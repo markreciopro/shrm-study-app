@@ -1,5 +1,6 @@
 import streamlit as st
 import json
+import random
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
@@ -35,6 +36,10 @@ if "user_answers" not in st.session_state:
 if "submitted" not in st.session_state:
     st.session_state.submitted = False
 
+# Track shuffled option mappings per question index to prevent jitter on reruns
+if "shuffled_options" not in st.session_state:
+    st.session_state.shuffled_options = {}
+
 total_questions = len(questions)
 
 # --- SIDEBAR NAVIGATION & GAMIFICATION ---
@@ -65,6 +70,7 @@ with st.sidebar:
         st.session_state.xp = 0
         st.session_state.user_answers = {}
         st.session_state.submitted = False
+        st.session_state.shuffled_options = {}
         st.rerun()
 
 # --- MAIN HEADER BANNER WITH LOGO ---
@@ -111,12 +117,32 @@ if key_terms:
         for term, definition in key_terms.items():
             st.markdown(f"**• {term}:** {definition}")
 
+# Randomize options per question index deterministically for rigorous testing
+q_idx = st.session_state.current_index
+if q_idx not in st.session_state.shuffled_options:
+    original_options = q.get("options", [])
+    correct_original_idx = q.get("correct", 0)
+    correct_text = original_options[correct_original_idx] if 0 <= correct_original_idx < len(original_options) else original_options[0]
+    
+    # Shuffle options
+    shuffled = original_options.copy()
+    random.shuffle(shuffled)
+    new_correct_idx = shuffled.index(correct_text)
+    
+    st.session_state.shuffled_options[q_idx] = {
+        "options": shuffled,
+        "correct": new_correct_idx
+    }
+
+current_shuffled_data = st.session_state.shuffled_options[q_idx]
+options = current_shuffled_data["options"]
+correct_index = current_shuffled_data["correct"]
+
 # Radio Selection for Options
-options = q.get("options", [])
 selected_option = st.radio(
     "Select the best strategic intervention:",
     options,
-    key=f"q_{st.session_state.current_index}"
+    key=f"q_{q_idx}"
 )
 
 # Submit Answer Action
@@ -125,10 +151,9 @@ col1, col2, col3 = st.columns([1, 1, 2])
 with col1:
     if st.button("Submit Answer", type="primary"):
         st.session_state.submitted = True
-        correct_idx = q.get("correct", 0)
         selected_idx = options.index(selected_option) if selected_option in options else -1
         
-        if selected_idx == correct_idx:
+        if selected_idx == correct_index:
             st.session_state.xp += 50
             st.success("🎉 Correct Strategic Response! (+50 XP)")
         else:
@@ -145,7 +170,7 @@ if st.session_state.submitted:
     if rat:
         st.markdown(f"**Strategic Rationale:** {rat}")
     if ex:
-        st.markdown(f"**Hospitality Application / Example:** {ex}")
+        st.markdown(f"**Hospitality Example:** {ex}")
     if not rat and not ex:
         st.write(exp_text)
 
