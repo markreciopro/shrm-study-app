@@ -1,141 +1,113 @@
 import streamlit as st
 import json
-import random
 
-# --- PAGE CONFIGURATION ---
+# Page Configuration
 st.set_page_config(
-    page_title="MAREC Insights | SHRM-CP HR Odyssey",
+    page_title="MAREC Insights | SHRM-CP Hospitality Odyssey",
     page_icon="🦜",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    layout="wide"
 )
 
-# --- LOAD QUESTION BANK ---
+# Sidebar Branding & Navigation
+with st.sidebar:
+    # MAREC Insights Lighthouse & Parrot Branding
+    st.image(
+        "https://marec.site/assets/img/logo.png",
+        use_column_width=True,
+        caption="MAREC Insights • Workforce Intelligence"
+    )
+    st.title("🏆 Exam Prep Navigator")
+    st.caption("Specialized for Luxury Resorts, Casinos & Hospitality Operations")
+    st.markdown("---")
+    st.write("**Consultant Rank:** Senior HR Strategist")
+    st.write("**XP Accumulated:** 120 XP")
+
+# Load Question Bank
 @st.cache_data
 def load_questions():
     try:
         with open("questions.json", "r", encoding="utf-8") as f:
-            data = json.load(f)
-            return data
-    except Exception as e:
-        st.error(f"Error loading questions.json: {e}")
+            return json.load(f)
+    except FileNotFoundError:
         return []
 
 questions = load_questions()
 
-# --- SESSION STATE INITIALIZATION ---
-if "current_index" not in st.session_state:
-    st.session_state.current_index = 0
-if "xp" not in st.session_state:
-    st.session_state.xp = 0
-if "user_answers" not in st.session_state:
-    st.session_state.user_answers = {}
-if "submitted" not in st.session_state:
-    st.session_state.submitted = False
+# Display Total Loaded Items
+st.sidebar.metric(label="Total Loaded Items", value=f"{len(questions)} Questions")
+st.sidebar.markdown("---")
+st.sidebar.write("**Team Morale:** 100%")
 
-total_questions = len(questions)
-
-# --- SIDEBAR NAVIGATION & GAMIFICATION ---
-with st.sidebar:
-    st.markdown("### 🏆 Exam Prep Navigator")
-    
-    # Calculate Rank based on XP
-    rank = "Junior HR Analyst"
-    if st.session_state.xp >= 500:
-        rank = "HR Generalist"
-    if st.session_state.xp >= 1200:
-        rank = "Senior HR Business Partner"
-    if st.session_state.xp >= 2500:
-        rank = "Strategic HR Director"
-    if st.session_state.xp >= 4000:
-        rank = "Chief Human Resources Officer (CHRO)"
-
-    st.write(f"**Consultant Rank:** {rank}")
-    st.write(f"**XP Accumulated:** `:green[{st.session_state.xp} XP]`")
-    st.write(f"**Total Loaded Items:** `{total_questions} Questions`")
-    st.progress(min((st.session_state.current_index + 1) / max(total_questions, 1), 1.0))
-    st.caption(f"Progress: Question {st.session_state.current_index + 1} of {total_questions}")
-    
-    st.markdown("---")
-    if st.button("🔄 Reset Exam Progress"):
-        st.session_state.current_index = 0
-        st.session_state.xp = 0
-        st.session_state.user_answers = {}
-        st.session_state.submitted = False
-        st.rerun()
-
-# --- MAIN CONTENT AREA ---
+# Main App Header
 st.markdown("""
-    <div style="background-color:#1E293B; padding:20px; border-radius:10px; color:white; margin-bottom:20px; border-left: 6px solid #3B82F6;">
-        <h1 style="margin:0; color:#F8FAFC;">MAREC Insights | SHRM-CP HR Odyssey</h1>
-        <p style="margin:5px 0 0 0; color:#94A3B8;">Workforce Intelligence & Behavioral Competency Simulator</p>
+    <div style="background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%); padding: 25px; border-radius: 10px; color: white;">
+        <h1 style="margin:0; font-size: 28px;">MAREC Insights | SHRM-CP HR Odyssey</h1>
+        <p style="margin:5px 0 0 0; font-size: 16px; opacity: 0.9;">Hospitality Workforce Intelligence & Behavioral Competency Simulator</p>
     </div>
 """, unsafe_allow_html=True)
+
+st.write("")
 
 if not questions:
-    st.warning("No questions found. Please check `questions.json` formatting in your GitHub repository.")
-    st.stop()
+    st.error("⚠️ `questions.json` not found or empty! Please make sure your question bank is uploaded to GitHub.")
+else:
+    # State management for quiz
+    if 'q_index' not in st.session_state:
+        st.session_state.q_index = 0
+    if 'submitted' not in st.session_state:
+        st.session_state.submitted = False
 
-# Ensure index stays within bounds
-if st.session_state.current_index >= total_questions:
-    st.session_state.current_index = total_questions - 1
+    current_q = questions[st.session_state.q_index]
 
-q = questions[st.session_state.current_index]
+    st.subheader(f"Question {st.session_state.q_index + 1} of {len(questions)}: {current_q.get('chapter', 'Hospitality Operations')}")
+    st.write(f"**Item Type:** {current_q.get('type', 'SJI')}")
+    
+    st.info(f"🎯 **Core Competency:** {current_q.get('competency', 'Business Acumen & Leadership')}")
 
-# Header Info
-st.subheader(f"Question {st.session_state.current_index + 1} of {total_questions}: {q.get('chapter', 'General HR')}")
-st.caption(f"**Item Type:** `{q.get('type', 'Knowledge Item')}`")
+    # Scenario Box
+    st.markdown("### 🏨 Hospitality Scenario Challenge:")
+    st.write(current_q['scenario'])
 
-st.info(f"🎯 **Core Competency:** {q.get('competency', 'HR Expertise')}")
-
-# Scenario Box
-st.markdown(f"""
-    <div style="background-color:#0F172A; padding:20px; border-radius:8px; border:1px solid #334155; margin-bottom:20px;">
-        <h4 style="color:#60A5FA; margin-top:0;">Scenario Challenge:</h4>
-        <p style="color:#E2E8F0; font-size:16px; line-height:1.6;">{q.get('scenario', '')}</p>
-    </div>
-""", unsafe_allow_html=True)
-
-# Radio Selection for Options
-options = q.get("options", [])
-selected_option = st.radio(
-    "Select the best strategic intervention:",
-    options,
-    key=f"q_{st.session_state.current_index}"
-)
-
-# Submit Answer Action
-col1, col2, col3 = st.columns([1, 1, 2])
-
-with col1:
-    if st.button("Submit Answer", type="primary"):
-        st.session_state.submitted = True
-        correct_idx = q.get("correct", 0)
-        selected_idx = options.index(selected_option) if selected_option in options else -1
+    # Options Form
+    form_key = f"form_{st.session_state.q_index}"
+    with st.form(key=form_key):
+        selected_option = st.radio(
+            "Select your best operational or strategic HR recommendation:",
+            current_q['options'],
+            key=f"radio_{st.session_state.q_index}"
+        )
         
-        if selected_idx == correct_idx:
-            st.session_state.xp += 50
-            st.success("🎉 Correct Strategic Response! (+50 XP)")
-        else:
-            st.error("❌ Sub-optimal Choice. Review rationale below.")
+        submitted = st.form_submit_button("Submit Answer")
 
-if st.session_state.submitted:
-    st.markdown("---")
-    st.markdown("### 💡 Strategic Rationale & Explanation")
-    st.write(q.get("explanation", "No explanation available."))
+        if submitted:
+            st.session_state.submitted = True
+            selected_idx = ord(selected_option[0]) - ord('A')
+            
+            if selected_idx == current_q['correct']:
+                st.success("✅ **Correct! Excellent strategic decision.**")
+            else:
+                correct_letter = chr(ord('A') + current_q['correct'])
+                st.error(f"❌ **Incorrect.** The correct strategic choice was **{correct_letter}**.")
 
-# Navigation Buttons
-st.markdown("---")
-nav_col1, nav_col2, nav_col3 = st.columns([1, 4, 1])
+            st.markdown("---")
+            st.markdown("### 💡 Strategic Rationale & Explanation")
+            st.write(current_q['explanation'])
 
-with nav_col1:
-    if st.button("⬅️ Previous") and st.session_state.current_index > 0:
-        st.session_state.current_index -= 1
-        st.session_state.submitted = False
-        st.rerun()
+            # Memory Anchor Card
+            st.markdown("### 🧠 Memory Anchor (Keep It Simple!)")
+            st.success(current_q.get('memory_anchor', 'Think of this like balancing resort shifts during peak guest arrivals.'))
 
-with nav_col3:
-    if st.button("Next ➡️") and st.session_state.current_index < total_questions - 1:
-        st.session_state.current_index += 1
-        st.session_state.submitted = False
-        st.rerun()
+    # Navigation Controls
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.session_state.q_index > 0:
+            if st.button("⬅️ Previous Question"):
+                st.session_state.q_index -= 1
+                st.session_state.submitted = False
+                st.rerun()
+    with col2:
+        if st.session_state.q_index < len(questions) - 1:
+            if st.button("Next Question ➡️"):
+                st.session_state.q_index += 1
+                st.session_state.submitted = False
+                st.rerun()
