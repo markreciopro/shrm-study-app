@@ -20,7 +20,7 @@ with st.sidebar:
     st.caption("Specialized for Luxury Resorts, Casinos & Hospitality Operations")
     st.markdown("---")
     st.write("**Consultant Rank:** Senior HR Strategist")
-    st.write("**XP Accumulated:** 120 XP")
+    st.write("**XP Accumulated:** 150 XP")
 
 # Load Question Bank
 @st.cache_data
@@ -33,7 +33,7 @@ def load_questions():
 
 questions = load_questions()
 
-# Display Total Loaded Items
+# Display Total Loaded Items Metric
 st.sidebar.metric(label="Total Loaded Items", value=f"{len(questions)} Questions")
 st.sidebar.markdown("---")
 st.sidebar.write("**Team Morale:** 100%")
