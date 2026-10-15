@@ -138,5 +138,145 @@
     "correct": 0,
     "explanation": "OSHA's General Duty Clause mandates that employers maintain a workplace free from recognized safety and health hazards.",
     "competency": "Workplace Risk Management"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Learning & Development Strategies",
+    "scenario": "When conducting a Needs Assessment for organizational training, which step must HR complete first to ensure alignment with business goals?",
+    "options": [
+      "A) Organizational analysis to identify strategic goals and operational priorities.",
+      "B) Individual performance appraisal reviews across all business units.",
+      "C) Selecting external training vendors and software platforms.",
+      "D) Administering employee satisfaction surveys regarding preferred learning styles."
+    ],
+    "correct": 0,
+    "explanation": "A training needs assessment begins with organizational analysis to align training interventions with corporate objectives and strategic initiatives.",
+    "competency": "People / Learning & Development"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Employee Engagement & Retention",
+    "scenario": "An HR Manager notices that exit interview data for software engineers shows a consistent complaint: lack of professional growth opportunities. How should HR address this systemic issue?",
+    "options": [
+      "A) Partner with engineering leadership to design dual-career ladders and technical leadership pathways.",
+      "B) Increase starting base salaries for all newly hired software engineers by 15%.",
+      "C) Require departing employees to complete a second, detailed exit survey.",
+      "D) Conduct mandatory stay interviews only for high-performing senior executives."
+    ],
+    "correct": 0,
+    "explanation": "Dual-career ladders allow individual contributors to advance professionally and financially without having to move into administrative management roles.",
+    "competency": "Relationship Management & Talent Strategy"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Total Rewards & Compensation",
+    "scenario": "In job evaluation methodology, which non-quantitative method involves comparing whole jobs against each other based on their overall worth to the organization?",
+    "options": [
+      "A) Job Ranking Method",
+      "B) Point-Factor Method",
+      "C) Factor Comparison Method",
+      "D) Market Pay Pricing Method"
+    ],
+    "correct": 0,
+    "explanation": "The Job Ranking Method is a qualitative, whole-job evaluation technique where jobs are ordered sequentially from highest to lowest value.",
+    "competency": "HR Expertise (Total Rewards)"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Labor & Employee Relations",
+    "scenario": "During a union organizing campaign, a department supervisor asks an HR professional if they can inform employees about the negative aspects of unionization. How should HR advise the supervisor under TIPSS guidelines?",
+    "options": [
+      "A) Supervisors may share facts, opinions, and personal experiences, but must strictly avoid Threats, Interrogations, Promises, or Surveillance (TIPS).",
+      "B) Supervisors are legally prohibited from speaking about unions under any circumstances.",
+      "C) Supervisors may promise wage increases if employees vote against union representation.",
+      "D) Supervisors should conduct one-on-one interrogations to identify union organizers."
+    ],
+    "correct": 0,
+    "explanation": "Under the NLRA, management may share factual information and opinions (TIPS rule) as long as they do not Threaten, Interrogate, Promise, or Spy.",
+    "competency": "Workplace / Employee & Labor Relations"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Organizational Structure & Design",
+    "scenario": "Which organizational structure groups employees by both functional specialty and project product lines, leading to a dual-chain of command?",
+    "options": [
+      "A) Matrix Structure",
+      "B) Divisional Structure",
+      "C) Functional Structure",
+      "D) Geographic Structure"
+    ],
+    "correct": 0,
+    "explanation": "A Matrix structure overlay creates dual reporting relationships, balancing functional expertise with project agility.",
+    "competency": "Structure & HR Service Delivery"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Ethics & Professional Conduct",
+    "scenario": "An HR specialist discovers that a hiring manager routinely passes over qualified older candidates for entry-level tech roles in favor of recent college graduates. What is HR's immediate duty?",
+    "options": [
+      "A) Audit the department's hiring records and review compliance under the Age Discrimination in Employment Act (ADEA) with leadership.",
+      "B) Ignore the pattern since entry-level roles naturally favor younger candidates.",
+      "C) Inform affected applicants directly so they can file private lawsuits.",
+      "D) Reassign the hiring manager to non-hiring administrative duties without investigation."
+    ],
+    "correct": 0,
+    "explanation": "HR must enforce compliance with federal anti-discrimination laws like ADEA (protecting workers 40+) through impartial audits and management counsel.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Global HR & Talent Management",
+    "scenario": "Which international compensation approach compensates expatriate employees by maintaining their home-country purchasing power?",
+    "options": [
+      "A) Balance Sheet Approach",
+      "B) Local Market Rate Approach",
+      "C) Lump-Sum Allowance Method",
+      "D) Global Tiered Salary Model"
+    ],
+    "correct": 0,
+    "explanation": "The Balance Sheet Approach ensures expatriates experience neither financial gain nor loss regarding standard of living during global assignments.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Performance Management Strategy",
+    "scenario": "A company is transitioning from annual performance reviews to continuous feedback and monthly check-ins. Managers report feeling overwhelmed by the administrative burden. How should HR assist?",
+    "options": [
+      "A) Provide lightweight check-in templates, automated calendar reminders, and concise manager coaching modules.",
+      "B) Revert immediately back to the traditional once-a-year review system.",
+      "C) Make monthly check-ins optional for all department supervisors.",
+      "D) Penalize managers who miss monthly feedback submissions by withholding bonuses."
+    ],
+    "correct": 0,
+    "explanation": "HR supports operational change by reducing administrative friction through simple tools, training, and streamlined workflows.",
+    "competency": "Consultation & Enablement"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "HR Technology & Analytics",
+    "scenario": "What is the primary benefit of deploying a unified Human Resource Information System (HRIS) across an enterprise?",
+    "options": [
+      "A) Centralized data management, streamlined employee self-service, and improved data-driven decision analytics.",
+      "B) Eliminating the need for dedicated HR business partners in business units.",
+      "C) Automatic compliance guarantees with all state and federal labor laws.",
+      "D) Replacing line managers' involvement in employee performance evaluations."
+    ],
+    "correct": 0,
+    "explanation": "An HRIS integrates employee data streams, automates routine operational tasks, and provides analytics for strategic workforce decisions.",
+    "competency": "Business Acumen & HR Systems"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Workforce Planning & Succession",
+    "scenario": "A critical executive announces an unexpected retirement in 30 days, and no internal successor has been identified. What should HR prioritize in the short term?",
+    "options": [
+      "A) Implement an emergency knowledge-transfer protocol while launching an interim leadership plan and target executive search.",
+      "B) Promote the most senior manager in the department regardless of technical readiness.",
+      "C) Freeze all department operations until a permanent replacement is hired.",
+      "D) Ask the retiring executive to stay indefinitely without an exit contract."
+    ],
+    "correct": 0,
+    "explanation": "Unplanned executive departures require immediate risk mitigation through knowledge capture, temporary leadership stability, and parallel executive sourcing.",
+    "competency": "Critical Evaluation & Talent Strategy"
   }
 ]
