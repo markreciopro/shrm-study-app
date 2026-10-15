@@ -98,11 +98,18 @@ st.info(f"🎯 **Core SHRM Competency:** {q.get('competency', 'HR Expertise')}")
 
 # Scenario Box
 st.markdown(f"""
-    <div style="background-color:#0F172A; padding:20px; border-radius:8px; border:1px solid #334155; margin-bottom:20px;">
+    <div style="background-color:#0F172A; padding:20px; border-radius:8px; border:1px solid #334155; margin-bottom:15px;">
         <h4 style="color:#60A5FA; margin-top:0;">Hospitality Scenario Challenge:</h4>
         <p style="color:#E2E8F0; font-size:16px; line-height:1.6;">{q.get('scenario', '')}</p>
     </div>
 """, unsafe_allow_html=True)
+
+# Key Terms Accordion
+key_terms = q.get("key_terms", {})
+if key_terms:
+    with st.expander("📚 View Key HR Terms & Legal Definitions for this Scenario"):
+        for term, definition in key_terms.items():
+            st.markdown(f"**• {term}:** {definition}")
 
 # Radio Selection for Options
 options = q.get("options", [])
