@@ -11,7 +11,11 @@
       "D) Replace full-time line staff with third-party agency labor to absorb peak turnover."
     ],
     "correct": 1,
-    "strategic_rationale": "Directly addressing schedule predictability and offering clear financial incentives for undesirable peak shifts solves core workplace dissatisfaction drivers without permanently inflating fixed base labor costs across low seasons.",
+    "key_terms": {
+      "Shift Differential": "Additional compensation paid to employees for working undesirable, non-standard, or high-demand shifts (e.g., weekends, holidays).",
+      "Total Rewards Strategy": "The holistic combination of direct pay, indirect benefits, flexible work environments, and career growth opportunities offered to employees."
+    },
+    "strategic_rationale": "Directly addressing schedule predictability and offering financial incentives for peak shifts solves core workplace dissatisfaction drivers without permanently inflating fixed base labor costs.",
     "example": "A 1,000-room Las Vegas resort implemented a shift-bidding mobile app paired with a $3.50/hr weekend premium for guest room attendants, reducing 90-day seasonal turnover from 38% to 14%.",
     "competency": "Total Rewards & Relationship Management"
   },
@@ -27,8 +31,12 @@
       "D) Ban all discussions of non-work topics in employee break areas."
     ],
     "correct": 1,
-    "strategic_rationale": "Section 7 of the NLRA protects employees' rights to engage in concerted activity during non-working time in non-working areas. Management must comply with TIPS rules (no Threats, Interrogations, Promises, or Surveillance).",
-    "example": "HR conducts a mandatory 15-minute briefing for shift managers at a boutique convention hotel to review legal boundaries after a front desk supervisor mistakenly banned union conversations in the staff lounge.",
+    "key_terms": {
+      "National Labor Relations Act (NLRA)": "Federal law protecting employee rights to organize, form unions, and engage in protected concerted activities.",
+      "TIPS Rule": "Management guidelines during union campaigns prohibiting Threats, Interrogations, Promises, and Surveillance."
+    },
+    "strategic_rationale": "Section 7 of the NLRA protects employees' rights to engage in concerted activity during non-working time in non-working areas. Management must comply strictly with TIPS rules.",
+    "example": "HR conducts a mandatory 15-minute briefing for shift managers at a convention hotel to review legal boundaries after a front desk supervisor mistakenly banned union conversations in the staff lounge.",
     "competency": "Workplace / Employee & Labor Relations"
   },
   {
@@ -43,6 +51,10 @@
       "D) Conduct a standard 3-day classroom lecture without practical skills practice."
     ],
     "correct": 0,
+    "key_terms": {
+      "Form I-9 Compliance": "Mandatory federal verification of identity and employment authorization for every newly hired employee.",
+      "Cohort Onboarding": "Onboarding new hires in structured groups to accelerate orientation, team bonding, and standard compliance training."
+    },
     "strategic_rationale": "Structured onboarding accelerates time-to-productivity while ensuring full compliance with federal immigration laws (Form I-9 completed within 3 days of hire).",
     "example": "A regional resort group uses mobile-first preboarding for background checks and digital forms, allowing day-one orientation to focus 100% on safety protocols, POS training, and live guest shadowing.",
     "competency": "People / HR Expertise & Talent Acquisition"
@@ -59,6 +71,10 @@
       "D) Discontinue monitoring demographic metrics across leadership tiers."
     ],
     "correct": 0,
+    "key_terms": {
+      "Diversity, Equity & Inclusion (DEI)": "Organizational frameworks ensuring fair treatment, access, and advancement opportunities for all demographic groups.",
+      "Talent Pipeline": "A structured source of qualified candidates developed internally or externally to fill future leadership vacancies."
+    },
     "strategic_rationale": "Building structured internal pathways and addressable skill-development frameworks fosters sustainable equity without exposing the organization to unlawful quota claims.",
     "example": "A luxury hotel brand launched a 'Frontline-to-Supervisor' program providing tuition reimbursement and cross-department shadow rotations, increasing internal promotion rates among minority employees by 40%.",
     "competency": "Global & Cultural Effectiveness & Talent Development"
@@ -75,6 +91,10 @@
       "D) Allow employees to choose whether or not to wear protective gear based on personal preference."
     ],
     "correct": 1,
+    "key_terms": {
+      "Occupational Safety and Health Act (OSHA)": "Federal legislation ensuring safe and healthful working conditions for working men and women.",
+      "Personal Protective Equipment (PPE)": "Protective gear worn to minimize exposure to hazards that cause serious workplace injuries and illnesses."
+    },
     "strategic_rationale": "OSHA mandates that employers evaluate hazards, supply necessary protective equipment at no cost to staff, and train workers on proper use and safety protocols.",
     "example": "A hotel culinary division provides custom-fit slip-resistant boots, chemical aprons, and eye protection goggles alongside quarterly Safety Data Sheet (SDS) refresher training for dishwashing staff.",
     "competency": "Workplace Risk Management & Compliance"
@@ -83,17 +103,21 @@
     "id": 6,
     "type": "Knowledge Item",
     "chapter": "U.S. Wage & Hour Regulations",
-    "scenario": "A boutique hotel pays guest room attendants on a piece-rate basis per room cleaned. During a heavy travel week, an attendant works 48 hours. Under the FLSA, how must overtime pay be calculated?",
+    "scenario": "Under the Fair Labor Standards Act (FLSA), a resort HR manager is auditing job classifications for front office supervisors. Which primary criteria must be met for an employee to be legally classified as exempt under the FLSA Administrative Exemption?",
     "options": [
-      "A) Piece-rate workers are exempt from federal overtime pay requirements.",
-      "B) Calculate total piece-rate earnings, divide by 48 hours to find the regular rate, and pay an additional 0.5 times that regular rate for the 8 overtime hours.",
-      "C) Pay standard minimum wage for the 8 overtime hours with no piece-rate credit.",
-      "D) Carry over the 8 extra hours to the following week's timesheet."
+      "A) Paid on a salary basis at or above the statutory threshold and primary duty includes the exercise of discretion and independent judgment regarding matters of significance.",
+      "B) Works more than 40 hours per week and directly manages at least two full-time employee equivalents.",
+      "C) Holds a bachelor's degree in business administration or hospitality management.",
+      "D) Receives commission pay exceeding 50% of total annual compensation."
     ],
-    "correct": 1,
-    "strategic_rationale": "Non-exempt piece-rate employees under the FLSA are entitled to 1.5 times their effective regular hourly rate for all hours worked over 40 in a workweek.",
-    "example": "A resort payroll audit corrected piece-rate calculations for room attendants who worked peak holiday shifts, issuing back pay adjustments for FLSA compliance.",
-    "competency": "HR Compliance & Total Rewards"
+    "correct": 0,
+    "key_terms": {
+      "Fair Labor Standards Act (FLSA)": "Federal law establishing minimum wage, overtime pay eligibility, and recordkeeping standards.",
+      "Administrative Exemption": "FLSA exemption requiring salary-basis pay above statutory limits and primary duties involving independent judgment on significant business operations."
+    },
+    "strategic_rationale": "Misclassifying non-exempt employees as exempt creates massive legal liabilities under FLSA for back overtime pay and statutory penalties.",
+    "example": "A 400-room luxury resort reclassified its Duty Managers from 'Exempt' to 'Non-Exempt Hourly' after an audit revealed their primary daily duties consisted of manual check-ins rather than strategic administration.",
+    "competency": "HR Expertise (Workplace Compliance)"
   },
   {
     "id": 7,
@@ -107,6 +131,10 @@
       "D) Issue written warnings to both managers without discussing underlying process issues."
     ],
     "correct": 1,
+    "key_terms": {
+      "Interest-Based Negotiation": "Conflict resolution method focusing on underlying needs, concerns, and shared goals rather than hard positions.",
+      "Service Level Agreement (SLA)": "Commitment between internal departments defining performance standards and delivery timelines."
+    },
     "strategic_rationale": "Interest-based negotiation targets operational root causes and shared goals rather than surface-level disputes, restoring cross-departmental collaboration.",
     "example": "HR facilitated a joint workflow mapping workshop between kitchen and banquet leadership, establishing clear cut-off times that reduced guest service delays by 90%.",
     "competency": "Relationship Management & Consultation"
@@ -123,8 +151,11 @@
       "D) Travel expenses for candidate interview site visits."
     ],
     "correct": 2,
-    "explanation": "Standard CPH calculations include direct internal and external recruiting costs but exclude indirect business costs like lost revenue or productivity.",
-    "strategic_rationale": "Standardized metric formulas ensure consistent, comparable benchmarking without confounding operational opportunity costs.",
+    "key_terms": {
+      "Cost-Per-Hire (CPH)": "Metric measuring total internal and external financial costs incurred to fill an open organizational position.",
+      "Opportunity Cost": "The loss of potential gain from other alternatives when one alternative is chosen (e.g., unrented room revenue)."
+    },
+    "strategic_rationale": "Standard CPH calculations include direct internal and external recruiting costs but exclude indirect business costs like lost revenue or productivity.",
     "example": "An HR director calculated a $2,400 CPH for front office managers by aggregating ad spend, ATS fees, and internal recruiter hours while omitting estimated vacancy losses.",
     "competency": "Business Acumen & Analytics"
   },
@@ -140,7 +171,11 @@
       "D) Require cooks to complete a 4-hour online IT training course at home."
     ],
     "correct": 1,
-    "strategic_rationale": "Effective change management overcomes user friction through practical peer support, clear demonstration of personal benefits (WIIFM), and accessible training.",
+    "key_terms": {
+      "Change Management": "Structured approach to transitioning individuals, teams, and organizations from a current state to a desired future state.",
+      "Peer Champions": "Respected frontline employees who advocate for and support co-workers through new operational transitions."
+    },
+    "strategic_rationale": "Effective change management overcomes user friction through practical peer support, clear demonstration of personal benefits, and accessible training.",
     "example": "A casino culinary department selected respected lead line cooks as peer champions to assist co-workers, achieving 98% mobile app adoption within two weeks.",
     "competency": "Leadership & Navigation & Technology Enablement"
   },
@@ -156,6 +191,10 @@
       "D) Require the employee to use all accrued paid time off without job protection."
     ],
     "correct": 1,
+    "key_terms": {
+      "Family and Medical Leave Act (FMLA)": "Federal law granting eligible employees up to 12 weeks of unpaid, job-protected leave per year for qualifying family and medical reasons.",
+      "Job-Protected Leave": "Statutory right allowing employees to return to their same or an equivalent position upon concluding approved leave."
+    },
     "strategic_rationale": "Eligible employees under FMLA are legally entitled to up to 12 workweeks of unpaid, job-protected leave for qualifying family medical care.",
     "example": "An HR specialist processed FMLA paperwork for a resort supervisor, coordinating temporary coverage through cross-trained guest service agents to protect the employee's role.",
     "competency": "HR Compliance & Workplace Law"
@@ -172,6 +211,10 @@
       "D) Recency Bias"
     ],
     "correct": 0,
+    "key_terms": {
+      "Central Tendency Error": "Performance rating error where raters evaluate all employees near the midpoint of a scale to avoid making difficult performance distinctions.",
+      "Performance Calibration": "Executive review sessions designed to align manager grading standards and eliminate bias across departments."
+    },
     "strategic_rationale": "Central Tendency Error occurs when managers rate all subordinates near the midpoint of a scale to avoid making performance distinctions or giving tough feedback.",
     "example": "HR conducted mandatory performance calibration sessions for hotel department heads to establish clear, objective performance tiering.",
     "competency": "Critical Evaluation & Performance Management"
@@ -188,6 +231,10 @@
       "D) Return on Investment (ROI)"
     ],
     "correct": 0,
+    "key_terms": {
+      "Yield Ratio": "Percentage of candidates who successfully pass from one stage of the recruitment funnel to the next.",
+      "Recruitment Funnel": "The multi-step process tracking candidates from initial application sourcing through final job offer acceptance."
+    },
     "strategic_rationale": "Yield Ratios calculate candidate conversion rates between selection stages, identifying bottlenecks in talent acquisition funnels.",
     "example": "A hotel group discovered a low 15% yield ratio from interview to offer acceptance for line cooks, prompting a review of pay competitiveness.",
     "competency": "Business Acumen & Talent Sourcing"
@@ -204,6 +251,10 @@
       "D) Require the employee to supply their own medical equipment without HR involvement."
     ],
     "correct": 1,
+    "key_terms": {
+      "Americans with Disabilities Act (ADA)": "Federal law prohibiting discrimination against qualified individuals with disabilities and requiring reasonable accommodations.",
+      "Interactive Process": "Collaborative dialogue between employer and employee to identify appropriate workplace accommodations."
+    },
     "strategic_rationale": "The ADA mandates an interactive process to explore effective accommodations unless the employer proves undue operational hardship.",
     "example": "HR conducted a trial with an ergonomic stool in the laundry room, finding folding output remained steady while preventing further employee injury.",
     "competency": "Consultation & Legal Compliance"
@@ -220,11 +271,16 @@
       "D) BCG Matrix"
     ],
     "correct": 0,
+    "key_terms": {
+      "SWOT Analysis": "Strategic planning framework evaluating internal Strengths and Weaknesses alongside external Opportunities and Threats.",
+      "Strategic Alignment": "The process of linking HR functional goals directly with overall corporate business strategy."
+    },
     "strategic_rationale": "SWOT Analysis pairs internal Strengths and Weaknesses with external Opportunities and Threats to build aligned strategic initiatives.",
     "example": "A resort used SWOT analysis to identify an internal turnover weakness and external local market wage threat, leading to a revamped retention program.",
     "competency": "Leadership & Navigation"
   },
   {
+    "id": 15,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Workplace Harassment & Conduct",
     "scenario": "An employee at a resort spa submits an anonymous tip alleging a lead massage therapist makes unwanted romantic advances toward junior staff. What is HR's mandatory first action?",
@@ -235,11 +291,16 @@
       "D) Reassign all junior staff to different shifts without investigating."
     ],
     "correct": 1,
+    "key_terms": {
+      "Impartial Investigation": "Thorough, objective fact-finding inquiry conducted by trained personnel to address workplace misconduct allegations.",
+      "Hostile Work Environment": "Harassment severe or pervasive enough to create an intimidating, offensive, or abusive working atmosphere."
+    },
     "strategic_rationale": "Employers have a strict legal and ethical obligation to investigate sexual harassment allegations promptly upon receiving notice.",
     "example": "HR conducted confidential interviews with spa staff following an anonymous complaint, uncovering policy violations and taking corrective action.",
     "competency": "Ethical Practice & Risk Mitigation"
   },
   {
+    "id": 16,
     "type": "Knowledge Item",
     "chapter": "Compensation Strategy & Pay Structures",
     "scenario": "Which compensation metric compares an individual hotel employee's actual salary rate to the exact midpoint of their salary grade?",
@@ -250,11 +311,16 @@
       "D) Pay Grade Overlap"
     ],
     "correct": 0,
+    "key_terms": {
+      "Compa-Ratio": "Ratio calculation comparing an employee's actual salary against the midpoint of their assigned salary pay range.",
+      "Pay Range Midpoint": "The exact middle salary value between the minimum and maximum of a defined pay grade."
+    },
     "strategic_rationale": "Compa-Ratio = (Actual Salary / Salary Midpoint). A ratio of 1.0 indicates exact pay parity at market midpoint.",
     "example": "An HR audit revealed front desk agents had an average compa-ratio of 0.82, prompting market pay adjustments to reduce attrition.",
     "competency": "Total Rewards Analytics"
   },
   {
+    "id": 17,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Strategic Workforce Planning & Automation",
     "scenario": "A hotel chain plans to install automated self-check-in kiosks, reducing front desk staff needs by 40%. What proactive workforce strategy should HR implement?",
@@ -265,11 +331,16 @@
       "D) Reduce wages for remaining front desk staff to offset kiosk costs."
     ],
     "correct": 1,
+    "key_terms": {
+      "Reskilling": "Training existing employees on new skill sets to equip them for different roles created by technological automation.",
+      "Skills Gap Analysis": "Evaluation comparing current employee workforce skills against future operational skill requirements."
+    },
     "strategic_rationale": "Strategic HR manages tech displacement through skill audits, cross-training, and workforce redeployment to maintain morale and service quality.",
     "example": "A hotel group reskilled 30 front desk agents into guest concierges, improving guest satisfaction scores by 18 points post-kiosk launch.",
     "competency": "Consultation & Strategic Workforce Planning"
   },
   {
+    "id": 18,
     "type": "Knowledge Item",
     "chapter": "U.S. Employment Compliance & Form I-9",
     "scenario": "Under federal immigration law, within how many business days of a new hotel employee's first day of work for pay must Section 2 of Form I-9 be completed?",
@@ -280,11 +351,16 @@
       "D) Within 30 calendar days"
     ],
     "correct": 0,
+    "key_terms": {
+      "Form I-9 Section 2": "Employer verification step requiring physical inspection of employee identity and work authorization documents.",
+      "Employment Eligibility Verification": "Federal statutory requirement ensuring all hired workers are authorized to work in the United States."
+    },
     "strategic_rationale": "Federal law strictly mandates Section 2 Form I-9 verification within 3 business days of the hire date.",
     "example": "A resort HR team standardized digital I-9 audits on day two of orientation to maintain 100% federal audit readiness across seasonal intakes.",
     "competency": "Workplace Law Compliance"
   },
   {
+    "id": 19,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Labor Relations & Contract Negotiations",
     "scenario": "During union collective bargaining negotiations, hotel management offers a 1% annual raise while the union demands 8%. Bargaining reaches an impasse. What mechanism should HR recommend?",
@@ -295,11 +371,16 @@
       "D) Lock out all employees immediately."
     ],
     "correct": 0,
+    "key_terms": {
+      "Mediation": "Dispute resolution process utilizing a neutral third party to help negotiating parties reach a voluntary compromise.",
+      "Collective Bargaining Impasse": "Point in negotiations where neither party is willing to alter positions, halting agreement progress."
+    },
     "strategic_rationale": "Mediation brings a neutral facilitator to help deadlocked parties re-engage constructively and negotiate voluntary agreements.",
     "example": "A hotel management group and union representatives utilized FMCS mediation to break a 3-month wage deadlock and secure a 4-year contract.",
     "competency": "Workplace / Employee & Labor Relations"
   },
   {
+    "id": 20,
     "type": "Knowledge Item",
     "chapter": "U.S. Health Benefits & COBRA",
     "scenario": "Under COBRA, what is the standard continuation coverage period for a hotel employee who leaves voluntarily or is terminated (other than gross misconduct)?",
@@ -310,11 +391,16 @@
       "D) 24 months"
     ],
     "correct": 0,
+    "key_terms": {
+      "COBRA": "Consolidated Omnibus Budget Reconciliation Act; federal law giving workers temporary group health insurance continuation rights after job loss.",
+      "Qualifying Event": "Event causing loss of health coverage, such as voluntary resignation, termination, or reduction in hours."
+    },
     "strategic_rationale": "COBRA grants qualifying beneficiaries up to 18 months of continued group health coverage following employment termination or reduction in hours.",
     "example": "An HR benefits coordinator issued COBRA election packets to departing resort staff within the required 14-day notification window.",
     "competency": "Total Rewards & Health Compliance"
   },
   {
+    "id": 21,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Organizational Culture & Executive Alignment",
     "scenario": "A newly hired Resort General Manager announces a strategy of 'Guest Delight Through Employee Empowerment.' However, shift supervisors continue micromanaging line staff and penalizing minor service adjustments. How should HR realign culture?",
@@ -325,11 +411,16 @@
       "D) Issue disciplinary warnings to frontline staff who make guest service decisions."
     ],
     "correct": 0,
+    "key_terms": {
+      "Cultural Transformation": "Comprehensive alignment of organizational systems, leader behavior, metrics, and values to achieve strategic goals.",
+      "Key Performance Indicators (KPIs)": "Quantifiable metrics evaluating how effectively an organization achieves key business objectives."
+    },
     "strategic_rationale": "Sustained cultural transformation requires aligning leadership training, accountability systems, and recognition with strategic goals.",
-    "example": "HR launched a 'Empowered Service' budget program allowing supervisors and line staff to spend up to $200 on-the-spot to resolve guest issues.",
+    "example": "HR launched an 'Empowered Service' budget program allowing supervisors and line staff to spend up to $200 on-the-spot to resolve guest issues.",
     "competency": "Leadership & Organizational Development"
   },
   {
+    "id": 22,
     "type": "Knowledge Item",
     "chapter": "Selection Testing & Validity",
     "scenario": "What type of test validity confirms that a hospitality front desk simulation accurately reflects actual tasks performed on shift?",
@@ -340,11 +431,16 @@
       "D) Predictive Validity"
     ],
     "correct": 0,
+    "key_terms": {
+      "Content Validity": "Evidence demonstrating that a selection test or assessment directly samples actual duties and knowledge required on the job.",
+      "Job Simulation": "Assessment methodology replicating core tasks and challenges encountered in an actual work role."
+    },
     "strategic_rationale": "Content Validity demonstrates that assessment content directly samples critical knowledge, skills, and duties required on the job.",
     "example": "A hotel group validated its front desk screening assessment by mapping each question directly to primary job duties in the official job description.",
     "competency": "Talent Sourcing & Selection"
   },
   {
+    "id": 23,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Ergonomics & Safety",
     "scenario": "A casino hotel experiences a spike in repetitive strain back injuries among guest room attendants lifting heavy mattresses. What is HR's best initial intervention?",
@@ -355,11 +451,16 @@
       "D) Replace injured attendants with temporary contract labor."
     ],
     "correct": 0,
+    "key_terms": {
+      "Ergonomics": "Designing workplaces, tools, and tasks to fit human physical capabilities and prevent musculoskeletal disorders.",
+      "Engineering Controls": "Physical changes to workstations or tools that eliminate or reduce worker exposure to hazards."
+    },
     "strategic_rationale": "Ergonomic redesign, engineering controls, and proper training target root causes of musculoskeletal workplace injuries.",
     "example": "A resort introduced mattress-lifting tools and ergonomic bed-making training, reducing workers' compensation claims by 42% in 6 months.",
     "competency": "Workplace Safety & Risk Management"
   },
   {
+    "id": 24,
     "type": "Knowledge Item",
     "chapter": "U.S. Equal Employment Opportunity",
     "scenario": "Under the Age Discrimination in Employment Act (ADEA), at what age do workers gain protection against employment discrimination?",
@@ -370,11 +471,16 @@
       "D) 35 years of age and older"
     ],
     "correct": 0,
+    "key_terms": {
+      "Age Discrimination in Employment Act (ADEA)": "Federal law protecting workers aged 40 and older from employment discrimination based on age.",
+      "Protected Class": "Group protected by federal law from discriminatory employment practices."
+    },
     "strategic_rationale": "The ADEA explicitly protects workers aged 40 and older from age-based employment discrimination.",
     "example": "An HR audit of casino banquet hiring practices ensured older qualified applicants were given equal evaluation during recruitment screens.",
     "competency": "HR Compliance & Workplace Law"
   },
   {
+    "id": 25,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Incentive Pay & Gainsharing",
     "scenario": "A hotel food & beverage division wants to improve kitchen cost efficiency without sacrificing food quality or guest ratings. Which incentive structure should HR recommend?",
@@ -385,11 +491,16 @@
       "D) Uniform piece-rate pay per dish prepared."
     ],
     "correct": 0,
+    "key_terms": {
+      "Gainsharing": "Incentive system that shares financial gains from operational productivity and cost savings with operational teams.",
+      "Variable Pay": "At-risk compensation tied to specific, measurable team or organizational performance targets."
+    },
     "strategic_rationale": "Gainsharing ties team financial rewards directly to operational efficiency, waste reduction, and output quality against baseline targets.",
     "example": "A resort culinary department launched a quarterly gainsharing program that shared 30% of kitchen waste savings with line cooks, reducing waste by $45,000.",
     "competency": "Total Rewards & Incentive Design"
   },
   {
+    "id": 26,
     "type": "Knowledge Item",
     "chapter": "Global Mobility & Expatriate Pay",
     "scenario": "Which compensation method maintains an expatriate hotel executive's home-country purchasing power during an international assignment?",
@@ -400,11 +511,16 @@
       "D) Tiered Global Salary Model"
     ],
     "correct": 0,
+    "key_terms": {
+      "Balance Sheet Approach": "Expatriate compensation method designed to maintain home-country living standards and purchasing power.",
+      "Expatriate": "Employee working and residing in a foreign country outside their home nation."
+    },
     "strategic_rationale": "The Balance Sheet Approach equalizes purchasing power so expatriates neither gain nor lose financially relative to their home country standard.",
     "example": "A global hotel group used the balance sheet method to cover housing and tax differentials for a GM transferred from Chicago to Tokyo.",
     "competency": "Global & Cultural Effectiveness"
   },
   {
+    "id": 27,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Ethical Leadership & Whistleblower Protection",
     "scenario": "A hotel auditor reports to HR that a finance director is misrecording vendor rebates. One week later, the director reduces the auditor's scheduled shift hours by half. What action must HR take immediately?",
@@ -415,11 +531,16 @@
       "D) Suggest the auditor transfer to another hotel property."
     ],
     "correct": 0,
+    "key_terms": {
+      "Whistleblower Protection": "Legal safeguards preventing retaliation against employees who report illegal or unethical organizational practices.",
+      "Retaliation": "Adverse employment action taken against an employee for exercising legally protected rights."
+    },
     "strategic_rationale": "Whistleblower protections require immediate HR intervention to halt potential retaliation while claims are impartially investigated.",
     "example": "HR immediately reinstated a resort worker's full shift schedule after investigating retaliatory schedule cuts by a department head.",
     "competency": "Ethical Practice & Risk Management"
   },
   {
+    "id": 28,
     "type": "Knowledge Item",
     "chapter": "Training Needs Assessment",
     "scenario": "What is the mandatory first step when conducting a Training Needs Assessment (TNA) for hotel front desk operations?",
@@ -430,11 +551,16 @@
       "D) Reviewing external competitor training manuals."
     ],
     "correct": 0,
+    "key_terms": {
+      "Training Needs Assessment (TNA)": "Systematic process evaluating organizational, task, and individual training requirements.",
+      "Organizational Analysis": "Evaluation of corporate goals, resources, and environment to determine where training is needed."
+    },
     "strategic_rationale": "A TNA begins with organizational analysis to align training interventions directly with business objectives and key performance gaps.",
     "example": "An HR manager conducted an organizational audit showing check-in delay trends before designing targeted PMS software training for front desk staff.",
     "competency": "People / Learning & Development"
   },
   {
+    "id": 29,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Grievance Handling & Union CBA",
     "scenario": "A union shop steward files a Step-1 grievance claiming overtime was assigned unfairly in violation of the Collective Bargaining Agreement (CBA). How should HR respond?",
@@ -445,11 +571,16 @@
       "D) Cancel all upcoming overtime shifts across the department."
     ],
     "correct": 0,
+    "key_terms": {
+      "Collective Bargaining Agreement (CBA)" : "Legal contract between employer and union governing wages, hours, and working conditions.",
+      "Grievance Procedure": "Formal contractual process for resolving disputes regarding CBA interpretation or enforcement."
+    },
     "strategic_rationale": "Step-1 grievance management requires strict adherence to CBA procedures, objective factual investigation, and timely formal resolution.",
     "example": "HR reviewed shift logs, found an administrative scheduling oversight, and resolved a union grievance by issuing back pay per CBA terms.",
     "competency": "Workplace / Employee & Labor Relations"
   },
   {
+    "id": 30,
     "type": "Knowledge Item",
     "chapter": "Adverse Impact & EEOC Guidelines",
     "scenario": "Under EEOC Uniform Guidelines, what statistical standard indicates potential adverse impact against protected candidate groups during selection screens?",
@@ -460,11 +591,16 @@
       "D) Cronbach's Alpha Reliability Test"
     ],
     "correct": 0,
+    "key_terms": {
+      "Four-Fifths Rule": "EEOC guideline stating selection rates for any protected group less than 80% of the highest group indicate adverse impact.",
+      "Adverse Impact": "Unintentional discrimination occurring when a neutral employment practice disproportionately affects a protected class."
+    },
     "strategic_rationale": "The Four-Fifths Rule compares selection rates for protected demographic groups against the group with the highest selection rate to detect potential bias.",
     "example": "An HR analytics audit identified a physical agility test that violated the 80% rule for female resort security candidates, prompting test redesign.",
     "competency": "Critical Evaluation & Analytics"
   },
   {
+    "id": 31,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Workplace Policy & Off-Hours Expectations",
     "scenario": "Front desk agents report receiving work texts from shift managers late at night demanding immediate response. How should HR intervene?",
@@ -475,11 +611,16 @@
       "D) Terminate shift managers for sending late messages."
     ],
     "correct": 0,
+    "key_terms": {
+      "Right to Disconnect": "Policy protecting employees from being contacted for work-related matters outside normal working hours.",
+      "Non-Exempt Working Hours": "All hours worked by non-exempt employees that must be compensated under FLSA rules."
+    },
     "strategic_rationale": "Protecting non-exempt working hours ensures FLSA compliance and prevents employee burnout through clear communication norms.",
     "example": "HR published off-hours communication guidelines for hotel management, stopping off-shift texting and reducing unpaid wage claims.",
     "competency": "Relationship Management & Compliance"
   },
   {
+    "id": 32,
     "type": "Knowledge Item",
     "chapter": "Strategic Sourcing & Candidate Channels",
     "scenario": "What term describes sourcing qualified candidates who are currently employed and not actively looking for work in the hospitality industry?",
@@ -490,11 +631,16 @@
       "D) Open Career Fair Sourcing"
     ],
     "correct": 0,
+    "key_terms": {
+      "Passive Candidates": "Qualified professionals who are currently employed and not actively searching for new job opportunities.",
+      "Talent Sourcing": "Proactive identification and engagement of prospective job candidates across various channels."
+    },
     "strategic_rationale": "Passive sourcing expands talent pools for specialized roles by targeting experienced, currently employed professionals.",
     "example": "A resort executive recruiter targeted passive head chefs at high-end restaurants to fill a new luxury property culinary leadership position.",
     "competency": "People / Talent Acquisition"
   },
   {
+    "id": 33,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Strategic Compensation Benchmarking",
     "scenario": "A luxury resort's stated strategy is to 'Lead the Market' (75th percentile) in pay, but market surveys show current wages sit at the 45th percentile. What should HR recommend?",
@@ -505,11 +651,16 @@
       "D) Award discretionary bonuses exclusively to executive leadership."
     ],
     "correct": 0,
+    "key_terms": {
+      "Market Positioning": "Compensation strategy determining whether an organization leads, lags, or matches market pay rates.",
+      "Salary Surveys": "Aggregated market data reports detailing compensation rates across specific industries and geographic regions."
+    },
     "strategic_rationale": "When actual compensation lags behind corporate strategy, HR must present market data and budget options to realign pay with goals.",
     "example": "HR presented benchmark data to the hotel board, securing budget for a phased 2-year wage adjustment that brought staff pay to the 75th percentile.",
     "competency": "Total Rewards Strategy"
   },
   {
+    "id": 34,
     "type": "Knowledge Item",
     "chapter": "U.S. Employee Medical Privacy",
     "scenario": "Under HIPAA and the ADA, how must hotel employers store employee medical and accommodation records relative to general personnel files?",
@@ -520,11 +671,16 @@
       "D) Destroyed within 30 days after employee separation."
     ],
     "correct": 0,
+    "key_terms": {
+      "HIPAA": "Health Insurance Portability and Accountability Act; federal law protecting sensitive patient health information privacy.",
+      "Segregated Medical Files": "Confidential storage requirement keeping employee health records separate from standard personnel files."
+    },
     "strategic_rationale": "Federal privacy laws require employee medical documentation to be kept confidential and strictly separated from general employment records.",
     "example": "A resort HR audit secured all employee medical notes and accommodation forms in locked, separate files with restricted digital permission access.",
     "competency": "Compliance & Privacy"
   },
   {
+    "id": 35,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Retention Analytics & Attrition Planning",
     "scenario": "A hotel group notices an unexpected rise in voluntary turnover among mid-level female managers. What analytical step should HR take first?",
@@ -535,11 +691,16 @@
       "D) Recruit external replacements without analyzing causes."
     ],
     "correct": 0,
+    "key_terms": {
+      "Stay Interviews": "Structured conversations with key employees to understand why they stay and what might cause them to leave.",
+      "Segmented Analytics": "Data breakdown analyzing attrition trends across specific demographic or departmental cohorts."
+    },
     "strategic_rationale": "Segmented exit and stay data provides precise, actionable insights into demographic retention drivers before launching targeted programs.",
     "example": "HR exit analytics revealed female managers cited lack of flexible scheduling; introducing flexible shift options reduced manager turnover by 25%.",
     "competency": "Critical Evaluation & Analytics"
   },
   {
+    "id": 36,
     "type": "Knowledge Item",
     "chapter": "Adult Learning Principles (Andragogy)",
     "scenario": "According to Knowles' theory of Andragogy, what is a key learning characteristic of adult employees in hospitality training?",
@@ -550,11 +711,16 @@
       "D) Adults are driven strictly by external punishments."
     ],
     "correct": 0,
+    "key_terms": {
+      "Andragogy": "Theory of adult learning developed by Malcolm Knowles emphasizing self-direction and practical problem-solving.",
+      "Problem-Centered Learning": "Instructional design focusing on practical solutions to real-world operational challenges."
+    },
     "strategic_rationale": "Adult learners thrive when instruction is practical, problem-focused, and leverages their existing work experience.",
     "example": "A hotel training department redesigned customer recovery modules to feature interactive role-play scenarios based on real guest complaints.",
     "competency": "People / Learning & Development"
   },
   {
+    "id": 37,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Workplace Investigation Credibility",
     "scenario": "During a workplace bullying investigation at a casino, the complaining employee and supervisor give conflicting accounts with no eyewitnesses. How should HR evaluate credibility?",
@@ -565,11 +731,16 @@
       "D) Terminate both employees to resolve team disruption."
     ],
     "correct": 0,
+    "key_terms": {
+      "Credibility Assessment": "Method of evaluating conflicting witness accounts based on plausibility, motives, demeanor, and corroborating evidence.",
+      "Corroborating Evidence": "Additional supporting data, documents, or indirect witness statements validating a claim."
+    },
     "strategic_rationale": "EEOC guidance directs investigators to weigh credibility factors (plausibility, motives, indirect evidence) when witness statements conflict.",
     "example": "HR interviewed co-workers and reviewed past email logs, uncovering corroborating pattern evidence that supported the employee's claim.",
     "competency": "Ethical Practice & Risk Management"
   },
   {
+    "id": 38,
     "type": "Knowledge Item",
     "chapter": "U.S. Veteran Rights & USERRA",
     "scenario": "Which federal law protects job rights and benefits for hotel employees returning from active military service in the National Guard or Reserves?",
@@ -580,11 +751,16 @@
       "D) National Defense Authorization Act (NDAA)"
     ],
     "correct": 0,
+    "key_terms": {
+      "USERRA": "Uniformed Services Employment and Reemployment Rights Act; federal law protecting military service members' civilian job rights.",
+      "Reemployment Rights": "Statutory right of returning service members to be reinstated to their civilian jobs with accumulated seniority."
+    },
     "strategic_rationale": "USERRA protects civilian job rights, seniority, and benefits for military service members returning from active duty.",
     "example": "HR processed seamless job reinstatement for a resort engineer returning from a 9-month military deployment, preserving seniority and step-pay advancement.",
     "competency": "Workplace Law Compliance"
   },
   {
+    "id": 39,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Diversity & Talent Pipeline",
     "scenario": "A hotel group aims to increase minority representation in senior hospitality director roles. What strategy is most sustainable and legally sound?",
@@ -595,11 +771,16 @@
       "D) Restrict non-minority employees from applying to internal openings."
     ],
     "correct": 0,
+    "key_terms": {
+      "Unconscious Bias": "Social stereotypes about certain groups that individuals form outside their own conscious awareness.",
+      "Inclusive Leadership": "Management approach valuing diverse perspectives and ensuring equitable opportunities across all teams."
+    },
     "strategic_rationale": "Broadening sourcing channels and removing evaluation bias builds a sustainable pipeline without violating anti-discrimination laws.",
     "example": "A hotel chain partnered with minority professional associations and introduced structured interview rubrics, expanding leadership diversity by 35%.",
     "competency": "Global & Cultural Effectiveness & Diversity"
   },
   {
+    "id": 40,
     "type": "Knowledge Item",
     "chapter": "Workforce Analytics & Retention",
     "scenario": "Which metric calculates the overall percentage of hotel employees who leave the organization voluntarily or involuntarily over a given timeframe?",
@@ -610,11 +791,16 @@
       "D) Time-to-Fill"
     ],
     "correct": 0,
+    "key_terms": {
+      "Turnover Rate": "Percentage of employees leaving an organization over a specified period relative to average workforce headcount.",
+      "Involuntary Turnover": "Employee separations initiated by the employer (e.g., layoffs, terminations for cause)."
+    },
     "strategic_rationale": "Turnover Rate = (Total Separations / Average Headcount) * 100, serving as a primary indicator of workforce stability.",
     "example": "An HR director tracked monthly turnover rates across hotel departments, identifying stewarding as a high-priority retention focus area.",
     "competency": "Business Acumen & Analytics"
   },
   {
+    "id": 41,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Disciplinary Procedures & Due Process",
     "scenario": "A banquet server is accused of stealing wine from a catering event. The banquet manager wants to fire the server immediately on the spot. How should HR advise?",
@@ -625,11 +811,16 @@
       "D) Transfer the server to room service without reviewing the incident."
     ],
     "correct": 0,
+    "key_terms": {
+      "Due Process": "Fair treatment through normal judicial and administrative disciplinary systems, ensuring notice and right to respond.",
+      "Investigatory Suspension": "Paid or unpaid temporary leave during which an employer investigates alleged employee misconduct."
+    },
     "strategic_rationale": "Due Process requires a fair, objective investigation and opportunity to respond before imposing severe disciplinary action or termination.",
     "example": "HR conducted a 24-hour investigatory suspension, reviewed security footage, and verified facts before determining appropriate disciplinary steps.",
     "competency": "Workplace / Employee Relations"
   },
   {
+    "id": 42,
     "type": "Knowledge Item",
     "chapter": "Organizational Structure & Matrix Management",
     "scenario": "Which organizational structure pairs functional department reporting (e.g., Regional HR) with project-based reporting (e.g., Resort Opening Team)?",
@@ -640,11 +831,16 @@
       "D) Geographic Structure"
     ],
     "correct": 0,
+    "key_terms": {
+      "Matrix Structure": "Organizational design featuring dual reporting relationships (e.g., functional manager and project manager).",
+      "Dual Chain of Command": "Reporting structure where employees answer to more than one direct supervisor."
+    },
     "strategic_rationale": "A Matrix structure overlay creates dual reporting lines, balancing functional alignment with project-based operational agility.",
     "example": "A resort opening taskforce used a matrix structure where taskforce leads reported to both their functional HR VP and the property General Manager.",
     "competency": "Structure & HR Service Delivery"
   },
   {
+    "id": 43,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Religious Accommodation & Scheduling",
     "scenario": "A guest service agent requests weekend schedule adjustments to observe religious Sabbath. The shift supervisor objects, citing shift coverage difficulty. What should HR do?",
@@ -655,11 +851,16 @@
       "D) Require the employee to choose between religious practice and employment."
     ],
     "correct": 0,
+    "key_terms": {
+      "Title VII Religious Accommodation": "Statutory requirement to reasonably accommodate sincerely held religious beliefs unless causing undue hardship.",
+      "Undue Hardship (Title VII)": "Accommodation burden that is excessively costly, extensive, or disruptive to business operations."
+    },
     "strategic_rationale": "Title VII requires reasonable accommodation for sincerely held religious beliefs unless the employer proves undue operational hardship.",
     "example": "HR coordinated a voluntary shift-swap schedule board, accommodating the agent's religious Sabbath without creating overtime expense.",
     "competency": "Ethical Practice & Diversity"
   },
   {
+    "id": 44,
     "type": "Knowledge Item",
     "chapter": "Business Performance Metrics",
     "scenario": "Which strategic management framework tracks operational performance across Financial, Customer, Internal Business Processes, and Learning & Growth perspectives?",
@@ -670,11 +871,16 @@
       "D) Porter's Value Chain"
     ],
     "correct": 0,
+    "key_terms": {
+      "Balanced Scorecard": "Strategic management tool tracking performance across financial, customer, internal, and learning metrics.",
+      "Strategic Metrics": "Quantitative indicators measuring organizational execution against long-term business goals."
+    },
     "strategic_rationale": "The Balanced Scorecard connects strategic business goals to actionable metrics across financial, customer, operational, and human capital perspectives.",
     "example": "A hotel resort group created a Balanced Scorecard linking employee retention metrics directly to guest satisfaction and RevPAR performance.",
     "competency": "Business Acumen & Strategic Alignment"
   },
   {
+    "id": 45,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Reduction in Force (RIF) & Legal Risk",
     "scenario": "Due to a severe economic downturn, a resort must reduce its operational staff by 20%. How should HR ensure layoff selection is legally defensible?",
@@ -685,11 +891,16 @@
       "D) Base layoff selection purely on employee attendance records without reviewing skills."
     ],
     "correct": 0,
+    "key_terms": {
+      "Reduction in Force (RIF)": "Employer-initiated elimination of positions due to economic necessity, restructuring, or merger.",
+      "Adverse Impact Testing": "Statistical analysis verifying that layoff selections do not disproportionately impact protected demographic classes."
+    },
     "strategic_rationale": "Objective business criteria and statistical adverse impact testing protect the organization against legal claims during a reduction in force.",
     "example": "HR conducted an adverse impact analysis on proposed layoff lists across age and gender categories, adjusting criteria to ensure fair, defensible selections.",
     "competency": "Risk Management & Employment Law"
   },
   {
+    "id": 46,
     "type": "Knowledge Item",
     "chapter": "U.S. Safety Regulations & WARN Act",
     "scenario": "Under the WARN Act, how many calendar days of advance written notice must qualifying hospitality employers give before executing a mass layoff or plant closing?",
@@ -700,11 +911,16 @@
       "D) 14 days"
     ],
     "correct": 0,
+    "key_terms": {
+      "WARN Act": "Worker Adjustment and Retraining Notification Act; federal law requiring advance notice of plant closings and mass layoffs.",
+      "Mass Layoff": "Employment loss affecting a large specified percentage or headcount of workers at a single employment site."
+    },
     "strategic_rationale": "The federal WARN Act mandates 60 days' advance written notice for qualifying mass layoffs or facility closures at covered employers.",
     "example": "A hotel management company issued WARN notices 60 days ahead of a major property renovation and temporary closure.",
     "competency": "Workplace Law Compliance"
   },
   {
+    "id": 47,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Succession Planning & Calibration",
     "scenario": "During a 9-Box Grid succession review, hotel department heads classify 85% of their supervisory staff as 'High Potential / High Performance.' How should HR guide calibration?",
@@ -715,11 +931,16 @@
       "D) Discontinue using the 9-Box Grid tool."
     ],
     "correct": 0,
+    "key_terms": {
+      "9-Box Grid": "Talent management matrix evaluating employees along performance and potential axes for succession planning.",
+      "Rating Inflation": "Managerial tendency to grade all subordinates higher than their actual performance merits."
+    },
     "strategic_rationale": "Calibration sessions establish consistent objective standards, preventing manager rating inflation and strengthening bench depth accuracy.",
     "example": "HR facilitated executive calibration sessions across hotel properties, refining high-potential lists to build realistic succession plans.",
     "competency": "Critical Evaluation & Talent Strategy"
   },
   {
+    "id": 48,
     "type": "Knowledge Item",
     "chapter": "U.S. Retirement Law & ERISA",
     "scenario": "Under ERISA regulations, what term describes a hotel employee's non-forfeitable legal ownership of employer contributions in a retirement plan over time?",
@@ -730,11 +951,16 @@
       "D) Commutation"
     ],
     "correct": 0,
+    "key_terms": {
+      "ERISA": "Employee Retirement Income Security Act; federal law setting minimum standards for private pension and health plans.",
+      "Vesting Schedule": "Timeline determining when an employee acquires full legal ownership of employer-provided retirement funds."
+    },
     "strategic_rationale": "Vesting governs the schedule and legal terms by which employees earn non-forfeitable rights to employer-contributed retirement funds.",
     "example": "A resort HR benefits team updated its 401(k) summary plan description to explain 3-year graded vesting schedules clearly to new hires.",
     "competency": "Total Rewards & Compliance"
   },
   {
+    "id": 49,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Strategic HR Leadership & Executive Board Presentation",
     "scenario": "The hotel board of directors requests an HR presentation on talent readiness for a planned expansion. What metrics should HR prioritize?",
@@ -745,11 +971,16 @@
       "D) Itemized receipts from past company social events."
     ],
     "correct": 0,
+    "key_terms": {
+      "Bench Depth": "Availability and readiness of qualified internal successors to fill critical leadership roles.",
+      "Human Capital ROI": "Strategic metric linking workforce investments and talent readiness directly to business financial returns."
+    },
     "strategic_rationale": "Board presentations require strategic, business-aligned metrics that link human capital capability directly to financial and operational expansion goals.",
     "example": "HR presented a talent readiness scorecard showing 80% internal succession coverage for key hotel management roles ahead of a property opening.",
     "competency": "Business Acumen & Executive Leadership"
   },
   {
+    "id": 50,
     "type": "Knowledge Item",
     "chapter": "HR Predictive Analytics",
     "scenario": "Which analytical technique uses historical employee data and statistical models to forecast future retention risks among hotel staff?",
@@ -760,11 +991,16 @@
       "D) Benchmark Profiling"
     ],
     "correct": 0,
+    "key_terms": {
+      "Predictive Analytics": "Statistical modeling and machine learning techniques utilizing historical data to forecast future trends and behaviors.",
+      "Turnover Modeling": "Algorithmic risk scoring identifying employees likely to resign based on historical attrition patterns."
+    },
     "strategic_rationale": "Predictive analytics identifies patterns in historical data to forecast future outcomes and enable proactive intervention strategies.",
     "example": "A casino HR analytics team built a predictive turnover model that flagged departments with high risk of mid-year attrition, enabling targeted stay interviews.",
     "competency": "Critical Evaluation & Analytics"
   },
   {
+    "id": 51,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Retaliation Prevention & Investigation",
     "scenario": "A front desk agent who submitted a sexual harassment complaint receives an unexpected negative performance evaluation three weeks later from the accused supervisor. What should HR do?",
@@ -775,11 +1011,16 @@
       "D) Transfer the employee to a lower-paying shift."
     ],
     "correct": 0,
+    "key_terms": {
+      "Protected Activity": "Legally safeguarded actions such as reporting harassment or participating in discrimination investigations.",
+      "Retaliation Audit": "Independent administrative review verifying that performance reviews following complaints are objective and non-punitive."
+    },
     "strategic_rationale": "HR must take immediate action to protect complainants from potential retaliation and ensure performance evaluations remain impartial.",
     "example": "HR suspended a retaliatory evaluation, conducted an independent performance review, and issued disciplinary action to the supervisor.",
     "competency": "Ethical Practice & Risk Mitigation"
   },
   {
+    "id": 52,
     "type": "Knowledge Item",
     "chapter": "Total Rewards & Flexible Spending Accounts",
     "scenario": "Which pre-tax benefit account allows hotel employees to pay for qualified out-of-pocket medical expenses, subject to strict annual 'use-it-or-lose-it' guidelines?",
@@ -790,11 +1031,16 @@
       "D) Disability Indemnity Account"
     ],
     "correct": 0,
+    "key_terms": {
+      "Flexible Spending Account (FSA)": "Employer-sponsored pre-tax benefit account used for qualified medical expenses with annual rollover restrictions.",
+      "Use-It-or-Lose-It Rule": "IRS regulation requiring unused FSA funds to be forfeited at the end of the plan year."
+    },
     "strategic_rationale": "Healthcare FSAs are employer-sponsored pre-tax benefit accounts governed by IRS rules, including annual contribution caps and rollover limits.",
     "example": "A resort HR benefits team provided open enrollment guides explaining FSA eligible expenses and key year-end claim deadlines.",
     "competency": "Total Rewards Administration"
   },
   {
+    "id": 53,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "OSHA & Employee Safety Protections",
     "scenario": "Hotel maintenance technicians refuse to repair a commercial boiler, claiming safety guards were removed and steam pressure exceeds safe limits. How should HR and management respond under OSHA?",
@@ -805,11 +1051,16 @@
       "D) Deduct safety inspection fees from the technicians' pay."
     ],
     "correct": 0,
+    "key_terms": {
+      "Refusal of Unsafe Work": "OSHA-protected worker right to refuse work when reasonably believing there is imminent danger of serious injury.",
+      "Hazard Mitigation": "Immediate operational action taken to eliminate or control recognized workplace safety risks."
+    },
     "strategic_rationale": "OSHA protects workers' rights to refuse unsafe assignments when there is a reasonable belief of imminent danger or severe physical harm.",
     "example": "HR supported a temporary maintenance shutdown, brought in certified inspectors to fix boiler safety guards, and confirmed zero retaliation for staff.",
     "competency": "Workplace Safety & Compliance"
   },
   {
+    "id": 54,
     "type": "Knowledge Item",
     "chapter": "Employer Brand & Candidate NPS",
     "scenario": "Which metric evaluates applicant experience by asking 'How likely are you to recommend applying to our hotel company to a friend or colleague?'",
@@ -820,11 +1071,16 @@
       "D) Offer Acceptance Rate"
     ],
     "correct": 0,
+    "key_terms": {
+      "Candidate Net Promoter Score (cNPS)": "Metric measuring applicant satisfaction and likelihood to recommend an employer's hiring process.",
+      "Employer Branding": "Organizational reputation and perception as an employer of choice among target talent markets."
+    },
     "strategic_rationale": "cNPS measures candidate perceptions and employer brand reputation across recruitment interactions.",
     "example": "A hotel group tracked cNPS across its hiring career portal, using candidate feedback to streamline its mobile application form.",
     "competency": "Talent Sourcing & Branding"
   },
   {
+    "id": 55,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Change Management & Operations Alignment",
     "scenario": "During an enterprise property management system (PMS) rollout, hotel front desk supervisors bypass digital training and continue writing paper guest logs. How should HR drive change?",
@@ -835,11 +1091,16 @@
       "D) Pay supervisors cash bonuses for attending training."
     ],
     "correct": 0,
+    "key_terms": {
+      "WIIFM (What's In It For Me)": "Core change management concept ensuring employees understand personal benefits of adopting new processes.",
+      "Managerial Accountability": "Holding leaders accountable for enforcing and adopting operational changes across their teams."
+    },
     "strategic_rationale": "Effective change management overcomes operational resistance by demonstrating value (WIIFM) and setting clear managerial accountability.",
     "example": "HR paired supervisors with peer IT champions and added PMS operational benchmarks to supervisor evaluations, reaching 100% digital check-in usage.",
     "competency": "Consultation & Enablement"
   },
   {
+    "id": 56,
     "type": "Knowledge Item",
     "chapter": "Equal Pay Act & Permissible Pay Gaps",
     "scenario": "Under the Equal Pay Act of 1963, wage differences between male and female employees in identical hospitality roles are legally permissible under which exception?",
@@ -850,11 +1111,16 @@
       "D) Marital status or family head-of-household status."
     ],
     "correct": 0,
+    "key_terms": {
+      "Equal Pay Act": "Federal law prohibiting gender-based wage discrimination for equal work requiring equal skill, effort, and responsibility.",
+      "Permissible Pay Exceptions": "Legally recognized justifications for pay variances including seniority, merit, and quantity/quality of production."
+    },
     "strategic_rationale": "The Equal Pay Act allows pay differentials based strictly on seniority, merit, production metrics, or factors other than sex.",
     "example": "A pay audit confirmed pay variances among resort supervisors were fully justified by documented years of service and annual performance ratings.",
     "competency": "Compliance & Total Rewards"
   },
   {
+    "id": 57,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Cross-Border Labor Compliance",
     "scenario": "A U.S. hotel company opens a property in Europe and plans to use standard U.S. employment-at-will contracts. How should global HR advise management?",
@@ -865,11 +1131,16 @@
       "D) Classify European staff as independent contractors to bypass employment law."
     ],
     "correct": 0,
+    "key_terms": {
+      "Employment-at-Will": "U.S. legal doctrine allowing employers or employees to terminate employment at any time without cause.",
+      "Statutory Notice Periods": "Mandatory legal notice timelines required before terminating employment under foreign labor laws."
+    },
     "strategic_rationale": "Global HR must adhere to local host-country statutory labor protections, as local laws supersede parent-country corporate policies.",
     "example": "HR worked with local European legal counsel to draft compliant employment agreements featuring statutory notice periods.",
     "competency": "Global & Cultural Effectiveness"
   },
   {
+    "id": 58,
     "type": "Knowledge Item",
     "chapter": "Knowledge Management & Mentorship",
     "scenario": "Which learning technique pairs experienced hotel culinary chefs with junior line cooks to pass down implicit culinary techniques and institutional wisdom?",
@@ -880,11 +1151,16 @@
       "D) Archiving Exit Interview Data"
     ],
     "correct": 0,
+    "key_terms": {
+      "Tacit Knowledge": "Implicit, uncodified knowledge gained through experience, difficult to transfer via written manuals alone.",
+      "Shadowing": "Learning method where an employee observes an experienced colleague performing daily operational tasks."
+    },
     "strategic_rationale": "Tacit knowledge (contextual skill and wisdom) is transferred effectively through interpersonal mentoring, coaching, and hands-on shadowing.",
     "example": "A luxury resort established a 6-month culinary mentorship program where executive sous chefs coached apprentice line cooks on specialized prep techniques.",
     "competency": "People / Learning & Development"
   },
   {
+    "id": 59,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Strategic HR Alignment & Revenue Management",
     "scenario": "A hotel's Revenue Management team projects a 40% surge in convention bookings next quarter. How should HR proactively support this business strategy?",
@@ -895,11 +1171,16 @@
       "D) Outsource all guest service operations to temporary agencies without training."
     ],
     "correct": 0,
+    "key_terms": {
+      "Cross-Training": "Training employees in multiple operational roles to build staffing flexibility during demand surges.",
+      "Workforce Planning": "Strategic alignment of human capital supply and demand with business revenue projections."
+    },
     "strategic_rationale": "Strategic HR aligns talent acquisition and cross-training plans directly with business revenue forecasts and demand surges.",
     "example": "HR analyzed demand forecasts with revenue managers, creating a flexible cross-trained reserve pool that covered peak convention shifts smoothly.",
     "competency": "Business Acumen & Strategic Alignment"
   },
   {
+    "id": 60,
     "type": "Knowledge Item",
     "chapter": "Job Evaluation Methods",
     "scenario": "Which non-quantitative job evaluation technique ranks hotel roles sequentially from highest to lowest value to the organization?",
@@ -910,11 +1191,16 @@
       "D) Market Pay Pricing Method"
     ],
     "correct": 0,
+    "key_terms": {
+      "Job Ranking Method": "Qualitative job evaluation technique ordering whole jobs sequentially by overall organizational worth.",
+      "Job Evaluation": "Systematic process determining the relative internal value of different jobs to establish fair pay structures."
+    },
     "strategic_rationale": "The Job Ranking Method is a simple qualitative technique that compares whole jobs to order them by relative organizational worth.",
     "example": "A small boutique hotel used the job ranking method to establish basic hierarchy and pay bands across its operational roles.",
     "competency": "HR Expertise (Total Rewards)"
   },
   {
+    "id": 61,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Conflict Management & Departmental Alignment",
     "scenario": "Sales Managers and Front Desk Supervisors continuously blame each other for overbooked room complaints. How should the HR Business Partner intervene?",
@@ -925,11 +1211,16 @@
       "D) Escalate the dispute to executive corporate leadership without discussing with teams."
     ],
     "correct": 0,
+    "key_terms": {
+      "Cross-Functional Alignment": "Collaborative initiative uniting distinct departments around shared operational processes and metrics.",
+      "Shared KPIs": "Performance indicators evaluated across multiple departments to encourage teamwork over siloed goals."
+    },
     "strategic_rationale": "Cross-functional alignment sessions resolve operational friction by focusing on shared metrics, mutual understanding, and clear protocols.",
     "example": "HR facilitated joint weekly yield-and-occupancy syncs between Sales and Front Office, reducing overbooking friction by 75%.",
     "competency": "Relationship Management & Consultation"
   },
   {
+    "id": 62,
     "type": "Knowledge Item",
     "chapter": "FLSA Administrative Exemption",
     "scenario": "Under the FLSA, what primary duty test criterion must be satisfied for a Hotel Executive Assistant to be classified as exempt under the Administrative Exemption?",
@@ -940,11 +1231,16 @@
       "D) Earns sales commissions exceeding 50% of annual compensation."
     ],
     "correct": 0,
+    "key_terms": {
+      "Primary Duty Test": "FLSA evaluation examining the main, most important responsibility performed by an employee.",
+      "Matters of Significance": "Business operations and decisions carrying substantial financial or operational impact."
+    },
     "strategic_rationale": "The FLSA administrative exemption requires meeting salary threshold tests and performing primary duties involving independent discretion on significant business matters.",
     "example": "An HR FLSA audit reclassified executive assistants based on whether their duties involved independent strategic decision-making or administrative execution.",
     "competency": "HR Expertise (Compliance)"
   },
   {
+    "id": 63,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Labor Relations & TIPS Rule",
     "scenario": "During a union organizing campaign at a resort, a supervisor asks HR if they can tell staff that unionization might lead to rigid work rules. How should HR advise under TIPS rules?",
@@ -955,11 +1251,16 @@
       "D) Supervisors should conduct one-on-one interrogations to identify union organizers."
     ],
     "correct": 0,
+    "key_terms": {
+      "TIPS Rule": "Legal boundaries under the NLRA prohibiting management from Threatening, Interrogating, Promising, or Spying during union campaigns.",
+      "Protected Employer Speech": "Management's legal right to share factual views regarding unionization without violating labor laws."
+    },
     "strategic_rationale": "Under the NLRA, management may share factual statements and personal views as long as they do not Threaten, Interrogate, Promise, or Spy.",
     "example": "HR provided supervisors with a pocket guide detailing legal boundaries and permitted factual statements during union organizing campaigns.",
     "competency": "Workplace / Employee & Labor Relations"
   },
   {
+    "id": 64,
     "type": "Knowledge Item",
     "chapter": "Job Analysis & KSAOs",
     "scenario": "Which systematic process gathers detailed information about hotel job duties, operational tasks, and required Knowledge, Skills, Abilities, and Other characteristics (KSAOs)?",
@@ -970,11 +1271,16 @@
       "D) Succession Planning"
     ],
     "correct": 0,
+    "key_terms": {
+      "Job Analysis": "Systematic investigation of tasks, duties, and responsibilities required for specific job roles.",
+      "KSAOs": "Knowledge, Skills, Abilities, and Other characteristics required to perform a job successfully."
+    },
     "strategic_rationale": "Job Analysis provides the essential foundation for legally defensible job descriptions, selection criteria, and pay structures.",
     "example": "HR conducted a job analysis for guest service representatives, updating job descriptions to reflect new mobile PMS technical competencies.",
     "competency": "HR Expertise (People)"
   },
   {
+    "id": 65,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Ethics & Policy Enforcement",
     "scenario": "A high-performing hotel sales director consistently submits late expense reports with missing receipts. The Sales VP excuses the behavior due to high booking numbers. What should HR do?",
@@ -985,11 +1291,16 @@
       "D) Reprimand the sales director publicly in a staff newsletter."
     ],
     "correct": 0,
+    "key_terms": {
+      "Policy Consistency": "Equitable enforcement of organizational rules and standards across all employees regardless of rank or performance.",
+      "Ethical Standard": "Core moral principles governing organizational behavior and compliance."
+    },
     "strategic_rationale": "Ethical practice requires consistent enforcement of organizational policies regardless of an individual's rank or revenue contribution.",
     "example": "HR partnered with finance to enforce standard policy compliance, requiring complete expense documentation from all managers before reimbursement.",
     "competency": "Ethical Practice & Leadership"
   },
   {
+    "id": 66,
     "type": "Knowledge Item",
     "chapter": "Talent Sourcing & Interviewing",
     "scenario": "Which structured interviewing format asks hotel candidates to describe past experience using the Situation, Task, Action, and Result (STAR) framework?",
@@ -1000,11 +1311,16 @@
       "D) Unstructured Interviewing"
     ],
     "correct": 0,
+    "key_terms": {
+      "Behavioral Interviewing": "Interview technique based on the premise that past behavior predicts future job performance.",
+      "STAR Method": "Structured interview response framework focusing on Situation, Task, Action, and Result."
+    },
     "strategic_rationale": "Behavioral interviewing evaluates past behavior in similar situations as the best predictor of future job performance.",
     "example": "HR trained hotel hiring managers to use STAR behavioral prompts to evaluate how candidates handled challenging guest service scenarios.",
     "competency": "Talent Acquisition & Selection"
   },
   {
+    "id": 67,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Wellness Programs & Employee Well-being",
     "scenario": "Hotel night-shift staff report feeling isolated and experiencing high burnout due to lack of health and wellness resources during night hours. How should HR respond?",
@@ -1015,11 +1331,16 @@
       "D) Require night-shift staff to attend wellness seminars during day hours."
     ],
     "correct": 0,
+    "key_terms": {
+      "Shift Worker Well-being": "Targeted health and wellness initiatives supporting employees working non-standard overnight schedules.",
+      "Employee Assistance Program (EAP)": "Confidential counseling and referral service supporting employee mental health and personal well-being."
+    },
     "strategic_rationale": "Providing tailored health resources for shift workers supports employee well-being, improves safety, and reduces burnout.",
     "example": "HR launched a 24/7 digital EAP portal and added healthy meal choices in the employee dining room for overnight resort shifts.",
     "competency": "Consultation & Employee Well-being"
   },
   {
+    "id": 68,
     "type": "Knowledge Item",
     "chapter": "Risk Management & Business Continuity",
     "scenario": "Which operational document outlines a resort's procedures for maintaining critical guest operations and safety during a natural disaster or crisis?",
@@ -1030,11 +1351,16 @@
       "D) Standard Operating Procedure (SOP)"
     ],
     "correct": 0,
+    "key_terms": {
+      "Business Continuity Plan (BCP)": "Operational framework ensuring critical business functions continue during emergencies or disasters.",
+      "Crisis Management": "Coordinated organizational response strategy minimizing disruption and protecting human capital during crises."
+    },
     "strategic_rationale": "A Business Continuity Plan details emergency protocols to protect human capital, maintain vital operations, and minimize crisis impact.",
     "example": "A coastal resort updated its BCP ahead of hurricane season, detailing evacuation workflows, emergency staffing, and guest communication protocols.",
     "competency": "Risk Management"
   },
   {
+    "id": 69,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Performance Coaching & Career Pathways",
     "scenario": "An experienced resort engineer expresses frustration at being passed over for a management position because they prefer technical work over supervising people. How should HR respond?",
@@ -1045,11 +1371,16 @@
       "D) Increase base pay by 2% without changing career pathways."
     ],
     "correct": 0,
+    "key_terms": {
+      "Dual-Career Ladder": "Career development path allowing individual technical contributors to advance professionally without entering management.",
+      "Technical Specialization": "Advanced professional career trajectory focusing on deep technical expertise rather than administrative supervision."
+    },
     "strategic_rationale": "Dual-career ladders provide advancement opportunities for high-performing technical specialists without forcing them into management roles.",
     "example": "HR created a 'Master Technical Specialist' career track in hotel engineering, retaining top technical talent while maintaining clear career growth.",
     "competency": "Relationship Management & Talent Strategy"
   },
   {
+    "id": 70,
     "type": "Knowledge Item",
     "chapter": "Total Rewards & Incentive Types",
     "scenario": "Which variable pay strategy rewards hotel management teams based on property profitability relative to annual budgeted targets?",
@@ -1060,11 +1391,16 @@
       "D) Commission Plan"
     ],
     "correct": 0,
+    "key_terms": {
+      "Profit-Sharing Plan": "Variable compensation program distributing a portion of organizational profits to employees.",
+      "Gross Operating Profit (GOP)": "Key financial performance metric in hospitality measuring total revenue minus departmental expenses."
+    },
     "strategic_rationale": "Profit-sharing plans align employee efforts with organizational financial success by distributing bonuses tied to overall profitability.",
     "example": "A hotel management company distributed annual profit-sharing bonuses to leadership teams after properties exceeded target GOP margins.",
     "competency": "Total Rewards & Incentives"
   },
   {
+    "id": 71,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Workforce Analytics & Labor Cost Modeling",
     "scenario": "A casino resort experiences rising overtime costs in housekeeping. How should HR analyze this issue before recommending solutions?",
@@ -1075,11 +1411,16 @@
       "D) Increase room cleaning quotas by 30% per shift."
     ],
     "correct": 0,
+    "key_terms": {
+      "Labor Cost Modeling": "Analytical evaluation of staffing hours, wage rates, and productivity drivers to optimize labor spend.",
+      "Root Cause Analysis": "Systematic investigation identifying underlying operational factors rather than surface symptoms."
+    },
     "strategic_rationale": "Thorough data analysis identifies underlying labor drivers (e.g., absenteeism, peak arrivals) before implementing operational changes.",
     "example": "HR analytics revealed overtime was driven by late guest check-outs; adjusting shift start times reduced housekeeping overtime by 60%.",
     "competency": "Business Acumen & Analytics"
   },
   {
+    "id": 72,
     "type": "Knowledge Item",
     "chapter": "Global HR & Localization Strategy",
     "scenario": "In global hospitality HR, what term describes customizing HR policies and benefits to fit host-country legal standards and cultural expectations?",
@@ -1090,11 +1431,16 @@
       "D) Centralized Sourcing Framework"
     ],
     "correct": 0,
+    "key_terms": {
+      "Localization": "Adapting corporate HR policies and practices to conform with local host-country laws and cultural norms.",
+      "Host-Country National": "Local citizen employed by an international organization operating within their home country."
+    },
     "strategic_rationale": "Localization adapts corporate practices to align with local legal frameworks, labor practices, and cultural norms in international markets.",
     "example": "A hotel group tailored its leave policies and holiday schedules to conform with local statutory rules when expanding into international markets.",
     "competency": "Global & Cultural Effectiveness"
   },
   {
+    "id": 73,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Training ROI & Executive Partnering",
     "scenario": "The hotel CFO proposes cutting the employee training budget by 15% to meet short-term margin goals. How should the HR Leader respond strategically?",
@@ -1105,11 +1451,16 @@
       "D) Shift the entire training budget into general administrative overhead."
     ],
     "correct": 0,
+    "key_terms": {
+      "Training ROI": "Financial calculation measuring the return on investment generated by employee training programs.",
+      "Business Acumen": "Ability to understand and apply financial and operational data to make sound business decisions."
+    },
     "strategic_rationale": "Strategic HR uses financial acumen and performance ROI data to defend key human capital investments while partnering on efficiency.",
     "example": "HR presented data showing customer service training reduced guest refund requests by $120,000, protecting the core training budget.",
     "competency": "Business Acumen & Strategic Leadership"
   },
   {
+    "id": 74,
     "type": "Knowledge Item",
     "chapter": "Salary Pay Structure & Range Spread",
     "scenario": "In hotel pay structure design, what term describes the percentage difference between the minimum and maximum salary rates of a pay grade?",
@@ -1120,11 +1471,16 @@
       "D) Midpoint Progression Rate"
     ],
     "correct": 0,
+    "key_terms": {
+      "Range Spread": "Percentage difference between the minimum and maximum salary rates within a defined pay grade.",
+      "Pay Grade": "Grouping of jobs of similar value assigned a single salary range with minimum, midpoint, and maximum."
+    },
     "strategic_rationale": "Range Spread measures pay range width from minimum to maximum as a percentage of the minimum: (Max - Min) / Min.",
     "example": "A resort pay audit established a 40% range spread for supervisory roles to allow pay growth based on tenure and performance.",
     "competency": "Total Rewards Analytics"
   },
   {
+    "id": 75,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Organizational Restructuring & Employee Morale",
     "scenario": "Following a hotel management takeover, employees express severe anxiety regarding potential job cuts, leading to dropping guest service scores. What should HR prioritize?",
@@ -1135,11 +1491,16 @@
       "D) Delay all announcements until decisions are 100% finalized in six months."
     ],
     "correct": 0,
+    "key_terms": {
+      "Transparent Communication": "Open, honest sharing of organizational information during transitions to reduce uncertainty and panic.",
+      "Town Hall Forum": "Interactive all-staff meeting enabling direct communication between executive leadership and employees."
+    },
     "strategic_rationale": "Transparent communication during management transitions reduces uncertainty, maintains trust, and stabilizes guest service standards.",
     "example": "HR hosted joint town hall syncs with incoming leadership, answering employee questions and stabilizing post-acquisition service scores.",
     "competency": "Relationship Management & Communication"
   },
   {
+    "id": 76,
     "type": "Knowledge Item",
     "chapter": "NLRA & Protected Concerted Activity",
     "scenario": "Under Section 7 of the NLRA, which employee action is legally protected in both unionized and non-unionized hotels?",
@@ -1150,11 +1511,16 @@
       "D) Engaging in physical fights on hotel property."
     ],
     "correct": 0,
+    "key_terms": {
+      "Protected Concerted Activity": "Legal right of employees to act together to address wages, hours, or working conditions under NLRA Section 7.",
+      "Section 7 Rights": "Statutory rights covering union and non-union workers discussing workplace conditions."
+    },
     "strategic_rationale": "NLRA Section 7 protects employees who discuss pay, working conditions, or safety collectively, regardless of union representation.",
     "example": "HR advised a front office manager that employees discussing shift pay rates in break rooms are engaged in protected concerted activity.",
     "competency": "Workplace / Labor Law"
   },
   {
+    "id": 77,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Learning Management Systems & Adoption",
     "scenario": "A hotel group launches a new LMS for compliance training, but completion rates among line cooks remain below 20%. How should HR drive engagement?",
@@ -1165,11 +1531,16 @@
       "D) Abandon digital learning completely."
     ],
     "correct": 0,
+    "key_terms": {
+      "Micro-Learning": "Bite-sized, modular online learning units designed for quick consumption and high retention.",
+      "Learning Management System (LMS)": "Software application administering, tracking, and delivering educational courses and training programs."
+    },
     "strategic_rationale": "Improving usability, offering bite-sized content, and providing dedicated on-shift time drives learning adoption among operational staff.",
     "example": "HR introduced 5-minute micro-learning modules accessible on kitchen tablets, increasing compliance completion from 20% to 92%.",
     "competency": "Consultation & L&D"
   },
   {
+    "id": 78,
     "type": "Knowledge Item",
     "chapter": "ERISA & Summary Plan Description",
     "scenario": "Under ERISA, which document must hotel employers issue to benefit plan participants to explain plan features, rights, and funding clearly?",
@@ -1180,11 +1551,16 @@
       "D) W-4 Form"
     ],
     "correct": 0,
+    "key_terms": {
+      "Summary Plan Description (SPD)": "Detailed ERISA-mandated document explaining employee benefit plan rules, rights, and responsibilities.",
+      "Fiduciary Responsibility": "Legal obligation of plan administrators to act solely in the interest of benefit plan participants."
+    },
     "strategic_rationale": "ERISA mandates that employers provide a clear, detailed Summary Plan Description (SPD) explaining plan rules and participant rights.",
     "example": "A hotel HR benefits team issued updated SPDs to all eligible staff during open enrollment to maintain ERISA compliance.",
     "competency": "Total Rewards Compliance"
   },
   {
+    "id": 79,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Cross-Functional Collaboration",
     "scenario": "Hotel Sales teams repeatedly book large group check-ins at times that conflict with Housekeeping room turnover hours. How should HR facilitate a solution?",
@@ -1195,11 +1571,16 @@
       "D) Reprimand both department heads in an executive meeting."
     ],
     "correct": 0,
+    "key_terms": {
+      "Process Mapping": "Visual workflow analysis detailing operational steps and hand-offs between departments.",
+      "Operational Workflow": "Coordinated sequence of tasks and communications required to deliver hotel guest services."
+    },
     "strategic_rationale": "Facilitating joint process mapping aligns cross-departmental workflows, reducing operational friction and improving efficiency.",
     "example": "HR facilitated joint workflow mapping that established standardized group check-in windows, smoothing room turnaround during peak days.",
     "competency": "Relationship Management & Consultation"
   },
   {
+    "id": 80,
     "type": "Knowledge Item",
     "chapter": "Talent Sourcing Yield Ratios",
     "scenario": "A hotel recruiter receives 200 applications, interviews 40 candidates, and extends 10 job offers. What is the yield ratio from interview to offer?",
@@ -1210,11 +1591,16 @@
       "D) 50%"
     ],
     "correct": 0,
+    "key_terms": {
+      "Conversion Yield Ratio": "Percentage metric calculating candidate progression efficiency from one recruitment funnel stage to another.",
+      "Recruiting Funnel Efficiency": "Evaluation of drop-off rates across candidate screening, interviewing, and offer stages."
+    },
     "strategic_rationale": "Yield Ratio = (Offers / Interviews) * 100 = (10 / 40) * 100 = 25%. Yield ratios measure conversion efficiency across hiring funnel stages.",
     "example": "HR tracked interview-to-offer yield ratios across recruiting channels to focus spend on high-performing recruitment sources.",
     "competency": "Business Acumen & Sourcing"
   },
   {
+    "id": 81,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Workplace Bullying & Management Conduct",
     "scenario": "An executive chef routinely screams at line cooks and throws kitchen utensils during busy dinner services. Line cook turnover reaches 60%. How should HR intervene?",
@@ -1225,11 +1611,16 @@
       "D) Transfer all complaining line cooks to stewarding."
     ],
     "correct": 0,
+    "key_terms": {
+      "Executive Coaching": "Professional development process improving leadership behavior, communication, and emotional intelligence.",
+      "Conduct Policy": "Organizational standards prohibiting abusive, bullying, or threatening behavior in the workplace."
+    },
     "strategic_rationale": "HR must enforce professional workplace conduct standards consistently, protecting staff well-being and reducing costly turnover.",
     "example": "HR implemented mandatory professional conduct coaching for kitchen management, reducing line cook turnover by 35% in one year.",
     "competency": "Ethical Practice & Leadership"
   },
   {
+    "id": 82,
     "type": "Knowledge Item",
     "chapter": "OSHA Hazard Communication Standard",
     "scenario": "Under OSHA's Hazard Communication Standard, what document must hotel employers maintain for every cleaning chemical used by housekeeping staff?",
@@ -1240,11 +1631,16 @@
       "D) Environmental Impact Statement (EIS)"
     ],
     "correct": 0,
+    "key_terms": {
+      "Safety Data Sheet (SDS)": "OSHA-mandated document detailing chemical hazards, safe handling, and emergency first-aid procedures.",
+      "Hazard Communication": "OSHA standard ensuring chemical safety information is communicated effectively to workers."
+    },
     "strategic_rationale": "OSHA requires accessible Safety Data Sheets (SDS) for all hazardous workplace chemicals to inform workers of risks and safe handling steps.",
     "example": "A hotel safety officer organized digital and physical SDS binder stations in all housekeeping supply closets for regulatory compliance.",
     "competency": "Workplace Risk Management"
   },
   {
+    "id": 83,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Pay Equity & Internal Audits",
     "scenario": "A compensation audit reveals that male front office supervisors earn 10% more on average than female supervisors with identical tenure and performance. What should HR do?",
@@ -1255,11 +1651,16 @@
       "D) Freeze male supervisor pay until parity occurs naturally."
     ],
     "correct": 0,
+    "key_terms": {
+      "Pay Equity Regression Analysis": "Statistical method isolating gender or minority pay gaps while controlling for legitimate factors like tenure and performance.",
+      "Equity Pay Adjustment": "Corrective base salary increase resolving unjustified compensation disparities."
+    },
     "strategic_rationale": "Unexplained pay disparities present severe legal and ethical risks; HR must analyze root causes and execute targeted equity adjustments.",
     "example": "HR conducted a pay equity study across property departments, making base salary adjustments to close unjustified gender pay gaps.",
     "competency": "Business Acumen & Total Rewards"
   },
   {
+    "id": 84,
     "type": "Knowledge Item",
     "chapter": "Competency Modeling in Hospitality",
     "scenario": "Which strategic tool defines the specific knowledge, skills, behaviors, and personal attributes needed for effective performance across hotel roles?",
@@ -1270,11 +1671,16 @@
       "D) 9-Box Grid"
     ],
     "correct": 0,
+    "key_terms": {
+      "Competency Model": "Framework defining observable behaviors, skills, and knowledge required for successful job performance.",
+      "Behavioral Indicator": "Specific, observable actions demonstrating proficiency in a core competency."
+    },
     "strategic_rationale": "Competency Models outline key behavioral competencies required across roles, guiding recruitment, performance management, and L&D.",
     "example": "HR built a Guest Service Competency Model that aligned hiring screens and performance reviews with core hospitality service standards.",
     "competency": "People / HR Expertise"
   },
   {
+    "id": 85,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Performance Management & Continuous Feedback",
     "scenario": "A hotel transitions from annual reviews to monthly check-ins. Managers report feeling overwhelmed by administrative documentation. How should HR assist?",
@@ -1285,11 +1691,16 @@
       "D) Penalize managers who miss check-in submissions."
     ],
     "correct": 0,
+    "key_terms": {
+      "Continuous Feedback": "Ongoing performance dialogue replacing or supplementing traditional annual performance reviews.",
+      "Administrative Friction": "Burden of paperwork and complex processes that slow down operational adoption."
+    },
     "strategic_rationale": "HR enables successful process change by streamlining administrative tasks, providing simple tools, and building managerial capability.",
     "example": "HR implemented a 3-question mobile check-in tool that reduced review admin time from 45 minutes to 5 minutes per employee.",
     "competency": "Consultation & Enablement"
   },
   {
+    "id": 86,
     "type": "Knowledge Item",
     "chapter": "HRIS Integration & Centralized Data",
     "scenario": "What is the primary operational benefit of deploying a unified enterprise HRIS across multiple resort properties?",
@@ -1300,11 +1711,16 @@
       "D) Replacing line managers' involvement in performance appraisals."
     ],
     "correct": 0,
+    "key_terms": {
+      "Human Resource Information System (HRIS)": "Software platform integrating employee data, payroll, benefits, and HR analytics.",
+      "Employee Self-Service (ESS)": "Digital portal allowing employees to view pay stubs, update personal details, and manage benefits independently."
+    },
     "strategic_rationale": "An integrated HRIS centralizes workforce records, automates routine tasks, and provides real-time data for strategic workforce planning.",
     "example": "A multi-property resort group integrated its payroll and scheduling into a unified HRIS, cutting weekly administrative processing time by 40%.",
     "competency": "Business Acumen & HR Systems"
   },
   {
+    "id": 87,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Succession Planning & Emergency Coverage",
     "scenario": "A hotel General Manager announces unexpected retirement in 30 days, and no internal successor is prepared. What should HR prioritize in the short term?",
@@ -1315,11 +1731,16 @@
       "D) Request the retiring GM stay indefinitely without a contract."
     ],
     "correct": 0,
+    "key_terms": {
+      "Interim Leadership": "Temporary appointment of qualified management to maintain operations during executive transitions.",
+      "Knowledge-Transfer Protocol": "Structured handover process capturing critical institutional knowledge prior to a departure."
+    },
     "strategic_rationale": "Unplanned executive departures require immediate risk mitigation through knowledge capture, temporary leadership stability, and parallel executive search.",
     "example": "HR appointed an experienced Assistant GM as interim General Manager while executing a 60-day executive search to secure a permanent leader.",
     "competency": "Critical Evaluation & Talent Strategy"
   },
   {
+    "id": 88,
     "type": "Knowledge Item",
     "chapter": "Title VII Bona Fide Occupational Qualification (BFOQ)",
     "scenario": "Under Title VII of the Civil Rights Act, which protected class can NEVER be used as a Bona Fide Occupational Qualification (BFOQ)?",
@@ -1330,11 +1751,16 @@
       "D) National Origin"
     ],
     "correct": 0,
+    "key_terms": {
+      "Bona Fide Occupational Qualification (BFOQ)": "Narrow statutory exception allowing discriminatory hiring based on religion, sex, or national origin if essential to normal business operations.",
+      "Title VII Protected Classes": "Federal categories protected from discrimination including race, color, religion, sex, and national origin."
+    },
     "strategic_rationale": "Title VII explicitly prohibits race or color from ever qualifying as a Bona Fide Occupational Qualification (BFOQ) under any circumstances.",
     "example": "HR reviewed job descriptions across property departments to ensure all qualification criteria complied with Title VII BFOQ statutory rules.",
     "competency": "HR Compliance & Workplace Law"
   },
   {
+    "id": 89,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "DEI & Leadership Buy-In",
     "scenario": "During a board meeting, hotel department heads worry that a new diversity mentorship program will create reverse discrimination. How should the HR Director respond?",
@@ -1345,11 +1771,16 @@
       "D) Limit program participation strictly to entry-level line workers."
     ],
     "correct": 0,
+    "key_terms": {
+      "Business Case for DEI": "Data-driven justification demonstrating how diversity and inclusion drive business performance and market agility.",
+      "Reverse Discrimination": "Perception or claim that preferential treatment given to protected groups disadvantages majority groups."
+    },
     "strategic_rationale": "Effective HR leaders use data-driven business cases to align leadership, demystify DEI programs, and demonstrate business value.",
     "example": "HR presented industry benchmarking data showing hotels with diverse leadership achieved 14% higher guest satisfaction scores.",
     "competency": "Global & Cultural Effectiveness & Leadership"
   },
   {
+    "id": 90,
     "type": "Knowledge Item",
     "chapter": "Nearshoring vs. Offshoring",
     "scenario": "What term describes relocating centralized reservation call center operations to a nearby neighboring country with aligned time zones?",
@@ -1360,11 +1791,16 @@
       "D) Co-sourcing"
     ],
     "correct": 0,
+    "key_terms": {
+      "Nearshoring": "Relocating business processes to companies in nearby countries sharing similar time zones and cultural proximity.",
+      "Offshoring": "Relocating business operations to distant overseas countries to achieve lower labor costs."
+    },
     "strategic_rationale": "Nearshoring transfers operational functions to close neighboring countries, maintaining time zone alignment and cultural proximity at lower cost.",
     "example": "A hotel group nearshored its overnight customer support to a nearby region, reducing costs while maintaining real-time guest service.",
     "competency": "Global Effectiveness & Strategic Sourcing"
   },
   {
+    "id": 91,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Overtime & Non-Exempt Classifications",
     "scenario": "Front desk supervisors spend 80% of their working time performing standard guest check-ins and 20% supervising agents. They are paid a flat salary with no overtime. How should HR address this compliance risk?",
@@ -1375,11 +1811,16 @@
       "D) Lower their base salary to offset potential overtime costs."
     ],
     "correct": 0,
+    "key_terms": {
+      "Exemption Audit": "Review of employee job duties and salary levels to ensure proper FLSA classification.",
+      "Primary Duty Audit": "Evaluation examining the actual tasks occupying the majority of an employee's working time."
+    },
     "strategic_rationale": "FLSA exemption status depends strictly on actual primary duties performed, not job titles. Performing non-exempt work primarily invalidates executive exemption.",
     "example": "HR conducted a duties audit across hotel properties, reclassifying working shift leads to non-exempt status to ensure full FLSA compliance.",
     "competency": "HR Compliance & Total Rewards"
   },
   {
+    "id": 92,
     "type": "Knowledge Item",
     "chapter": "Strategic Management & PESTLE Analysis",
     "scenario": "Which strategic analytical tool evaluates external Political, Economic, Social, Technological, Legal, and Environmental factors affecting the hospitality industry?",
@@ -1390,11 +1831,16 @@
       "D) Balanced Scorecard"
     ],
     "correct": 0,
+    "key_terms": {
+      "PESTLE Analysis": "Macro-environmental strategic framework examining Political, Economic, Social, Technological, Legal, and Environmental factors.",
+      "Macro-Environment": "External forces and trends shaping the broader industry landscape beyond an organization's direct control."
+    },
     "strategic_rationale": "PESTLE Analysis examines macro-environmental forces that impact organizational strategy, labor availability, and market expansion.",
     "example": "A resort executive team used PESTLE analysis to evaluate local labor law changes and economic trends before opening a new property location.",
     "competency": "Leadership & Business Acumen"
   },
   {
+    "id": 93,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Labor Union Strikes & Contingency Planning",
     "scenario": "A hotel's collective bargaining agreement expires in 30 days, and the union threatens a strike vote. What proactive step should HR take?",
@@ -1405,11 +1851,16 @@
       "D) Refuse to meet with union negotiators until the strike vote ends."
     ],
     "correct": 0,
+    "key_terms": {
+      "Strike Contingency Plan": "Prepared operational strategy maintaining essential hotel functions and guest safety during a work stoppage.",
+      "Management Cross-Coverage": "Cross-training salaried personnel to perform essential frontline duties during labor disputes."
+    },
     "strategic_rationale": "Proactive strike contingency planning protects guest safety, maintains essential operations, and ensures business continuity during labor disputes.",
     "example": "HR created a property contingency plan cross-training salaried management to cover critical guest service duties during a potential work stoppage.",
     "competency": "Workplace / Employee & Labor Relations"
   },
   {
+    "id": 94,
     "type": "Knowledge Item",
     "chapter": "U.S. Leave Compliance & FMLA Military Caregiver",
     "scenario": "Under the Family and Medical Leave Act (FMLA), how many workweeks of unpaid, job-protected leave can an eligible employee take to care for a covered servicemember with a serious injury or illness?",
@@ -1420,11 +1871,16 @@
       "D) 52 workweeks"
     ],
     "correct": 0,
+    "key_terms": {
+      "Military Caregiver Leave": "Special FMLA provision granting up to 26 weeks of leave to care for a covered injured or ill servicemember.",
+      "Single 12-Month Period": "FMLA timeframe governing military caregiver leave entitlements."
+    },
     "strategic_rationale": "FMLA provides up to 26 workweeks of military caregiver leave in a single 12-month period for eligible employees caring for a covered servicemember.",
     "example": "HR processed 26 weeks of military caregiver leave for a resort engineer caring for a spouse injured during active military duty.",
     "competency": "HR Compliance & Benefits"
   },
   {
+    "id": 95,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Employer Branding & Recruitment Marketing",
     "scenario": "A luxury resort struggles to recruit qualified line cooks in a competitive local market. How should HR refresh its recruitment marketing strategy?",
@@ -1435,11 +1891,16 @@
       "D) Require current cooks to work mandatory overtime instead of hiring."
     ],
     "correct": 0,
+    "key_terms": {
+      "Employer Value Proposition (EVP)": "Unique set of benefits and rewards offered by an employer in exchange for employee performance and loyalty.",
+      "Recruitment Marketing": "Promotional strategies attracting active and passive talent pools to an organization."
+    },
     "strategic_rationale": "Effective employer branding communicates total value propositions (learning pathways, culture, perks) to attract top talent in tight labor markets.",
     "example": "HR produced video highlights showcasing kitchen culture and career growth pathways, increasing qualified line cook applications by 50%.",
     "competency": "Talent Sourcing & Branding"
   },
   {
+    "id": 96,
     "type": "Knowledge Item",
     "chapter": "Employee Assistance Programs (EAPs)",
     "scenario": "What is the primary objective of providing a confidential Employee Assistance Program (EAP) in the hospitality industry?",
@@ -1450,11 +1911,16 @@
       "D) Conduct mandatory drug testing across hotel departments."
     ],
     "correct": 0,
+    "key_terms": {
+      "Employee Assistance Program (EAP)": "Voluntary work-based program offering confidential short-term counseling and advisory services.",
+      "Confidential Counseling": "Private mental health support ensuring employee disclosures remain strictly confidential."
+    },
     "strategic_rationale": "EAPs support employee well-being, mitigate personal stress factors, and improve workplace productivity and safety through confidential counseling.",
     "example": "A hotel promoted its confidential EAP resources to shift workers, seeing a reduction in stress-related absenteeism over six months.",
     "competency": "Consultation & Employee Well-being"
   },
   {
+    "id": 97,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Cross-Cultural Management & Expatriate Support",
     "scenario": "An international hotel group assigns a senior manager to lead a resort opening in South America. The manager experiences culture shock and team friction. What should HR have provided pre-departure?",
@@ -1465,11 +1931,16 @@
       "D) A guaranteed promotion upon assignment completion."
     ],
     "correct": 0,
+    "key_terms": {
+      "Cross-Cultural Training": "Preparation programs helping expatriates adapt to local cultural norms, communication styles, and business customs.",
+      "Culture Shock": "Psychological disorientation experienced when operating in an unfamiliar foreign cultural environment."
+    },
     "strategic_rationale": "Comprehensive cross-cultural preparation and local mentorship reduce international assignment failure rates and support adaptation.",
     "example": "HR established pre-departure cultural immersion and host-country executive coaching, helping expatriate leaders navigate local business customs.",
     "competency": "Global & Cultural Effectiveness"
   },
   {
+    "id": 98,
     "type": "Knowledge Item",
     "chapter": "HR Metrics & Time-to-Fill",
     "scenario": "Which HR metric calculates the average number of days between opening a job requisition and an applicant accepting the job offer?",
@@ -1480,11 +1951,16 @@
       "D) Yield Ratio"
     ],
     "correct": 0,
+    "key_terms": {
+      "Time-to-Fill": "Recruitment metric measuring total elapsed calendar days from job requisition approval to offer acceptance.",
+      "Requisition Lifecycle": "Timeline tracking an open job vacancy from creation through candidate onboarding."
+    },
     "strategic_rationale": "Time-to-Fill measures recruitment process efficiency from initial requisition approval to offer acceptance.",
     "example": "HR tracked Time-to-Fill across hotel positions, reducing requisition-to-offer timelines for front desk roles from 42 days to 18 days.",
     "competency": "Business Acumen & Talent Sourcing"
   },
   {
+    "id": 99,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Safety Culture & Incident Reporting",
     "scenario": "Frontline banquet servers hesitate to report minor slips and falls because managers penalize teams with accident records by withholding quarterly bonuses. What should HR do?",
@@ -1495,11 +1971,16 @@
       "D) Discontinue safety tracking across the resort."
     ],
     "correct": 0,
+    "key_terms": {
+      "Proactive Safety Incentive": "Reward system encouraging near-miss reporting and hazard identification rather than penalizing incident counts.",
+      "Underreporting Hazard": "Unintended consequence of safety penalties where workers hide injuries to protect team bonuses."
+    },
     "strategic_rationale": "Penalizing reported safety incidents creates underreporting; incentivizing proactive hazard identification builds a true safety culture.",
     "example": "HR replaced incident-based penalties with a proactive 'Safety Hazard Spotter' award, increasing near-miss reporting and lowering severe injuries.",
     "competency": "Workplace Safety & Risk Management"
   },
   {
+    "id": 100,
     "type": "Knowledge Item",
     "chapter": "Construct Validity in Selection",
     "scenario": "Which type of assessment validity measures abstract psychological traits like emotional intelligence or stress tolerance in hospitality leadership candidates?",
@@ -1510,11 +1991,16 @@
       "D) Concurrent Validity"
     ],
     "correct": 0,
+    "key_terms": {
+      "Construct Validity": "Evidence demonstrating that a selection test accurately measures an abstract psychological trait or construct.",
+      "Psychometric Assessment": "Standardized test measuring psychological attributes, cognitive ability, or personality traits."
+    },
     "strategic_rationale": "Construct Validity confirms that a test accurately measures underlying psychological constructs or traits relevant to job performance.",
     "example": "HR validated an emotional intelligence assessment to ensure it accurately measured stress resilience traits essential for resort GMs.",
     "competency": "Talent Sourcing & Selection"
   },
   {
+    "id": 101,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Remote Work Policies & Corporate Staff",
     "scenario": "Corporate hotel revenue analysts demand flexible hybrid work options, while property-level managers argue remote options are unfair to frontline staff. How should HR balance this?",
@@ -1525,11 +2011,16 @@
       "D) Permit frontline hotel staff to work remotely."
     ],
     "correct": 0,
+    "key_terms": {
+      "Job Feasibility": "Assessment of whether a role's tasks can be performed effectively outside a centralized physical workplace.",
+      "Equitable Flexibility": "Providing tailored flexibility solutions appropriate to operational realities across different job families."
+    },
     "strategic_rationale": "Equity does not mean identical treatment; HR creates fair flexible work policies tailored to job feasibility while supporting frontline needs.",
     "example": "HR implemented hybrid schedules for corporate analysts while launching flexible shift-bidding apps for property frontline employees.",
     "competency": "Consultation & Relationship Management"
   },
   {
+    "id": 102,
     "type": "Knowledge Item",
     "chapter": "U.S. FLSA Tip Credit Rules",
     "scenario": "Under the FLSA, what standard must a hotel restaurant meet to claim a tip credit toward minimum wage obligations for tipped servers?",
@@ -1537,4 +2028,972 @@
       "A) Inform employees in advance, allow staff to retain all tips (except valid tip pools), and ensure direct pay plus tips equals minimum wage.",
       "B) Deduct 20% of server tips to pay kitchen utility staff salaries.",
       "C) Claim tip credit without notifying employees in writing.",
-      "D) Retain employee
+      "D) Retain employee tips as corporate restaurant revenue."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Tip Credit": "FLSA provision allowing employers to pay tipped workers a lower direct cash wage provided tips make up the difference.",
+      "Valid Tip Pool": "Legally compliant tip-pooling arrangement restricted to employees who customarily receive tips (excluding management)."
+    },
+    "strategic_rationale": "FLSA tip credit compliance requires advance written notice, full tip retention by staff (barring legal tip pools), and guaranteed minimum wage floors.",
+    "example": "HR audited restaurant tip credit notices and tip-pooling structures across all dining outlets to ensure full compliance with Department of Labor regulations.",
+    "competency": "HR Compliance & Total Rewards"
+  },
+  {
+    "id": 103,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Employee Engagement & Action Planning",
+    "scenario": "A resort's annual employee engagement survey shows high satisfaction with compensation but critically low scores regarding direct supervisor communication. What is HR's best next step?",
+    "options": [
+      "A) Conduct confidential focus groups to gather qualitative feedback and design targeted supervisory communication coaching.",
+      "B) Retake the survey immediately until supervisor scores improve.",
+      "C) Issue across-the-board pay raises to boost overall morale.",
+      "D) Reprimand all resort supervisors publicly during executive meetings."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Qualitative Focus Groups": "Facilitated employee discussions exploring survey themes and uncovering root causes behind engagement scores.",
+      "Action Planning": "Targeted organizational initiatives designed to address specific feedback identified in employee surveys."
+    },
+    "strategic_rationale": "Survey data requires qualitative follow-up (focus groups) to understand root causes and targeted development interventions to drive real behavior change.",
+    "example": "HR organized department focus groups following an engagement survey, uncovering communication bottlenecks and launching supervisor coaching workshops.",
+    "competency": "Relationship Management & L&D"
+  },
+  {
+    "id": 104,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Affordable Care Act (ACA) Compliance",
+    "scenario": "Under the Affordable Care Act (ACA) Employer Shared Responsibility provisions, what is the minimum weekly hour threshold defining a 'full-time employee' for applicable large employers (ALEs)?",
+    "options": [
+      "A) 30 hours per week (or 130 hours per month)",
+      "B) 40 hours per week",
+      "C) 20 hours per week",
+      "D) 35 hours per week"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Applicable Large Employer (ALE)": "Employer with 50 or more full-time equivalent employees subject to ACA healthcare mandates.",
+      "ACA Full-Time Definition": "Federal threshold defining full-time employment as averaging at least 30 service hours per week."
+    },
+    "strategic_rationale": "The ACA defines full-time employees as those working an average of 30+ hours per week, obligating ALEs to offer affordable health coverage.",
+    "example": "Resort HR tracked variable-hour banquet servers using the ACA measurement period to ensure timely health benefit offers for qualifying staff.",
+    "competency": "Total Rewards & Compliance"
+  },
+  {
+    "id": 105,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Talent Acquisition & Sourcing Strategy",
+    "scenario": "A luxury hotel property faces severe candidate shortages for culinary line cooks. Job board postings yield zero applicants. How should HR pivot its talent sourcing strategy?",
+    "options": [
+      "A) Partner with local culinary schools, launch employee referral bonuses, and host on-property weekend hiring fairs.",
+      "B) Wait passively until local candidate market conditions improve.",
+      "C) Lower culinary qualification standards to hire untrained individuals.",
+      "D) Outsource all kitchen operations to international staffing agencies."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Sourcing Diversification": "Employing multiple recruitment channels (schools, referrals, hiring fairs) rather than relying on single job boards.",
+      "Employee Referral Program": "Recruitment strategy incentivizing current staff to recommend qualified professional connections."
+    },
+    "strategic_rationale": "Diversifying sourcing channels through culinary school partnerships and referral programs reaches active and passive talent directly.",
+    "example": "HR established a partnership with regional culinary institutes and introduced a $500 employee referral bonus, filling all open line cook roles in 4 weeks.",
+    "competency": "Talent Sourcing & Acquisition Strategy"
+  },
+  {
+    "id": 106,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Immigration Reform and Control Act (IRCA)",
+    "scenario": "Under the Immigration Reform and Control Act (IRCA), what is the primary purpose of Form I-9 verification?",
+    "options": [
+      "A) Verify identity and employment authorization of all newly hired workers regardless of citizenship.",
+      "B) Collect federal income tax withholding details from employees.",
+      "C) Register foreign workers for permanent residency sponsorships.",
+      "D) Conduct criminal background check screenings for hospitality roles."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "IRCA": "Immigration Reform and Control Act; federal legislation prohibiting unauthorized alien employment and mandating I-9 verification.",
+      "Employment Authorization": "Legal permission allowing an individual to work lawfully in the United States."
+    },
+    "strategic_rationale": "IRCA mandates that employers verify identity and work authorization for all new hires to prevent unlawful employment practices.",
+    "example": "A hotel audit team verified that all newly onboarded banquet staff completed Form I-9 paperwork within statutory deadlines.",
+    "competency": "Workplace Law Compliance"
+  },
+  {
+    "id": 107,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Organizational Development & Structure",
+    "scenario": "A rapidly expanding hotel management company is experiencing severe communication bottlenecks between corporate leadership and individual properties. What structural change should HR recommend?",
+    "options": [
+      "A) Decentralize operational decision-making by establishing regional cluster management structures to streamline communication.",
+      "B) Centralize all property decisions directly under the corporate CEO.",
+      "C) Eliminate property-level general managers entirely.",
+      "D) Increase corporate headquarters reporting layers from 4 to 8."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Decentralized Structure": "Organizational design delegating operational decision-making authority closer to local property units.",
+      "Cluster Management": "Operational grouping of multiple hospitality properties sharing regional leadership and resources."
+    },
+    "strategic_rationale": "Decentralizing structure and empowering regional cluster leadership removes communication bottlenecks and accelerates property responsiveness.",
+    "example": "The hotel group reorganized into regional operational clusters, reducing corporate approval turnaround times from weeks to hours.",
+    "competency": "Structure & HR Service Delivery"
+  },
+  {
+    "id": 108,
+    "type": "Knowledge Item",
+    "chapter": "HR Metrics & Human Capital ROI",
+    "scenario": "Which financial metric calculates the total business value generated by an organization's workforce relative to total employment expenses?",
+    "options": [
+      "A) Human Capital ROI",
+      "B) Compa-Ratio",
+      "C) Cost-Per-Hire",
+      "D) Revenue-Per-Available-Room (RevPAR)"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Human Capital ROI": "Financial formula measuring net value created per dollar spent on total employee compensation and benefits.",
+      "Employment Expenses": "Total direct and indirect financial costs associated with maintaining an organization's workforce."
+    },
+    "strategic_rationale": "Human Capital ROI measures financial return generated by workforce expenditures, providing executive leadership with clear people-analytics data.",
+    "example": "HR presented Human Capital ROI metrics to the board, demonstrating that enhanced training investments yielded a 3.2x return in guest revenue.",
+    "competency": "Business Acumen & Analytics"
+  },
+  {
+    "id": 109,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Crisis Management & Employee Communication",
+    "scenario": "During a sudden local flash flood near a mountain resort property, guests and staff are temporarily stranded on-site. What is HR's immediate communication priority?",
+    "options": [
+      "A) Establish a central emergency communication channel, verify staff and guest headcount, and provide continuous safety updates.",
+      "B) Send staff home immediately through flooded local roadways.",
+      "C) Wait until local emergency services contact the hotel before taking action.",
+      "D) Suspend all internal communication to prevent employee panic."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Emergency Communication": "Rapid, clear messaging protocols established to protect human life and coordinate safety during crises.",
+      "Headcount Verification": "Systematic accounting of all employees and guests during an emergency to ensure safety."
+    },
+    "strategic_rationale": "Crisis management requires immediate headcount verification, centralized communication, and clear safety guidance to protect human capital.",
+    "example": "HR activated the property emergency communications tree, accounting for all on-site staff and coordinating safe shelter areas during the flash flood.",
+    "competency": "Risk Management & Leadership"
+  },
+  {
+    "id": 110,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Equal Pay Legislation & Pay Transparency",
+    "scenario": "Under emerging state pay transparency laws affecting hospitality employers, what requirement must job postings typically fulfill?",
+    "options": [
+      "A) Disclose the salary range or hourly pay scale directly within job postings and recruitment advertisements.",
+      "B) Keep all compensation figures strictly confidential until the final job offer stage.",
+      "C) Publish candidate salary expectations in public press releases.",
+      "D) Restrict salary negotiations to executive leadership roles only."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Pay Transparency": "Legislative requirement mandating public disclosure of salary ranges in job recruitment postings.",
+      "Pay Scale Disclosure": "Statutory obligation preventing wage secrecy and promoting pay equity during recruitment."
+    },
+    "strategic_rationale": "Pay transparency laws require transparent salary disclosures in job listings, enhancing candidate trust and reducing wage gaps.",
+    "example": "HR updated all career portal postings for hotel management and hourly roles to include transparent hourly and salary ranges per state law.",
+    "competency": "Total Rewards & Legal Compliance"
+  },
+  {
+    "id": 111,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Strategic Onboarding & Retention",
+    "scenario": "A resort property observes that 50% of new line-level hires resign within their first 30 days of employment. What strategic onboarding enhancement should HR implement?",
+    "options": [
+      "A) Implement a comprehensive 30-60-90 day onboarding roadmap featuring structured mentorship, regular manager check-ins, and clear milestone feedback.",
+      "B) Require new hires to sign a 12-month retention contract with financial penalties for early resignation.",
+      "C) Shorten new hire orientation from 2 days to 30 minutes to get staff on the floor faster.",
+      "D) Eliminate probation periods and delay performance feedback until annual reviews."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Extended Onboarding Roadmap": "Structured multi-month integration plan supporting new hire adjustment, training, and cultural assimilation.",
+      "Early-Stage Retention": "Focus on stabilizing new employee satisfaction and productivity during the critical first 30-90 days."
+    },
+    "strategic_rationale": "Structured 30-60-90 day onboarding roadmaps with mentorship dramatically reduce early-stage attrition by providing continuous support and clarity.",
+    "example": "A hotel group introduced a 'Buddy Mentor' program and bi-weekly 30-day check-ins for room attendants, cutting 30-day turnover from 50% to 15%.",
+    "competency": "Talent Management & Employee Retention"
+  },
+  {
+    "id": 112,
+    "type": "Knowledge Item",
+    "chapter": "Job Evaluation Methods & Point-Factor",
+    "scenario": "Which quantitative job evaluation method assesses jobs by scoring compensable factors (e.g., skill, effort, responsibility, working conditions) and converting scores into monetary pay values?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Job Ranking Method",
+      "C) Market Pay Pricing",
+      "D) Factor Comparison"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Point-Factor Method": "Quantitative job evaluation technique measuring compensable factors to determine relative job value.",
+      "Compensable Factors": "Characteristics of a job (e.g., skill, responsibility, effort, working conditions) used to measure relative worth."
+    },
+    "strategic_rationale": "The Point-Factor Method provides a rigorous, quantitative framework for evaluating job worth based on standardized compensable factors.",
+    "example": "HR utilized a point-factor evaluation system to establish objective internal pay equity across disparate administrative and operational hotel roles.",
+    "competency": "Total Rewards & Job Evaluation"
+  },
+  {
+    "id": 113,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Workplace Conflict & Peer Mediation",
+    "scenario": "Two veteran front desk agents refuse to speak to each other due to a personal dispute outside of work, creating severe tension and guest check-in delays. How should HR intervene?",
+    "options": [
+      "A) Meet with both agents individually to establish strict professional conduct standards on shift, and offer voluntary peer mediation.",
+      "B) Fire both agents immediately for bringing personal drama to work.",
+      "C) Ignore the personal dispute since it occurred outside company property.",
+      "D) Require guests to check in exclusively via self-service kiosks."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Professional Conduct Standard": "Enforceable workplace expectation requiring respectful behavior and cooperation regardless of personal feelings.",
+      "Peer Mediation": "Facilitated conflict resolution process where neutral parties help disputing employees reach agreement."
+    },
+    "strategic_rationale": "Personal disputes impacting workplace operations require immediate intervention, clear professional conduct boundaries, and conflict resolution support.",
+    "example": "HR coached both desk agents on professional conduct standards, establishing a cooperative shift protocol that eliminated guest check-in delays.",
+    "competency": "Relationship Management & Employee Relations"
+  },
+  {
+    "id": 114,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Uniformed Services & USERRA Reinstatement",
+    "scenario": "Under USERRA, what is the general timeline within which a returning military service member must apply for reemployment following active duty of 181 days or more?",
+    "options": [
+      "A) Within 90 days of completing service",
+      "B) Within 14 days of completing service",
+      "C) Within 1 year of completing service",
+      "D) Within 30 days of completing service"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "USERRA Application Window": "Statutory timeline (90 days for service over 180 days) for returning veterans to apply for civilian reemployment.",
+      "Steplocked Seniority": "USERRA provision ensuring returning service members receive seniority and pay increases they would have attained."
+    },
+    "strategic_rationale": "USERRA grants returning service members up to 90 days following military service exceeding 180 days to apply for civilian job reinstatement.",
+    "example": "HR processed a returning veteran's reemployment application within the statutory 90-day window, restoring full seniority and updated benefit accruals.",
+    "competency": "Workplace Law Compliance"
+  },
+  {
+    "id": 115,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Strategic HR Analytics & Turnover Forecasting",
+    "scenario": "The executive team asks HR to forecast next year's labor replacement costs based on current hospitality industry attrition trends. What analytical approach should HR take?",
+    "options": [
+      "A) Build a predictive cost model incorporating historical turnover rates, average Cost-Per-Hire figures, and projected wage inflation.",
+      "B) Guess a flat 10% budget increase without reviewing historical data.",
+      "C) Exclude recruitment and training costs from financial budget models.",
+      "D) Assume zero employee turnover will occur next year."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Predictive Cost Modeling": "Analytical forecasting technique combining historical turnover metrics and recruitment costs to project future expenses.",
+      "Attrition Forecasting": "Statistical projection of future employee departures to plan recruitment budgets."
+    },
+    "strategic_rationale": "Predictive modeling combines historical turnover and CPH metrics to give executives accurate, data-driven workforce financial forecasts.",
+    "example": "HR presented a 12-month turnover cost projection model to finance, securing an optimized recruitment budget ahead of peak hiring season.",
+    "competency": "Business Acumen & Workforce Analytics"
+  },
+  {
+    "id": 116,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Department of Labor (DOL) Audits",
+    "scenario": "During a DOL Wage and Hour Division audit of a hotel property, which records must the employer make available to investigators under FLSA regulations?",
+    "options": [
+      "A) Payroll records, timecards, job descriptions, wage rate tables, and records of tip credits or deductions for at least 3 years.",
+      "B) Employee personal medical files and performance review scores.",
+      "C) Union organizing authorization cards and ballot records.",
+      "D) Customer feedback survey responses and room occupancy logs."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "FLSA Recordkeeping Mandate": "Federal requirement compelling employers to maintain accurate payroll, time, and wage records for inspection.",
+      "Wage and Hour Audit": "DOL investigation verifying employer compliance with minimum wage, overtime, and child labor laws."
+    },
+    "strategic_rationale": "FLSA regulations mandate that employers retain payroll, timecard, and wage rate documentation for a minimum of 3 years for DOL inspection.",
+    "example": "HR maintained digital archives of 3 years of timecard logs and tip credit notices, ensuring a seamless DOL wage audit review.",
+    "competency": "HR Compliance & Workplace Law"
+  },
+  {
+    "id": 117,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Organizational Culture & Employee Recognition",
+    "scenario": "Resort line employees report feeling invisible and unappreciated by management, leading to low morale. The general manager wants to award a single 'Employee of the Year' trophy. How should HR advise?",
+    "options": [
+      "A) Implement a frequent, peer-to-peer recognition program alongside monthly spot awards to celebrate daily contributions across all operating units.",
+      "B) Rely solely on the annual 'Employee of the Year' trophy.",
+      "C) Eliminate employee recognition programs entirely.",
+      "D) Award bonuses exclusively to executive department heads."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Peer-to-Peer Recognition": "Program enabling employees to acknowledge and reward co-workers directly for exceptional daily contributions.",
+      "Spot Awards": "Immediate, tangible recognition given to employees for demonstrating core organizational values in real time."
+    },
+    "strategic_rationale": "Frequent, peer-to-peer recognition and spot awards drive daily morale and engagement far more effectively than a distant annual trophy.",
+    "example": "A resort introduced 'Hero Cards' allowing any staff member to recognize co-workers instantly, boosting engagement scores by 30% in six months.",
+    "competency": "Relationship Management & Employee Engagement"
+  },
+  {
+    "id": 118,
+    "type": "Knowledge Item",
+    "chapter": "Strategic Workforce Planning & Gap Analysis",
+    "scenario": "What is the primary purpose of conducting a Workforce Gap Analysis during strategic organizational planning?",
+    "options": [
+      "A) Identify discrepancies between current workforce capabilities and future talent requirements needed to execute business strategy.",
+      "B) Calculate total employee payroll taxes owed to the federal government.",
+      "C) Determine the physical square footage needed for new office buildings.",
+      "D) Establish baseline employee attendance and tardiness quotas."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Workforce Gap Analysis": "Strategic comparison between current workforce supply/skills and future business demand requirements.",
+      "Talent Supply vs. Demand": "Evaluation matching available employee skills against future operational expansion needs."
+    },
+    "strategic_rationale": "A Workforce Gap Analysis identifies talent deficits early, enabling HR to build targeted hiring, training, and succession strategies.",
+    "example": "HR conducted a gap analysis revealing a shortage of digital PMS skills ahead of property modernization, launching targeted upskilling courses.",
+    "competency": "Strategic Workforce Planning"
+  },
+  {
+    "id": 119,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Workplace Violence Prevention & Security",
+    "scenario": "A terminated hotel front desk employee makes vague threatening statements on social media directed at property management. What should HR and security do?",
+    "options": [
+      "A) Conduct an immediate risk assessment, notify property security, increase security patrols, and issue trespass warnings if necessary.",
+      "B) Ignore social media posts as harmless venting.",
+      "C) Invite the former employee back on property to discuss grievances casually.",
+      "D) Delete the social media posts without informing security."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Workplace Violence Prevention": "Proactive security protocols identifying threats and protecting staff from potential physical harm.",
+      "Threat Risk Assessment": "Multidisciplinary evaluation measuring the credibility and severity of expressed threats against an organization."
+    },
+    "strategic_rationale": "Threats of violence require immediate risk assessment, security coordination, and preventive physical security measures to protect human capital.",
+    "example": "HR partnered with resort security to assess a threatening social media post, increasing lobby patrols and restricting property access.",
+    "competency": "Workplace Risk Management & Safety"
+  },
+  {
+    "id": 120,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Uniformed Services & USERRA Health Coverage",
+    "scenario": "Under USERRA, for how many months of active military service is an employee entitled to continue their employer-sponsored health insurance coverage?",
+    "options": [
+      "A) Up to 24 months of coverage",
+      "B) Up to 6 months of coverage",
+      "C) Up to 12 months of coverage",
+      "D) Up to 36 months of coverage"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "USERRA Health Continuation": "Statutory right allowing military service members to continue health coverage for up to 24 months during active duty.",
+      "Military Leave Benefits": "Protected benefit continuations ensuring service members maintain healthcare access during deployment."
+    },
+    "strategic_rationale": "USERRA ensures that employees performing active military duty can elect to continue their employer health plan for up to 24 months.",
+    "example": "HR coordinated 24-month health plan continuation coverage for a resort technician deployed on active military reserve duty.",
+    "competency": "Total Rewards & Compliance"
+  },
+  {
+    "id": 121,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Job Analysis & Performance Standards",
+    "scenario": "A luxury hotel introduces a new upscale dining concept. Housekeeping and room service workflows change significantly, but current job descriptions do not reflect the new duties. What should HR do?",
+    "options": [
+      "A) Conduct a rapid job analysis, update job descriptions, establish clear performance standards, and communicate changes to staff.",
+      "B) Leave existing job descriptions unchanged since titles remain the same.",
+      "C) Discipline employees who fail to perform unassigned new tasks.",
+      "D) Outsource all room service functions to external contractors."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Job Description Updating": "Revising task inventories and responsibilities to reflect evolving operational requirements.",
+      "Performance Standards": "Clear, measurable criteria defining successful task execution for updated roles."
+    },
+    "strategic_rationale": "Evolving business operations require prompt job analysis and updated job descriptions to maintain legal clarity and performance alignment.",
+    "example": "HR partnered with food and beverage directors to update room service job descriptions and performance standards for the new dining concept.",
+    "competency": "HR Expertise & Job Design"
+  },
+  {
+    "id": 122,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Immigration & Form I-9 Retention Rules",
+    "scenario": "Under federal immigration rules, for how long must an employer retain completed Form I-9 records following an employee's date of hire or date of termination (whichever is later)?",
+    "options": [
+      "A) 3 years after the date of hire, or 1 year after the date of employment termination, whichever is later.",
+      "B) Exactly 5 years from the date of hire.",
+      "C) 6 months following employee separation.",
+      "D) Indefinitely until company dissolution."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Form I-9 Retention Period": "Mandatory federal rule requiring I-9 storage for 3 years post-hire or 1 year post-termination, whichever is later.",
+      "Immigration Compliance Audit": "Federal inspection verifying proper completion and retention of employee I-9 records."
+    },
+    "strategic_rationale": "Federal I-9 rules dictate retention for 3 years from hire date or 1 year from termination date, whichever is later.",
+    "example": "HR established a digital archiving schedule ensuring Form I-9 records are retained and securely purged according to federal timelines.",
+    "competency": "Workplace Law Compliance"
+  },
+  {
+    "id": 123,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Labor Relations & Weingarten Rights",
+    "scenario": "During an investigatory interview regarding cash drawer discrepancies, a unionized front desk agent requests union representation. The supervisor wants to proceed alone. What must HR advise?",
+    "options": [
+      "A) Grant the agent's request for union representation immediately under Weingarten rights before continuing the interview.",
+      "B) Deny the request and proceed with the disciplinary interview immediately.",
+      "C) Terminate the employee for requesting union representation.",
+      "D) Cancel the investigation entirely."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Weingarten Rights": "Unionized employee right to have a union representative present during investigatory interviews that could lead to discipline.",
+      "Investigatory Interviewing": "Questioning by management that an employee reasonably believes could result in disciplinary action."
+    },
+    "strategic_rationale": "Under Weingarten rights, unionized employees facing investigatory interviews have the legal right to union representation upon request.",
+    "example": "HR paused a cash handling interview to allow a union steward to attend as requested under Weingarten rights.",
+    "competency": "Workplace / Employee & Labor Relations"
+  },
+  {
+    "id": 124,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Leave Administration & ADA Interaction",
+    "scenario": "When an employee exhausts all available FMLA leave for a medical condition but still requires additional time off, what legal framework must HR consider next?",
+    "options": [
+      "A) Evaluate whether additional unpaid leave or schedule modifications constitute a reasonable accommodation under the ADA.",
+      "B) Terminate employment immediately upon FMLA exhaustion.",
+      "C) Automatically grant an unlimited 12-month leave extension.",
+      "D) Convert the employee to independent contractor status."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "ADA Leave Interaction": "Obligation to evaluate extended leave as a potential reasonable accommodation after FMLA exhaustion.",
+      "Undue Hardship (ADA)": "Significant difficulty or expense preventing an employer from granting an accommodation."
+    },
+    "strategic_rationale": "FMLA exhaustion does not end employer obligations; HR must engage in the ADA interactive process to evaluate extended leave as an accommodation.",
+    "example": "HR evaluated a resort employee's request for a 4-week post-FMLA leave extension under ADA interactive process guidelines, granting the extension safely.",
+    "competency": "HR Compliance & Legal Consultation"
+  },
+  {
+    "id": 125,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Strategic Workforce Planning & Contingent Labor",
+    "scenario": "A resort property experiences extreme seasonal occupancy spikes during winter holidays followed by deep summer lulls. How should HR strategically design the workforce structure?",
+    "options": [
+      "A) Maintain a core full-time permanent staff supplemented by a structured seasonal contingent workforce and cross-trained internal reserves.",
+      "B) Hire 100% temporary agency staff year-round to avoid permanent payroll.",
+      "C) Keep permanent headcount at peak levels year-round regardless of occupancy.",
+      "D) Shut down property operations completely during summer lulls."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Contingent Workforce": "Flexible staffing model utilizing seasonal, temporary, or contract workers to absorb demand fluctuations.",
+      "Core-Flex Staffing Model": "Workforce strategy combining a permanent core staff with flexible contingent labor."
+    },
+    "strategic_rationale": "Core-flex staffing models balance permanent core staff stability with seasonal contingent labor to absorb hospitality demand volatility cost-effectively.",
+    "example": "A mountain ski resort partnered with local seasonal agencies and established a core-flex staffing model, optimizing labor costs across peak and low seasons.",
+    "competency": "Strategic Workforce Planning & Total Rewards"
+  },
+  {
+    "id": 126,
+    "type": "Knowledge Item",
+    "chapter": "Job Evaluation Methods & Factor Comparison",
+    "scenario": "Which quantitative job evaluation method compares benchmark jobs against key compensable factors using a monetary scale to establish pay rates?",
+    "options": [
+      "A) Factor Comparison Method",
+      "B) Point-Factor Method",
+      "C) Job Ranking Method",
+      "D) Classification Method"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Factor Comparison Method": "Quantitative job evaluation technique ranking benchmark jobs across compensable factors using monetary values.",
+      "Benchmark Jobs": "Well-understood jobs with stable market wage data used as reference points in job evaluation."
+    },
+    "strategic_rationale": "The Factor Comparison Method evaluates jobs directly against benchmark monetary scales across defined compensable factors.",
+    "example": "A multi-property hotel group utilized the factor comparison method to price newly created niche technical roles against established benchmark pay rates.",
+    "competency": "Total Rewards & Compensation"
+  },
+  {
+    "id": 127,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Diversity & Inclusive Workplace Culture",
+    "scenario": "During a hotel team meeting, an employee makes a microaggression regarding a co-worker's cultural background. Other team members look uncomfortable. How should the supervisor handle this?",
+    "options": [
+      "A) Address the comment immediately in the meeting by clarifying inclusive standards, and follow up with private coaching for the employee.",
+      "B) Ignore the comment to avoid making the meeting awkward.",
+      "C) Reprimand the entire team for feeling uncomfortable.",
+      "D) Tell the targeted employee to develop thicker skin."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Microaggression": "Subtle, everyday comments or actions expressing prejudiced slights against marginalized groups.",
+      "Inclusive Norms": "Established behavioral expectations ensuring psychological safety and respect across diverse teams."
+    },
+    "strategic_rationale": "Addressing microaggressions immediately sets clear behavioral boundaries, models inclusive leadership, and maintains psychological safety.",
+    "example": "A restaurant manager calmly intervened after a cultural microaggression in a briefing, followed up with private coaching, and reinforced team inclusion standards.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 128,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Safety Regulations & OSHA Recordkeeping",
+    "scenario": "Under OSHA guidelines, which workplace injury must be recorded on the employer's Form 300 Log within 7 calendar days of receiving information?",
+    "options": [
+      "A) Work-related injuries resulting in death, days away from work, restricted work, or medical treatment beyond first aid.",
+      "B) Minor paper cuts treated with a standard adhesive bandage in the break room.",
+      "C) First-aid treatments administered by an on-site nurse.",
+      "D) Personal medical conditions unrelated to work activities."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "OSHA Form 300 Log": "Mandatory workplace injury and illness tracking log maintained by covered employers.",
+      "Recordable Injury": "Work-related injury involving medical treatment beyond first aid, days away, or restricted duties."
+    },
+    "strategic_rationale": "OSHA recordkeeping rules require logging any work-related injury resulting in medical treatment beyond first aid, days away from work, or restricted duties.",
+    "example": "A hotel safety coordinator logged a slip-and-fall injury resulting in restricted physical duties on the OSHA 300 Log within the 7-day window.",
+    "competency": "Workplace Safety & Compliance"
+  },
+  {
+    "id": 129,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Performance Management & Termination Risk",
+    "scenario": "A hotel department manager wants to terminate a poor-performing employee immediately without documentation, citing 'employment-at-will.' How should HR advise?",
+    "options": [
+      "A"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Employment-at-Will": "Legal doctrine allowing termination without cause, subject to exceptions like public policy, implied contracts, and anti-discrimination laws.",
+      "Progressive Discipline": "Step-by-step corrective action process ensuring due process and documented performance standards."
+    },
+    "strategic_rationale": "While at-will employment exists, terminating staff without documented progressive discipline exposes the organization to severe wrongful termination and discrimination claims.",
+    "example": "HR advised a resort manager against instant termination, implementing a documented 30-day performance improvement plan instead.",
+    "competency": "Risk Management & Employee Relations"
+  },
+  {
+    "id": 130,
+    "type": "Knowledge Item",
+    "chapter": "U.S. FLSA Child Labor Regulations",
+    "scenario": "Under FLSA child labor provisions, what is the maximum number of hours 14- and 15-year-olds are permitted to work per day when school is in session?",
+    "options": [
+      "A) Maximum of 3 hours per school day (and 18 hours per school week)",
+      "B) Maximum of 8 hours per school day",
+      "C) Maximum of 10 hours per school day",
+      "D) No limits apply to youth employment in hospitality."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "FLSA Child Labor Rules": "Federal statutory limits restricting working hours and hazardous duties for minor workers.",
+      "School-In-Session Limits": "Stricter working hour caps protecting educational schedules for youth aged 14 and 15."
+    },
+    "strategic_rationale": "FLSA child labor regulations strictly limit 14- and 15-year-old youth to 3 hours per school day and 18 hours per school week.",
+    "example": "Resort HR audited scheduling software to ensure minor gift shop employees were never scheduled past federal school-night hour limits.",
+    "competency": "HR Compliance & Workplace Law"
+  },
+  {
+    "id": 131,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Total Rewards Strategy & Benefits Communication",
+    "scenario": "A hotel property invests heavily in upgrading its employee healthcare and wellness benefits, but employee utilization remains low because staff do not understand the offerings. What should HR do?",
+    "options": [
+      "A) Launch a multi-channel benefits communication campaign featuring bilingual info-sessions, mobile app guides, and drop-in Q&A desks.",
+      "B) Assume employees do not value benefits and cancel the upgraded plans.",
+      "C) Send a single dense 80-page PDF document via email.",
+      "D) Require employees to pass an exam on healthcare terminology."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Benefits Communication": "Strategic messaging ensuring employees understand and value their total rewards packages.",
+      "Multi-Channel Campaign": "Utilizing diverse communication formats (meetings, apps, drop-in desks) to reach all operational staff."
+    },
+    "strategic_rationale": "Maximizing total rewards ROI requires clear, multi-channel communication ensuring operational staff understand and utilize available benefits.",
+    "example": "HR hosted bilingual drop-in benefit desks in the employee dining room, increasing wellness benefit enrollment by 65%.",
+    "competency": "Total Rewards & Communication"
+  },
+  {
+    "id": 132,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Equal Employment Opportunity Commission (EEOC)",
+    "scenario": "What is the primary statutory jurisdiction of the Equal Employment Opportunity Commission (EEOC)?",
+    "options": [
+      "A) Enforce federal laws prohibiting employment discrimination based on protected classes.",
+      "B) Audit corporate income tax returns and financial payroll deductions.",
+      "C) Establish national minimum wage rates and overtime formulas.",
+      "D) Inspect physical workplace facilities for industrial safety hazards."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "EEOC": "Equal Employment Opportunity Commission; federal agency enforcing anti-discrimination employment laws.",
+      "Protected Classes": "Statutory categories (race, sex, religion, age, disability) protected under EEOC jurisdiction."
+    },
+    "strategic_rationale": "The EEOC enforces federal anti-discrimination laws protecting workers across protected classes from unlawful employment practices.",
+    "example": "HR partnered with legal counsel to respond to an EEOC charge of discrimination, submitting structured personnel records and selection data.",
+    "competency": "HR Compliance & Workplace Law"
+  },
+  {
+    "id": 133,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Strategic Workforce Planning & Turnover",
+    "scenario": "A high-end resort hotel experiences sudden turnover among key front desk supervisors during peak tourist season. What should HR do immediately to stabilize operations?",
+    "options": [
+      "A) Deploy cross-trained administrative staff temporarily, fast-track external candidate pipelines, and conduct stay interviews with remaining supervisors.",
+      "B) Close the front desk and require guests to self-check-in.",
+      "C) Ignore vacancies until the peak season concludes naturally.",
+      "D) Force remaining supervisors to work 80 hours a week without relief."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Operational Stabilization": "Immediate tactical response deploying cross-trained staff and fast-tracking recruitment during unexpected vacancies.",
+      "Stay Interviews": "Targeted retention conversations with key current staff to identify and mitigate flight risks."
+    },
+    "strategic_rationale": "Unexpected peak turnover requires rapid operational stabilization through cross-training, expedited hiring, and immediate stay interviews.",
+    "example": "HR deployed corporate trainers to cover front desk shifts, fast-tracked recruiter phone screens, and held stay interviews to retain remaining leads.",
+    "competency": "Talent Strategy & Operational Continuity"
+  },
+  {
+    "id": 134,
+    "type": "Knowledge Item",
+    "chapter": "Organizational Development & Appreciative Inquiry",
+    "scenario": "Which organizational development methodology focuses on identifying and building upon what an organization already does well rather than focusing strictly on fixing deficits?",
+    "options": [
+      "A) Appreciative Inquiry",
+      "B) Six Sigma DMAIC",
+      "C) Root Cause Analysis",
+      "D) SWOT Deficit Audit"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Appreciative Inquiry": "Organizational development framework focusing on strengths, positive core values, and future possibilities.",
+      "Strengths-Based Development": "Management approach building upon existing organizational capabilities rather than dwelling exclusively on weaknesses."
+    },
+    "strategic_rationale": "Appreciative Inquiry drives positive cultural change by mobilizing organizational strengths and collaborative visioning.",
+    "example": "HR used Appreciative Inquiry workshops with hotel department heads to scale successful guest service practices across all property units.",
+    "competency": "Organizational Development & Leadership"
+  },
+  {
+    "id": 135,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Labor Relations & Weingarten Limitations",
+    "scenario": "During a routine, non-disciplinary performance check-in meeting with a unionized banquet server, the employee demands union representation. Must management grant it?",
+    "options": [
+      "A) No, Weingarten rights apply strictly to investigatory interviews where the employee reasonably believes discipline may result.",
+      "B) Yes, union employees have the right to representation during every single meeting with management.",
+      "C) Yes, deny the meeting immediately if a union steward is absent.",
+      "D) No, terminate the employee for making the demand."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Weingarten Scope": "Legal limitation restricting union representation rights exclusively to investigatory interviews carrying disciplinary risk.",
+      "Routine Performance Meeting": "Standard supervisory coaching session not carrying investigatory disciplinary risk."
+    },
+    "strategic_rationale": "Weingarten rights do not apply to routine performance discussions or coaching sessions that do not carry investigatory disciplinary risk.",
+    "example": "HR correctly advised a banquet manager that routine weekly feedback check-ins do not trigger mandatory Weingarten representation rights.",
+    "competency": "Workplace / Employee & Labor Relations"
+  },
+  {
+    "id": 136,
+    "type": "Knowledge Item",
+    "chapter": "U.S. FLSA Recordkeeping & Minor Workers",
+    "scenario": "Under FLSA regulations, how long must employers retain employment records for minor workers under age 18?",
+    "options": [
+      "A) Until the minor reaches age 18 (or for the standard 3-year FLSA retention period, whichever is longer).",
+      "B) Exactly 30 days after minor separation.",
+      "C) Indefinitely for life.",
+      "D) 6 months following minor employment."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Minor Worker Record Retention": "FLSA mandate requiring employers to retain minor employment records until the worker turns 18.",
+      "Child Labor Compliance": "Strict federal documentation rules governing employment records for youth workers."
+    },
+    "strategic_rationale": "FLSA regulations mandate that employment records for workers under 18 be retained until they reach age 18.",
+    "example": "HR configured HRIS archiving rules to retain minor gift shop personnel files until each youth worker attained legal adulthood.",
+    "competency": "HR Compliance & Workplace Law"
+  },
+  {
+    "id": 137,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Workplace Health & Ergonomic Interventions",
+    "scenario": "Housekeeping staff report chronic shoulder and wrist fatigue from scrubbing hotel guest tubs. What ergonomic intervention should HR implement?",
+    "options": [
+      "A) Invest in lightweight, long-handled cleaning tools and ergonomic scrubbing attachments to eliminate awkward reaching and strain.",
+      "B) Require housekeepers to clean tubs faster using standard sponges.",
+      "C) Tell housekeeping staff to take fewer rest breaks during shift.",
+      "D) Outsource all guest room cleaning to external contractors."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Ergonomic Intervention": "Equipment or procedural redesign eliminating physical strain and musculoskeletal injury risks.",
+      "Mechanical Assistive Devices": "Tools reducing physical exertion required for repetitive operational tasks."
+    },
+    "strategic_rationale": "Ergonomic tools and long-handled attachments eliminate awkward physical postures and protect housekeeping staff from repetitive strain injuries.",
+    "example": "A hotel resort purchased long-handled swivel scrubbing brushes for housekeeping, reducing physical strain reports by 55%.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 138,
+    "type": "Knowledge Item",
+    "chapter": "Global HR & Ethnocentric Staffing",
+    "scenario": "What term describes an international staffing strategy where all key management positions in foreign hotel subsidiaries are filled by parent-country nationals?",
+    "options": [
+      "A) Ethnocentric Staffing Strategy",
+      "B) Polycentric Staffing Strategy",
+      "C) Geocentric Staffing Strategy",
+      "D) Regiocentric Staffing Strategy"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Ethnocentric Staffing": "International staffing approach favoring parent-country nationals for key leadership roles abroad.",
+      "Polycentric Staffing": "Staffing model employing host-country nationals to manage local foreign subsidiaries."
+    },
+    "strategic_rationale": "An ethnocentric staffing strategy relies on parent-country nationals to ensure tight home-office strategic control in foreign properties.",
+    "example": "A luxury hotel brand utilized an ethnocentric staffing model during initial international property launches to ensure brand standard alignment.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 139,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Performance Management & Underperformance",
+    "scenario": "A tenured hotel front desk agent's accuracy in cash handling drops significantly, causing drawer shortages. The employee blames new PMS software. How should HR guide the manager?",
+    "options": [
+      "A) Audit PMS cash transaction logs, provide targeted retraining on software workflows, and establish clear accuracy benchmarks with regular check-ins.",
+      "B) Terminate the tenured agent immediately for cash discrepancies.",
+      "C) Ignore drawer shortages as an unavoidable cost of new software.",
+      "D) Deduct drawer shortages directly from the agent's paycheck."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Targeted Retraining": "Skill remediation addressing specific performance gaps identified after new software rollouts.",
+      "Performance Benchmarks": "Measurable standards defining acceptable error rates and operational accuracy."
+    },
+    "strategic_rationale": "Addressing PMS-related performance drops requires system auditing, targeted retraining, and measurable accuracy benchmarks rather than punitive action.",
+    "example": "HR audited PMS cash logs, identified software navigation errors, provided 1-on-1 coaching, and restored cash drawer accuracy.",
+    "competency": "Performance Management & Consultation"
+  },
+  {
+    "id": 140,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Uniformed Services & USERRA Benefits",
+    "scenario": "Under USERRA, when a military service member is reemployed following active duty, how must their pension and retirement plan benefits be treated?",
+    "options": [
+      "A) Treated as if the employee had been continuously employed for vesting and benefit accrual purposes without break in service.",
+      "B) Reset to zero contribution status requiring a new 5-year vesting period.",
+      "C) Excluded entirely from pension calculations.",
+      "D) Replaced with a lump-sum cash severance payment."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "USERRA Pension Protection": "Statutory requirement treating military leave as continuous service for retirement benefit vesting and accrual.",
+      "Continuous Employment Fiction": "Legal principle ensuring military service members do not lose retirement seniority or vesting rights."
+    },
+    "strategic_rationale": "USERRA mandates that military service be treated as uninterrupted employment for pension plan vesting and benefit accrual.",
+    "example": "HR coordinated with 401(k) plan administrators to credit continuous service vesting for an engineer returning from military deployment.",
+    "competency": "Total Rewards & Compliance"
+  },
+  {
+    "id": 141,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Strategic Workforce Planning & Succession",
+    "scenario": "A resort executive team identifies a severe shortage of internal candidates ready to step into General Manager roles over the next 3 years. What strategic plan should HR execute?",
+    "options": [
+      "A) Design an accelerated General Manager Leadership Academy featuring executive mentoring, rotational property assignments, and strategic P&L training.",
+      "B) Rely exclusively on expensive external executive search firms when vacancies arise.",
+      "C) Lower leadership qualification standards to fill roles instantly.",
+      "D) Freeze property expansion plans permanently."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Leadership Development Academy": "Structured accelerated training program preparing high-potential internal talent for executive roles.",
+      "Rotational Assignments": "Strategic job rotation exposing future leaders to diverse property operations (F&B, Rooms, Finance)."
+    },
+    "strategic_rationale": "Building an accelerated Leadership Academy with cross-functional property rotations resolves executive succession shortages sustainably.",
+    "example": "A hotel group launched a GM Leadership Academy, increasing internal executive succession readiness from 20% to 75% in three years.",
+    "competency": "Talent Strategy & Succession Planning"
+  },
+  {
+    "id": 142,
+    "type": "Knowledge Item",
+    "chapter": "U.S. EEOC National Origin Discrimination",
+    "scenario": "Under Title VII, when is an employer's 'English-only' rule in the workplace legally permissible?",
+    "options": [
+      "A) When justified by business necessity (such as safety or communication efficiency) and communicated clearly to staff.",
+      "B) At all times across all areas of a hotel property without exception.",
+      "C) Never under any circumstances.",
+      "D) Only during employee lunch breaks and rest periods."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "English-Only Rule": "Workplace policy requiring employees to speak English, permissible only under strict business necessity.",
+      "Business Necessity (Title VII)": "Legitimate operational requirement essential to safe and efficient business performance."
+    },
+    "strategic_rationale": "Title VII permits English-only rules only when justified by documented business necessity, such as safety communications or operational coordination.",
+    "example": "A resort implemented a narrow English-only rule strictly for safety-critical kitchen communications, ensuring full EEOC compliance.",
+    "competency": "HR Compliance & Workplace Law"
+  },
+  {
+    "id": 143,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Workforce Analytics & Absenteeism",
+    "scenario": "A casino hotel notices a 30% spike in unscheduled absenteeism on Mondays and Fridays among housekeeping staff. How should HR analyze and address this trend?",
+    "options": [
+      "A) Analyze attendance tracking data by shift and supervisor, investigate potential burnout or scheduling conflicts, and review attendance policy enforcement.",
+      "B) Terminate the first 10 housekeepers who call in sick on a Monday.",
+      "C) Ignore Monday/Friday absenteeism as normal hospitality behavior.",
+      "D) Eliminate all sick leave benefits across the property."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Absenteeism Analytics": "Data-driven evaluation identifying attendance patterns, peak absence days, and operational drivers.",
+      "Attendance Policy Enforcement": "Equitable application of corrective attendance standards combined with root-cause analysis."
+    },
+    "strategic_rationale": "Analyzing attendance data uncovers root causes (burnout, scheduling) and ensures equitable, consistent attendance policy enforcement.",
+    "example": "HR analytics revealed Monday/Friday absences correlated with rigid shift scheduling; introducing flexible shift-bidding reduced weekend absenteeism by 45%.",
+    "competency": "Business Acumen & Employee Relations"
+  },
+  {
+    "id": 144,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Employee Retirement Income Security Act (ERISA)",
+    "scenario": "Under ERISA fiduciary standards, what is the primary legal duty of a retirement plan trustee or administrator?",
+    "options": [
+      "A) Discharge duties solely in the interest of plan participants and beneficiaries for the exclusive purpose of providing benefits and defraying reasonable expenses.",
+      "B) Maximize corporate profits for shareholders above all else.",
+      "C) Invest all pension assets exclusively in company stock.",
+      "D) Minimize administrative paperwork by delegating all duties without oversight."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "ERISA Fiduciary Duty": "Legal obligation requiring plan administrators to act solely in the financial interest of plan participants.",
+      "Exclusive Benefit Rule": "ERISA mandate requiring plan assets to be used exclusively for participant benefits and reasonable expenses."
+    },
+    "strategic_rationale": "ERISA fiduciaries are legally bound to act solely in the interest of plan participants with undivided loyalty and prudence.",
+    "example": "Hotel benefit trustees reviewed investment fund options quarterly, ensuring all selections aligned with strict ERISA fiduciary standards.",
+    "competency": "Total Rewards & Fiduciary Compliance"
+  },
+  {
+    "id": 145,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Strategic Management & Stakeholder Alignment",
+    "scenario": "A luxury hotel group plans to convert an underutilized tennis facility into a profitable eco-spa. Neighborhood residents and municipal leaders protest due to traffic concerns. How should HR and corporate leadership engage stakeholders?",
+    "options": [
+      "A) Host public town hall listening sessions, conduct traffic impact studies, and collaborate with community leaders on mitigation solutions.",
+      "B) Ignore community protests and begin construction immediately.",
+      "C) Cancel the eco-spa project permanently at the first sign of friction.",
+      "D) File lawsuits against protesting neighborhood residents."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Stakeholder Engagement": "Proactive communication and collaboration with external community and municipal groups impacted by business projects.",
+      "Community Relations": "Strategic organizational efforts building trust and alignment with local civic stakeholders."
+    },
+    "strategic_rationale": "Major property developments require proactive community stakeholder engagement, transparent impact studies, and collaborative problem-solving.",
+    "example": "Corporate leadership partnered with HR to host community town halls, modifying spa parking plans to resolve municipal traffic concerns successfully.",
+    "competency": "Leadership & Stakeholder Management"
+  },
+  {
+    "id": 146,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Fair Labor Standards Act (FLSA) Child Labor",
+    "scenario": "Under FLSA federal child labor rules, what is the absolute minimum age for employment in non-agricultural occupations?",
+    "options": [
+      "A) 14 years of age (with restrictions on hours and hazardous duties)",
+      "B) 16 years of age",
+      "C) 18 years of age",
+      "D) 12 years of age"
+    ],
+    "correct": 0,
+    "key_terms": {
+      "FLSA Minimum Age": "Federal rule establishing 14 as the minimum employment age for non-agricultural work with hour and task limits.",
+      "Non-Agricultural Youth Employment": "Statutory rules governing employment conditions for minor workers in hospitality and retail."
+    },
+    "strategic_rationale": "FLSA establishes 14 as the minimum age for non-agricultural employment, subject to strict hour caps and hazardous duty prohibitions.",
+    "example": "Resort HR ensured seasonal gift shop employment offers complied with federal minimum age and working hour restrictions for 14-year-old youth.",
+    "competency": "HR Compliance & Workplace Law"
+  },
+  {
+    "id": 147,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Performance Management & Goal Alignment",
+    "scenario": "A hotel general manager sets a vague annual goal for the front office team: 'Improve guest happiness.' Team performance drifts. How should HR help refine the goal?",
+    "options": [
+      "A) Apply SMART goal methodology (Specific, Measurable, Achievable, Relevant, Time-bound) linking front office metrics to specific guest satisfaction scores.",
+      "B) Keep the goal broad and subjective to give staff maximum creative freedom.",
+      "C) Eliminate performance goals entirely across the hotel.",
+      "D) Tie executive bonuses solely to subjective manager impressions."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "SMART Goals": "Goal-setting framework ensuring objectives are Specific, Measurable, Achievable, Relevant, and Time-bound.",
+      "Performance Alignment": "Connecting individual and team goals directly to organizational key performance indicators."
+    },
+    "strategic_rationale": "Vague goals fail to drive performance; converting objectives into SMART goals ensures clarity, accountability, and measurable results.",
+    "example": "HR coached property managers to rewrite vague goals into SMART targets, raising guest satisfaction score tracking accuracy by 40%.",
+    "competency": "Performance Management & Consultation"
+  },
+  {
+    "id": 148,
+    "type": "Knowledge Item",
+    "chapter": "U.S. Equal Pay Act & Merit Systems",
+    "scenario": "Under the Equal Pay Act, what evidentiary standard must an employer meet to justify a gender pay gap based on a 'merit system'?",
+    "options": [
+      "A) The merit system must be written, formally communicated to employees, consistently applied, and based on objective performance evaluations.",
+      "B) Merit pay decisions can be completely subjective and unrecorded.",
+      "C) Merit systems apply exclusively to executive leadership roles.",
+      "D) Merit pay variances are exempt from all federal equal pay audits."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Defensible Merit System": "Formal, objective, and consistently applied performance-based pay system satisfying Equal Pay Act exceptions.",
+      "Objective Performance Criteria": "Measurable standards eliminating manager bias in merit pay determinations."
+    },
+    "strategic_rationale": "To justify pay differentials under Equal Pay Act merit exceptions, employers must prove the merit system is formal, objective, and consistently applied.",
+    "example": "HR audited resort merit pay increases, verifying that all variances were supported by documented, objective annual performance review scores.",
+    "competency": "Total Rewards & Legal Compliance"
+  },
+  {
+    "id": 149,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Workplace Violence Prevention & Threat Assessment",
+    "scenario": "A hotel guest physically shoves a front desk agent after being denied a room upgrade. The guest is escorted off property by security. What post-incident actions must HR and management take?",
+    "options": [
+      "A) Provide immediate medical and counseling support to the assaulted agent, file incident reports, review security footage, and evaluate front desk safety barriers.",
+      "B) Tell the front desk agent to move past the incident and return to work immediately.",
+      "C) Blame the front desk agent for provoking the hotel guest.",
+      "D) Keep the incident confidential and take no security action."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "Post-Incident Response": "Immediate operational, medical, and psychological support provided following workplace violence or assault.",
+      "Safety Barrier Evaluation": "Assessing physical security infrastructure to protect frontline employees from hostile guest interactions."
+    },
+    "strategic_rationale": "Workplace violence incidents require immediate employee support (EAP/medical), thorough security reviews, and physical safety enhancements.",
+    "example": "HR provided immediate EAP counseling and paid leave to the assaulted desk agent while upgrading front desk security panic buttons and glass partitions.",
+    "competency": "Workplace Safety & Employee Well-being"
+  },
+  {
+    "id": 150,
+    "type": "Knowledge Item",
+    "chapter": "Strategic HR Audit & Compliance",
+    "scenario": "What is the primary objective of conducting a comprehensive periodic HR Compliance Audit across multiple hotel properties?",
+    "options": [
+      "A) Proactively identify and correct operational legal risks, policy gaps, and recordkeeping discrepancies before federal or state agency inspections occur.",
+      "B) Find reasons to terminate underperforming hotel department managers.",
+      "C) Reduce employee benefit offerings to cut corporate operational overhead.",
+      "D) Eliminate property-level HR management positions."
+    ],
+    "correct": 0,
+    "key_terms": {
+      "HR Compliance Audit": "Systematic review of HR policies, records, and practices to ensure adherence to employment laws.",
+      "Proactive Risk Mitigation": "Identifying and resolving legal exposure areas before regulatory penalties or lawsuits occur."
+    },
+    "strategic_rationale": "Periodic HR compliance audits proactively uncover recordkeeping and policy discrepancies, mitigating legal exposure before regulatory inspections.",
+    "example": "HR executed an annual multi-property compliance audit reviewing I-9 files, FLSA classifications, and OSHA logs, correcting gaps proactively.",
+    "competency": "Critical Evaluation & Risk Management"
+  }
+]
