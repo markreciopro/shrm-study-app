@@ -107,7 +107,7 @@ st.markdown(f"""
 # Key Terms Accordion
 key_terms = q.get("key_terms", {})
 if key_terms:
-    with st.expander("📚 View Key HR Terms & Legal Definitions for this Scenario"):
+    with st.expander("📚 View SHRM Key Terms & Legal Definitions for this Scenario"):
         for term, definition in key_terms.items():
             st.markdown(f"**• {term}:** {definition}")
 
@@ -145,7 +145,7 @@ if st.session_state.submitted:
     if rat:
         st.markdown(f"**Strategic Rationale:** {rat}")
     if ex:
-        st.markdown(f"**Hospitality Example:** {ex}")
+        st.markdown(f"**Hospitality Application / Example:** {ex}")
     if not rat and not ex:
         st.write(exp_text)
 
