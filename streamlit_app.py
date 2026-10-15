@@ -1,17 +1,16 @@
 import streamlit as st
 import json
-import random
-
-# --- LOGO URL ---
-LOGO_URL = "https://raw.githubusercontent.com/markreciopro/marec_insights/main/Gemini_Generated_Image_noss7snoss7snoss.jpg"
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
-    page_title="MAREC Insights | SHRM-CP HR Odyssey",
-    page_icon=LOGO_URL,
+    page_title="MAREC Insights | SHRM-CP Hospitality HR Odyssey",
+    page_icon="🦜",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# --- LOGO URL ---
+LOGO_URL = "https://raw.githubusercontent.com/markreciopro/marec_insights/main/Gemini_Generated_Image_noss7snoss7snoss.jpg"
 
 # --- LOAD QUESTION BANK ---
 @st.cache_data
@@ -44,15 +43,15 @@ with st.sidebar:
     st.markdown("### 🏆 Exam Prep Navigator")
     
     # Calculate Rank based on XP
-    rank = "Junior HR Analyst"
+    rank = "Junior Hospitality HR Analyst"
     if st.session_state.xp >= 500:
-        rank = "HR Generalist"
-    if st.session_state.xp >= 1200:
-        rank = "Senior HR Business Partner"
-    if st.session_state.xp >= 2500:
-        rank = "Strategic HR Director"
-    if st.session_state.xp >= 4000:
-        rank = "Chief Human Resources Officer (CHRO)"
+        rank = "Resort HR Generalist"
+    if st.session_state.xp >= 1500:
+        rank = "Senior Hospitality HR Business Partner"
+    if st.session_state.xp >= 3500:
+        rank = "Director of Hospitality Human Capital"
+    if st.session_state.xp >= 6000:
+        rank = "VP / Chief Human Resources Officer (CHRO)"
 
     st.write(f"**Consultant Rank:** {rank}")
     st.write(f"**XP Accumulated:** `:green[{st.session_state.xp} XP]`")
@@ -68,15 +67,15 @@ with st.sidebar:
         st.session_state.submitted = False
         st.rerun()
 
-# --- MAIN CONTENT AREA ---
-col_logo, col_title = st.columns([1, 5])
+# --- MAIN HEADER BANNER WITH LOGO ---
+col_logo, col_title = st.columns([1, 4])
 with col_logo:
-    st.image(LOGO_URL, width=110)
+    st.image(LOGO_URL, width=130)
 with col_title:
     st.markdown("""
-        <div style="background-color:#1E293B; padding:15px 20px; border-radius:10px; color:white; border-left: 6px solid #3B82F6;">
-            <h1 style="margin:0; color:#F8FAFC; font-size: 26px;">MAREC Insights | SHRM-CP Hospitality HR Odyssey</h1>
-            <p style="margin:5px 0 0 0; color:#94A3B8; font-size: 14px;">Workforce Intelligence & Behavioral Competency Simulator (Hospitality Industry Focus)</p>
+        <div style="background-color:#1E293B; padding:15px; border-radius:10px; color:white; border-left: 6px solid #3B82F6;">
+            <h1 style="margin:0; color:#F8FAFC; font-size: 26px;">MAREC Insights | SHRM-CP HR Odyssey</h1>
+            <p style="margin:5px 0 0 0; color:#94A3B8;">150-Question Hospitality Workforce Intelligence & Behavioral Simulator</p>
         </div>
     """, unsafe_allow_html=True)
 
@@ -93,15 +92,14 @@ if st.session_state.current_index >= total_questions:
 q = questions[st.session_state.current_index]
 
 # Header Info
-st.subheader(f"Question {st.session_state.current_index + 1} of {total_questions}: {q.get('chapter', 'General HR')}")
+st.subheader(f"Question {st.session_state.current_index + 1} of {total_questions}: {q.get('chapter', 'Hospitality HR Operations')}")
 st.caption(f"**Item Type:** `{q.get('type', 'Knowledge Item')}`")
-
-st.info(f"🎯 **Core Competency:** {q.get('competency', 'HR Expertise')}")
+st.info(f"🎯 **Core SHRM Competency:** {q.get('competency', 'HR Expertise')}")
 
 # Scenario Box
 st.markdown(f"""
     <div style="background-color:#0F172A; padding:20px; border-radius:8px; border:1px solid #334155; margin-bottom:20px;">
-        <h4 style="color:#60A5FA; margin-top:0;">Scenario Challenge:</h4>
+        <h4 style="color:#60A5FA; margin-top:0;">Hospitality Scenario Challenge:</h4>
         <p style="color:#E2E8F0; font-size:16px; line-height:1.6;">{q.get('scenario', '')}</p>
     </div>
 """, unsafe_allow_html=True)
@@ -131,15 +129,18 @@ with col1:
 
 if st.session_state.submitted:
     st.markdown("---")
+    st.markdown("### 💡 Strategic Rationale & Hospitality Application")
     
-    # Strategic Rationale
-    if "strategic_rationale" in q:
-        st.markdown("### 🎯 Strategic Rationale")
-        st.write(q.get("strategic_rationale"))
-        
-    # Operational Explanation
-    st.markdown("### 💡 Explanation")
-    st.write(q.get("explanation", "No explanation available."))
+    rat = q.get("strategic_rationale", "")
+    ex = q.get("example", "")
+    exp_text = q.get("explanation", "")
+    
+    if rat:
+        st.markdown(f"**Strategic Rationale:** {rat}")
+    if ex:
+        st.markdown(f"**Hospitality Example:** {ex}")
+    if not rat and not ex:
+        st.write(exp_text)
 
 # Navigation Buttons
 st.markdown("---")
