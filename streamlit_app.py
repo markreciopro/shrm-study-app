@@ -2,10 +2,13 @@ import streamlit as st
 import json
 import random
 
+# --- LOGO URL ---
+LOGO_URL = "https://raw.githubusercontent.com/markreciopro/marec_insights/main/Gemini_Generated_Image_noss7snoss7snoss.jpg"
+
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
     page_title="MAREC Insights | SHRM-CP HR Odyssey",
-    page_icon="🦜",
+    page_icon=LOGO_URL,
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -37,6 +40,7 @@ total_questions = len(questions)
 
 # --- SIDEBAR NAVIGATION & GAMIFICATION ---
 with st.sidebar:
+    st.image(LOGO_URL, use_container_width=True)
     st.markdown("### 🏆 Exam Prep Navigator")
     
     # Calculate Rank based on XP
@@ -65,12 +69,18 @@ with st.sidebar:
         st.rerun()
 
 # --- MAIN CONTENT AREA ---
-st.markdown("""
-    <div style="background-color:#1E293B; padding:20px; border-radius:10px; color:white; margin-bottom:20px; border-left: 6px solid #3B82F6;">
-        <h1 style="margin:0; color:#F8FAFC;">MAREC Insights | SHRM-CP HR Odyssey</h1>
-        <p style="margin:5px 0 0 0; color:#94A3B8;">Workforce Intelligence & Behavioral Competency Simulator</p>
-    </div>
-""", unsafe_allow_html=True)
+col_logo, col_title = st.columns([1, 5])
+with col_logo:
+    st.image(LOGO_URL, width=110)
+with col_title:
+    st.markdown("""
+        <div style="background-color:#1E293B; padding:15px 20px; border-radius:10px; color:white; border-left: 6px solid #3B82F6;">
+            <h1 style="margin:0; color:#F8FAFC; font-size: 26px;">MAREC Insights | SHRM-CP Hospitality HR Odyssey</h1>
+            <p style="margin:5px 0 0 0; color:#94A3B8; font-size: 14px;">Workforce Intelligence & Behavioral Competency Simulator (Hospitality Industry Focus)</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("<br>", unsafe_allow_html=True)
 
 if not questions:
     st.warning("No questions found. Please check `questions.json` formatting in your GitHub repository.")
@@ -121,7 +131,14 @@ with col1:
 
 if st.session_state.submitted:
     st.markdown("---")
-    st.markdown("### 💡 Strategic Rationale & Explanation")
+    
+    # Strategic Rationale
+    if "strategic_rationale" in q:
+        st.markdown("### 🎯 Strategic Rationale")
+        st.write(q.get("strategic_rationale"))
+        
+    # Operational Explanation
+    st.markdown("### 💡 Explanation")
     st.write(q.get("explanation", "No explanation available."))
 
 # Navigation Buttons
