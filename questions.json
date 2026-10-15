@@ -1,8 +1,8 @@
 [
   {
     "type": "Situational Judgment Item (SJI)",
-    "chapter": "Total Rewards & Retention",
-    "scenario": "A chief human resource officer is evaluating the company's total rewards strategy after experiencing higher than normal turnover due to a global shift in work styles. Which approach should the company take?",
+    "chapter": "Total Rewards & Retention Strategy",
+    "scenario": "A chief human resource officer is evaluating the company's total rewards strategy after experiencing higher than normal turnover due to a global shift in work styles. Which approach should the company take to retain and attract talent?",
     "options": [
       "A) Reinforce strict operational policies and procedures.",
       "B) Participate in competitive salary and benefits surveys.",
@@ -10,7 +10,133 @@
       "D) Eliminate voluntary benefit plans to cut overhead."
     ],
     "correct": 2,
-    "explanation": "Modern workforce demands require flexibility to maintain engagement and reduce turnover.",
+    "explanation": "Offering flexible schedule options directly addresses the root cause of modern turnover while maintaining market competitiveness and employee autonomy.",
     "competency": "Relationship Management & Consultation"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Corporate Social Responsibility",
+    "scenario": "Which action should an HR manager take to implement a newly developed corporate social responsibility and sustainability program?",
+    "options": [
+      "A) Advise department managers to independently develop programs for their teams.",
+      "B) Issue an all-employee memo outlining the program and general expectations.",
+      "C) Work collaboratively with key stakeholders to implement a strategy across the organization.",
+      "D) Hire an external consultant exclusively to lead the program rollout."
+    ],
+    "correct": 2,
+    "explanation": "Strategic HR initiatives require cross-functional stakeholder alignment and organization-wide integration rather than isolated department efforts or simple top-down memos.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Strategic Onboarding & Orientation",
+    "scenario": "A resort property is preparing to onboard a large cohort of seasonal staff for peak convention season. According to SHRM best practice, what is the most critical priority to establish trust and productivity early?",
+    "options": [
+      "A) Ensure a structured onboarding plan is in place.",
+      "B) Assign mandatory weekend overtime shifts without prior notice.",
+      "C) Delay health benefits registration until contract completion.",
+      "D) Streamline orientation to get staff working on the floor faster."
+    ],
+    "correct": 0,
+    "explanation": "A well-structured onboarding plan provides seasonal staff with the clarity, tools, and support needed to build organizational trust and drive peak performance.",
+    "competency": "People / HR Expertise"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Employee Grievances & Performance Management",
+    "scenario": "An HR recruiter with four years of strong performance experiences a sudden drop in productivity following a passed-over promotion. The recruiter feels the process was unfair and that their manager is unreceptive. What should the HR manager do to resolve the issue?",
+    "options": [
+      "A) Inform the recruiter's supervisor of the concerns and facilitate a structured meeting between them.",
+      "B) Send the recruiter links to self-paced skill development modules.",
+      "C) Immediately reassign the recruiter to a different department manager.",
+      "D) Issue a formal written warning regarding declining email response times."
+    ],
+    "correct": 0,
+    "explanation": "Bridging communication between the employee and manager directly targets the root cause of the grievance, restoring trust and supporting mutual accountability.",
+    "competency": "Ethical Practice & Consultation"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Workforce Intelligence & Metrics",
+    "scenario": "When calculating standard Cost-Per-Hire (CPH) for an organizational audit, which expense should be excluded from recruitment costs?",
+    "options": [
+      "A) Recruiter salaries and administrative overhead.",
+      "B) Third-party job board posting fees.",
+      "C) Estimated lost productivity of team during vacancy.",
+      "D) External executive search firm fees."
+    ],
+    "correct": 2,
+    "explanation": "Standard CPH calculations focus exclusively on direct internal and external sourcing costs rather than indirect productivity losses.",
+    "competency": "Business Acumen & Analytics"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "U.S. Employment Law & Compliance",
+    "scenario": "Under the Fair Labor Standards Act (FLSA), which primary criteria must be met for an employee to be classified as exempt under the administrative exemption?",
+    "options": [
+      "A) Paid on a salary basis at or above the threshold and primary duty includes exercise of discretion regarding matters of significance.",
+      "B) Works more than 40 hours per week and manages at least two full-time employees.",
+      "C) Holds a bachelor's degree in business administration or related field.",
+      "D) Receives commission pay exceeding 50% of total annual compensation."
+    ],
+    "correct": 0,
+    "explanation": "FLSA administrative exemption requires meeting the minimum salary threshold, salary basis test, and primary duties involving independent discretion on significant business matters.",
+    "competency": "HR Expertise (Workplace)"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Diversity, Equity & Inclusion (DEI)",
+    "scenario": "During a leadership meeting, department heads express concern that a newly proposed diversity mentoring initiative will lead to reverse discrimination. How should the HR Director respond?",
+    "options": [
+      "A) Cancel the initiative to avoid leadership friction and potential employee discontent.",
+      "B) Present data on how inclusive talent development drives innovation, organizational agility, and market performance.",
+      "C) Mandate that all managers attend compulsory diversity sensitivity training immediately.",
+      "D) Limit program participation strictly to entry-level individual contributors."
+    ],
+    "correct": 1,
+    "explanation": "Effective HR leaders use data-driven business cases to align leadership, demystify DEI programs, and highlight organizational benefits.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Talent Acquisition Strategy",
+    "scenario": "Which sourcing technique involves identifying potential high-performing candidates who are not actively seeking new employment?",
+    "options": [
+      "A) Passive candidate recruitment",
+      "B) Inbound applicant tracking",
+      "C) Contingent labor staffing",
+      "D) Open job fair sourcing"
+    ],
+    "correct": 0,
+    "explanation": "Passive candidate sourcing targets employed professionals who aren't active job seekers, expanding talent quality for critical roles.",
+    "competency": "People / Talent Sourcing"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Change Management & Organizational Design",
+    "scenario": "An organization is restructuring its operations team to move from regional units to centralized cross-functional project squads. Frontline supervisors are resisting the transition. What is HR's best initial action?",
+    "options": [
+      "A) Escalate supervisor resistance directly to executive leadership for disciplinary review.",
+      "B) Conduct stakeholder alignment sessions with supervisors to clarify role expectations and address specific operational concerns.",
+      "C) Postpone the restructuring rollout by 12 months.",
+      "D) Issue standardized job descriptions without holding discussion meetings."
+    ],
+    "correct": 1,
+    "explanation": "Change management requires active stakeholder engagement and clear communication to resolve ambiguity and foster buy-in.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Risk Management & Safety",
+    "scenario": "Under OSHA guidelines, what is the primary obligation of the General Duty Clause for employers?",
+    "options": [
+      "A) Provide a workplace free from recognized hazards that cause or are likely to cause death or serious physical harm.",
+      "B) Provide comprehensive medical coverage for all workplace injuries regardless of fault.",
+      "C) Inspect all physical facilities on a bi-weekly basis with certified external inspectors.",
+      "D) Restrict employees from working shifts exceeding 10 hours per day."
+    ],
+    "correct": 0,
+    "explanation": "OSHA's General Duty Clause mandates that employers maintain a workplace free from recognized safety and health hazards.",
+    "competency": "Workplace Risk Management"
   }
 ]
