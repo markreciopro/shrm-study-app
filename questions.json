@@ -12,11 +12,12 @@
     ],
     "correct": 1,
     "key_terms": {
-      "Shift Differential": "Additional compensation paid to employees for working undesirable, non-standard, or high-demand shifts (e.g., weekends, holidays).",
-      "Total Rewards Strategy": "The holistic combination of direct pay, indirect benefits, flexible work environments, and career growth opportunities offered to employees."
+      "Shift Differential": "Additional financial compensation paid to employees working non-standard, undesirable, or high-demand operational shifts (e.g., weekends, night audits, holidays).",
+      "Total Rewards Strategy": "The holistic framework combining direct compensation, indirect benefits, flexible work environments, and career growth opportunities offered by an organization.",
+      "Stay Interviews": "Structured retention conversations conducted with current high-performing staff to identify drivers of engagement and prevent voluntary turnover."
     },
     "strategic_rationale": "Directly addressing schedule predictability and offering financial incentives for peak shifts solves core workplace dissatisfaction drivers without permanently inflating fixed base labor costs.",
-    "example": "A 1,000-room Las Vegas resort implemented a shift-bidding mobile app paired with a $3.50/hr weekend premium for guest room attendants, reducing 90-day seasonal turnover from 38% to 14%.",
+    "example": "A 1,000-room resort implemented a shift-bidding mobile app paired with a $3.50/hr weekend premium for room attendants, reducing 90-day seasonal turnover from 38% to 14%.",
     "competency": "Total Rewards & Relationship Management"
   },
   {
@@ -32,10 +33,11 @@
     ],
     "correct": 1,
     "key_terms": {
-      "National Labor Relations Act (NLRA)": "Federal law protecting employee rights to organize, form unions, and engage in protected concerted activities.",
-      "TIPS Rule": "Management guidelines during union campaigns prohibiting Threats, Interrogations, Promises, and Surveillance."
+      "National Labor Relations Act (NLRA)": "Federal legislation protecting employee rights to organize, form unions, and engage in protected concerted activities.",
+      "TIPS Rule": "Management guidelines during union campaigns prohibiting Threats, Interrogations, Promises, and Surveillance.",
+      "Section 7 Rights": "Statutory rights under the NLRA granting employees the right to engage in concerted activities for mutual aid or protection."
     },
-    "strategic_rationale": "Section 7 of the NLRA protects employees' rights to engage in concerted activity during non-working time in non-working areas. Management must comply strictly with TIPS rules.",
+    "strategic_rationale": "Section 7 of the NLRA protects employees' rights to engage in concerted activity during non-working time in non-working areas. Management must comply strictly with TIPS rules to avoid Unfair Labor Practice (ULP) charges.",
     "example": "HR conducts a mandatory 15-minute briefing for shift managers at a convention hotel to review legal boundaries after a front desk supervisor mistakenly banned union conversations in the staff lounge.",
     "competency": "Workplace / Employee & Labor Relations"
   },
@@ -52,8 +54,9 @@
     ],
     "correct": 0,
     "key_terms": {
-      "Form I-9 Compliance": "Mandatory federal verification of identity and employment authorization for every newly hired employee.",
-      "Cohort Onboarding": "Onboarding new hires in structured groups to accelerate orientation, team bonding, and standard compliance training."
+      "Form I-9 Compliance": "Mandatory federal verification of identity and employment authorization for every newly hired employee under the Immigration Reform and Control Act (IRCA).",
+      "Cohort Onboarding": "Onboarding new hires in structured groups to accelerate orientation, team bonding, and standard compliance training.",
+      "Time-to-Productivity": "The duration required for a newly hired employee to reach full operational efficiency and output standards."
     },
     "strategic_rationale": "Structured onboarding accelerates time-to-productivity while ensuring full compliance with federal immigration laws (Form I-9 completed within 3 days of hire).",
     "example": "A regional resort group uses mobile-first preboarding for background checks and digital forms, allowing day-one orientation to focus 100% on safety protocols, POS training, and live guest shadowing.",
@@ -72,8 +75,9 @@
     ],
     "correct": 0,
     "key_terms": {
-      "Diversity, Equity & Inclusion (DEI)": "Organizational frameworks ensuring fair treatment, access, and advancement opportunities for all demographic groups.",
-      "Talent Pipeline": "A structured source of qualified candidates developed internally or externally to fill future leadership vacancies."
+      "Diversity, Equity & Inclusion (DEI) Programs": "Organizational frameworks designed to ensure fair treatment, access, advancement, and psychological safety for all demographic groups.",
+      "Talent Pipeline": "A structured source of qualified internal or external candidates developed to fill future leadership vacancies.",
+      "Sponsorship Programs": "Career development initiatives where senior leaders actively advocate for high-potential diverse talent."
     },
     "strategic_rationale": "Building structured internal pathways and addressable skill-development frameworks fosters sustainable equity without exposing the organization to unlawful quota claims.",
     "example": "A luxury hotel brand launched a 'Frontline-to-Supervisor' program providing tuition reimbursement and cross-department shadow rotations, increasing internal promotion rates among minority employees by 40%.",
@@ -90,10 +94,11 @@
       "C) Rely solely on warning labels on chemical bottles without providing physical PPE.",
       "D) Allow employees to choose whether or not to wear protective gear based on personal preference."
     ],
-    "correct": 1,
+    "correct": 0,
     "key_terms": {
-      "Occupational Safety and Health Act (OSHA)": "Federal legislation ensuring safe and healthful working conditions for working men and women.",
-      "Personal Protective Equipment (PPE)": "Protective gear worn to minimize exposure to hazards that cause serious workplace injuries and illnesses."
+      "Occupational Safety and Health Act (OSHA)": "Federal legislation ensuring safe and healthful working conditions for working men and women by setting and enforcing workplace standards.",
+      "Personal Protective Equipment (PPE)": "Specialized gear worn to minimize worker exposure to hazards that cause serious workplace injuries and illnesses.",
+      "Safety Data Sheet (SDS)": "OSHA-mandated document detailing chemical hazard classifications, safe handling, and emergency response procedures."
     },
     "strategic_rationale": "OSHA mandates that employers evaluate hazards, supply necessary protective equipment at no cost to staff, and train workers on proper use and safety protocols.",
     "example": "A hotel culinary division provides custom-fit slip-resistant boots, chemical aprons, and eye protection goggles alongside quarterly Safety Data Sheet (SDS) refresher training for dishwashing staff.",
@@ -112,10 +117,11 @@
     ],
     "correct": 0,
     "key_terms": {
-      "Fair Labor Standards Act (FLSA)": "Federal law establishing minimum wage, overtime pay eligibility, and recordkeeping standards.",
-      "Administrative Exemption": "FLSA exemption requiring salary-basis pay above statutory limits and primary duties involving independent judgment on significant business operations."
+      "Fair Labor Standards Act (FLSA)": "Federal law establishing minimum wage, overtime pay eligibility, child labor limits, and recordkeeping standards.",
+      "Administrative Exemption": "FLSA exemption requiring salary-basis pay above statutory limits and primary duties involving independent judgment on significant business operations.",
+      "Salary Basis Test": "Requirement that exempt employees receive a predetermined, fixed salary that cannot be reduced based on quality or quantity of work."
     },
-    "strategic_rationale": "Misclassifying non-exempt employees as exempt creates massive legal liabilities under FLSA for back overtime pay and statutory penalties.",
+    "strategic_rationale": "Misclassifying non-exempt employees as exempt creates massive legal liabilities under FLSA for back overtime pay, liquidated damages, and statutory penalties.",
     "example": "A 400-room luxury resort reclassified its Duty Managers from 'Exempt' to 'Non-Exempt Hourly' after an audit revealed their primary daily duties consisted of manual check-ins rather than strategic administration.",
     "competency": "HR Expertise (Workplace Compliance)"
   },
@@ -132,8 +138,9 @@
     ],
     "correct": 1,
     "key_terms": {
-      "Interest-Based Negotiation": "Conflict resolution method focusing on underlying needs, concerns, and shared goals rather than hard positions.",
-      "Service Level Agreement (SLA)": "Commitment between internal departments defining performance standards and delivery timelines."
+      "Interest-Based Negotiation": "Conflict resolution method focusing on underlying needs, concerns, and shared goals rather than hard adversarial positions.",
+      "Service Level Agreement (SLA)": "Formal commitment between internal departments defining performance standards, hand-off protocols, and delivery timelines.",
+      "HR Business Partner (HRBP)": "Strategic HR professional partnering with executive business leaders to align human capital strategies with organizational goals."
     },
     "strategic_rationale": "Interest-based negotiation targets operational root causes and shared goals rather than surface-level disputes, restoring cross-departmental collaboration.",
     "example": "HR facilitated a joint workflow mapping workshop between kitchen and banquet leadership, establishing clear cut-off times that reduced guest service delays by 90%.",
@@ -153,7 +160,8 @@
     "correct": 2,
     "key_terms": {
       "Cost-Per-Hire (CPH)": "Metric measuring total internal and external financial costs incurred to fill an open organizational position.",
-      "Opportunity Cost": "The loss of potential gain from other alternatives when one alternative is chosen (e.g., unrented room revenue)."
+      "Opportunity Cost": "The loss of potential financial gain from other alternatives when one alternative is chosen (e.g., unrented room revenue).",
+      "Internal Recruiting Costs": "Expenses associated with internal recruiters, applicant tracking software, and employee referral bonuses."
     },
     "strategic_rationale": "Standard CPH calculations include direct internal and external recruiting costs but exclude indirect business costs like lost revenue or productivity.",
     "example": "An HR director calculated a $2,400 CPH for front office managers by aggregating ad spend, ATS fees, and internal recruiter hours while omitting estimated vacancy losses.",
@@ -173,7 +181,8 @@
     "correct": 1,
     "key_terms": {
       "Change Management": "Structured approach to transitioning individuals, teams, and organizations from a current state to a desired future state.",
-      "Peer Champions": "Respected frontline employees who advocate for and support co-workers through new operational transitions."
+      "Peer Champions": "Respected frontline employees who advocate for, model, and support co-workers through new operational transitions.",
+      "WIIFM (What's In It For Me)": "Core change management principle ensuring employees understand the personal benefits of adopting new tools or processes."
     },
     "strategic_rationale": "Effective change management overcomes user friction through practical peer support, clear demonstration of personal benefits, and accessible training.",
     "example": "A casino culinary department selected respected lead line cooks as peer champions to assist co-workers, achieving 98% mobile app adoption within two weeks.",
@@ -193,7 +202,8 @@
     "correct": 1,
     "key_terms": {
       "Family and Medical Leave Act (FMLA)": "Federal law granting eligible employees up to 12 weeks of unpaid, job-protected leave per year for qualifying family and medical reasons.",
-      "Job-Protected Leave": "Statutory right allowing employees to return to their same or an equivalent position upon concluding approved leave."
+      "Job-Protected Leave": "Statutory right allowing employees to return to their same or an equivalent position upon concluding approved leave.",
+      "Health Benefit Maintenance": "FMLA requirement compelling employers to maintain group health coverage during leave under the same conditions as active work."
     },
     "strategic_rationale": "Eligible employees under FMLA are legally entitled to up to 12 workweeks of unpaid, job-protected leave for qualifying family medical care.",
     "example": "An HR specialist processed FMLA paperwork for a resort supervisor, coordinating temporary coverage through cross-trained guest service agents to protect the employee's role.",
@@ -213,7 +223,8 @@
     "correct": 0,
     "key_terms": {
       "Central Tendency Error": "Performance rating error where raters evaluate all employees near the midpoint of a scale to avoid making difficult performance distinctions.",
-      "Performance Calibration": "Executive review sessions designed to align manager grading standards and eliminate bias across departments."
+      "Performance Calibration": "Executive review sessions designed to align manager grading standards, eliminate bias, and normalize performance distributions.",
+      "Leniency Error": "Rating error where managers grade all subordinates overly favorably regardless of actual performance."
     },
     "strategic_rationale": "Central Tendency Error occurs when managers rate all subordinates near the midpoint of a scale to avoid making performance distinctions or giving tough feedback.",
     "example": "HR conducted mandatory performance calibration sessions for hotel department heads to establish clear, objective performance tiering.",
@@ -2565,7 +2576,10 @@
     "chapter": "Performance Management & Termination Risk",
     "scenario": "A hotel department manager wants to terminate a poor-performing employee immediately without documentation, citing 'employment-at-will.' How should HR advise?",
     "options": [
-      "A"
+      "A) Advise against instant termination, establish a documented progressive discipline process, and review legal exceptions to employment-at-will.",
+      "B) Approve the immediate termination since at-will employment applies everywhere.",
+      "C) Tell the manager to cut the employee's hours until they resign.",
+      "D) Transfer the employee to another department without documentation."
     ],
     "correct": 0,
     "key_terms": {
@@ -2636,7 +2650,7 @@
     "example": "HR partnered with legal counsel to respond to an EEOC charge of discrimination, submitting structured personnel records and selection data.",
     "competency": "HR Compliance & Workplace Law"
   },
-  {
+ {
     "id": 133,
     "type": "Situational Judgment Item (SJI)",
     "chapter": "Strategic Workforce Planning & Turnover",
@@ -2650,7 +2664,8 @@
     "correct": 0,
     "key_terms": {
       "Operational Stabilization": "Immediate tactical response deploying cross-trained staff and fast-tracking recruitment during unexpected vacancies.",
-      "Stay Interviews": "Targeted retention conversations with key current staff to identify and mitigate flight risks."
+      "Stay Interviews": "Targeted retention conversations with key current staff to identify and mitigate flight risks.",
+      "Contingent Deployment": "Quickly mobilizing internal and external talent resources to cover critical operational gaps."
     },
     "strategic_rationale": "Unexpected peak turnover requires rapid operational stabilization through cross-training, expedited hiring, and immediate stay interviews.",
     "example": "HR deployed corporate trainers to cover front desk shifts, fast-tracked recruiter phone screens, and held stay interviews to retain remaining leads.",
@@ -2670,7 +2685,8 @@
     "correct": 0,
     "key_terms": {
       "Appreciative Inquiry": "Organizational development framework focusing on strengths, positive core values, and future possibilities.",
-      "Strengths-Based Development": "Management approach building upon existing organizational capabilities rather than dwelling exclusively on weaknesses."
+      "Strengths-Based Development": "Management approach building upon existing organizational capabilities rather than dwelling exclusively on weaknesses.",
+      "Organizational Development (OD)": "Planned, system-wide effort to increase organizational effectiveness through behavioral science interventions."
     },
     "strategic_rationale": "Appreciative Inquiry drives positive cultural change by mobilizing organizational strengths and collaborative visioning.",
     "example": "HR used Appreciative Inquiry workshops with hotel department heads to scale successful guest service practices across all property units.",
@@ -2690,7 +2706,8 @@
     "correct": 0,
     "key_terms": {
       "Weingarten Scope": "Legal limitation restricting union representation rights exclusively to investigatory interviews carrying disciplinary risk.",
-      "Routine Performance Meeting": "Standard supervisory coaching session not carrying investigatory disciplinary risk."
+      "Routine Performance Meeting": "Standard supervisory coaching session not carrying investigatory disciplinary risk.",
+      "Union Rights": "Statutory parameters governing collective bargaining protections in the workplace."
     },
     "strategic_rationale": "Weingarten rights do not apply to routine performance discussions or coaching sessions that do not carry investigatory disciplinary risk.",
     "example": "HR correctly advised a banquet manager that routine weekly feedback check-ins do not trigger mandatory Weingarten representation rights.",
@@ -2710,7 +2727,8 @@
     "correct": 0,
     "key_terms": {
       "Minor Worker Record Retention": "FLSA mandate requiring employers to retain minor employment records until the worker turns 18.",
-      "Child Labor Compliance": "Strict federal documentation rules governing employment records for youth workers."
+      "Child Labor Compliance": "Strict federal documentation rules governing employment records for youth workers.",
+      "Statutory Retention Window": "Mandatory timeframe for storing payroll and age verification records."
     },
     "strategic_rationale": "FLSA regulations mandate that employment records for workers under 18 be retained until they reach age 18.",
     "example": "HR configured HRIS archiving rules to retain minor gift shop personnel files until each youth worker attained legal adulthood.",
@@ -2730,7 +2748,8 @@
     "correct": 0,
     "key_terms": {
       "Ergonomic Intervention": "Equipment or procedural redesign eliminating physical strain and musculoskeletal injury risks.",
-      "Mechanical Assistive Devices": "Tools reducing physical exertion required for repetitive operational tasks."
+      "Mechanical Assistive Devices": "Tools reducing physical exertion required for repetitive operational tasks.",
+      "Musculoskeletal Health": "Preventing repetitive motion injuries among frontline hospitality staff."
     },
     "strategic_rationale": "Ergonomic tools and long-handled attachments eliminate awkward physical postures and protect housekeeping staff from repetitive strain injuries.",
     "example": "A hotel resort purchased long-handled swivel scrubbing brushes for housekeeping, reducing physical strain reports by 55%.",
@@ -2750,7 +2769,8 @@
     "correct": 0,
     "key_terms": {
       "Ethnocentric Staffing": "International staffing approach favoring parent-country nationals for key leadership roles abroad.",
-      "Polycentric Staffing": "Staffing model employing host-country nationals to manage local foreign subsidiaries."
+      "Polycentric Staffing": "Staffing model employing host-country nationals to manage local foreign subsidiaries.",
+      "Parent-Country National": "Expatriate employee originating from the nation where corporate headquarters is located."
     },
     "strategic_rationale": "An ethnocentric staffing strategy relies on parent-country nationals to ensure tight home-office strategic control in foreign properties.",
     "example": "A luxury hotel brand utilized an ethnocentric staffing model during initial international property launches to ensure brand standard alignment.",
@@ -2770,7 +2790,8 @@
     "correct": 0,
     "key_terms": {
       "Targeted Retraining": "Skill remediation addressing specific performance gaps identified after new software rollouts.",
-      "Performance Benchmarks": "Measurable standards defining acceptable error rates and operational accuracy."
+      "Performance Benchmarks": "Measurable standards defining acceptable error rates and operational accuracy.",
+      "System Audit": "Investigating technical logs to determine whether user error or software glitches caused operational issues."
     },
     "strategic_rationale": "Addressing PMS-related performance drops requires system auditing, targeted retraining, and measurable accuracy benchmarks rather than punitive action.",
     "example": "HR audited PMS cash logs, identified software navigation errors, provided 1-on-1 coaching, and restored cash drawer accuracy.",
@@ -2790,7 +2811,8 @@
     "correct": 0,
     "key_terms": {
       "USERRA Pension Protection": "Statutory requirement treating military leave as continuous service for retirement benefit vesting and accrual.",
-      "Continuous Employment Fiction": "Legal principle ensuring military service members do not lose retirement seniority or vesting rights."
+      "Continuous Employment Fiction": "Legal principle ensuring military service members do not lose retirement seniority or vesting rights.",
+      "Retirement Benefit Accrual": "Accumulation of pension credits during approved military service absences."
     },
     "strategic_rationale": "USERRA mandates that military service be treated as uninterrupted employment for pension plan vesting and benefit accrual.",
     "example": "HR coordinated with 401(k) plan administrators to credit continuous service vesting for an engineer returning from military deployment.",
@@ -2810,7 +2832,8 @@
     "correct": 0,
     "key_terms": {
       "Leadership Development Academy": "Structured accelerated training program preparing high-potential internal talent for executive roles.",
-      "Rotational Assignments": "Strategic job rotation exposing future leaders to diverse property operations (F&B, Rooms, Finance)."
+      "Rotational Assignments": "Strategic job rotation exposing future leaders to diverse property operations (F&B, Rooms, Finance).",
+      "Executive Succession Planning": "Proactively identifying and developing internal successors for critical leadership vacancies."
     },
     "strategic_rationale": "Building an accelerated Leadership Academy with cross-functional property rotations resolves executive succession shortages sustainably.",
     "example": "A hotel group launched a GM Leadership Academy, increasing internal executive succession readiness from 20% to 75% in three years.",
@@ -2830,7 +2853,8 @@
     "correct": 0,
     "key_terms": {
       "English-Only Rule": "Workplace policy requiring employees to speak English, permissible only under strict business necessity.",
-      "Business Necessity (Title VII)": "Legitimate operational requirement essential to safe and efficient business performance."
+      "Business Necessity (Title VII)": "Legitimate operational requirement essential to safe and efficient business performance.",
+      "National Origin Discrimination": "Unlawful employment bias based on an individual's ancestry, birthplace, or linguistic characteristics."
     },
     "strategic_rationale": "Title VII permits English-only rules only when justified by documented business necessity, such as safety communications or operational coordination.",
     "example": "A resort implemented a narrow English-only rule strictly for safety-critical kitchen communications, ensuring full EEOC compliance.",
@@ -2850,7 +2874,8 @@
     "correct": 0,
     "key_terms": {
       "Absenteeism Analytics": "Data-driven evaluation identifying attendance patterns, peak absence days, and operational drivers.",
-      "Attendance Policy Enforcement": "Equitable application of corrective attendance standards combined with root-cause analysis."
+      "Attendance Policy Enforcement": "Equitable application of corrective attendance standards combined with root-cause analysis.",
+      "Burnout Mitigation": "Addressing underlying workload and scheduling factors contributing to unscheduled absences."
     },
     "strategic_rationale": "Analyzing attendance data uncovers root causes (burnout, scheduling) and ensures equitable, consistent attendance policy enforcement.",
     "example": "HR analytics revealed Monday/Friday absences correlated with rigid shift scheduling; introducing flexible shift-bidding reduced weekend absenteeism by 45%.",
@@ -2870,7 +2895,8 @@
     "correct": 0,
     "key_terms": {
       "ERISA Fiduciary Duty": "Legal obligation requiring plan administrators to act solely in the financial interest of plan participants.",
-      "Exclusive Benefit Rule": "ERISA mandate requiring plan assets to be used exclusively for participant benefits and reasonable expenses."
+      "Exclusive Benefit Rule": "ERISA mandate requiring plan assets to be used exclusively for participant benefits and reasonable expenses.",
+      "Prudent Expert Rule": "Fiduciary standard requiring plan administrators to manage investments with care, skill, and prudence."
     },
     "strategic_rationale": "ERISA fiduciaries are legally bound to act solely in the interest of plan participants with undivided loyalty and prudence.",
     "example": "Hotel benefit trustees reviewed investment fund options quarterly, ensuring all selections aligned with strict ERISA fiduciary standards.",
@@ -2890,7 +2916,8 @@
     "correct": 0,
     "key_terms": {
       "Stakeholder Engagement": "Proactive communication and collaboration with external community and municipal groups impacted by business projects.",
-      "Community Relations": "Strategic organizational efforts building trust and alignment with local civic stakeholders."
+      "Community Relations": "Strategic organizational efforts building trust and alignment with local civic stakeholders.",
+      "Impact Mitigation": "Collaborative problem-solving addressing negative externalities associated with corporate expansion."
     },
     "strategic_rationale": "Major property developments require proactive community stakeholder engagement, transparent impact studies, and collaborative problem-solving.",
     "example": "Corporate leadership partnered with HR to host community town halls, modifying spa parking plans to resolve municipal traffic concerns successfully.",
@@ -2910,7 +2937,8 @@
     "correct": 0,
     "key_terms": {
       "FLSA Minimum Age": "Federal rule establishing 14 as the minimum employment age for non-agricultural work with hour and task limits.",
-      "Non-Agricultural Youth Employment": "Statutory rules governing employment conditions for minor workers in hospitality and retail."
+      "Non-Agricultural Youth Employment": "Statutory rules governing employment conditions for minor workers in hospitality and retail.",
+      "Hazardous Duty Prohibitions": "FLSA rules barring minor workers from operating dangerous machinery or performing hazardous tasks."
     },
     "strategic_rationale": "FLSA establishes 14 as the minimum age for non-agricultural employment, subject to strict hour caps and hazardous duty prohibitions.",
     "example": "Resort HR ensured seasonal gift shop employment offers complied with federal minimum age and working hour restrictions for 14-year-old youth.",
@@ -2930,7 +2958,8 @@
     "correct": 0,
     "key_terms": {
       "SMART Goals": "Goal-setting framework ensuring objectives are Specific, Measurable, Achievable, Relevant, and Time-bound.",
-      "Performance Alignment": "Connecting individual and team goals directly to organizational key performance indicators."
+      "Performance Alignment": "Connecting individual and team goals directly to organizational key performance indicators.",
+      "Objective Key Results (OKRs)": "Goal-setting methodology tracking organizational and individual performance targets."
     },
     "strategic_rationale": "Vague goals fail to drive performance; converting objectives into SMART goals ensures clarity, accountability, and measurable results.",
     "example": "HR coached property managers to rewrite vague goals into SMART targets, raising guest satisfaction score tracking accuracy by 40%.",
@@ -2950,7 +2979,8 @@
     "correct": 0,
     "key_terms": {
       "Defensible Merit System": "Formal, objective, and consistently applied performance-based pay system satisfying Equal Pay Act exceptions.",
-      "Objective Performance Criteria": "Measurable standards eliminating manager bias in merit pay determinations."
+      "Objective Performance Criteria": "Measurable standards eliminating manager bias in merit pay determinations.",
+      "Pay Equity Compliance": "Adherence to statutory standards justifying wage variances under federal law."
     },
     "strategic_rationale": "To justify pay differentials under Equal Pay Act merit exceptions, employers must prove the merit system is formal, objective, and consistently applied.",
     "example": "HR audited resort merit pay increases, verifying that all variances were supported by documented, objective annual performance review scores.",
@@ -2970,7 +3000,8 @@
     "correct": 0,
     "key_terms": {
       "Post-Incident Response": "Immediate operational, medical, and psychological support provided following workplace violence or assault.",
-      "Safety Barrier Evaluation": "Assessing physical security infrastructure to protect frontline employees from hostile guest interactions."
+      "Safety Barrier Evaluation": "Assessing physical security infrastructure to protect frontline employees from hostile guest interactions.",
+      "Trauma Support": "Providing EAP and psychological first aid to employees following physical or verbal assaults."
     },
     "strategic_rationale": "Workplace violence incidents require immediate employee support (EAP/medical), thorough security reviews, and physical safety enhancements.",
     "example": "HR provided immediate EAP counseling and paid leave to the assaulted desk agent while upgrading front desk security panic buttons and glass partitions.",
@@ -2990,10 +3021,10 @@
     "correct": 0,
     "key_terms": {
       "HR Compliance Audit": "Systematic review of HR policies, records, and practices to ensure adherence to employment laws.",
-      "Proactive Risk Mitigation": "Identifying and resolving legal exposure areas before regulatory penalties or lawsuits occur."
+      "Proactive Risk Mitigation": "Identifying and resolving legal exposure areas before regulatory penalties or lawsuits occur.",
+      "Regulatory Preparedness": "Maintaining audit-ready documentation across I-9 files, wage records, and safety logs."
     },
     "strategic_rationale": "Periodic HR compliance audits proactively uncover recordkeeping and policy discrepancies, mitigating legal exposure before regulatory inspections.",
     "example": "HR executed an annual multi-property compliance audit reviewing I-9 files, FLSA classifications, and OSHA logs, correcting gaps proactively.",
     "competency": "Critical Evaluation & Risk Management"
   }
-]
