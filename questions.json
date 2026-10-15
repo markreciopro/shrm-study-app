@@ -1,1 +1,16 @@
-
+[
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Total Rewards & Retention",
+    "scenario": "A chief human resource officer is evaluating the company's total rewards strategy after experiencing higher than normal turnover due to a global shift in work styles. Which approach should the company take?",
+    "options": [
+      "A) Reinforce strict operational policies and procedures.",
+      "B) Participate in competitive salary and benefits surveys.",
+      "C) Offer flexible schedule and hybrid work options where feasible.",
+      "D) Eliminate voluntary benefit plans to cut overhead."
+    ],
+    "correct": 2,
+    "explanation": "Modern workforce demands require flexibility to maintain engagement and reduce turnover.",
+    "competency": "Relationship Management & Consultation"
+  }
+]
