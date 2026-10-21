@@ -12,7 +12,6 @@ st.set_page_config(
 
 # Sidebar Branding & Navigation
 with st.sidebar:
-    # MAREC Insights Lighthouse & Parrot Branding
     st.image(
         "https://marec.site/assets/img/logo.png",
         use_column_width=True,
@@ -22,7 +21,7 @@ with st.sidebar:
     st.caption("Specialized for Luxury Resorts, Casinos & Hospitality Operations")
     st.markdown("---")
     st.write("**Consultant Rank:** Senior HR Strategist")
-    st.write("**XP Accumulated:** 150 XP")
+    st.write("**Target Credential:** SHRM-CP / CRME")
 
 # Load Question Bank
 @st.cache_data
@@ -36,9 +35,9 @@ def load_questions():
 questions = load_questions()
 
 # Display Total Loaded Items
-st.sidebar.metric(label="Total Loaded Items", value=f"{len(questions)} Questions")
+st.sidebar.metric(label="Total Question Bank", value=f"{len(questions)} Questions")
 st.sidebar.markdown("---")
-st.sidebar.write("**Team Morale:** 100% 🌟")
+st.sidebar.write("**System Status:** Operational 🌟")
 
 # Main App Header
 st.markdown("""
@@ -51,9 +50,8 @@ st.markdown("""
 st.write("")
 
 if not questions:
-    st.error("⚠️ `questions.json` not found or empty! Please make sure your question bank is uploaded to GitHub.")
+    st.error("⚠️ `questions.json` not found or empty! Please verify the repository files.")
 else:
-    # State management for quiz
     if 'q_index' not in st.session_state:
         st.session_state.q_index = 0
     if 'submitted' not in st.session_state:
@@ -61,7 +59,6 @@ else:
 
     current_q = questions[st.session_state.q_index]
 
-    # Progress bar & header info
     progress_val = (st.session_state.q_index + 1) / len(questions)
     st.progress(progress_val, text=f"Exam Progress: Question {st.session_state.q_index + 1} of {len(questions)}")
 
@@ -72,7 +69,7 @@ else:
     st.markdown("### 🏨 Hospitality Scenario Challenge:")
     st.info(current_q['scenario'])
 
-    # Audio Reader Feature (Engaging TTS)
+    # Audio Reader Feature (TTS)
     if st.button("🔊 Read Scenario Aloud"):
         try:
             tts = gTTS(text=current_q['scenario'], lang='en', slow=False)
@@ -81,7 +78,7 @@ else:
             audio_fp.seek(0)
             st.audio(audio_fp, format='audio/mp3', autoplay=True)
         except Exception as e:
-            st.warning("Audio note: Ensure `gTTS` is included in your repository's `requirements.txt` file.")
+            st.warning("Audio synthesis note: Ensure `gTTS` is installed in `requirements.txt`.")
 
     # Options Form
     form_key = f"form_{st.session_state.q_index}"
@@ -109,7 +106,6 @@ else:
             st.markdown("### 💡 Strategic Rationale & Explanation")
             st.write(current_q['explanation'])
 
-            # Memory Anchor Card
             st.markdown("### 🧠 Memory Anchor (Keep It Simple!)")
             st.success(current_q.get('memory_anchor', 'Think of this like balancing resort shifts during peak guest arrivals.'))
 
