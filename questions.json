@@ -2,91 +2,2547 @@
   {
     "id": 1,
     "type": "Knowledge Item",
-    "competency": "Business Acumen",
-    "domain": "Behavioral Competencies",
-    "cluster": "Business Cluster",
-    "chapter": "SHRM BASK: Financial Metrics & Revenue Analytics",
-    "scenario": "In hotel operational analytics, which financial metric measures total room revenue divided by total available rooms over a given period?",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Communication",
+    "competency": "Communication",
+    "topic": "Communication",
+    "scenario": "Restating what a speaker said in your own words to confirm understanding is called:",
     "options": [
-      "RevPAR (Revenue Per Available Room)",
-      "ADR (Average Daily Rate)",
-      "GOPPAR (Gross Operating Profit Per Room)",
-      "Occupancy Percentage"
+      "A) Paraphrasing (reflective listening)",
+      "B) Filtering",
+      "C) Rationalizing",
+      "D) Deflecting"
     ],
     "correct": 0,
-    "explanation": "RevPAR combines occupancy rate and average daily rate to evaluate overall room inventory yield performance.",
-    "memory_anchor": "🏨 RevPAR = Room Revenue ÷ Total Available Rooms (or Occupancy % × ADR)."
+    "explanation": "Paraphrasing is an active listening technique that confirms understanding and shows attention.",
+    "memory_anchor": "🔁 Say it back to make sure you got it."
   },
   {
     "id": 2,
     "type": "Situational Judgment Item (SJI)",
-    "competency": "Workplace Safety & Risk Management",
-    "domain": "HR Knowledge Domains",
-    "cluster": "Workplace Domain",
-    "chapter": "SHRM BASK: OSHA General Duty & Energy Control",
-    "scenario": "A 1,500-room luxury hotel casino experiences an OSHA inspection after a facilities maintenance technician suffers an electrical burn injury while servicing an exhaust fan without applying Lockout/Tagout (LOTO) protocols. The inspector cites the General Duty Clause (Section 5(a)(1)). How should HR lead the response?",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "The CFO asks HR to reduce labor costs 10% during a slow season. What should HR do FIRST?",
     "options": [
-      "Audit all equipment energy-control procedures, mandate LOTO retraining for facilities staff, and strictly enforce documented safety compliance.",
-      "Claim full legal immunity because safety protocols were reviewed during initial employee onboarding two years prior.",
-      "Reclassify all maintenance staff as independent contractors to transfer liability away from resort operations.",
-      "Issue an oral reprimand to the technician and close the internal incident file."
+      "A) Lay off the newest employees in every department",
+      "B) Analyze demand forecasts, scheduling, hours, and productivity data and model options before recommending",
+      "C) Freeze all pay and benefits immediately",
+      "D) Ask each manager to cut 10% without guidance"
     ],
-    "correct": 0,
-    "explanation": "Under Section 5(a)(1) of the OSH Act, employers must furnish a workplace free from recognized hazards likely to cause death or serious physical harm. HR must conduct immediate energy control audits, retrain workers, and enforce compliance.",
-    "memory_anchor": "⚠️ OSHA Response = Audit energy controls, retrain staff, and strictly enforce documented LOTO compliance."
+    "correct": 1,
+    "explanation": "A sound recommendation is grounded in data and modeled scenarios, rather than across-the-board cuts that can hurt service and morale.",
+    "memory_anchor": "🧮 Model first, cut second."
   },
   {
     "id": 3,
     "type": "Knowledge Item",
-    "competency": "Total Rewards",
-    "domain": "HR Knowledge Domains",
-    "cluster": "Organization Domain",
-    "chapter": "SHRM BASK: Job Evaluation Methods",
-    "scenario": "Which quantitative job evaluation technique breaks positions down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns point values to determine internal pay grades?",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Relationship Management",
+    "competency": "Relationship Management",
+    "topic": "Relationship Management",
+    "scenario": "Interest-based (principled) negotiation emphasizes:",
     "options": [
-      "Point-Factor Method",
-      "Whole-Job Ranking Method",
-      "Job Classification Method",
-      "Market Pricing Benchmarking"
+      "A) Making the first extreme offer",
+      "B) Winning at all costs",
+      "C) Focusing on underlying interests rather than fixed positions",
+      "D) Avoiding discussion of needs"
     ],
-    "correct": 0,
-    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish objective internal relative worth.",
-    "memory_anchor": "🔢 Point-Factor Method = Scoring positions quantitatively based on compensable factors."
+    "correct": 2,
+    "explanation": "Interest-based negotiation seeks solutions that satisfy underlying interests of all parties.",
+    "memory_anchor": "🔑 Interests, not positions, unlock the deal."
   },
   {
     "id": 4,
-    "type": "Situational Judgment Item (SJI)",
-    "competency": "Global & Cultural Effectiveness",
-    "domain": "Behavioral Competencies",
-    "cluster": "Interpersonal Cluster",
-    "chapter": "SHRM BASK: Title VII & National Origin Discrimination",
-    "scenario": "A resort General Manager mandates a strict 'English-Only at all times' policy covering all work time and non-work break periods across the housekeeping department, claiming it improves guest service. Housekeepers complain to HR. What is HR's best legal and strategic directive?",
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "Which situation is the clearest example of a conflict of interest for an HR director?",
     "options": [
-      "Advise the GM to rescind the blanket policy immediately, explaining that English-only rules during non-work breaks presumptively violate Title VII national origin protections unless strictly required by narrow business necessity during job performance.",
-      "Uphold the GM's policy to maintain operational consistency and guest experience standards.",
-      "Require non-English speaking employees to take unpaid English language courses off property.",
-      "Transfer complaining housekeepers to night-shift cleaning duties to eliminate guest interaction."
+      "A) Choosing the lowest-cost qualified payroll vendor after a competitive bid",
+      "B) Attending a free industry webinar offered to all HR members",
+      "C) Recommending a vendor based on documented selection criteria",
+      "D) Selecting a benefits broker owned by her brother-in-law without disclosing the relationship"
     ],
-    "correct": 0,
-    "explanation": "EEOC guidance establishes that blanket rules requiring employees to speak only English at all times, including non-work break periods, violate Title VII national origin protections unless justified by strict business necessity during job performance.",
-    "memory_anchor": "🗣️ English-Only = Rescind blanket rules; Title VII protects native languages during non-work break time."
+    "correct": 3,
+    "explanation": "A conflict of interest exists when personal relationships or interests could improperly influence professional decisions. Disclosure and recusal are the standard remedies.",
+    "memory_anchor": "🪞 If a relative could benefit, disclose it and step back."
   },
   {
     "id": 5,
-    "type": "Knowledge Item",
-    "competency": "Learning & Development",
-    "domain": "HR Knowledge Domains",
-    "cluster": "People Domain",
-    "chapter": "SHRM BASK: ADDIE Instructional Design Model",
-    "scenario": "In instructional design and workforce development, which phase of the ADDIE model involves setting learning objectives, constructing curriculum architecture, selecting delivery methods, and designing module assessments?",
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Technology Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Technology Management",
+    "scenario": "A manager wants HR to review applicants' personal social media accounts. What is the BEST advice?",
     "options": [
-      "Design Phase",
-      "Analysis Phase",
-      "Development Phase",
-      "Implementation Phase"
+      "A) Consult legal counsel and establish a consistent, job-related process that avoids protected-class information",
+      "B) Allow managers to look at anything they want",
+      "C) Ban all use of the internet in hiring",
+      "D) Have friends of managers look privately"
     ],
     "correct": 0,
-    "explanation": "The Design phase of ADDIE establishes learning objectives, target audience requirements, course sequencing, media selection, and test design based on analysis findings.",
-    "memory_anchor": "📐 ADDIE Design = Constructing the curriculum blueprint and learning objectives before creating training materials."
+    "explanation": "Social media screening can expose protected information and legal risk, so it needs consistency, job relevance, and counsel review.",
+    "memory_anchor": "👀 If you look, do it consistently - and know what you saw."
+  },
+  {
+    "id": 6,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Employee Engagement & Retention",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee Engagement & Retention",
+    "scenario": "A top-performing sous chef says she is considering an offer from a competitor. What is the BEST first step?",
+    "options": [
+      "A) Counter immediately with a large raise",
+      "B) Hold a stay conversation to understand her needs and review market pay and growth options",
+      "C) Tell her to decide by the end of the week",
+      "D) Ignore the comment until she resigns"
+    ],
+    "correct": 1,
+    "explanation": "Understanding motivations lets HR tailor retention actions beyond pay alone.",
+    "memory_anchor": "👩‍🍳 Understand the 'why' before opening the wallet."
+  },
+  {
+    "id": 7,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: HR in a Global Context",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "HR in a Global Context",
+    "scenario": "In international staffing, what is a third-country national (TCN)?",
+    "options": [
+      "A) An employee who is a citizen of the parent company's country",
+      "B) An employee who is a citizen of the host country",
+      "C) An employee who is a citizen of neither the parent company's country nor the host country",
+      "D) An employee on a short domestic business trip"
+    ],
+    "correct": 2,
+    "explanation": "Parent-country nationals, host-country nationals, and third-country nationals are the three standard categories.",
+    "memory_anchor": "🌍 Third country = neither HQ nor host."
+  },
+  {
+    "id": 8,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Communication",
+    "competency": "Communication",
+    "topic": "Communication",
+    "scenario": "A property is closing seasonally and some employees will be laid off. What is the BEST communication approach?",
+    "options": [
+      "A) Post a notice on the break-room board",
+      "B) Let supervisors share whatever information they have",
+      "C) Wait until the last day to inform staff",
+      "D) Meet with affected employees privately, give a clear and consistent message with next steps and support, and follow with written details"
+    ],
+    "correct": 3,
+    "explanation": "Consistent, timely, and empathetic communication reduces confusion and risk.",
+    "memory_anchor": "📬 Same message, same day, with a support plan."
+  },
+  {
+    "id": 9,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Critical Evaluation",
+    "competency": "Critical Evaluation",
+    "topic": "Critical Evaluation",
+    "scenario": "A department leader says turnover is due to low pay. What should HR do before agreeing?",
+    "options": [
+      "A) Analyze turnover by tenure, manager, schedule, and pay position to test the claim",
+      "B) Raise pay immediately",
+      "C) Dismiss the claim without data",
+      "D) Survey only the leader's direct reports"
+    ],
+    "correct": 0,
+    "explanation": "Competing explanations should be tested with segmented data before action.",
+    "memory_anchor": "🧩 Test the theory before spending the budget."
+  },
+  {
+    "id": 10,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Employee & Labor Relations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee & Labor Relations",
+    "scenario": "A union files a grievance alleging a supervisor violated the seniority provisions of the collective bargaining agreement. What should HR do?",
+    "options": [
+      "A) Ignore the grievance until arbitration",
+      "B) Review the contract language, investigate the facts, and respond within the contractual timelines",
+      "C) Deny the grievance without review",
+      "D) Ask the supervisor to resolve it privately"
+    ],
+    "correct": 1,
+    "explanation": "Grievances must be handled according to the CBA's procedures and timelines.",
+    "memory_anchor": "📜 The contract is the rulebook - follow its clock."
+  },
+  {
+    "id": 11,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Risk Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Risk Management",
+    "scenario": "Workers' compensation is best described as:",
+    "options": [
+      "A) A system that requires proof of employer negligence",
+      "B) A federal wage replacement program for all unemployed workers",
+      "C) A no-fault insurance system that provides benefits for work-related injuries and illnesses",
+      "D) Voluntary coverage for large employers"
+    ],
+    "correct": 2,
+    "explanation": "Workers' compensation provides medical and wage benefits regardless of fault, in exchange for limits on employee lawsuits.",
+    "memory_anchor": "🩹 Hurt at work? Covered - no fault needed."
+  },
+  {
+    "id": 12,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Talent Acquisition",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Talent Acquisition",
+    "scenario": "A hiring manager wants to ask a candidate whether she plans to have children because the role includes long hours. What should HR advise?",
+    "options": [
+      "A) Ask the question but document the answer",
+      "B) Ask only female candidates",
+      "C) Ask the question after the offer is made",
+      "D) Avoid the question, explain the legal risk, and focus on job-related requirements and availability for all candidates"
+    ],
+    "correct": 3,
+    "explanation": "Questions about family plans can lead to sex discrimination claims. Ask all candidates about job-related requirements such as scheduling availability.",
+    "memory_anchor": "🙅 Ask about the job, not the family plans."
+  },
+  {
+    "id": 13,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Employee Engagement & Retention",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee Engagement & Retention",
+    "scenario": "A survey shows night-shift employees at a casino are far less engaged than day-shift employees. What should HR do FIRST?",
+    "options": [
+      "A) Share the results, hold focus groups with night-shift employees, and develop an action plan with them",
+      "B) Dismiss the results as normal for night work",
+      "C) Give night-shift employees a one-time bonus",
+      "D) Transfer all night-shift managers"
+    ],
+    "correct": 0,
+    "explanation": "Engagement efforts work best when employees help identify issues and solutions.",
+    "memory_anchor": "🌙 Ask the night crew what they need."
+  },
+  {
+    "id": 14,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "A new front-office manager is unsure how to address a team member's repeated tardiness. How should HR help?",
+    "options": [
+      "A) Handle the discipline for the manager",
+      "B) Coach the manager on documenting issues, setting expectations, and following the progressive discipline policy",
+      "C) Tell the manager to ignore the issue",
+      "D) Recommend immediate termination"
+    ],
+    "correct": 1,
+    "explanation": "HR builds manager capability by coaching and providing tools while keeping ownership of performance with the manager.",
+    "memory_anchor": "🧰 Give managers the toolkit, not the job."
+  },
+  {
+    "id": 15,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Total Rewards",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Total Rewards",
+    "scenario": "Which of the following is an example of indirect compensation?",
+    "options": [
+      "A) Base salary",
+      "B) Hourly wages",
+      "C) Employer-sponsored health insurance",
+      "D) Commission"
+    ],
+    "correct": 2,
+    "explanation": "Direct compensation is cash pay; indirect compensation includes benefits such as health insurance.",
+    "memory_anchor": "🏥 Benefits = indirect; paycheck = direct."
+  },
+  {
+    "id": 16,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Workforce Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Workforce Management",
+    "scenario": "In workforce planning, a gap analysis compares:",
+    "options": [
+      "A) Current payroll with last year's payroll",
+      "B) Turnover with absenteeism",
+      "C) Job descriptions with job titles",
+      "D) Forecasted workforce demand with available workforce supply"
+    ],
+    "correct": 3,
+    "explanation": "Gap analysis identifies shortages or surpluses by comparing future demand with projected supply.",
+    "memory_anchor": "🕳️ Demand minus supply = the gap."
+  },
+  {
+    "id": 17,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Structure of the HR Function",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Structure of the HR Function",
+    "scenario": "Which term describes the number of direct reports a manager supervises?",
+    "options": [
+      "A) Span of control",
+      "B) Chain of command",
+      "C) Unity of command",
+      "D) Departmentalization"
+    ],
+    "correct": 0,
+    "explanation": "Span of control refers to the number of employees who report directly to a manager.",
+    "memory_anchor": "🕸️ Span = how many people one manager can reach."
+  },
+  {
+    "id": 18,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "Which description best matches the SHRM behavioral competency Consultation?",
+    "options": [
+      "A) The ability to interpret information to make business decisions and recommendations",
+      "B) The ability to provide guidance to organizational stakeholders",
+      "C) The ability to integrate core values, integrity, and accountability",
+      "D) The ability to value and consider the perspectives and backgrounds of all parties"
+    ],
+    "correct": 1,
+    "explanation": "Consultation is about advising and guiding stakeholders to achieve business outcomes.",
+    "memory_anchor": "💬 Consultation = trusted advisor, not order-taker."
+  },
+  {
+    "id": 19,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Communication",
+    "competency": "Communication",
+    "topic": "Communication",
+    "scenario": "Which description best matches the SHRM behavioral competency Communication?",
+    "options": [
+      "A) The ability to provide guidance to organizational stakeholders",
+      "B) The ability to understand and apply information to contribute to strategy",
+      "C) The ability to effectively exchange information with stakeholders",
+      "D) The ability to value the perspectives and backgrounds of all parties"
+    ],
+    "correct": 2,
+    "explanation": "Communication means exchanging information clearly and appropriately with stakeholders in multiple directions.",
+    "memory_anchor": "📣 Communication = a two-way street."
+  },
+  {
+    "id": 20,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Relationship Management",
+    "competency": "Relationship Management",
+    "topic": "Relationship Management",
+    "scenario": "An employee complains that a coworker takes credit for her work. What should HR do?",
+    "options": [
+      "A) Tell her to ignore it",
+      "B) Discipline the coworker without investigation",
+      "C) Reassign her to another team",
+      "D) Coach her to address it directly with specific examples and offer mediation if needed"
+    ],
+    "correct": 3,
+    "explanation": "HR should empower employees to resolve interpersonal issues and facilitate when necessary.",
+    "memory_anchor": "🪪 Give credit where it's due - and coach people to ask for it."
+  },
+  {
+    "id": 21,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "Which employers must file an annual EEO-1 report?",
+    "options": [
+      "A) Private employers with 100 or more employees (and certain federal contractors with 50 or more)",
+      "B) All employers with 10 or more employees",
+      "C) Only government agencies",
+      "D) Only employers with unions"
+    ],
+    "correct": 0,
+    "explanation": "The EEO-1 report collects workforce demographic data from covered private employers and federal contractors.",
+    "memory_anchor": "📊 EEO-1: 100+ employees (50+ for contractors)."
+  },
+  {
+    "id": 22,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "An employee reports harassment by a supervisor but asks you to keep it confidential and do nothing. What is the BEST response?",
+    "options": [
+      "A) Agree to do nothing to preserve trust",
+      "B) Explain that you cannot promise full confidentiality, that the company must act once aware, and that you will limit sharing to those who need to know",
+      "C) Immediately announce the complaint to the whole team",
+      "D) Tell the employee to file an external charge first"
+    ],
+    "correct": 1,
+    "explanation": "Once HR is aware of potential harassment, the organization must investigate. HR should be honest about limits on confidentiality while protecting privacy as much as possible.",
+    "memory_anchor": "🚨 You can promise discretion, not silence."
+  },
+  {
+    "id": 23,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "While you are evaluating bids for a staffing contract, a vendor offers you a complimentary weekend at a resort. What should you do?",
+    "options": [
+      "A) Accept it because the contract has not been awarded yet",
+      "B) Accept it but pay for your own meals",
+      "C) Decline the offer and report it according to the gift and conflict-of-interest policy",
+      "D) Accept it and award the contract to someone else to appear neutral"
+    ],
+    "correct": 2,
+    "explanation": "Gifts during a selection process can compromise objectivity. Decline and disclose per policy.",
+    "memory_anchor": "🎁 A free weekend during a bid is not free."
+  },
+  {
+    "id": 24,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Total Rewards",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Total Rewards",
+    "scenario": "An employee earns $48,000 and the pay range midpoint is $50,000. What is the employee's compa-ratio?",
+    "options": [
+      "A) 1.04",
+      "B) 0.48",
+      "C) 1.00",
+      "D) 0.96"
+    ],
+    "correct": 3,
+    "explanation": "Compa-ratio = employee pay ÷ range midpoint = 48,000 ÷ 50,000 = 0.96.",
+    "memory_anchor": "📐 Pay over midpoint: below 1.0 = below midpoint."
+  },
+  {
+    "id": 25,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Global & Cultural Effectiveness",
+    "competency": "Global & Cultural Effectiveness",
+    "topic": "Global & Cultural Effectiveness",
+    "scenario": "Several employees request time off for different cultural and religious holidays during peak season. What is the BEST approach?",
+    "options": [
+      "A) Create a fair, neutral process, such as advance requests and shift swaps, applied consistently to all",
+      "B) Approve only the holidays most employees observe",
+      "C) Deny all holiday requests during peak season",
+      "D) Let each supervisor decide informally"
+    ],
+    "correct": 0,
+    "explanation": "A consistent, neutral process respects diverse needs while meeting business requirements (and legal accommodation duties).",
+    "memory_anchor": "📆 One fair calendar process for everyone."
+  },
+  {
+    "id": 26,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Leadership & Navigation",
+    "competency": "Leadership & Navigation",
+    "topic": "Leadership & Navigation",
+    "scenario": "A resort director involves the leadership team in major decisions, listens to their input, and builds ownership before finalizing a plan. Which leadership style is this?",
+    "options": [
+      "A) Autocratic",
+      "B) Participative (democratic)",
+      "C) Laissez-faire",
+      "D) Transactional"
+    ],
+    "correct": 1,
+    "explanation": "Participative leaders solicit input and share decision-making to increase buy-in. Autocratic leaders decide alone, laissez-faire leaders step back, and transactional leaders rely on rewards and corrections.",
+    "memory_anchor": "🤝 Participative = a round table, not a throne."
+  },
+  {
+    "id": 27,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Leadership & Navigation",
+    "competency": "Leadership & Navigation",
+    "topic": "Leadership & Navigation",
+    "scenario": "Which description best matches the SHRM behavioral competency Leadership & Navigation?",
+    "options": [
+      "A) The ability to understand and apply information to contribute to the organization's strategic plan",
+      "B) The ability to effectively exchange information with stakeholders",
+      "C) The ability to direct and contribute to initiatives and processes within the organization",
+      "D) The ability to interpret information to make business decisions and recommendations"
+    ],
+    "correct": 2,
+    "explanation": "Leadership & Navigation is about directing and contributing to initiatives and processes, including change, vision, and influence. The other options describe Business Acumen, Communication, and Critical Evaluation.",
+    "memory_anchor": "🧭 Leadership & Navigation = steering the ship: you set direction and move people and processes with you."
+  },
+  {
+    "id": 28,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Talent Acquisition",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Talent Acquisition",
+    "scenario": "By when must an employer complete Section 2 of Form I-9 for a new hire?",
+    "options": [
+      "A) Before the job offer is extended",
+      "B) Within 30 calendar days",
+      "C) By the end of the employee's first pay period",
+      "D) Within three business days of the employee's first day of work"
+    ],
+    "correct": 3,
+    "explanation": "Employees complete Section 1 by their first day; the employer completes Section 2 within three business days of the start date.",
+    "memory_anchor": "🗂️ I-9: Section 1 by day 1, Section 2 within 3 business days."
+  },
+  {
+    "id": 29,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Leadership & Navigation",
+    "competency": "Leadership & Navigation",
+    "topic": "Leadership & Navigation",
+    "scenario": "After three organizational changes in one year, employees at your hotel appear exhausted and morale is falling. Leadership wants to launch a fourth initiative next month. What should HR advise?",
+    "options": [
+      "A) Acknowledge change fatigue, prioritize and sequence initiatives, and communicate how they connect",
+      "B) Launch the initiative on schedule and tell staff to adapt",
+      "C) Cancel all initiatives permanently",
+      "D) Offer a one-time pizza party and proceed unchanged"
+    ],
+    "correct": 0,
+    "explanation": "Leaders manage change capacity by prioritizing, sequencing, and explaining how initiatives connect. Ignoring fatigue risks disengagement and failure of the change.",
+    "memory_anchor": "🔋 Too many changes drain the battery - pace the rollout."
+  },
+  {
+    "id": 30,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "Which action best describes HR acting as an internal consultant?",
+    "options": [
+      "A) Processing payroll corrections on request",
+      "B) Diagnosing a business problem with managers and recommending solutions aligned to organizational goals",
+      "C) Enforcing policy without discussion",
+      "D) Delegating all people decisions to line managers"
+    ],
+    "correct": 1,
+    "explanation": "Internal consultants diagnose problems, advise, and partner with managers so that solutions fit business needs.",
+    "memory_anchor": "🩺 Diagnose before you prescribe."
+  },
+  {
+    "id": 31,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "A department head insists on firing an employee for having a 'bad attitude.' What is the BEST consultative response?",
+    "options": [
+      "A) Approve the termination to support the manager",
+      "B) Refuse to discuss the matter until legal reviews it",
+      "C) Ask for specific, documented behaviors and examples, review policy and prior feedback, and discuss coaching or progressive discipline",
+      "D) Tell the manager to give the employee a final warning verbally"
+    ],
+    "correct": 2,
+    "explanation": "HR should translate vague complaints into job-related, documented behaviors and ensure consistency and fairness before action.",
+    "memory_anchor": "🔍 'Attitude' needs examples before it needs consequences."
+  },
+  {
+    "id": 32,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "A manager wants to outsource housekeeping because the vendor's hourly rate is lower. What should HR do?",
+    "options": [
+      "A) Support the move because the hourly rate is lower",
+      "B) Reject outsourcing on principle",
+      "C) Ask the vendor to guarantee savings in writing and decide",
+      "D) Analyze total cost, service quality, legal risk, and employee impact before recommending"
+    ],
+    "correct": 3,
+    "explanation": "Outsourcing decisions require a total-cost and risk view, including quality, compliance, and workforce effects, not just wage rates.",
+    "memory_anchor": "🧾 The cheapest rate is not always the lowest total cost."
+  },
+  {
+    "id": 33,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Critical Evaluation",
+    "competency": "Critical Evaluation",
+    "topic": "Critical Evaluation",
+    "scenario": "Evidence-based HR practice primarily involves:",
+    "options": [
+      "A) Combining the best available research, organizational data, and professional judgment",
+      "B) Following current industry trends",
+      "C) Relying on the most senior leader's opinion",
+      "D) Copying competitors' practices"
+    ],
+    "correct": 0,
+    "explanation": "Evidence-based HR integrates research, internal data, stakeholder input, and professional judgment.",
+    "memory_anchor": "📚 Evidence-based = research + data + judgment."
+  },
+  {
+    "id": 34,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Employee Engagement & Retention",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee Engagement & Retention",
+    "scenario": "What is the main purpose of a stay interview?",
+    "options": [
+      "A) To document an employee's resignation",
+      "B) To learn why current employees stay and what might cause them to leave",
+      "C) To conduct disciplinary investigations",
+      "D) To decide who will be terminated"
+    ],
+    "correct": 1,
+    "explanation": "Stay interviews proactively identify retention drivers and risks while employees are still engaged.",
+    "memory_anchor": "🏠 Ask before they pack their bags."
+  },
+  {
+    "id": 35,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "In a SWOT analysis, a competitor opening a large new resort next door is classified as a:",
+    "options": [
+      "A) Weakness",
+      "B) Strength",
+      "C) Threat",
+      "D) Opportunity"
+    ],
+    "correct": 2,
+    "explanation": "Threats and opportunities are external factors. A new competitor is an external force that could harm the business.",
+    "memory_anchor": "🏗️ Outside + harmful = Threat; inside + helpful = Strength."
+  },
+  {
+    "id": 36,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "When an employee requests a reasonable accommodation under the ADA, the employer should:",
+    "options": [
+      "A) Automatically deny requests that cost money",
+      "B) Require the employee to choose the accommodation",
+      "C) Terminate the employee if the job cannot be performed as-is",
+      "D) Engage in an interactive process to identify effective accommodations"
+    ],
+    "correct": 3,
+    "explanation": "The interactive process is a good-faith dialogue to identify accommodations that do not impose undue hardship.",
+    "memory_anchor": "🤝 ADA = talk it through (interactive process)."
+  },
+  {
+    "id": 37,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Communication",
+    "competency": "Communication",
+    "topic": "Communication",
+    "scenario": "A manager softens negative performance data before sending it upward so it looks more favorable. Which communication barrier is this?",
+    "options": [
+      "A) Filtering",
+      "B) Selective perception",
+      "C) Information overload",
+      "D) Semantic confusion"
+    ],
+    "correct": 0,
+    "explanation": "Filtering is when a sender manipulates information so that it is perceived more favorably by the receiver.",
+    "memory_anchor": "🧂 Filtering strains the facts out of the message."
+  },
+  {
+    "id": 38,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Global & Cultural Effectiveness",
+    "competency": "Global & Cultural Effectiveness",
+    "topic": "Global & Cultural Effectiveness",
+    "scenario": "Believing that one's own culture is superior to others is known as:",
+    "options": [
+      "A) Cultural relativism",
+      "B) Ethnocentrism",
+      "C) Acculturation",
+      "D) Polycentrism"
+    ],
+    "correct": 1,
+    "explanation": "Ethnocentrism judges other cultures by one's own standards and can hinder global effectiveness.",
+    "memory_anchor": "🧱 Ethnocentric = my way is the only way."
+  },
+  {
+    "id": 39,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Global & Cultural Effectiveness",
+    "competency": "Global & Cultural Effectiveness",
+    "topic": "Global & Cultural Effectiveness",
+    "scenario": "A manager is frustrated that an employee from a high-power-distance culture never disagrees in meetings. What should HR suggest?",
+    "options": [
+      "A) Tell the employee to speak up or face discipline",
+      "B) Assume the employee has no opinions",
+      "C) Help the manager understand the cultural norm and create alternative ways for input, such as one-on-one conversations",
+      "D) Exclude the employee from meetings"
+    ],
+    "correct": 2,
+    "explanation": "Cultural awareness helps managers adapt practices so that all voices are heard.",
+    "memory_anchor": "🗣️ Different cultures speak up differently - build more than one door."
+  },
+  {
+    "id": 40,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Risk Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Risk Management",
+    "scenario": "A kitchen employee slips on a wet floor and is injured during a shift. What should HR do?",
+    "options": [
+      "A) Ask the employee to keep working",
+      "B) Wait to see if the employee files a claim",
+      "C) Discourage reporting to avoid increasing insurance costs",
+      "D) Ensure medical care, document and report the incident per requirements, and investigate to prevent recurrence"
+    ],
+    "correct": 3,
+    "explanation": "Prompt care, accurate recordkeeping and reporting, and root-cause investigation are essential. Discouraging reporting is unlawful.",
+    "memory_anchor": "🧽 Care, record, fix the cause."
+  },
+  {
+    "id": 41,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Relationship Management",
+    "competency": "Relationship Management",
+    "topic": "Relationship Management",
+    "scenario": "Which description best matches the SHRM behavioral competency Relationship Management?",
+    "options": [
+      "A) The ability to manage interactions to provide service and support the organization",
+      "B) The ability to understand and apply information to contribute to strategy",
+      "C) The ability to direct and contribute to initiatives and processes",
+      "D) The ability to interpret information to make business decisions"
+    ],
+    "correct": 0,
+    "explanation": "Relationship Management is about building trust and managing interactions, networks, and conflict.",
+    "memory_anchor": "🤝 Relationship Management = trust, teamwork, and conflict skills."
+  },
+  {
+    "id": 42,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Total Rewards",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Total Rewards",
+    "scenario": "Which job evaluation method assigns points to compensable factors such as skill, effort, responsibility, and working conditions?",
+    "options": [
+      "A) Ranking method",
+      "B) Point-factor method",
+      "C) Classification method",
+      "D) Market pricing"
+    ],
+    "correct": 1,
+    "explanation": "The point-factor method quantifies jobs by scoring compensable factors and totaling the points.",
+    "memory_anchor": "🔢 Point-factor = scorecard for jobs."
+  },
+  {
+    "id": 43,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Risk Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Risk Management",
+    "scenario": "OSHA requires employers to report a work-related fatality within how many hours?",
+    "options": [
+      "A) 24 hours",
+      "B) 48 hours",
+      "C) 8 hours",
+      "D) 72 hours"
+    ],
+    "correct": 2,
+    "explanation": "Employers must report fatalities within 8 hours, and inpatient hospitalizations, amputations, or loss of an eye within 24 hours.",
+    "memory_anchor": "🚑 Death = 8 hours; serious injury = 24 hours."
+  },
+  {
+    "id": 44,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "Employees' perceptions of what an organization truly values are shaped MOST strongly by:",
+    "options": [
+      "A) The wording of the employee handbook alone",
+      "B) The font and layout of the code of conduct",
+      "C) Annual ethics slogans on break-room posters",
+      "D) The visible behavior of senior leaders (tone at the top)"
+    ],
+    "correct": 3,
+    "explanation": "Employees watch what leaders do and reward more than what documents say. Tone at the top is the strongest driver of ethical culture.",
+    "memory_anchor": "👀 Staff copy what the GM does, not what the poster says."
+  },
+  {
+    "id": 45,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "A server reports that her manager pressures hourly staff to clock out and keep working during slow periods. What should HR do?",
+    "options": [
+      "A) Investigate promptly, stop the practice, ensure unpaid time is corrected, and protect the reporter from retaliation",
+      "B) Advise the server to speak with the manager and resolve it informally",
+      "C) Wait for a second employee to complain before acting",
+      "D) Ask the manager to stop but take no further steps"
+    ],
+    "correct": 0,
+    "explanation": "Off-the-clock work violates the Fair Labor Standards Act. HR must investigate, correct the practice and pay, and prevent retaliation.",
+    "memory_anchor": "⏱️ If they work, they get paid - and nobody gets punished for speaking up."
+  },
+  {
+    "id": 46,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Talent Acquisition",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Talent Acquisition",
+    "scenario": "Which protected characteristic can NEVER be justified as a bona fide occupational qualification (BFOQ)?",
+    "options": [
+      "A) Religion",
+      "B) Race",
+      "C) Sex",
+      "D) National origin"
+    ],
+    "correct": 1,
+    "explanation": "Under Title VII, a BFOQ defense may apply to religion, sex, or national origin in narrow cases, but never to race or color.",
+    "memory_anchor": "🚫 BFOQ never covers race."
+  },
+  {
+    "id": 47,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Learning & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Learning & Development",
+    "scenario": "Several new supervisors at a hotel are struggling with employee conflicts. What should HR do before designing training?",
+    "options": [
+      "A) Purchase a popular leadership course",
+      "B) Assign all supervisors the same program",
+      "C) Conduct a needs assessment to identify specific skill gaps",
+      "D) Wait for the next performance review cycle"
+    ],
+    "correct": 2,
+    "explanation": "Training should be based on a needs analysis so that it targets real gaps.",
+    "memory_anchor": "🔎 Diagnose the gap, then pick the course."
+  },
+  {
+    "id": 48,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Global & Cultural Effectiveness",
+    "competency": "Global & Cultural Effectiveness",
+    "topic": "Global & Cultural Effectiveness",
+    "scenario": "Which description best matches the SHRM behavioral competency Global & Cultural Effectiveness?",
+    "options": [
+      "A) The ability to provide guidance to organizational stakeholders",
+      "B) The ability to interpret information to make business decisions",
+      "C) The ability to integrate core values, integrity, and accountability",
+      "D) The ability to value and consider the perspectives and backgrounds of all parties"
+    ],
+    "correct": 3,
+    "explanation": "Global & Cultural Effectiveness is about valuing diverse perspectives and operating effectively across cultures.",
+    "memory_anchor": "🌍 See the world through more than one window."
+  },
+  {
+    "id": 49,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Global & Cultural Effectiveness",
+    "competency": "Global & Cultural Effectiveness",
+    "topic": "Global & Cultural Effectiveness",
+    "scenario": "Your company plans to staff a new resort abroad. What is the BEST HR approach?",
+    "options": [
+      "A) Research local employment laws and cultural norms and adapt practices with local expertise",
+      "B) Apply U.S. policies without change",
+      "C) Assume local laws are similar to U.S. laws",
+      "D) Let the local manager decide with no HR guidance"
+    ],
+    "correct": 0,
+    "explanation": "Global HR balances global consistency with local legal and cultural requirements.",
+    "memory_anchor": "🌐 Think global, comply local."
+  },
+  {
+    "id": 50,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Risk Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Risk Management",
+    "scenario": "Purchasing insurance to cover potential losses is an example of which risk response?",
+    "options": [
+      "A) Risk avoidance",
+      "B) Risk transfer",
+      "C) Risk acceptance",
+      "D) Risk elimination"
+    ],
+    "correct": 1,
+    "explanation": "Insurance transfers financial risk to another party. Avoidance eliminates the activity; acceptance bears the risk.",
+    "memory_anchor": "🛡️ Insurance moves the risk to someone else's balance sheet."
+  },
+  {
+    "id": 51,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "Under the Americans with Disabilities Act, how should an employer store employee medical information?",
+    "options": [
+      "A) In the employee's regular personnel file for easy access by managers",
+      "B) In the supervisor's desk so accommodations can be tracked",
+      "C) In separate, confidential medical files kept apart from the personnel file",
+      "D) In a shared drive accessible to the entire HR department"
+    ],
+    "correct": 2,
+    "explanation": "Medical information must be kept confidential and separate from personnel files, with access limited to those with a need to know, such as for accommodation or safety.",
+    "memory_anchor": "🔒 Medical info lives in a locked drawer, not the personnel file."
+  },
+  {
+    "id": 52,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Leadership & Navigation",
+    "competency": "Leadership & Navigation",
+    "topic": "Leadership & Navigation",
+    "scenario": "A luxury resort is rolling out a new property management system. Front-desk employees are openly resisting it. As the HR business partner, what should you do FIRST?",
+    "options": [
+      "A) Announce that anyone who resists will face progressive discipline",
+      "B) Postpone the rollout until every employee says they support it",
+      "C) Let each front-desk supervisor decide whether to adopt the system",
+      "D) Meet with front-desk employees and influencers to hear their concerns, explain the business reasons, and enlist change champions"
+    ],
+    "correct": 3,
+    "explanation": "Effective change leadership listens to resistance, explains the 'why,' and uses champions. Threats, indefinite delay, or inconsistent adoption do not build commitment.",
+    "memory_anchor": "🛠️ Resistance is data - listen first, then lead."
+  },
+  {
+    "id": 53,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Global & Cultural Effectiveness",
+    "competency": "Global & Cultural Effectiveness",
+    "topic": "Global & Cultural Effectiveness",
+    "scenario": "In Hofstede's cultural dimensions, which term describes the extent to which less powerful members accept that power is distributed unequally?",
+    "options": [
+      "A) Power distance",
+      "B) Individualism",
+      "C) Uncertainty avoidance",
+      "D) Masculinity"
+    ],
+    "correct": 0,
+    "explanation": "Power distance reflects acceptance of hierarchy and unequal power in a society.",
+    "memory_anchor": "📏 Power distance = how steep the ladder is."
+  },
+  {
+    "id": 54,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Talent Acquisition",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Talent Acquisition",
+    "scenario": "A resort spent $45,000 in total recruiting costs to fill 30 positions. What is the cost per hire?",
+    "options": [
+      "A) $150",
+      "B) $1,500",
+      "C) $15,000",
+      "D) $13,500"
+    ],
+    "correct": 1,
+    "explanation": "Cost per hire = total recruiting costs ÷ number of hires = 45,000 ÷ 30 = $1,500.",
+    "memory_anchor": "💲 $45K split among 30 hires = $1,500 each."
+  },
+  {
+    "id": 55,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Communication",
+    "competency": "Communication",
+    "topic": "Communication",
+    "scenario": "Housekeeping employees who speak limited English misunderstood a chemical safety training. What should HR do?",
+    "options": [
+      "A) Repeat the same training more loudly",
+      "B) Give employees the written policy to sign",
+      "C) Provide training in languages and formats employees understand and verify comprehension with teach-back or demonstration",
+      "D) Rely on bilingual coworkers to explain informally"
+    ],
+    "correct": 2,
+    "explanation": "Safety communication must be understood by employees. Use appropriate languages and visuals, and confirm comprehension.",
+    "memory_anchor": "🧴 If they can't understand it, you haven't trained them."
+  },
+  {
+    "id": 56,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Talent Acquisition",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Talent Acquisition",
+    "scenario": "A realistic job preview (RJP) is MOST likely to improve which outcome?",
+    "options": [
+      "A) Higher offer rejection rates in every case",
+      "B) Lower interview costs",
+      "C) Elimination of the need for onboarding",
+      "D) Lower early turnover by setting accurate expectations"
+    ],
+    "correct": 3,
+    "explanation": "RJPs share both positive and negative aspects of the job so new hires self-select and are less surprised.",
+    "memory_anchor": "👀 Show the real shift schedule before they sign."
+  },
+  {
+    "id": 57,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Learning & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Learning & Development",
+    "scenario": "Participants enjoyed a customer service training, but guest complaints did not decline. What should HR evaluate next?",
+    "options": [
+      "A) Whether participants are applying the skills on the job and what barriers prevent transfer",
+      "B) Whether the room was comfortable",
+      "C) Whether more participants should attend",
+      "D) Whether to cancel all training"
+    ],
+    "correct": 0,
+    "explanation": "Positive reactions (Level 1) do not guarantee behavior change (Level 3) or results (Level 4). HR should look for transfer barriers.",
+    "memory_anchor": "🎯 Smiling in class is not the same as performing at the desk."
+  },
+  {
+    "id": 58,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Leadership & Navigation",
+    "competency": "Leadership & Navigation",
+    "topic": "Leadership & Navigation",
+    "scenario": "You are asked to lead a cross-functional team preparing for a seasonal hiring surge. You have no formal authority over the members from Food & Beverage, Housekeeping, and Security. What is the BEST way to get results?",
+    "options": [
+      "A) Ask the CEO to order everyone to follow your instructions",
+      "B) Clarify shared goals and roles with an executive sponsor's support and influence through collaboration",
+      "C) Complete most of the work yourself to avoid conflict",
+      "D) Assign tasks without discussion to move quickly"
+    ],
+    "correct": 1,
+    "explanation": "Leading without authority relies on shared goals, clear roles, sponsor backing, and influence rather than command or doing the work alone.",
+    "memory_anchor": "🌉 No authority? Build a bridge: shared goals, sponsor support, and influence."
+  },
+  {
+    "id": 59,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Relationship Management",
+    "competency": "Relationship Management",
+    "topic": "Relationship Management",
+    "scenario": "In the Thomas-Kilmann model, which conflict-handling mode combines high assertiveness with high cooperativeness?",
+    "options": [
+      "A) Avoiding",
+      "B) Accommodating",
+      "C) Collaborating",
+      "D) Competing"
+    ],
+    "correct": 2,
+    "explanation": "Collaborating seeks a win-win solution by fully addressing both parties' concerns.",
+    "memory_anchor": "🧩 Collaborate = both pieces fit."
+  },
+  {
+    "id": 60,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Diversity, Equity & Inclusion",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Diversity, Equity & Inclusion",
+    "scenario": "Which statement BEST distinguishes inclusion from diversity?",
+    "options": [
+      "A) Diversity and inclusion mean exactly the same thing",
+      "B) Inclusion refers only to hiring targets",
+      "C) Diversity focuses only on legal compliance",
+      "D) Diversity is the mix of differences; inclusion is creating an environment where everyone can participate and contribute"
+    ],
+    "correct": 3,
+    "explanation": "Diversity is who is in the room; inclusion is whether everyone has a voice and feels valued.",
+    "memory_anchor": "🎉 Diversity invites you to the party; inclusion asks you to dance."
+  },
+  {
+    "id": 61,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Critical Evaluation",
+    "competency": "Critical Evaluation",
+    "topic": "Critical Evaluation",
+    "scenario": "Exit interviews from the past quarter (only six responses) say most employees left because of their managers. What should HR do?",
+    "options": [
+      "A) Triangulate with additional data, such as stay interviews and survey results, before acting broadly",
+      "B) Replace all managers",
+      "C) Ignore the data because the sample is small",
+      "D) Publish the findings company-wide"
+    ],
+    "correct": 0,
+    "explanation": "Small samples limit confidence. HR should validate patterns using additional sources before large decisions.",
+    "memory_anchor": "🔺 One source is a hint; three sources are a pattern."
+  },
+  {
+    "id": 62,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Relationship Management",
+    "competency": "Relationship Management",
+    "topic": "Relationship Management",
+    "scenario": "Two supervisors are in conflict over shift assignments, and it is affecting their teams. What should HR do?",
+    "options": [
+      "A) Tell them to work it out alone",
+      "B) Meet with each separately, then facilitate a joint conversation focused on shared interests and clear agreements",
+      "C) Reassign one supervisor immediately",
+      "D) Side with the more senior supervisor"
+    ],
+    "correct": 1,
+    "explanation": "Facilitation helps parties understand each other and develop agreements without escalating.",
+    "memory_anchor": "🕊️ Hear each side, then bring them together."
+  },
+  {
+    "id": 63,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Employee & Labor Relations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee & Labor Relations",
+    "scenario": "A manager wants to discipline several employees who discussed their low pay in a social media group. What should HR advise?",
+    "options": [
+      "A) Discipline them to prevent more posts",
+      "B) Require them to delete the posts",
+      "C) Recognize that the activity may be protected concerted activity and consult legal counsel before taking action",
+      "D) Ask them to apologize publicly"
+    ],
+    "correct": 2,
+    "explanation": "Employees discussing wages and working conditions together may be protected by the NLRA, so discipline can create legal risk.",
+    "memory_anchor": "📱 Pay talk together = possibly protected."
+  },
+  {
+    "id": 64,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "The company plans to open a new resort in 18 months. What is HR's most appropriate contribution to the strategic plan?",
+    "options": [
+      "A) Wait until the opening date to start hiring",
+      "B) Focus only on drafting job descriptions",
+      "C) Leave workforce planning to individual managers",
+      "D) Forecast labor demand and supply, identify gaps, and propose staffing and talent strategies"
+    ],
+    "correct": 3,
+    "explanation": "Workforce planning aligns talent with strategy by forecasting demand and supply and closing gaps well in advance.",
+    "memory_anchor": "🗺️ Plan the people before the ribbon-cutting."
+  },
+  {
+    "id": 65,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Learning & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Learning & Development",
+    "scenario": "Which level of Kirkpatrick's training evaluation model measures whether participants apply learning on the job?",
+    "options": [
+      "A) Level 3: Behavior",
+      "B) Level 1: Reaction",
+      "C) Level 2: Learning",
+      "D) Level 4: Results"
+    ],
+    "correct": 0,
+    "explanation": "Level 1 measures reaction, Level 2 learning, Level 3 behavior (transfer), and Level 4 results.",
+    "memory_anchor": "🪜 Level 3 = Do it on the job."
+  },
+  {
+    "id": 66,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Leadership & Navigation",
+    "competency": "Leadership & Navigation",
+    "topic": "Leadership & Navigation",
+    "scenario": "In Kotter's eight-step model for leading change, which step comes first?",
+    "options": [
+      "A) Build a guiding coalition",
+      "B) Create a sense of urgency",
+      "C) Generate short-term wins",
+      "D) Anchor new approaches in the culture"
+    ],
+    "correct": 1,
+    "explanation": "Kotter begins by creating urgency around the need for change. Coalition building, short-term wins, and anchoring in culture come later.",
+    "memory_anchor": "🔥 Kotter starts with a 'burning platform' - like a fire alarm before a hotel evacuation drill."
+  },
+  {
+    "id": 67,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "A training program cost $20,000 and produced measurable benefits of $50,000. What is the ROI?",
+    "options": [
+      "A) 60%",
+      "B) 250%",
+      "C) 150%",
+      "D) 40%"
+    ],
+    "correct": 2,
+    "explanation": "ROI = (benefits − costs) ÷ costs = (50,000 − 20,000) ÷ 20,000 = 150%.",
+    "memory_anchor": "💵 Net gain over cost: $30K ÷ $20K = 1.5 = 150%."
+  },
+  {
+    "id": 68,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "USERRA primarily protects employees by:",
+    "options": [
+      "A) Guaranteeing paid leave for any volunteer activity",
+      "B) Requiring employers to hire veterans first",
+      "C) Providing federal unemployment benefits",
+      "D) Providing reemployment rights and prohibiting discrimination based on military service"
+    ],
+    "correct": 3,
+    "explanation": "The Uniformed Services Employment and Reemployment Rights Act protects reemployment and prohibits discrimination due to military service.",
+    "memory_anchor": "🎖️ USERRA = job protection for service members."
+  },
+  {
+    "id": 69,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "A new competitor is offering higher wages for similar roles. What should HR do before adjusting pay?",
+    "options": [
+      "A) Benchmark market pay data and assess the impact on turnover and costs",
+      "B) Match the competitor's wages immediately for all positions",
+      "C) Ignore the competitor and keep pay unchanged",
+      "D) Announce a raise for managers only"
+    ],
+    "correct": 0,
+    "explanation": "Pay decisions should be based on market data and the business impact (turnover risk, cost, internal equity).",
+    "memory_anchor": "🏷️ Check the market before you move the price."
+  },
+  {
+    "id": 70,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Global & Cultural Effectiveness",
+    "competency": "Global & Cultural Effectiveness",
+    "topic": "Global & Cultural Effectiveness",
+    "scenario": "Communication in a high-context culture is characterized by:",
+    "options": [
+      "A) Explicit, direct statements with little reliance on context",
+      "B) Reliance on implicit cues, shared understanding, and relationships",
+      "C) Written contracts replacing relationships",
+      "D) Avoidance of nonverbal cues"
+    ],
+    "correct": 1,
+    "explanation": "High-context cultures convey meaning through context, tone, and relationships rather than explicit words alone.",
+    "memory_anchor": "🎭 High-context = read between the lines."
+  },
+  {
+    "id": 71,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Critical Evaluation",
+    "competency": "Critical Evaluation",
+    "topic": "Critical Evaluation",
+    "scenario": "A vendor claims its AI screening tool eliminates bias. What is the BEST next step?",
+    "options": [
+      "A) Adopt the tool because the vendor says it is unbiased",
+      "B) Reject all technology-based screening",
+      "C) Request validation studies and conduct an adverse impact analysis before use",
+      "D) Use the tool only for senior roles"
+    ],
+    "correct": 2,
+    "explanation": "Employers remain responsible for selection outcomes and should validate tools and test for adverse impact.",
+    "memory_anchor": "🤖 Trust, but verify the algorithm."
+  },
+  {
+    "id": 72,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Organizational Effectiveness & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Organizational Effectiveness & Development",
+    "scenario": "What is the primary purpose of succession planning?",
+    "options": [
+      "A) To reduce headcount",
+      "B) To avoid external hiring altogether",
+      "C) To increase compensation for executives",
+      "D) To prepare qualified internal candidates for critical roles"
+    ],
+    "correct": 3,
+    "explanation": "Succession planning identifies and develops talent to fill key positions and ensure continuity.",
+    "memory_anchor": "🎖️ Always have a ready successor on the bench."
+  },
+  {
+    "id": 73,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "A power-interest grid is most useful to HR for:",
+    "options": [
+      "A) Prioritizing how to engage different stakeholders",
+      "B) Calculating compa-ratios",
+      "C) Forecasting labor supply",
+      "D) Determining overtime eligibility"
+    ],
+    "correct": 0,
+    "explanation": "Stakeholder analysis tools such as the power-interest grid help decide how much attention and what type of communication each stakeholder needs.",
+    "memory_anchor": "🎯 Who has power? Who cares? Engage accordingly."
+  },
+  {
+    "id": 74,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Workforce Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Workforce Management",
+    "scenario": "A resort has predictable seasonal peaks and valleys in labor demand. What is the BEST workforce strategy?",
+    "options": [
+      "A) Staff for peak levels all year",
+      "B) Combine a stable core team with cross-training and a flexible part-time or seasonal pool",
+      "C) Hire only temporary workers",
+      "D) Reduce service levels in peak season"
+    ],
+    "correct": 1,
+    "explanation": "Blending core and flexible staff matches labor supply to demand while controlling cost.",
+    "memory_anchor": "🎚️ Core team + flex pool = right-sized staffing."
+  },
+  {
+    "id": 75,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "The Age Discrimination in Employment Act (ADEA) protects individuals who are at least:",
+    "options": [
+      "A) 18 years old",
+      "B) 50 years old",
+      "C) 40 years old",
+      "D) 65 years old"
+    ],
+    "correct": 2,
+    "explanation": "The ADEA protects workers age 40 and older and generally applies to employers with 20 or more employees.",
+    "memory_anchor": "🎂 ADEA starts at 40."
+  },
+  {
+    "id": 76,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "Executives question the cost of the company's wellness program. What is the BEST way to demonstrate its value?",
+    "options": [
+      "A) Tell executives that wellness programs are always worth it",
+      "B) Cancel the program to save money",
+      "C) Share testimonials from a few employees",
+      "D) Gather participation, absenteeism, claims, and engagement data and calculate return on investment"
+    ],
+    "correct": 3,
+    "explanation": "Business cases need measurable outcomes. HR should connect program costs to data-based benefits.",
+    "memory_anchor": "📈 If you can't measure it, you can't defend it."
+  },
+  {
+    "id": 77,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "A casino general manager asks you to backdate a written warning so a planned termination appears better documented. What should you do?",
+    "options": [
+      "A) Decline, explain the legal and ethical risk, and document the facts accurately with proper dates",
+      "B) Backdate the warning since the manager is accountable for the decision",
+      "C) Backdate it but keep a private note of the real date",
+      "D) Refuse to discuss the matter and take no further action"
+    ],
+    "correct": 0,
+    "explanation": "Falsifying records is unethical and can expose the organization to serious liability. HR should decline, explain the risk, and help document accurately.",
+    "memory_anchor": "📅 Dates on documents must be true - no time travel."
+  },
+  {
+    "id": 78,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "Which description best matches the SHRM behavioral competency Business Acumen?",
+    "options": [
+      "A) The ability to manage interactions to provide service and support the organization",
+      "B) The ability to understand and apply information to contribute to the organization's strategic plan",
+      "C) The ability to direct and contribute to initiatives and processes",
+      "D) The ability to effectively exchange information with stakeholders"
+    ],
+    "correct": 1,
+    "explanation": "Business Acumen links HR to strategy, finance, and operations so HR decisions create business value.",
+    "memory_anchor": "📊 Business Acumen = speaking the language of profit, strategy, and metrics."
+  },
+  {
+    "id": 79,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "An employee returns from approved FMLA leave, and the manager wants to assign her to a lower-paying position because her duties were covered during her absence. What should HR advise?",
+    "options": [
+      "A) Assign her to any available role",
+      "B) Delay her return until a position opens",
+      "C) Restore the employee to the same or an equivalent position with equivalent pay, benefits, and conditions",
+      "D) Offer a lower-paying role if the department has adapted"
+    ],
+    "correct": 2,
+    "explanation": "FMLA requires restoration to the same or an equivalent job. Retaliation or interference violates the Act.",
+    "memory_anchor": "↩️ Back from FMLA = same or equivalent job."
+  },
+  {
+    "id": 80,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "An employer may have an affirmative defense to a supervisor harassment claim (when no tangible employment action occurred) if it:",
+    "options": [
+      "A) Has no harassment policy",
+      "B) Required employees to resolve harassment on their own",
+      "C) Waited for an external agency to investigate",
+      "D) Exercised reasonable care to prevent and correct harassment, and the employee unreasonably failed to use the complaint procedure"
+    ],
+    "correct": 3,
+    "explanation": "The Faragher/Ellerth defense requires reasonable preventive and corrective measures and the employee's unreasonable failure to use them.",
+    "memory_anchor": "🛡️ Policy + prompt action + unused complaint process = possible defense."
+  },
+  {
+    "id": 81,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: HR in a Global Context",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "HR in a Global Context",
+    "scenario": "An employee has returned from a two-year international assignment and appears disengaged. What is the BEST HR action?",
+    "options": [
+      "A) Use a structured repatriation process: debrief, identify a role that leverages new skills, and provide career support",
+      "B) Place the employee in any open role",
+      "C) Assume the employee will adjust on their own",
+      "D) Reduce the employee's pay to the pre-assignment level"
+    ],
+    "correct": 0,
+    "explanation": "Repatriation planning helps retain valuable global experience and prevents turnover.",
+    "memory_anchor": "🏡 Coming home needs a landing plan."
+  },
+  {
+    "id": 82,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Technology Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Technology Management",
+    "scenario": "Which practice BEST protects sensitive employee information stored in an HRIS?",
+    "options": [
+      "A) Sharing one login among the HR team",
+      "B) Role-based access controls with regular audits",
+      "C) Allowing all managers full access",
+      "D) Storing passwords in a shared document"
+    ],
+    "correct": 1,
+    "explanation": "Role-based access limits data to those with a business need, and audits detect misuse.",
+    "memory_anchor": "🔐 Least access necessary - and check the logs."
+  },
+  {
+    "id": 83,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "Which of the following is required for an employee to qualify for the executive exemption under the FLSA (in addition to the salary requirements)?",
+    "options": [
+      "A) Supervising at least one part-time employee occasionally",
+      "B) Holding a college degree",
+      "C) A primary duty of managing the enterprise or a department and regularly directing the work of two or more employees",
+      "D) Working more than 40 hours per week"
+    ],
+    "correct": 2,
+    "explanation": "The executive exemption requires meeting the salary tests and a duties test, including management as a primary duty and directing two or more employees.",
+    "memory_anchor": "👔 Exempt isn't just salary - duties decide."
+  },
+  {
+    "id": 84,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Talent Acquisition",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Talent Acquisition",
+    "scenario": "A resort needs to hire 200 seasonal employees in two months. What approach is BEST?",
+    "options": [
+      "A) Post one ad and hire the first applicants",
+      "B) Lower standards to speed hiring",
+      "C) Skip background checks for seasonal roles",
+      "D) Build a talent pipeline with schools and community partners, use employee referrals, and apply structured screening"
+    ],
+    "correct": 3,
+    "explanation": "A multi-channel pipeline combined with consistent screening balances speed and quality.",
+    "memory_anchor": "🌊 Fill the pipeline before the season wave hits."
+  },
+  {
+    "id": 85,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Critical Evaluation",
+    "competency": "Critical Evaluation",
+    "topic": "Critical Evaluation",
+    "scenario": "A pilot of a new scheduling program shows mixed results. How should HR proceed?",
+    "options": [
+      "A) Compare outcomes to predefined metrics and a comparison group, then decide whether to modify, scale, or stop",
+      "B) Roll it out to all properties immediately",
+      "C) Cancel the program based on one complaint",
+      "D) Continue the pilot indefinitely without review"
+    ],
+    "correct": 0,
+    "explanation": "Pilots should be evaluated against defined success criteria and a comparison to inform go/no-go decisions.",
+    "memory_anchor": "🧫 Pilots need a scoreboard."
+  },
+  {
+    "id": 86,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Relationship Management",
+    "competency": "Relationship Management",
+    "topic": "Relationship Management",
+    "scenario": "A union steward asks to discuss a recurring scheduling complaint. What is the BEST approach?",
+    "options": [
+      "A) Refuse to meet without an attorney",
+      "B) Meet in good faith, listen, review the contract, and follow up with a clear response",
+      "C) Ignore the steward until a grievance is filed",
+      "D) Discuss the matter only with employees directly"
+    ],
+    "correct": 1,
+    "explanation": "Constructive, good-faith engagement builds trust and often resolves issues before they become formal grievances.",
+    "memory_anchor": "🧑‍🤝‍🧑 Good faith early prevents grievances later."
+  },
+  {
+    "id": 87,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Technology Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Technology Management",
+    "scenario": "Your company is migrating to a new HRIS and early testing shows errors in migrated employee data. What should HR do?",
+    "options": [
+      "A) Go live and fix errors later",
+      "B) Cancel the project",
+      "C) Validate and clean the data, run a pilot, and resolve errors before going live",
+      "D) Ask employees to correct their records after launch"
+    ],
+    "correct": 2,
+    "explanation": "Data accuracy is critical, so validation and piloting reduce payroll and compliance errors.",
+    "memory_anchor": "🧹 Clean data in, reliable data out."
+  },
+  {
+    "id": 88,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Diversity, Equity & Inclusion",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Diversity, Equity & Inclusion",
+    "scenario": "Employees ask to start an employee resource group (ERG) at your hotel. What is the BEST HR response?",
+    "options": [
+      "A) Deny the request to avoid special treatment",
+      "B) Allow it but restrict membership to one group",
+      "C) Fund it without any policies",
+      "D) Support the ERG with clear guidelines, open membership to all employees, and executive sponsorship"
+    ],
+    "correct": 3,
+    "explanation": "ERGs can support inclusion and engagement when they are open to all and aligned with business goals.",
+    "memory_anchor": "🌈 ERGs: open doors, clear rules, leadership sponsor."
+  },
+  {
+    "id": 89,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Learning & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Learning & Development",
+    "scenario": "In the ADDIE instructional design model, what is the first phase?",
+    "options": [
+      "A) Analysis",
+      "B) Design",
+      "C) Development",
+      "D) Implementation"
+    ],
+    "correct": 0,
+    "explanation": "ADDIE stands for Analysis, Design, Development, Implementation, and Evaluation. Needs assessment occurs in Analysis.",
+    "memory_anchor": "🏗️ A-D-D-I-E: Analyze before you design."
+  },
+  {
+    "id": 90,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "Under COBRA, how long must group health coverage generally be offered to a qualified beneficiary after an employee's termination?",
+    "options": [
+      "A) Up to 6 months",
+      "B) Up to 18 months",
+      "C) Up to 12 months",
+      "D) Up to 36 months for all terminations"
+    ],
+    "correct": 1,
+    "explanation": "COBRA generally provides up to 18 months of continuation coverage after termination or reduction in hours (longer for some other events). It applies to employers with 20 or more employees.",
+    "memory_anchor": "🏥 COBRA after termination = 18 months."
+  },
+  {
+    "id": 91,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Diversity, Equity & Inclusion",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Diversity, Equity & Inclusion",
+    "scenario": "Title VII of the Civil Rights Act generally applies to employers with at least how many employees?",
+    "options": [
+      "A) 5",
+      "B) 20",
+      "C) 15",
+      "D) 50"
+    ],
+    "correct": 2,
+    "explanation": "Title VII covers private employers with 15 or more employees. The ADEA covers 20 or more.",
+    "memory_anchor": "1️⃣5️⃣ Title VII = 15."
+  },
+  {
+    "id": 92,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Business Acumen",
+    "competency": "Business Acumen",
+    "topic": "Business Acumen",
+    "scenario": "A hotel had 30 separations during the year and an average headcount of 200. What was the annual turnover rate?",
+    "options": [
+      "A) 6.7%",
+      "B) 30%",
+      "C) 0.15%",
+      "D) 15%"
+    ],
+    "correct": 3,
+    "explanation": "Turnover rate = separations ÷ average number of employees × 100 = 30 ÷ 200 × 100 = 15%.",
+    "memory_anchor": "🔁 30 out of 200 left = 15% - think 'three of every twenty'."
+  },
+  {
+    "id": 93,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Organizational Effectiveness & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Organizational Effectiveness & Development",
+    "scenario": "Several managers rate nearly all their employees as 'exceeds expectations,' making ratings hard to differentiate. What is the BEST HR response?",
+    "options": [
+      "A) Provide rater training and hold calibration sessions to align rating standards",
+      "B) Eliminate performance reviews",
+      "C) Force managers to lower all ratings",
+      "D) Let managers continue as is"
+    ],
+    "correct": 0,
+    "explanation": "Leniency bias is addressed with rater training, clear criteria, and calibration to improve consistency.",
+    "memory_anchor": "⚖️ Calibrate the scale so 'great' means the same everywhere."
+  },
+  {
+    "id": 94,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Technology Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Technology Management",
+    "scenario": "Using historical HR data to forecast which employees are most likely to leave is an example of:",
+    "options": [
+      "A) Descriptive analytics",
+      "B) Predictive analytics",
+      "C) Benchmarking only",
+      "D) Job analysis"
+    ],
+    "correct": 1,
+    "explanation": "Descriptive analytics summarize what happened; predictive analytics estimate what is likely to happen; prescriptive suggests actions.",
+    "memory_anchor": "🔮 Predict who might leave before they do."
+  },
+  {
+    "id": 95,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Employee & Labor Relations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee & Labor Relations",
+    "scenario": "Which step typically comes first in a progressive discipline policy for a first minor offense?",
+    "options": [
+      "A) Suspension",
+      "B) Termination",
+      "C) Verbal warning",
+      "D) Demotion"
+    ],
+    "correct": 2,
+    "explanation": "Progressive discipline escalates from verbal warnings to written warnings and more serious steps depending on severity.",
+    "memory_anchor": "🪜 Start small: verbal first."
+  },
+  {
+    "id": 96,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Diversity, Equity & Inclusion",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Diversity, Equity & Inclusion",
+    "scenario": "Under the four-fifths (80%) rule, adverse impact is generally indicated when a group's selection rate is:",
+    "options": [
+      "A) More than 120% of the overall rate",
+      "B) Less than 50% of applicants",
+      "C) Equal to the highest group's rate",
+      "D) Less than 80% of the selection rate of the group with the highest rate"
+    ],
+    "correct": 3,
+    "explanation": "The four-fifths rule is a rule of thumb used to identify potential adverse impact in selection decisions.",
+    "memory_anchor": "4️⃣5️⃣ Under 4/5 of the top group's rate = red flag."
+  },
+  {
+    "id": 97,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Communication",
+    "competency": "Communication",
+    "topic": "Communication",
+    "scenario": "Which channel is MOST appropriate for communicating a termination decision to an employee?",
+    "options": [
+      "A) A private, face-to-face meeting",
+      "B) A group email",
+      "C) A text message",
+      "D) A posting on the staff bulletin board"
+    ],
+    "correct": 0,
+    "explanation": "Sensitive, high-impact messages should be delivered privately, in person when possible, with follow-up documentation.",
+    "memory_anchor": "🚪 Hard news deserves a closed door."
+  },
+  {
+    "id": 98,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Structure of the HR Function",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Structure of the HR Function",
+    "scenario": "In an HR shared-services model, which activity is MOST commonly centralized?",
+    "options": [
+      "A) Strategic workforce planning for each business unit",
+      "B) Routine, transaction-heavy services such as benefits administration and payroll inquiries",
+      "C) Executive coaching",
+      "D) Culture transformation initiatives"
+    ],
+    "correct": 1,
+    "explanation": "Shared services centralize standardized, high-volume transactions to improve efficiency and consistency.",
+    "memory_anchor": "🏢 Shared services = one help desk for routine HR tasks."
+  },
+  {
+    "id": 99,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Structure of the HR Function",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Structure of the HR Function",
+    "scenario": "In Ulrich's HR model, which role is responsible for aligning HR strategy with business strategy?",
+    "options": [
+      "A) Administrative expert",
+      "B) Employee champion",
+      "C) Strategic partner",
+      "D) Compliance auditor"
+    ],
+    "correct": 2,
+    "explanation": "Ulrich's roles are strategic partner, administrative expert, employee champion, and change agent.",
+    "memory_anchor": "♟️ Strategic partner = HR with a seat at the table."
+  },
+  {
+    "id": 100,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Communication",
+    "competency": "Communication",
+    "topic": "Communication",
+    "scenario": "An employee sends an angry email to HR about a schedule change. What should you do?",
+    "options": [
+      "A) Reply in kind to match the tone",
+      "B) Ignore the email until the employee calms down",
+      "C) Forward the email to the employee's manager and take no further action",
+      "D) Respond calmly, acknowledge the concern, and meet to listen and clarify"
+    ],
+    "correct": 3,
+    "explanation": "Professional, empathetic responses de-escalate and open the door to problem-solving.",
+    "memory_anchor": "🧊 Cool tone, warm listening."
+  },
+  {
+    "id": 101,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: HR in a Global Context",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "HR in a Global Context",
+    "scenario": "Moving business processes, such as a call center, to another country is called:",
+    "options": [
+      "A) Offshoring",
+      "B) Reshoring",
+      "C) Downsizing",
+      "D) Delayering"
+    ],
+    "correct": 0,
+    "explanation": "Offshoring relocates operations to a foreign country, often to reduce costs or access talent.",
+    "memory_anchor": "✈️ Offshoring = work flies overseas."
+  },
+  {
+    "id": 102,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Total Rewards",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Total Rewards",
+    "scenario": "Under the Fair Labor Standards Act, how must non-exempt employees be paid for hours worked beyond 40 in a workweek?",
+    "options": [
+      "A) At their regular rate of pay",
+      "B) At least one and one-half times their regular rate of pay",
+      "C) At twice their regular rate in all cases",
+      "D) With compensatory time off only, in the private sector"
+    ],
+    "correct": 1,
+    "explanation": "The FLSA requires overtime at 1.5 times the regular rate for non-exempt employees over 40 hours in a workweek.",
+    "memory_anchor": "⏰ Over 40 hours = time and a half."
+  },
+  {
+    "id": 103,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Employee & Labor Relations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee & Labor Relations",
+    "scenario": "Under Section 7 of the National Labor Relations Act, which activity is generally protected for both union and non-union employees?",
+    "options": [
+      "A) Refusing all lawful work instructions",
+      "B) Publicly sharing confidential customer data",
+      "C) Discussing wages and working conditions together with coworkers",
+      "D) Falsifying time records"
+    ],
+    "correct": 2,
+    "explanation": "Section 7 protects concerted activity for mutual aid or protection, including discussing pay and working conditions.",
+    "memory_anchor": "💬 Talking about pay together can be protected."
+  },
+  {
+    "id": 104,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "An executive disagrees with HR's recommendation on a pay structure change. What is the BEST way to respond?",
+    "options": [
+      "A) Implement your recommendation without the executive's approval",
+      "B) Drop the issue to preserve the relationship",
+      "C) Escalate to the CEO before speaking with the executive",
+      "D) Present data, risks, alternatives, and trade-offs, respect the executive's decision authority, and document the advice given"
+    ],
+    "correct": 3,
+    "explanation": "Consultants influence with evidence and options while respecting decision rights and documenting guidance.",
+    "memory_anchor": "📑 Advise with evidence; the decision belongs to the owner."
+  },
+  {
+    "id": 105,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Learning & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Learning & Development",
+    "scenario": "Which principle is associated with adult learning theory (andragogy)?",
+    "options": [
+      "A) Adults are self-directed and learn best when content is relevant to their experience and needs",
+      "B) Adults learn best through memorization alone",
+      "C) Adults prefer teacher-directed instruction only",
+      "D) Adults do not bring useful experience to training"
+    ],
+    "correct": 0,
+    "explanation": "Knowles' andragogy emphasizes self-direction, experience, readiness to learn, and problem-centered learning.",
+    "memory_anchor": "🧑‍🎓 Adults want 'why this matters' and 'how I use it'."
+  },
+  {
+    "id": 106,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Total Rewards",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Total Rewards",
+    "scenario": "New hires at a hotel are being paid nearly as much as tenured employees in the same role. What should HR do?",
+    "options": [
+      "A) Ignore it because new hires have less experience",
+      "B) Analyze the pay data for compression and recommend adjustments based on internal equity and market data",
+      "C) Reduce new-hire offers below market",
+      "D) Give all employees the same raise"
+    ],
+    "correct": 1,
+    "explanation": "Pay compression harms morale and retention; HR should analyze and address it using equity and market data.",
+    "memory_anchor": "🗜️ Compression squeezes loyalty out of veterans."
+  },
+  {
+    "id": 107,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Employee Engagement & Retention",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee Engagement & Retention",
+    "scenario": "According to Herzberg's two-factor theory, which of the following is a hygiene factor?",
+    "options": [
+      "A) Recognition",
+      "B) Achievement",
+      "C) Job security",
+      "D) Opportunity for advancement"
+    ],
+    "correct": 2,
+    "explanation": "Hygiene factors (pay, job security, working conditions, policies) prevent dissatisfaction; motivators (achievement, recognition, growth) drive satisfaction.",
+    "memory_anchor": "🧼 Hygiene = prevents unhappiness; motivators = create excitement."
+  },
+  {
+    "id": 108,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Organizational Effectiveness & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Organizational Effectiveness & Development",
+    "scenario": "Two resort companies are merging and have very different cultures. What should HR do FIRST?",
+    "options": [
+      "A) Impose the larger company's culture",
+      "B) Let employees figure it out",
+      "C) Delay any culture discussion for a year",
+      "D) Assess both cultures, identify differences, and involve leaders in a culture integration plan"
+    ],
+    "correct": 3,
+    "explanation": "Culture integration requires assessment and leadership involvement to retain talent and performance.",
+    "memory_anchor": "🧬 Map both cultures before merging them."
+  },
+  {
+    "id": 109,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "Which description best matches the SHRM behavioral competency Ethical Practice?",
+    "options": [
+      "A) The ability to integrate core values, integrity, and accountability throughout all organizational and business practices",
+      "B) The ability to provide guidance to organizational stakeholders",
+      "C) The ability to value and consider the perspectives and backgrounds of all parties",
+      "D) The ability to interpret information to make business decisions and recommendations"
+    ],
+    "correct": 0,
+    "explanation": "Ethical Practice means applying values, integrity, and accountability consistently. The distractors describe Consultation, Global & Cultural Effectiveness, and Critical Evaluation.",
+    "memory_anchor": "⚖️ Ethical Practice = values and accountability baked into every decision."
+  },
+  {
+    "id": 110,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Critical Evaluation",
+    "competency": "Critical Evaluation",
+    "topic": "Critical Evaluation",
+    "scenario": "A selection test whose scores predict later job performance demonstrates strong:",
+    "options": [
+      "A) Face validity only",
+      "B) Criterion-related (predictive) validity",
+      "C) Inter-rater reliability only",
+      "D) Content reliability"
+    ],
+    "correct": 1,
+    "explanation": "Criterion-related validity shows that test scores correlate with job performance outcomes.",
+    "memory_anchor": "🎯 If scores predict performance later, the test is valid for the job."
+  },
+  {
+    "id": 111,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Critical Evaluation",
+    "competency": "Critical Evaluation",
+    "topic": "Critical Evaluation",
+    "scenario": "Which description best matches the SHRM behavioral competency Critical Evaluation?",
+    "options": [
+      "A) The ability to provide guidance to organizational stakeholders",
+      "B) The ability to direct and contribute to initiatives and processes",
+      "C) The ability to interpret information to make business decisions and recommendations",
+      "D) The ability to manage interactions to provide service and support the organization"
+    ],
+    "correct": 2,
+    "explanation": "Critical Evaluation involves gathering, analyzing, and interpreting data to inform decisions.",
+    "memory_anchor": "🔬 Critical Evaluation = turning data into decisions."
+  },
+  {
+    "id": 112,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Employee & Labor Relations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee & Labor Relations",
+    "scenario": "Weingarten rights allow a union-represented employee to:",
+    "options": [
+      "A) Refuse to attend any meeting with management",
+      "B) Have an attorney present at all meetings",
+      "C) Receive advance written questions",
+      "D) Request union representation during an investigatory interview the employee reasonably believes could lead to discipline"
+    ],
+    "correct": 3,
+    "explanation": "Under NLRB v. Weingarten, employees can request representation at investigatory interviews that may lead to discipline.",
+    "memory_anchor": "🧑‍⚖️ Weingarten = 'I want my rep present.'"
+  },
+  {
+    "id": 113,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Organizational Effectiveness & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Organizational Effectiveness & Development",
+    "scenario": "According to Lewin's change model, what is the correct sequence of stages?",
+    "options": [
+      "A) Unfreeze, change, refreeze",
+      "B) Change, unfreeze, refreeze",
+      "C) Refreeze, change, unfreeze",
+      "D) Plan, do, check"
+    ],
+    "correct": 0,
+    "explanation": "Lewin's model prepares the organization (unfreeze), implements change, and reinforces the new state (refreeze).",
+    "memory_anchor": "🧊 Melt the old, shape the new, freeze it in."
+  },
+  {
+    "id": 114,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Workforce Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Workforce Management",
+    "scenario": "Under the WARN Act, covered employers must generally give how much notice of a plant closing or mass layoff?",
+    "options": [
+      "A) 14 days",
+      "B) 60 calendar days",
+      "C) 30 days",
+      "D) 90 days"
+    ],
+    "correct": 1,
+    "explanation": "The WARN Act requires 60 days' advance written notice for covered employers (generally those with 100 or more employees).",
+    "memory_anchor": "⚠️ WARN = 60 days."
+  },
+  {
+    "id": 115,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Workforce Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Workforce Management",
+    "scenario": "The company must conduct a reduction in force. What is the BEST way to select employees?",
+    "options": [
+      "A) Select those with the most recent complaints",
+      "B) Choose the highest-paid employees",
+      "C) Use objective, job-related criteria and conduct an adverse impact analysis before finalizing",
+      "D) Let each manager choose informally"
+    ],
+    "correct": 2,
+    "explanation": "Objective, documented criteria and adverse impact review reduce legal risk and increase fairness.",
+    "memory_anchor": "📊 Layoff lists need criteria and a check for adverse impact."
+  },
+  {
+    "id": 116,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Relationship Management",
+    "competency": "Relationship Management",
+    "topic": "Relationship Management",
+    "scenario": "You are new to supporting the resort's general manager. What is the BEST way to build a strong working relationship?",
+    "options": [
+      "A) Wait to be contacted",
+      "B) Focus only on HR compliance topics",
+      "C) Share your own agenda without asking about theirs",
+      "D) Schedule regular check-ins, learn the GM's priorities, and deliver on commitments"
+    ],
+    "correct": 3,
+    "explanation": "Credibility comes from understanding stakeholder priorities and reliably delivering value.",
+    "memory_anchor": "☕ Regular coffee chats build trust."
+  },
+  {
+    "id": 117,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Organizational Effectiveness & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Organizational Effectiveness & Development",
+    "scenario": "In Schein's model of organizational culture, which level is the deepest and hardest to change?",
+    "options": [
+      "A) Basic underlying assumptions",
+      "B) Artifacts",
+      "C) Espoused values",
+      "D) Observable behaviors only"
+    ],
+    "correct": 0,
+    "explanation": "Schein's levels are artifacts, espoused values, and basic underlying assumptions (the deepest level).",
+    "memory_anchor": "🧅 Culture is an onion - assumptions are the core."
+  },
+  {
+    "id": 118,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Critical Evaluation",
+    "competency": "Critical Evaluation",
+    "topic": "Critical Evaluation",
+    "scenario": "A survey shows that engagement scores and retention move together across departments. What is the most accurate conclusion?",
+    "options": [
+      "A) Engagement causes retention in every department",
+      "B) There is an association, but the data alone do not prove that engagement causes retention",
+      "C) Retention causes engagement",
+      "D) The data show no relationship"
+    ],
+    "correct": 1,
+    "explanation": "Correlation does not establish causation; other factors or reverse causality could explain the pattern.",
+    "memory_anchor": "🚦 Moving together is not the same as causing."
+  },
+  {
+    "id": 119,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Ethical Practice",
+    "competency": "Ethical Practice",
+    "topic": "Ethical Practice",
+    "scenario": "A coworker asks you, out of curiosity, whether a colleague is under investigation. What is the BEST response?",
+    "options": [
+      "A) Share a general hint without naming the person",
+      "B) Confirm only if the coworker promises secrecy",
+      "C) Politely decline, explaining that employee matters are confidential",
+      "D) Tell the coworker to ask the colleague's supervisor"
+    ],
+    "correct": 2,
+    "explanation": "HR must protect confidential employee information and share only with those who have a legitimate need to know.",
+    "memory_anchor": "🤐 Curiosity is not a need to know."
+  },
+  {
+    "id": 120,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Leadership & Navigation",
+    "competency": "Leadership & Navigation",
+    "topic": "Leadership & Navigation",
+    "scenario": "A casino operations director measures her success by how well she removes obstacles for her staff and develops their growth. This approach best reflects which theory?",
+    "options": [
+      "A) Transactional leadership",
+      "B) Bureaucratic leadership",
+      "C) Autocratic leadership",
+      "D) Servant leadership"
+    ],
+    "correct": 3,
+    "explanation": "Servant leaders put the needs, growth, and well-being of followers first so that followers can perform at their best.",
+    "memory_anchor": "🛎️ Servant leadership = the leader as the concierge for the team's success."
+  },
+  {
+    "id": 121,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Global & Cultural Effectiveness",
+    "competency": "Global & Cultural Effectiveness",
+    "topic": "Global & Cultural Effectiveness",
+    "scenario": "You notice team members making jokes about a coworker's accent. What should you do?",
+    "options": [
+      "A) Address the behavior promptly, reinforce respectful-conduct expectations, and coach those involved",
+      "B) Ignore it because it is only humor",
+      "C) Wait until the coworker complains",
+      "D) Ask the coworker to ignore it"
+    ],
+    "correct": 0,
+    "explanation": "Prompt intervention supports inclusion and reduces the risk of a hostile environment.",
+    "memory_anchor": "🛑 Small comments grow into big problems."
+  },
+  {
+    "id": 122,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Talent Acquisition",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Talent Acquisition",
+    "scenario": "Which interview format generally has the highest reliability and validity for selection?",
+    "options": [
+      "A) Unstructured conversational interviews",
+      "B) Structured interviews with job-related, consistently asked questions",
+      "C) Interviews based on gut feeling",
+      "D) Interviews that vary by candidate"
+    ],
+    "correct": 1,
+    "explanation": "Structured interviews use standardized, job-related questions and scoring, which improves consistency and predictive power.",
+    "memory_anchor": "📋 Same questions, same scoring, better hiring."
+  },
+  {
+    "id": 123,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Employee Engagement & Retention",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee Engagement & Retention",
+    "scenario": "How is an employee Net Promoter Score (eNPS) calculated?",
+    "options": [
+      "A) Average satisfaction score divided by 10",
+      "B) Number of respondents minus number of detractors",
+      "C) Percentage of promoters minus percentage of detractors",
+      "D) Percentage of employees who completed the survey"
+    ],
+    "correct": 2,
+    "explanation": "eNPS asks how likely employees are to recommend the organization as a place to work; promoters score 9-10 and detractors 0-6.",
+    "memory_anchor": "➕➖ Promoters minus detractors = eNPS."
+  },
+  {
+    "id": 124,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "A food and beverage director asks for a 'quick fix' to high turnover among bartenders. What should you do?",
+    "options": [
+      "A) Increase everyone's pay immediately",
+      "B) Launch a hiring campaign to replace the leavers",
+      "C) Introduce a mandatory team-building event",
+      "D) Gather data (exit interviews, pay, schedules, manager feedback) to identify root causes before recommending solutions"
+    ],
+    "correct": 3,
+    "explanation": "Consultants diagnose root causes with data before recommending solutions.",
+    "memory_anchor": "🧪 Root cause first, remedy second."
+  },
+  {
+    "id": 125,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Corporate Social Responsibility",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Corporate Social Responsibility",
+    "scenario": "The 'triple bottom line' framework evaluates organizational performance based on:",
+    "options": [
+      "A) People, planet, and profit",
+      "B) Price, product, and promotion",
+      "C) Policies, procedures, and productivity",
+      "D) Profit, penalties, and politics"
+    ],
+    "correct": 0,
+    "explanation": "The triple bottom line considers social, environmental, and economic outcomes.",
+    "memory_anchor": "♻️ People + Planet + Profit."
+  },
+  {
+    "id": 126,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Relationship Management",
+    "competency": "Relationship Management",
+    "topic": "Relationship Management",
+    "scenario": "In Tuckman's model of team development, which stage is marked by conflict and competition over roles?",
+    "options": [
+      "A) Forming",
+      "B) Storming",
+      "C) Norming",
+      "D) Performing"
+    ],
+    "correct": 1,
+    "explanation": "Storming features conflict as members test boundaries and roles; forming comes before it, then norming and performing.",
+    "memory_anchor": "⛈️ Storming = the stormy stage of a team."
+  },
+  {
+    "id": 127,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "The Equal Pay Act requires equal pay for men and women performing jobs that require substantially equal:",
+    "options": [
+      "A) Education and seniority only",
+      "B) Job titles and departments",
+      "C) Skill, effort, and responsibility under similar working conditions",
+      "D) Schedules and locations"
+    ],
+    "correct": 2,
+    "explanation": "The EPA looks at substantially equal skill, effort, responsibility, and working conditions at the same establishment, not job titles.",
+    "memory_anchor": "💼 EPA: skill, effort, responsibility, working conditions."
+  },
+  {
+    "id": 128,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Workforce Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Workforce Management",
+    "scenario": "Which of the following is a recognized exception to the employment-at-will doctrine?",
+    "options": [
+      "A) Employer preference exception",
+      "B) Seniority-based exception",
+      "C) Manager discretion exception",
+      "D) Public policy exception"
+    ],
+    "correct": 3,
+    "explanation": "Courts recognize exceptions such as public policy, implied contract, and implied covenant of good faith in many states.",
+    "memory_anchor": "🏛️ You can't fire someone for doing what the law encourages."
+  },
+  {
+    "id": 129,
+    "type": "Knowledge Item",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "In a typical consulting cycle, what should HR do first?",
+    "options": [
+      "A) Clarify the client's needs and agree on scope and expectations",
+      "B) Implement a solution",
+      "C) Evaluate results",
+      "D) Present final recommendations"
+    ],
+    "correct": 0,
+    "explanation": "Consulting starts with entry and contracting: understand the need and agree on scope before gathering data, giving feedback, implementing, and evaluating.",
+    "memory_anchor": "📝 Scope first, solutions later."
+  },
+  {
+    "id": 130,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: U.S. Employment Law & Regulations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "U.S. Employment Law & Regulations",
+    "scenario": "Which set of criteria makes an employee generally eligible for FMLA leave?",
+    "options": [
+      "A) 6 months of employment and 500 hours",
+      "B) 12 months of employment, 1,250 hours worked in the prior 12 months, and employed at a worksite with 50+ employees within 75 miles",
+      "C) 12 months of employment and 2,080 hours",
+      "D) Any full-time employee after 90 days"
+    ],
+    "correct": 1,
+    "explanation": "FMLA requires 12 months of employment, 1,250 hours in the prior 12 months, and a covered employer worksite with 50 or more employees within 75 miles.",
+    "memory_anchor": "📌 12 months, 1,250 hours, 50 within 75 miles."
+  },
+  {
+    "id": 131,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Leadership Cluster",
+    "chapter": "Behavioral Competency • Leadership Cluster: Leadership & Navigation",
+    "competency": "Leadership & Navigation",
+    "topic": "Leadership & Navigation",
+    "scenario": "A newly trained banquet captain makes an error that causes a service delay at a large event. You are coaching the captain's manager. What should you recommend?",
+    "options": [
+      "A) Correct the captain in front of the team to set an example",
+      "B) Ignore the error because the event is over",
+      "C) Hold a private conversation to find the root cause, then agree on a development plan",
+      "D) Immediately reassign the captain to a lower-level role"
+    ],
+    "correct": 2,
+    "explanation": "Leaders develop people by coaching privately, diagnosing causes (training, tools, or process), and agreeing on next steps. Public correction or hasty demotion damages trust.",
+    "memory_anchor": "🎓 Praise in public, coach in private."
+  },
+  {
+    "id": 132,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Business Cluster",
+    "chapter": "Behavioral Competency • Business Cluster: Consultation",
+    "competency": "Consultation",
+    "topic": "Consultation",
+    "scenario": "A manager says an employee who recently announced a pregnancy should be moved to lighter duties without asking her. What should HR advise?",
+    "options": [
+      "A) Move her to lighter duty immediately for her own protection",
+      "B) Ignore the situation unless she complains",
+      "C) Place her on unpaid leave until after the birth",
+      "D) Talk with the employee about her needs and treat her the same as other employees similar in their ability or inability to work"
+    ],
+    "correct": 3,
+    "explanation": "Assumptions about pregnant employees can create discrimination risk. The employee should be consulted and treated consistently with others similar in ability to work.",
+    "memory_anchor": "🤰 Ask, don't assume."
+  },
+  {
+    "id": 133,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "Behavioral Competency",
+    "domain": "Interpersonal Cluster",
+    "chapter": "Behavioral Competency • Interpersonal Cluster: Communication",
+    "competency": "Communication",
+    "topic": "Communication",
+    "scenario": "A rumor spreads that the casino will be sold and jobs will be cut. What is the BEST HR response?",
+    "options": [
+      "A) Share verified information as allowed, state what is unknown, and commit to regular updates",
+      "B) Deny the rumor without checking the facts",
+      "C) Say nothing so as not to fuel it",
+      "D) Tell managers to discipline employees who discuss it"
+    ],
+    "correct": 0,
+    "explanation": "Credible, regular communication fills the information vacuum without making promises HR cannot keep.",
+    "memory_anchor": "📢 Silence feeds rumors - update on a schedule."
+  },
+  {
+    "id": 134,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Corporate Social Responsibility",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Corporate Social Responsibility",
+    "scenario": "An HR-supported volunteer program that encourages employees to serve local communities primarily supports which goal?",
+    "options": [
+      "A) Reducing overtime costs",
+      "B) Corporate social responsibility and employer brand",
+      "C) Meeting a legal safety requirement",
+      "D) Increasing span of control"
+    ],
+    "correct": 1,
+    "explanation": "Community engagement initiatives support CSR, employee engagement, and employer reputation.",
+    "memory_anchor": "🤲 Volunteering builds community and brand."
   }
 ]
