@@ -1,181 +1,2402 @@
-import streamlit as st
-from gtts import gTTS
-from io import BytesIO
-
-# Page Configuration
-st.set_page_config(
-    page_title="MAREC Insights | SHRM-CP Hospitality Odyssey",
-    page_icon="🦜",
-    layout="wide"
-)
-
-# Sidebar Branding & Navigation
-with st.sidebar:
-    st.image(
-        "https://marec.site/assets/img/logo.png",
-        use_column_width=True,
-        caption="MAREC Insights • Workforce Intelligence"
-    )
-    st.title("🏆 Exam Prep Navigator")
-    st.caption("Specialized for Luxury Resorts, Casinos & Hospitality Operations")
-    st.markdown("---")
-    st.write("**Consultant Rank:** Senior HR Strategist")
-    st.write("**Target Credential:** SHRM-CP / CRME")
-
-# Embedded Question Bank (No external JSON file required!)
-@st.cache_data
-def load_questions():
-    return [
-        {
-            "type": "Situational Judgment Item (SJI)",
-            "chapter": "Hospitality Labor Economics & Overtime Control",
-            "scenario": "A 2,000-room Las Vegas casino resort experiences a sudden 30% spike in weekend occupancy due to an unannounced convention booking. Front Desk and Housekeeping shift managers immediately call in off-duty staff on double-time overtime without clearing floor schedules. How should the HR Director intervene to manage labor costs without hurting guest service standards?",
-            "options": [
-                "A) Require department managers to utilize flexible cross-trained banquet and pool staff on straight-time hours before approving emergency overtime.",
-                "B) Freeze all incoming guest check-ins until regular shift workers arrive on Monday.",
-                "C) Automatically deny all overtime pay requests submitted by shift supervisors after the weekend.",
-                "D) Require guests to clean their own rooms during peak occupancy periods."
-            ],
-            "correct": 0,
-            "explanation": "Strategic HR balances guest service with labor expense by deploying cross-trained utility pools on regular pay bands before resorting to costly penalty overtime rates.",
-            "memory_anchor": "🏨 Like pulling cross-trained pool staff to work front desk check-in when a 10-bus tour group arrives at once—uses regular pay instead of paying double overtime!",
-            "competency": "Business Acumen & Workforce Analytics"
-        },
-        {
-            "type": "Situational Judgment Item (SJI)",
-            "chapter": "Resort Collective Bargaining & Union Grievances",
-            "scenario": "During peak dinner service in a resort's primary steakhouse, a Food & Beverage manager assigns a non-union supervisor to clear dining tables because three busboys called in sick. The union shop steward files a formal Step-1 grievance alleging bargaining unit infringement. How should HR handle the response?",
-            "options": [
-                "A) Review the Collective Bargaining Agreement (CBA) emergency clauses, meet with the steward, and enforce proper bargaining unit work definitions while addressing staffing coverage.",
-                "B) Fire the shop steward for interfering with peak dinner service.",
-                "C) Ignore the grievance since guest service takes priority over written labor union contracts.",
-                "D) Transfer all non-union supervisors to off-site administrative roles."
-            ],
-            "correct": 0,
-            "explanation": "CBA terms are legally binding agreements. HR must maintain operational trust by strictly respecting bargaining unit work definitions while utilizing contractual emergency or call-in provisions.",
-            "memory_anchor": "🤝 Like referees in sports: managers can't run onto the field and play for the team. HR must follow the contract rulebook so the union doesn't penalty-flag the resort!",
-            "competency": "Labor & Employee Relations"
-        },
-        {
-            "type": "Knowledge Item",
-            "chapter": "Workplace Safety & Resort EHS",
-            "scenario": "Under OSHA guidelines, what protocol must a resort hotel execute before maintenance engineers perform repairs inside confined industrial laundry equipment or walk-in freezers?",
-            "options": [
-                "A) Lockout/Tagout (LOTO) Energy Control Procedures",
-                "B) General Liability Audit Clearance",
-                "C) Guest Experience Exemption Filing",
-                "D) Annual Hazard Communication Posting"
-            ],
-            "correct": 0,
-            "explanation": "OSHA's Lockout/Tagout standard prevents accidental machinery re-energization during maintenance in hazardous or confined resort spaces.",
-            "memory_anchor": "🔑 Putting an actual padlock on the freezer or washer power switch and keeping the key in your pocket so nobody turns it on while you are fixing it!",
-            "competency": "Workplace Safety & Risk Management"
-        },
-        {
-            "type": "Situational Judgment Item (SJI)",
-            "chapter": "AI Scheduling & Workforce Intelligence",
-            "scenario": "A luxury boutique hotel deploys an automated AI shift-scheduling tool linked to the Property Management System (PMS). Room attendants report that the AI regularly schedules 15 check-out room cleans in a single 4-hour window, leading to severe fatigue. How should HR guide management?",
-            "options": [
-                "A) Audit the AI algorithm's workload inputs against realistic housekeeping physical standards and adjust parameters with the software vendor.",
-                "B) Instruct room attendants to work faster to meet the automated system outputs.",
-                "C) Deactivate the entire automated PMS system and return to hand-written schedules.",
-                "D) Discipline room attendants who fail to complete the 15 rooms."
-            ],
-            "correct": 0,
-            "explanation": "AI scheduling tools must be continuously validated against real-world human physical capabilities and operational standards to prevent burnout and safety hazards.",
-            "memory_anchor": "🤖 A computer doesn't know how heavy a king-size mattress is! HR must adjust the software settings when the robot gives humans impossible deadlines.",
-            "competency": "Critical Evaluation & AI Governance"
-        }
-    ]
-
-questions = load_questions()
-
-# Display Total Loaded Items
-st.sidebar.metric(label="Total Question Bank", value=f"{len(questions)} Questions")
-st.sidebar.markdown("---")
-st.sidebar.write("**System Status:** Operational 🌟")
-
-# Main App Header
-st.markdown("""
-    <div style="background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%); padding: 25px; border-radius: 10px; color: white;">
-        <h1 style="margin:0; font-size: 28px;">MAREC Insights | SHRM-CP HR Odyssey</h1>
-        <p style="margin:5px 0 0 0; font-size: 16px; opacity: 0.9;">Hospitality Workforce Intelligence & Behavioral Competency Simulator</p>
-    </div>
-""", unsafe_allow_html=True)
-
-st.write("")
-
-if not questions:
-    st.error("⚠️ Question bank is empty.")
-else:
-    if 'q_index' not in st.session_state:
-        st.session_state.q_index = 0
-    if 'submitted' not in st.session_state:
-        st.session_state.submitted = False
-
-    current_q = questions[st.session_state.q_index]
-
-    progress_val = (st.session_state.q_index + 1) / len(questions)
-    st.progress(progress_val, text=f"Exam Progress: Question {st.session_state.q_index + 1} of {len(questions)}")
-
-    st.subheader(f"{current_q.get('chapter', 'Hospitality Operations')}")
-    st.write(f"**Item Type:** {current_q.get('type', 'SJI')} | 🎯 **Core Competency:** {current_q.get('competency', 'Business Acumen & Leadership')}")
-
-    # Scenario Box
-    st.markdown("### 🏨 Hospitality Scenario Challenge:")
-    st.info(current_q['scenario'])
-
-    # Audio Reader Feature (TTS)
-    if st.button("🔊 Read Scenario Aloud"):
-        try:
-            tts = gTTS(text=current_q['scenario'], lang='en', slow=False)
-            audio_fp = BytesIO()
-            tts.write_to_fp(audio_fp)
-            audio_fp.seek(0)
-            st.audio(audio_fp, format='audio/mp3', autoplay=True)
-        except Exception as e:
-            st.warning("Audio synthesis note: Ensure `gTTS` is installed in `requirements.txt`.")
-
-    # Options Form
-    form_key = f"form_{st.session_state.q_index}"
-    with st.form(key=form_key):
-        selected_option = st.radio(
-            "Select your best operational or strategic HR recommendation:",
-            current_q['options'],
-            key=f"radio_{st.session_state.q_index}"
-        )
-        
-        submitted = st.form_submit_button("Submit Answer")
-
-        if submitted:
-            st.session_state.submitted = True
-            selected_idx = ord(selected_option[0]) - ord('A')
-            
-            if selected_idx == current_q['correct']:
-                st.success("✅ **Correct! Excellent strategic decision.** (+10 XP)")
-                st.balloons()
-            else:
-                correct_letter = chr(ord('A') + current_q['correct'])
-                st.error(f"❌ **Incorrect.** The correct strategic choice was **{correct_letter}**.")
-
-            st.markdown("---")
-            st.markdown("### 💡 Strategic Rationale & Explanation")
-            st.write(current_q['explanation'])
-
-            st.markdown("### 🧠 Memory Anchor (Keep It Simple!)")
-            st.success(current_q.get('memory_anchor', 'Think of this like balancing resort shifts during peak guest arrivals.'))
-
-    # Navigation Controls
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.session_state.q_index > 0:
-            if st.button("⬅️ Previous Question"):
-                st.session_state.q_index -= 1
-                st.session_state.submitted = False
-                st.rerun()
-    with col2:
-        if st.session_state.q_index < len(questions) - 1:
-            if st.button("Next Question ➡️"):
-                st.session_state.q_index += 1
-                st.session_state.submitted = False
-                st.rerun()
+[
+  {
+    "id": 1,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 1: Strategic Management & Competency Model",
+    "scenario": "According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 2,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 1: Workplace Safety & OSHA Compliance",
+    "scenario": "A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 3,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 1: Total Rewards & Job Evaluation",
+    "scenario": "Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 4,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 1: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 5,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 1: Talent Development & ADDIE Model",
+    "scenario": "In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 6,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 1: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 7,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 1: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 8,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 1: Total Rewards & Compa-Ratio Management",
+    "scenario": "A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 9,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 1: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 10,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 1: Employee Relations & Constructive Discharge",
+    "scenario": "A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 11,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 1: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #11] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 12,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 1: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #12] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 13,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 1: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #13] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 14,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 1: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #14] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 15,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 1: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #15] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 16,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 2: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #16] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 17,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 2: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #17] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 18,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 2: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #18] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 19,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 2: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #19] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 20,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 2: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #20] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 21,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 2: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #21] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 22,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 2: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #22] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 23,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 2: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #23] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 24,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 2: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #24] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 25,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 2: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #25] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 26,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 2: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #26] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 27,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 2: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #27] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 28,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 2: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #28] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 29,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 2: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #29] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 30,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 2: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #30] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 31,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 3: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #31] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 32,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 3: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #32] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 33,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 3: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #33] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 34,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 3: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #34] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 35,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 3: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #35] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 36,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 3: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #36] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 37,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 3: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #37] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 38,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 3: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #38] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 39,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 3: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #39] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 40,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 3: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #40] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 41,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 3: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #41] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 42,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 3: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #42] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 43,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 3: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #43] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 44,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 3: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #44] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 45,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 3: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #45] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 46,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 4: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #46] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 47,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 4: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #47] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 48,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 4: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #48] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 49,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 4: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #49] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 50,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 4: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #50] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 51,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 4: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #51] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 52,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 4: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #52] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 53,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 4: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #53] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 54,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 4: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #54] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 55,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 4: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #55] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 56,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 4: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #56] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 57,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 4: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #57] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 58,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 4: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #58] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 59,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 4: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #59] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 60,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 4: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #60] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 61,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 5: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #61] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 62,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 5: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #62] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 63,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 5: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #63] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 64,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 5: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #64] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 65,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 5: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #65] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 66,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 5: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #66] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 67,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 5: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #67] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 68,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 5: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #68] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 69,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 5: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #69] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 70,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 5: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #70] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 71,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 5: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #71] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 72,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 5: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #72] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 73,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 5: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #73] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 74,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 5: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #74] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 75,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 5: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #75] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 76,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 6: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #76] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 77,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 6: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #77] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 78,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 6: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #78] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 79,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 6: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #79] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 80,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 6: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #80] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 81,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 6: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #81] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 82,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 6: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #82] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 83,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 6: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #83] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 84,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 6: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #84] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 85,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 6: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #85] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 86,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 6: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #86] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 87,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 6: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #87] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 88,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 6: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #88] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 89,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 6: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #89] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 90,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 6: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #90] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 91,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 7: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #91] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 92,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 7: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #92] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 93,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 7: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #93] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 94,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 7: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #94] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 95,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 7: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #95] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 96,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 7: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #96] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 97,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 7: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #97] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 98,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 7: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #98] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 99,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 7: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #99] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 100,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 7: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #100] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 101,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 7: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #101] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 102,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 7: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #102] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 103,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 7: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #103] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 104,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 7: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #104] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 105,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 7: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #105] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 106,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 8: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #106] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 107,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 8: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #107] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 108,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 8: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #108] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 109,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 8: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #109] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 110,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 8: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #110] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 111,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 8: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #111] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 112,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 8: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #112] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 113,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 8: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #113] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 114,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 8: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #114] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 115,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 8: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #115] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 116,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 8: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #116] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 117,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 8: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #117] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 118,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 8: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #118] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 119,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 8: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #119] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 120,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 8: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #120] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 121,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 9: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #121] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 122,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 9: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #122] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 123,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 9: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #123] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 124,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 9: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #124] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 125,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 9: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #125] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 126,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 9: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #126] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 127,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 9: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #127] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 128,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 9: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #128] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 129,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 9: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #129] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 130,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 9: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #130] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 131,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 9: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #131] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 132,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 9: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #132] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 133,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 9: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #133] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 134,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 9: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #134] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 135,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 9: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #135] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 136,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 10: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #136] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 137,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 10: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #137] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 138,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 10: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #138] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 139,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 10: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #139] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 140,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 10: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #140] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  },
+  {
+    "id": 141,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 10: Strategic Management & Competency Model",
+    "scenario": "[SHRM-CP Exam Prep Item #141] According to the SHRM Body of Applied Skills and Knowledge (BASK), which behavioral competency encompasses the ability to understand and apply information to contribute to the organization's strategic plan?",
+    "options": [
+      "A) Business Acumen",
+      "B) Ethical Practice",
+      "C) Global & Cultural Effectiveness",
+      "D) Relationship Management"
+    ],
+    "correct": 0,
+    "explanation": "Business Acumen is the SHRM competency that drives strategic alignment, financial literacy, and understanding of organizational metrics.",
+    "memory_anchor": "\ud83d\udcca Business Acumen = Knowing how the business makes money and reading the financial scorecards.",
+    "competency": "Business Acumen"
+  },
+  {
+    "id": 142,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 10: Workplace Safety & OSHA Compliance",
+    "scenario": "[SHRM-CP Exam Prep Item #142] A 2,000-room hotel casino experiences an OSHA inspection after a maintenance worker fails to use lockout/tagout (LOTO) procedures on a high-pressure boiler. What is the primary liability exposure under OSHA's General Duty Clause?",
+    "options": [
+      "A) Failure to provide a workplace free from recognized hazards causing or likely to cause death or serious physical harm.",
+      "B) Minor civil tax penalty with no recordkeeping requirements.",
+      "C) Violation of voluntary corporate wellness guidelines.",
+      "D) Infringement on collective bargaining union agreements."
+    ],
+    "correct": 0,
+    "explanation": "The OSHA General Duty Clause (Section 5(a)(1)) mandates that employers maintain a workplace free from recognized, preventable hazards.",
+    "memory_anchor": "\u26a0\ufe0f General Duty Clause = Employers must keep the workplace safe from obvious lethal hazards like unlatched boilers or live circuits.",
+    "competency": "HR Expertise / HR Knowledge Domain"
+  },
+  {
+    "id": 143,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 10: Total Rewards & Job Evaluation",
+    "scenario": "[SHRM-CP Exam Prep Item #143] Which quantitative job evaluation method breaks jobs down into compensable factors (such as skill, effort, responsibility, and working conditions) and assigns numerical points to determine pay grades?",
+    "options": [
+      "A) Point-Factor Method",
+      "B) Whole-Job Ranking Method",
+      "C) Market Pay Pricing Model",
+      "D) Broadbanding Spread Matrix"
+    ],
+    "correct": 0,
+    "explanation": "The Point-Factor Method evaluates jobs quantitatively using weighted compensable factors to establish fair, objective internal equity.",
+    "memory_anchor": "\ud83d\udd22 Point-Factor = Scoring a job like a video game using points for skill, effort, and responsibility.",
+    "competency": "Leadership & Navigation"
+  },
+  {
+    "id": 144,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 10: Diversity, Equity & Inclusion (DEI) & Title VII",
+    "scenario": "[SHRM-CP Exam Prep Item #144] A luxury resort implements a strict English-only rule during all working and non-working break hours across its diverse housekeeping staff, claiming it helps guest relations. How should HR evaluate this under Title VII?",
+    "options": [
+      "A) Broad English-only rules during non-working break times create a presumptive national origin discrimination violation under Title VII unless justified by strict business necessity.",
+      "B) Perfectly legal since guests prefer English speakers.",
+      "C) Required under federal OSHA hospitality standards.",
+      "D) Exempt from all federal employment laws."
+    ],
+    "correct": 0,
+    "explanation": "EEOC guidelines state that blanket English-only rules during non-working time violate Title VII for national origin discrimination unless proven necessary for safe operations.",
+    "memory_anchor": "\ud83d\udde3\ufe0f You cannot ban employees from speaking their native language during lunch breaks\u2014Title VII protects national origin.",
+    "competency": "Ethical Practice"
+  },
+  {
+    "id": 145,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 10: Talent Development & ADDIE Model",
+    "scenario": "[SHRM-CP Exam Prep Item #145] In instructional design and training architecture, what phase of the ADDIE model involves establishing learning objectives, selecting instructional strategies, and designing module assessments?",
+    "options": [
+      "A) Design Phase",
+      "B) Analysis Phase",
+      "C) Implementation Phase",
+      "D) Evaluation Phase"
+    ],
+    "correct": 0,
+    "explanation": "The ADDIE framework consists of Analysis, Design, Development, Implementation, and Evaluation. The Design phase builds the blueprint, objectives, and test mechanics.",
+    "memory_anchor": "\ud83d\udcd0 ADDIE Design = Creating the architectural blueprint and learning objectives before building the slides.",
+    "competency": "Relationship Management"
+  },
+  {
+    "id": 146,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 10: Labor Relations & NLRA / Weingarten Rights",
+    "scenario": "[SHRM-CP Exam Prep Item #146] A unionized banquet server is called into an investigatory meeting with hotel security regarding missing cash from a banquet register. The server asks for a union steward to be present. The manager says no. What violation occurred?",
+    "options": [
+      "A) Violation of Weingarten Rights under the NLRA (denying union representation during investigatory interviews that could lead to discipline).",
+      "B) Violation of FMLA medical leave statutes.",
+      "C) Violation of ADA accommodation guidelines.",
+      "D) Infringement on OSHA walkthrough inspections."
+    ],
+    "correct": 0,
+    "explanation": "Weingarten rights entitle unionized employees to union representation during investigatory interviews upon request.",
+    "memory_anchor": "\u270a Weingarten = 'I want my union steward in here!' Union workers have the right to representation during interrogations.",
+    "competency": "Consultation"
+  },
+  {
+    "id": 147,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 10: Strategic Workforce Planning & Balanced Scorecard",
+    "scenario": "[SHRM-CP Exam Prep Item #147] What strategic management tool, developed by Kaplan and Norton, evaluates organizational performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) BCG Growth Matrix",
+      "C) Compa-Ratio Curve",
+      "D) PESTLE Scan"
+    ],
+    "correct": 0,
+    "explanation": "The Balanced Scorecard balances traditional financial metrics with customer satisfaction, operational efficiency, and workforce learning metrics.",
+    "memory_anchor": "\u2696\ufe0f Balanced Scorecard = Looking at financial health alongside customer happiness, internal processes, and employee training.",
+    "competency": "Critical Evaluation"
+  },
+  {
+    "id": 148,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 10: Total Rewards & Compa-Ratio Management",
+    "scenario": "[SHRM-CP Exam Prep Item #148] A resort hotel analyst calculates a front desk manager's salary as $52,000 against a salary grade midpoint of $50,000. What is the manager's compa-ratio, and how should HR interpret it?",
+    "options": [
+      "A) Compa-ratio is 1.04 (or 104%), indicating the employee is paid slightly above the salary range midpoint, reflecting solid tenure or experience.",
+      "B) Compa-ratio is 0.96, indicating severe underpayment.",
+      "C) Compa-ratio is 2.0, indicating executive status.",
+      "D) Compa-ratio is invalid under FLSA rules."
+    ],
+    "correct": 0,
+    "explanation": "Compa-Ratio = (Actual Salary \u00f7 Range Midpoint) = $52,000 \u00f7 $50,000 = 1.04. 1.0 is right at market midpoint.",
+    "memory_anchor": "\ud83d\udcca Compa-Ratio = Actual pay divided by midpoint. 1.0 means you are right in the middle of the pay grade.",
+    "competency": "Global & Cultural Effectiveness"
+  },
+  {
+    "id": 149,
+    "type": "Knowledge Item",
+    "chapter": "SHRM-CP Domain 10: U.S. Employment Law & ADA Interactive Process",
+    "scenario": "[SHRM-CP Exam Prep Item #149] Under the Americans with Disabilities Act (ADA), what legally mandated dialogue must occur between an employer and an employee requesting a workplace accommodation?",
+    "options": [
+      "A) The Interactive Process",
+      "B) Summary Arbitration Review",
+      "C) Mandatory Grievance Step-1",
+      "D) Disciplinary Calibration Hearing"
+    ],
+    "correct": 0,
+    "explanation": "The Interactive Process is the ongoing, good-faith dialogue required under the ADA to identify effective reasonable accommodations.",
+    "memory_anchor": "\ud83d\udcac Interactive Process = Sitting down together in good faith to figure out how the hotel can accommodate a medical need.",
+    "competency": "Communication"
+  },
+  {
+    "id": 150,
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "SHRM-CP Domain 10: Employee Relations & Constructive Discharge",
+    "scenario": "[SHRM-CP Exam Prep Item #150] A general manager wants to force a veteran food & beverage director to quit without paying severance. The manager cuts their hours to 5 per week, reassigns them to midnight pot-washing, and removes their office. What legal concept does this represent?",
+    "options": [
+      "A) Constructive Discharge (deliberately creating intolerable working conditions to force an involuntary resignation)",
+      "B) Legitimate Reduction in Force (RIF)",
+      "C) Voluntary Mutual Separation Agreement",
+      "D) Exempt Overtime Reclassification"
+    ],
+    "correct": 0,
+    "explanation": "Constructive discharge occurs when an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign, treated legally as a termination.",
+    "memory_anchor": "\ud83e\udea4 Constructive Discharge = Intentionally making work so miserable that you force someone to quit.",
+    "competency": "Workplace Safety & Risk Management"
+  }
+]
