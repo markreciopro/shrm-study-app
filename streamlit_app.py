@@ -1,227 +1,508 @@
-import streamlit as st
 import json
-from gtts import gTTS
+import random
+import re
 from io import BytesIO
+from pathlib import Path
 
-# Page Configuration
+import streamlit as st
+from gtts import gTTS
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Page configuration
+# ──────────────────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="MAREC Insights | SHRM-CP & CRME Hospitality Masterclass",
     page_icon="🏨",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
 )
 
-# Custom High-Contrast CSS for Pristine Readability & Luxury Resort Theme
-st.markdown("""
+XP_PER_CORRECT = 10
+LETTERS = "ABCDEFGH"
+
+st.markdown(
+    """
     <style>
-    /* High-Contrast Color Palette & Luxury Resort Glassmorphism */
     @keyframes fadeIn {
-        0% { opacity: 0; transform: translateY(10px); }
+        0%   { opacity: 0; transform: translateY(10px); }
         100% { opacity: 1; transform: translateY(0); }
     }
 
     .stApp {
         background: linear-gradient(135deg, #0a192f 0%, #172a45 50%, #1f4068 100%);
-        color: #ffffff !important;
         font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     }
+    header[data-testid="stHeader"] { background: transparent; }
 
-    /* Main Content Card Container with High Contrast */
-    .masterclass-card {
+    /* Question card (container created with key="qcard") */
+    .st-key-qcard {
         animation: fadeIn 0.5s ease-out;
         background: rgba(15, 23, 42, 0.85);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(100, 255, 218, 0.3);
+        border: 1px solid rgba(100, 255, 218, 0.3) !important;
         border-radius: 16px;
-        padding: 30px;
-        margin-bottom: 24px;
-        box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+        padding: 14px 18px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     }
 
     .hero-header {
         background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
-        padding: 30px;
+        padding: 26px 30px;
         border-radius: 16px;
-        color: #ffffff;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        margin-bottom: 18px;
+    }
+    .hero-header h1 { margin: 0; font-size: 28px; font-weight: 700; color: #ffffff; }
+    .hero-header p  { margin: 8px 0 0 0; font-size: 15px; color: #cbd5e1; }
+
+    /* Buttons */
+    .stButton > button {
+        border-radius: 10px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .stButton > button:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 180, 216, 0.55);
+    }
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(90deg, #00b4d8 0%, #0077b6 100%);
+        color: #ffffff;
+        border: none;
     }
 
-    /* High Visibility Typography & Labels */
-    h1, h2, h3, h4, h5, h6, p, span, label, .stMarkdown {
-        color: #ffffff !important;
-    }
+    /* Answer choices */
+    .stRadio label p { font-size: 16px; font-weight: 500; }
 
-    .stRadio label p {
-        color: #e2e8f0 !important;
-        font-size: 16px !important;
-        font-weight: 500 !important;
-    }
-
-    /* Stunning Custom Buttons */
-    .stButton>button {
-        border-radius: 10px !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.5px !important;
-        background: linear-gradient(90deg, #00b4d8 0%, #0077b6 100%) !important;
-        color: #ffffff !important;
-        border: none !important;
-        padding: 10px 24px !important;
-        box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4) !important;
-    }
-    
-    .stButton>button:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 6px 20px rgba(0, 180, 216, 0.7) !important;
-        background: linear-gradient(90deg, #90e0ef 0%, #00b4d8 100%) !important;
-        color: #0a192f !important;
-    }
-
-    /* Sidebar Styling */
     section[data-testid="stSidebar"] {
-        background-color: #070d1b !important;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
-
-    /* Info / Success / Error box overrides for high contrast */
-    .stAlert {
-        background-color: rgba(30, 41, 59, 0.9) !important;
-        color: #ffffff !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    }
     </style>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True,
+)
 
-# Safe Loader for questions.json
-@st.cache_data
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Data loading & validation
+# ──────────────────────────────────────────────────────────────────────────────
+ITEM_PREFIX_RE = re.compile(r"^\s*\[[^\]]*#\d+\]\s*")  # e.g. "[SHRM-CP Exam Prep Item #16] "
+OPTION_PREFIX_RE = re.compile(r"^\s*[A-Ha-h][\)\.:]\s*")  # e.g. "A) "
+
+
+def _normalize(raw: dict, idx: int) -> dict:
+    options = [OPTION_PREFIX_RE.sub("", str(o)).strip() for o in raw["options"]]
+    correct = int(raw["correct"])
+    if len(options) < 2 or not 0 <= correct < len(options):
+        raise ValueError("options/correct index are inconsistent")
+    return {
+        "uid": idx,  # unique key for session state, independent of the JSON "id"
+        "id": raw.get("id", idx + 1),
+        "type": raw.get("type", "Knowledge Item"),
+        "chapter": raw.get("chapter", "Hospitality Operations"),
+        "competency": raw.get("competency", "Business Acumen"),
+        "scenario": ITEM_PREFIX_RE.sub("", str(raw["scenario"])).strip(),
+        "options": options,
+        "correct": correct,  # index within the ORIGINAL option order
+        "explanation": str(raw.get("explanation", "")).strip(),
+        "memory_anchor": str(
+            raw.get(
+                "memory_anchor",
+                "Think of this like balancing resort shifts during peak guest arrivals.",
+            )
+        ).strip(),
+    }
+
+
+@st.cache_data(show_spinner=False)
 def load_questions():
+    """Returns (questions, warnings, fatal_error)."""
+    candidates = [Path(__file__).with_name("questions.json"), Path("questions.json")]
+    path = next((p for p in candidates if p.exists()), None)
+    if path is None:
+        return [], [], "`questions.json` not found in the repository."
     try:
-        with open("questions.json", "r", encoding="utf-8") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        st.error("⚠️ `questions.json` not found in repository.")
-        return []
+        data = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as e:
-        st.error(f"⚠️ Syntax error in `questions.json` at line {e.lineno}: {e.msg}")
-        return []
+        return [], [], f"Syntax error in `questions.json` at line {e.lineno}: {e.msg}"
 
-questions = load_questions()
+    questions, warnings = [], []
+    for i, raw in enumerate(data):
+        try:
+            questions.append(_normalize(raw, i))
+        except (KeyError, TypeError, ValueError) as e:
+            warnings.append(f"Skipped entry #{i + 1}: {e}")
+    return questions, warnings, None
 
-# Sidebar Navigation & User Profile
+
+questions, load_warnings, fatal_error = load_questions()
+Q_BY_UID = {q["uid"]: q for q in questions}
+
+TYPE_FILTERS = {
+    "All items": lambda q: True,
+    "Knowledge Items only": lambda q: "situational" not in q["type"].lower(),
+    "Situational Judgment (SJI) only": lambda q: "situational" in q["type"].lower(),
+}
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Text-to-speech helpers
+# ──────────────────────────────────────────────────────────────────────────────
+EMOJI_RE = re.compile("[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50\uFE0F\u200d]+")
+SPEECH_FIXES = [
+    (r"\bNLRA\b", "N L R A"),
+    (r"\bFLSA\b", "F L S A"),
+    (r"\bFMLA\b", "F M L A"),
+    (r"\bEEOC\b", "E E O C"),
+    (r"\bADA\b", "A D A"),
+    (r"\bSHRM\b", "S H R M"),
+    (r"\bCP\b", "C P"),
+    (r"\bHR\b", "H R"),
+    (r"\bDEI\b", "D E I"),
+    (r"\bSJI\b", "S J I"),
+    (r"\bBCG\b", "B C G"),
+    (r"\bRIF\b", "R I F"),
+    (r"\bLOTO\b", "low-toe"),
+    (r"\bADDIE\b", "addy"),
+    (r"\bPESTLE\b", "pestle"),
+    (r"\bVII\b", "seven"),
+    (r"(\d)\(([A-Za-z0-9]+)\)", r"\1 \2"),  # "5(a)(1)" -> "5 a 1"
+    (r"\(([A-Za-z0-9]+)\)", r" \1"),
+    (r"\s*&\s*", " and "),
+    (r"\s+/\s+|/", ", "),
+]
+
+
+def clean_for_speech(text: str) -> str:
+    text = EMOJI_RE.sub("", text)
+    for pattern, repl in SPEECH_FIXES:
+        text = re.sub(pattern, repl, text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _sentence(text: str) -> str:
+    text = text.strip()
+    return text if text.endswith((".", "!", "?", ":")) else text + "."
+
+
+def question_speech(q: dict, perm: list, number: int, total: int) -> str:
+    parts = [f"Question {number} of {total}.", _sentence(q["scenario"])]
+    for pos, orig in enumerate(perm):
+        parts.append(f"Option {LETTERS[pos]}. {_sentence(q['options'][orig])}")
+    return clean_for_speech(" ".join(parts))
+
+
+def explanation_speech(q: dict, perm: list, was_correct: bool) -> str:
+    letter = LETTERS[perm.index(q["correct"])]
+    verdict = "Correct." if was_correct else "Incorrect."
+    parts = [
+        verdict,
+        f"The best answer is option {letter}. {_sentence(q['options'][q['correct']])}",
+        _sentence(q["explanation"]),
+        "Memory anchor. " + _sentence(q["memory_anchor"]),
+    ]
+    return clean_for_speech(" ".join(parts))
+
+
+@st.cache_data(show_spinner=False, max_entries=300)
+def synthesize(text: str, slow: bool, tld: str) -> bytes:
+    buf = BytesIO()
+    gTTS(text=text, lang="en", slow=slow, tld=tld).write_to_fp(buf)
+    return buf.getvalue()
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Session state: deck building, navigation, audio queue
+# ──────────────────────────────────────────────────────────────────────────────
+def build_deck(pool_uids=None):
+    """(Re)build a study deck with shuffled question order and shuffled answer choices."""
+    if pool_uids is None:
+        keep = TYPE_FILTERS[st.session_state.get("type_filter", "All items")]
+        pool_uids = [q["uid"] for q in questions if keep(q)]
+    deck = list(pool_uids)
+    if st.session_state.get("shuffle_q", True):
+        random.shuffle(deck)
+
+    perms = {}
+    for uid in deck:
+        order = list(range(len(Q_BY_UID[uid]["options"])))
+        if st.session_state.get("shuffle_a", True):
+            random.shuffle(order)
+        perms[uid] = order
+
+    st.session_state.deck = deck
+    st.session_state.perms = perms
+    st.session_state.answers = {}  # uid -> {"choice": position, "correct": bool}
+    st.session_state.pos = 0
+    st.session_state.epoch = st.session_state.get("epoch", 0) + 1
+    st.session_state.audio_data = None
+    st.session_state.audio_req = "question" if st.session_state.get("auto_q", True) else None
+
+
+def go_to(new_pos: int):
+    deck_len = len(st.session_state.deck)
+    st.session_state.pos = max(0, min(deck_len, new_pos))
+    st.session_state.audio_data = None
+    on_question = st.session_state.pos < deck_len
+    st.session_state.audio_req = "question" if (on_question and st.session_state.get("auto_q", True)) else None
+
+
+def request_audio(kind: str):
+    st.session_state.audio_req = kind
+
+
+def retry_missed():
+    answers = st.session_state.answers
+    missed = [uid for uid in st.session_state.deck if not answers.get(uid, {}).get("correct")]
+    build_deck(pool_uids=missed)
+
+
+def accuracy_pct() -> int:
+    answers = st.session_state.answers
+    return round(100 * sum(a["correct"] for a in answers.values()) / len(answers)) if answers else 0
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Sidebar
+# ──────────────────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.image(
-        "https://raw.githubusercontent.com/markreciopro/shrm-study-app/main/assets/logo.png",
-        use_column_width=True,
-        caption="MAREC Insights • Workforce Intelligence"
-    )
+    try:
+        st.image(
+            "https://raw.githubusercontent.com/markreciopro/shrm-study-app/main/assets/logo.png",
+            use_container_width=True,
+            caption="MAREC Insights • Workforce Intelligence",
+        )
+    except Exception:
+        st.markdown("## 🏨 MAREC Insights")
+
     st.markdown("### 🏆 Exam Masterclass Navigator")
     st.caption("Specialized for Luxury Resorts, Casinos & SHRM-CP Success")
     st.markdown("---")
-    
     st.write("**Candidate:** Mark Anthony Recio, MBA")
     st.write("**Target Credential:** SHRM-CP / CRME")
     st.write("**Core Focus:** BASK Competencies, OSHA, DEI, Labor, Total Rewards")
     st.markdown("---")
-    
+
     if questions:
-        st.metric(label="Master Question Bank", value=f"{len(questions)} Questions", delta="100% Loaded 🌟")
+        st.metric("Master Question Bank", f"{len(questions)} Questions", "100% Loaded 🌟")
     else:
         st.error("0 Questions Loaded")
-    
+
+    st.markdown("### 🎛️ Study Session")
+    st.selectbox("Question set", list(TYPE_FILTERS), key="type_filter")
+    st.checkbox("🔀 Shuffle question order", value=True, key="shuffle_q")
+    st.checkbox("🔀 Shuffle answer choices", value=True, key="shuffle_a")
+    if st.button("🔄 Start New Session", use_container_width=True, disabled=not questions):
+        build_deck()
+        st.rerun()
+
+    st.markdown("### 🔊 Audio Coach")
+    st.checkbox("Auto-read each new question", value=True, key="auto_q")
+    st.checkbox("Auto-read explanation after answering", value=True, key="auto_e")
+    st.checkbox("Slower speaking pace", value=False, key="tts_slow")
+    st.selectbox(
+        "Voice accent",
+        options=["com", "co.uk", "com.au", "ca", "co.in"],
+        format_func=lambda t: {
+            "com": "US English",
+            "co.uk": "British English",
+            "com.au": "Australian English",
+            "ca": "Canadian English",
+            "co.in": "Indian English",
+        }[t],
+        key="tts_tld",
+    )
     st.markdown("---")
     st.write("**System Status:** Operational 🚀")
 
-# Hero Banner Header
-st.markdown("""
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Header
+# ──────────────────────────────────────────────────────────────────────────────
+st.markdown(
+    f"""
     <div class="hero-header">
-        <h1 style="margin:0; font-size: 28px; font-weight: 700; color: #ffffff;">🏨 MAREC Insights | SHRM-CP Hospitality Masterclass</h1>
-        <p style="margin:8px 0 0 0; font-size: 15px; color: #cbd5e1;">
-            Mastering 150 Rigorous SHRM-BASK Scenarios, Exam Terminology, Real-World Examples & Memory Anchors
-        </p>
+        <h1>🏨 MAREC Insights | SHRM-CP Hospitality Masterclass</h1>
+        <p>Mastering {len(questions) or 150} SHRM-BASK Scenarios, Exam Terminology,
+        Real-World Examples &amp; Memory Anchors — now shuffled and read aloud.</p>
     </div>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True,
+)
 
-st.write("")
-
+if fatal_error:
+    st.error(f"⚠️ {fatal_error}")
+    st.stop()
+for w in load_warnings:
+    st.warning(f"⚠️ {w}")
 if not questions:
-    st.warning("⚠️ No questions loaded. Please verify `questions.json` in your repository.")
-else:
-    if 'q_index' not in st.session_state:
-        st.session_state.q_index = 0
-    if 'score' not in st.session_state:
-        st.session_state.score = 0
+    st.warning("⚠️ No valid questions loaded. Please verify `questions.json` in your repository.")
+    st.stop()
 
-    current_q = questions[st.session_state.q_index]
+if "deck" not in st.session_state:
+    st.session_state.score = 0
+    build_deck()
+st.session_state.score = sum(XP_PER_CORRECT for a in st.session_state.answers.values() if a["correct"])
 
-    # Progress Indicator
-    progress_val = (st.session_state.q_index + 1) / len(questions)
-    st.progress(progress_val, text=f"Exam Progress: Question {st.session_state.q_index + 1} of {len(questions)}")
+deck = st.session_state.deck
+total = len(deck)
+pos = st.session_state.pos
 
-    # Main Card Container
-    st.markdown('<div class="masterclass-card">', unsafe_allow_html=True)
-    
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Results screen
+# ──────────────────────────────────────────────────────────────────────────────
+if pos >= total:
+    answers = st.session_state.answers
+    correct_n = sum(a["correct"] for a in answers.values())
+    st.progress(1.0, text="Session complete")
+
+    with st.container(border=True, key="qcard"):
+        st.subheader("🏁 Session Results")
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Total XP", f"{st.session_state.score} XP")
+        c2.metric("Correct", f"{correct_n} / {total}")
+        c3.metric("Accuracy (answered)", f"{accuracy_pct()}%")
+        c4.metric("Unanswered", total - len(answers))
+
+        # Per-competency breakdown
+        stats = {}
+        for uid in deck:
+            comp = Q_BY_UID[uid]["competency"]
+            row = stats.setdefault(comp, {"Competency": comp, "Answered": 0, "Correct": 0})
+            if uid in answers:
+                row["Answered"] += 1
+                row["Correct"] += int(answers[uid]["correct"])
+        table = []
+        for row in stats.values():
+            row["Accuracy"] = f"{round(100 * row['Correct'] / row['Answered'])}%" if row["Answered"] else "—"
+            table.append(row)
+        table.sort(key=lambda r: (r["Answered"] == 0, r["Correct"] / r["Answered"] if r["Answered"] else 0))
+        st.markdown("#### 📊 Competency Breakdown (weakest first)")
+        st.dataframe(table, use_container_width=True, hide_index=True)
+
+        missed_n = total - correct_n
+        b1, b2, b3 = st.columns(3)
+        b1.button("🔀 Reshuffle & Restart", on_click=build_deck, type="primary", use_container_width=True)
+        b2.button(
+            f"🔁 Retry Missed / Unanswered ({missed_n})",
+            on_click=retry_missed,
+            disabled=missed_n == 0,
+            use_container_width=True,
+        )
+        b3.button("⬅️ Review Last Question", on_click=go_to, args=(total - 1,), use_container_width=True)
+        if missed_n == 0:
+            st.balloons()
+    st.stop()
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Question screen
+# ──────────────────────────────────────────────────────────────────────────────
+uid = deck[pos]
+q = Q_BY_UID[uid]
+perm = st.session_state.perms[uid]  # perm[display_position] = original option index
+correct_pos = perm.index(q["correct"])
+record = st.session_state.answers.get(uid)
+answered = record is not None
+
+st.progress(
+    len(st.session_state.answers) / total,
+    text=f"Question {pos + 1} of {total}  •  {len(st.session_state.answers)} answered",
+)
+
+with st.container(border=True, key="qcard"):
     col_a, col_b = st.columns([3, 1])
     with col_a:
-        st.subheader(f"📍 {current_q.get('chapter', 'Hospitality Operations')}")
-        st.markdown(f"**Item Type:** `{current_q.get('type', 'SJI')}` | 🎯 **SHRM Competency:** `{current_q.get('competency', 'Business Acumen')}`")
+        st.subheader(f"📍 {q['chapter']}")
+        st.markdown(f"**Item Type:** `{q['type']}` | 🎯 **SHRM Competency:** `{q['competency']}`")
     with col_b:
-        st.metric(label="Total XP Score", value=f"{st.session_state.score} XP")
+        st.metric("Total XP Score", f"{st.session_state.score} XP")
 
     st.markdown("### 🏨 Exam Scenario Challenge:")
-    st.info(current_q['scenario'])
+    st.info(q["scenario"])
 
-    # Audio TTS Reader
-    if st.button("🔊 Read Scenario Aloud"):
-        try:
-            tts = gTTS(text=current_q['scenario'], lang='en', slow=False)
-            audio_fp = BytesIO()
-            tts.write_to_fp(audio_fp)
-            audio_fp.seek(0)
-            st.audio(audio_fp, format='audio/mp3', autoplay=True)
-        except Exception as e:
-            st.warning("Audio synthesis note: Ensure `gTTS` is installed in `requirements.txt`.")
+    # Audio controls
+    a1, a2, _ = st.columns([2, 2, 3])
+    a1.button("🔊 Read Question & Choices", on_click=request_audio, args=("question",), use_container_width=True)
+    a2.button(
+        "🔊 Read Explanation",
+        on_click=request_audio,
+        args=("explanation",),
+        disabled=not answered,
+        use_container_width=True,
+    )
+    audio_slot = st.container()
 
-    # Interactive Options Form
-    form_key = f"form_{st.session_state.q_index}"
-    with st.form(key=form_key):
-        selected_option = st.radio(
-            "Select your best operational or strategic HR recommendation:",
-            current_q['options'],
-            key=f"radio_{st.session_state.q_index}"
+    # Answer choices
+    choice = st.radio(
+        "Select your best operational or strategic HR recommendation:",
+        options=list(range(len(perm))),
+        format_func=lambda i: f"{LETTERS[i]}) {q['options'][perm[i]]}",
+        index=record["choice"] if answered else None,
+        disabled=answered,
+        key=f"radio_{st.session_state.epoch}_{uid}",
+    )
+
+    if not answered:
+        if st.button("Submit Answer 🎯", type="primary", disabled=choice is None):
+            is_correct = choice == correct_pos
+            st.session_state.answers[uid] = {"choice": choice, "correct": is_correct}
+            st.session_state.celebrate = is_correct
+            if st.session_state.get("auto_e", True):
+                st.session_state.audio_req = "explanation"
+            st.rerun()
+    else:
+        if record["correct"]:
+            st.success(f"✅ **Correct! Excellent strategic decision.** (+{XP_PER_CORRECT} XP)")
+        else:
+            st.error(
+                f"❌ **Incorrect.** The correct strategic choice was "
+                f"**{LETTERS[correct_pos]}) {q['options'][q['correct']]}**"
+            )
+        if st.session_state.pop("celebrate", False):
+            st.balloons()
+
+        st.markdown("---")
+        st.markdown("### 💡 Strategic Rationale & SHRM-CP Terminology")
+        st.write(q["explanation"])
+        st.markdown("### 🧠 Memory Anchor & Practical Example")
+        st.success(q["memory_anchor"])
+
+    # Audio rendering (generated once per request; autoplays only when freshly requested)
+    request = st.session_state.pop("audio_req", None)
+    if request == "explanation" and not answered:
+        request = None
+    if request:
+        text = (
+            explanation_speech(q, perm, record["correct"])
+            if request == "explanation"
+            else question_speech(q, perm, pos + 1, total)
         )
-        
-        submitted = st.form_submit_button("Submit Answer 🎯")
+        try:
+            with audio_slot, st.spinner("Preparing audio…"):
+                st.session_state.audio_data = synthesize(
+                    text, st.session_state.get("tts_slow", False), st.session_state.get("tts_tld", "com")
+                )
+            st.session_state.audio_fresh = True
+        except Exception:
+            st.session_state.audio_data = None
+            audio_slot.warning(
+                "Audio is unavailable right now. gTTS needs an internet connection and "
+                "`gTTS` listed in `requirements.txt`."
+            )
+    if st.session_state.get("audio_data"):
+        fresh = st.session_state.pop("audio_fresh", False)
+        audio_slot.audio(st.session_state.audio_data, format="audio/mp3", autoplay=fresh)
 
-        if submitted:
-            selected_idx = ord(selected_option[0]) - ord('A')
-            
-            if selected_idx == current_q['correct']:
-                st.session_state.score += 10
-                st.success("✅ **Correct! Excellent strategic decision.** (+10 XP)")
-                st.balloons()
-            else:
-                correct_letter = chr(ord('A') + current_q['correct'])
-                st.error(f"❌ **Incorrect.** The correct strategic choice was **{correct_letter}**.")
-
-            st.markdown("---")
-            st.markdown("### 💡 Strategic Rationale & SHRM-CP Terminology")
-            st.write(current_q['explanation'])
-
-            st.markdown("### 🧠 Memory Anchor & Practical Example")
-            st.success(current_q.get('memory_anchor', 'Think of this like balancing resort shifts during peak guest arrivals.'))
-
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # Carousel Navigation Controls
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col1:
-        if st.session_state.q_index > 0:
-            if st.button("⬅️ Previous Question"):
-                st.session_state.q_index -= 1
-                st.rerun()
-    with col3:
-        if st.session_state.q_index < len(questions) - 1:
-            if st.button("Next Question ➡️"):
-                st.session_state.q_index += 1
-                st.rerun()
+# Navigation
+col1, col2, col3 = st.columns([1, 2, 1])
+with col1:
+    if pos > 0:
+        st.button("⬅️ Previous Question", on_click=go_to, args=(pos - 1,))
+with col3:
+    last = pos == total - 1
+    st.button("🏁 Finish & See Results" if last else "Next Question ➡️", on_click=go_to, args=(pos + 1,), type="primary")
