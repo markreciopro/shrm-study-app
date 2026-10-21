@@ -8,7 +8,7 @@ import streamlit as st
 from gTTS import gTTS
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Page configuration
+# Page Configuration
 # ──────────────────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="SHRM-CP Hospitality Masterclass | Created by Mark Anthony Recio",
@@ -34,7 +34,6 @@ st.markdown(
     }
     header[data-testid="stHeader"] { background: transparent; }
 
-    /* Question card container */
     .st-key-qcard {
         animation: fadeIn 0.5s ease-out;
         background: rgba(15, 23, 42, 0.85);
@@ -42,7 +41,7 @@ st.markdown(
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(100, 255, 218, 0.3) !important;
         border-radius: 16px;
-        padding: 16px 22px;
+        padding: 18px 24px;
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     }
 
@@ -57,7 +56,6 @@ st.markdown(
     .hero-header h1 { margin: 0; font-size: 26px; font-weight: 700; color: #ffffff; }
     .hero-header p  { margin: 8px 0 0 0; font-size: 14px; color: #cbd5e1; }
 
-    /* Buttons */
     .stButton > button {
         border-radius: 10px;
         font-weight: 700;
@@ -74,7 +72,6 @@ st.markdown(
         border: none;
     }
 
-    /* Answer choices */
     .stRadio label p { font-size: 15px; font-weight: 500; }
 
     section[data-testid="stSidebar"] {
@@ -87,7 +84,7 @@ st.markdown(
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Data loading & validation
+# Data Loading & Normalization
 # ──────────────────────────────────────────────────────────────────────────────
 ITEM_PREFIX_RE = re.compile(r"^\s*\[[^\]]*#\d+\]\s*")
 OPTION_PREFIX_RE = re.compile(r"^\s*[A-Ha-h][\)\.:]\s*")
@@ -119,11 +116,10 @@ def _normalize(raw: dict, idx: int) -> dict:
 
 @st.cache_data(show_spinner=False)
 def load_questions():
-    """Returns (questions, warnings, fatal_error)."""
     candidates = [Path(__file__).with_name("questions.json"), Path("questions.json")]
     path = next((p for p in candidates if p.exists()), None)
     if path is None:
-        return [], [], "`questions.json` not found in repository."
+        return [], [], "`questions.json` not found in the repository."
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as e:
@@ -149,7 +145,7 @@ TYPE_FILTERS = {
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Speech Synthesis
+# Speech Synthesis Helpers
 # ──────────────────────────────────────────────────────────────────────────────
 EMOJI_RE = re.compile("[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50\uFE0F\u200d]+")
 
@@ -191,7 +187,7 @@ def synthesize(text: str, slow: bool, tld: str) -> bytes:
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Session Deck State
+# Session & Deck Navigation
 # ──────────────────────────────────────────────────────────────────────────────
 def build_deck(pool_uids=None):
     if pool_uids is None:
@@ -247,13 +243,14 @@ with st.sidebar:
     st.markdown("## 🏨 SHRM-CP Masterclass")
     st.caption("Created by Mark Anthony Recio")
     st.markdown("---")
-    st.write("**Target Exam:** SHRM-CP Certification")
-    st.write("**Total Items:** 134 Questions (80 KI / 54 SJI)")
-    st.write("**Passing Scaled Score:** 200 (Scale 120–300)")
+    st.write("**Exam Format:** 134 Scored Items")
+    st.write("**Knowledge Items:** 80 Questions")
+    st.write("**Situational Judgment:** 54 Scenarios")
+    st.write("**Passing Score:** 200 Scaled Score (Scale 120–300)")
     st.markdown("---")
 
     if questions:
-        st.metric("Question Bank Status", f"{len(questions)} Loaded", "100% Unique ✅")
+        st.metric("Master Question Bank", f"{len(questions)} Unique Items", "100% Loaded ✅")
     else:
         st.error("0 Questions Loaded")
 
@@ -274,7 +271,7 @@ with st.sidebar:
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Main Header
+# Header & Execution
 # ──────────────────────────────────────────────────────────────────────────────
 st.markdown(
     """
@@ -292,7 +289,7 @@ if fatal_error:
 for w in load_warnings:
     st.warning(f"⚠️ {w}")
 if not questions:
-    st.warning("⚠️ No valid questions loaded. Please check `questions.json`.")
+    st.warning("⚠️ No valid questions loaded. Please verify `questions.json` in your repository.")
     st.stop()
 
 if "deck" not in st.session_state:
@@ -306,7 +303,7 @@ pos = st.session_state.pos
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Completion Results View
+# Results View
 # ──────────────────────────────────────────────────────────────────────────────
 if pos >= total:
     answers = st.session_state.answers
@@ -314,17 +311,16 @@ if pos >= total:
     st.progress(1.0, text="Exam Session Completed")
 
     with st.container(border=True, key="qcard"):
-        st.subheader("🏁 Performance Summary")
+        st.subheader("🏁 Performance Diagnostics")
         scaled_score = 120 + round((correct_n / max(total, 1)) * 180)
         passed = scaled_score >= 200
 
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Scaled Score", f"{scaled_score} / 300", "PASS ✅" if passed else "DID NOT PASS ❌")
-        c2.metric("Raw Score", f"{correct_n} / {total}")
+        c2.metric("Raw Correct", f"{correct_n} / {total}")
         c3.metric("Accuracy", f"{accuracy_pct()}%")
-        c4.metric("XP Earned", f"{st.session_state.score} XP")
+        c4.metric("Total XP", f"{st.session_state.score} XP")
 
-        # Competency summary
         stats = {}
         for uid in deck:
             comp = Q_BY_UID[uid]["competency"]
@@ -341,9 +337,9 @@ if pos >= total:
 
         missed_n = total - correct_n
         b1, b2, b3 = st.columns(3)
-        b1.button("🔀 Start New Random Deck", on_click=build_deck, type="primary", use_container_width=True)
+        b1.button("🔀 Start New Session", on_click=build_deck, type="primary", use_container_width=True)
         b2.button(
-            f"🔁 Retry Missed Questions ({missed_n})",
+            f"🔁 Retry Missed Items ({missed_n})",
             on_click=retry_missed,
             disabled=missed_n == 0,
             use_container_width=True,
@@ -353,7 +349,7 @@ if pos >= total:
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Question Challenge View
+# Main Question Screen
 # ──────────────────────────────────────────────────────────────────────────────
 uid = deck[pos]
 q = Q_BY_UID[uid]
@@ -373,7 +369,7 @@ with st.container(border=True, key="qcard"):
         st.subheader(f"📍 {q['chapter']}")
         st.markdown(f"**Item Type:** `{q['type']}` | 🎯 **SHRM Competency:** `{q['competency']}`")
     with col_b:
-        st.metric("Total XP", f"{st.session_state.score} XP")
+        st.metric("Total XP Score", f"{st.session_state.score} XP")
 
     st.markdown("### 🏨 Exam Scenario:")
     st.info(q["scenario"])
@@ -381,7 +377,7 @@ with st.container(border=True, key="qcard"):
     a1, a2, _ = st.columns([2, 2, 3])
     a1.button("🔊 Read Question", on_click=request_audio, args=("question",), use_container_width=True)
     a2.button(
-        "🔊 Read Rationale",
+        "🔊 Read Explanation",
         on_click=request_audio,
         args=("explanation",),
         disabled=not answered,
@@ -410,7 +406,7 @@ with st.container(border=True, key="qcard"):
             st.success(f"✅ **Correct! Excellent strategic decision.** (+{XP_PER_CORRECT} XP)")
         else:
             st.error(
-                f"❌ **Incorrect.** Correct answer: "
+                f"❌ **Incorrect.** The correct strategic choice is "
                 f"**{LETTERS[correct_pos]}) {q['options'][q['correct']]}**"
             )
 
@@ -430,7 +426,7 @@ with st.container(border=True, key="qcard"):
             else question_speech(q, perm, pos + 1, total)
         )
         try:
-            with audio_slot, st.spinner("Synthesizing audio…"):
+            with audio_slot, st.spinner("Preparing audio…"):
                 st.session_state.audio_data = synthesize(
                     text, False, st.session_state.get("tts_tld", "com")
                 )
@@ -442,7 +438,7 @@ with st.container(border=True, key="qcard"):
         fresh = st.session_state.pop("audio_fresh", False)
         audio_slot.audio(st.session_state.audio_data, format="audio/mp3", autoplay=fresh)
 
-# Navigation
+# Navigation Controls
 col1, col2, col3 = st.columns([1, 2, 1])
 with col1:
     if pos > 0:
