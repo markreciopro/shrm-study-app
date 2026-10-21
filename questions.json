@@ -131,6 +131,7 @@
     ],
     "correct": 0,
     "explanation": "Labor Cost Percentage is a core hospitality financial metric tracking labor overhead relative to top-line departmental revenue.",
+    "memory_anchor": "📊 Labor Cost % = Total labor dollar expenses divided by total revenue generated.",
     "competency": "Business Acumen & Financial Literacy"
   },
   {
@@ -175,6 +176,7 @@
     ],
     "correct": 0,
     "explanation": "Holistic performance management in hospitality weighs both guest-facing service excellence and operational discipline.",
+    "memory_anchor": "⚖️ Balance guest review praise with punctuality coaching—don't throw out great service over 5 minutes.",
     "competency": "Critical Evaluation & Performance Management"
   },
   {
@@ -219,6 +221,7 @@
     ],
     "correct": 0,
     "explanation": "Large resorts operate using a divisional structure where each distinct guest-service vertical operates as a semi-autonomous business unit under property leadership.",
+    "memory_anchor": "🏢 Divisional Structure = Organizing by operational units like Rooms, Food & Beverage, and Gaming.",
     "competency": "Structure & HR Service Delivery"
   },
   {
@@ -1500,3 +1503,177 @@
     "type": "Knowledge Item",
     "chapter": "Total Rewards & Benefit Compliance",
     "scenario": "Under COBRA regulations, what triggers an employer's obligation to offer health insurance continuation coverage to a resort employee?",
+    "options": [
+      "A) A qualifying event (such as voluntary/involuntary termination or reduction in hours) that would otherwise result in loss of coverage.",
+      "B) A routine annual employee performance review.",
+      "C) Receiving a promotion to a senior management role.",
+      "D) Taking paid vacation leave."
+    ],
+    "correct": 0,
+    "explanation": "COBRA is triggered by qualifying events like termination or reduced hours that cause loss of group health coverage.",
+    "memory_anchor": "🛡️ COBRA Trigger = Leaving the resort job (termination or hour cuts) means you get the right to continue your health insurance plan.",
+    "competency": "Total Rewards & Compliance"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Workplace Safety & Ergonomics",
+    "scenario": "Front desk agents complain of severe wrist fatigue and carpal tunnel symptoms from typing reservations into an outdated hotel computer keyboard. What should HR recommend?",
+    "options": [
+      "A) Conduct ergonomic workstation evaluations, provide wrist rests, ergonomic keyboards, and adjustable monitors.",
+      "B) Tell desk agents to type faster and ignore wrist pain.",
+      "C) Ban computers from the front desk entirely.",
+      "D) Require desk agents to pay for their own ergonomic keyboards."
+    ],
+    "correct": 0,
+    "explanation": "Ergonomic equipment and workstation adjustments prevent repetitive strain injuries (RSI) among administrative staff.",
+    "memory_anchor": "⌨️ Give front desk agents ergonomic keyboards and wrist rests before carpal tunnel forces them onto medical leave.",
+    "competency": "Workplace Safety & Ergonomics"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Strategic Workforce Planning & Forecasting",
+    "scenario": "What workforce planning tool uses historical occupancy rates, seasonal tourism trends, and local event schedules to project hotel staffing needs for the upcoming quarter?",
+    "options": [
+      "A) Demand Forecasting & Headcount Modeling",
+      "B) Job Evaluation Point-Factor Analysis",
+      "C) Compa-Ratio Salary Spread Chart",
+      "D) Turnover Attrition Ratio"
+    ],
+    "correct": 0,
+    "explanation": "Demand forecasting models predict future labor requirements based on historical business cycles, occupancy, and market trends.",
+    "memory_anchor": "📈 Demand Forecasting = Looking at hotel booking calendars to predict how many housekeepers and desk agents you need next month.",
+    "competency": "Strategic Workforce Planning"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Employee Relations & Workplace Investigations",
+    "scenario": "Two resort employees accuse each other of verbal threats in the employee cafeteria. No physical blows were struck, but coworkers are alarmed. How should HR handle the investigation?",
+    "options": [
+      "A) Interview both employees and witnesses separately, review safety policies, assess immediate risk, and administer appropriate corrective action.",
+      "B) Fire both employees instantly without talking to witnesses.",
+      "C) Order both employees to settle the dispute in the parking lot.",
+      "D) Pretend the cafeteria argument never happened."
+    ],
+    "correct": 0,
+    "explanation": "Workplace threats require separate, impartial fact-finding interviews, witness corroboration, risk assessment, and policy enforcement.",
+    "memory_anchor": "🗣️ Cafeteria shouting match? Interview both sides and witnesses separately to get the real story before taking disciplinary action.",
+    "competency": "Employee Relations & Risk Management"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "U.S. Leave Law & FMLA Eligibility",
+    "scenario": "To be eligible for FMLA leave, how many total months of service and how many hours of service must an employee have accumulated with the employer over the previous 12-month period?",
+    "options": [
+      "A) At least 12 months of total service and at least 1,250 hours of service during the previous 12-month period.",
+      "B) Exactly 6 months of service and 500 hours.",
+      "C) 24 months of service and 2,080 hours.",
+      "D) No service requirements apply to hospitality staff."
+    ],
+    "correct": 0,
+    "explanation": "FMLA statutory eligibility requires 12 months of cumulative service and 1,250 hours worked in the 12 months prior to leave.",
+    "memory_anchor": "⌛ FMLA Rule = 12 months on the job AND 1,250 hours worked (roughly 24 hours a week) to qualify for family leave.",
+    "competency": "HR Compliance & Leave Administration"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Leadership & Executive Coaching",
+    "scenario": "A newly promoted resort Food & Beverage Director is technically brilliant but lacks emotional intelligence, frequently reducing junior catering staff to tears. How should HR intervene?",
+    "options": [
+      "A) Provide executive coaching focused on leadership emotional intelligence, active listening, and constructive feedback delivery.",
+      "B) Fire the F&B Director immediately without coaching.",
+      "C) Promote the F&B Director to Vice President of Operations.",
+      "D) Ignore the crying catering staff."
+    ],
+    "correct": 0,
+    "explanation": "High-potential leaders who struggle with soft skills benefit greatly from targeted executive coaching rather than immediate termination.",
+    "memory_anchor": "🧠 Brilliant chef but a toxic boss? Pair them with an executive coach to build emotional intelligence before you lose all your catering staff.",
+    "competency": "Leadership & Coaching"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Total Rewards & Executive Benefits",
+    "scenario": "What term describes supplemental retirement or benefit arrangements provided to key hotel executives that exceed standard qualified plan contribution caps?",
+    "options": [
+      "A) Non-Qualified Deferred Compensation (NQDC) Plans (Section 409A)",
+      "B) Standard 401(k) Safe Harbor Accounts",
+      "C) State Unemployment Insurance Funds",
+      "D) Mandatory Cafeteria Food Allowances"
+    ],
+    "correct": 0,
+    "explanation": "NQDC plans allow executives to defer compensation beyond standard IRS qualified limits under Section 409A rules.",
+    "memory_anchor": "💼 NQDC Plans = Special retirement savings accounts for top executives above standard 401(k) limits.",
+    "competency": "Total Rewards & Executive Compensation"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Talent Sourcing & Onboarding Experience",
+    "scenario": "A luxury resort hires a new Executive Pastry Chef. On day one, no workstation is set up, no email account works, and no mentor greets them. The chef considers quitting. What failed?",
+    "options": [
+      "A) Strategic Onboarding Logistics & Pre-boarding Coordination",
+      "B) The 9-Box Calibration Grid",
+      "C) FMLA Eligibility Calculation",
+      "D) OSHA Safety Compliance Audit"
+    ],
+    "correct": 0,
+    "explanation": "Effective pre-boarding and onboarding logistics ensure workstations, tech access, and mentorship are ready on day one to secure new hire commitment.",
+    "memory_anchor": "📦 Day one disaster (no email, no desk)? Poor onboarding logistics make elite talent regret taking your job.",
+    "competency": "Talent Acquisition & Onboarding"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "U.S. Equal Opportunity & ADEA",
+    "scenario": "Under the Age Discrimination in Employment Act (ADEA), what is the minimum age of employees protected against age-based employment discrimination?",
+    "options": [
+      "A) 40 years of age and older",
+      "B) 50 years of age and older",
+      "C) 62 years of age and older",
+      "D) 55 years of age and older"
+    ],
+    "correct": 0,
+    "explanation": "The ADEA explicitly protects workers aged 40 and older from age-based employment discrimination.",
+    "memory_anchor": "🧓 ADEA = Protecting mature hospitality workers aged 40 and over from age discrimination.",
+    "competency": "HR Compliance & Workplace Law"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Workplace Safety & Emergency Preparedness",
+    "scenario": "A resort property located in an earthquake-prone region has not conducted an emergency evacuation drill in 5 years. What is HR's safety priority?",
+    "options": [
+      "A) Partner with EHS and facility directors to design, schedule, and execute comprehensive emergency evacuation drills for all shifts.",
+      "B) Assume guests and staff will figure out exits during a disaster.",
+      "C) Post static evacuation maps behind guest room doors and take no further action.",
+      "D) Cancel all safety meetings to save operating hours."
+    ],
+    "correct": 0,
+    "explanation": "Proactive safety management requires regular, scheduled emergency drills across all operational shifts to ensure life safety preparedness.",
+    "memory_anchor": "🏃 Practice makes safe! Run real earthquake and fire drills across all shifts so staff know escape routes before disaster strikes.",
+    "competency": "Workplace Safety & Crisis Management"
+  },
+  {
+    "type": "Knowledge Item",
+    "chapter": "Strategic Management & SWOT Analysis",
+    "scenario": "In an HR SWOT analysis for a casino resort, what category captures state legislation proposing a ban on 24-hour gaming licenses?",
+    "options": [
+      "A) External Threat (T)",
+      "B) Internal Weakness (W)",
+      "C) Internal Strength (S)",
+      "D) External Opportunity (O)"
+    ],
+    "correct": 0,
+    "explanation": "Pending legislation and regulatory changes originate externally and pose risks to business continuity, making them Threats.",
+    "memory_anchor": "📜 SWOT Threat = New government laws or regulations that could hurt your casino resort's business model.",
+    "competency": "Business Acumen & Strategic Risk"
+  },
+  {
+    "type": "Situational Judgment Item (SJI)",
+    "chapter": "Employee Relations & Conflict Resolution",
+    "scenario": "A housekeeping supervisor and front desk manager publicly argue in the hotel lobby regarding guest check-in room readiness, embarrassing management in front of guests. How should HR handle this?",
+    "options": [
+      "A) Meet with both managers in private, address unprofessional public conduct, establish cross-departmental communication protocols, and issue coaching/discipline.",
+      "B) Fire both managers in front of hotel guests.",
+      "C) Laugh it off as friendly department banter.",
+      "D) Promote both managers to executive vice president."
+    ],
+    "correct": 0,
+    "explanation": "Public inter-departmental conflict damages guest trust and brand reputation. HR must address professional conduct privately and build cross-functional collaboration.",
+    "memory_anchor": "🗣️ Public turf wars in the hotel lobby look
