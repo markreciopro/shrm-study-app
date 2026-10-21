@@ -1,191 +1,129 @@
 import streamlit as st
 import json
-import random
+from gtts import gTTS
+from io import BytesIO
 
-# --- PAGE CONFIGURATION ---
+# Page Configuration
 st.set_page_config(
-    page_title="MAREC Insights | SHRM-CP Hospitality HR Odyssey",
+    page_title="MAREC Insights | SHRM-CP Hospitality Odyssey",
     page_icon="🦜",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    layout="wide"
 )
 
-# --- LOGO URL ---
-LOGO_URL = "https://raw.githubusercontent.com/markreciopro/marec_insights/main/Gemini_Generated_Image_noss7snoss7snoss.jpg"
+# Sidebar Branding & Navigation
+with st.sidebar:
+    # MAREC Insights Lighthouse & Parrot Branding
+    st.image(
+        "https://marec.site/assets/img/logo.png",
+        use_column_width=True,
+        caption="MAREC Insights • Workforce Intelligence"
+    )
+    st.title("🏆 Exam Prep Navigator")
+    st.caption("Specialized for Luxury Resorts, Casinos & Hospitality Operations")
+    st.markdown("---")
+    st.write("**Consultant Rank:** Senior HR Strategist")
+    st.write("**XP Accumulated:** 150 XP")
 
-# --- LOAD QUESTION BANK ---
+# Load Question Bank
 @st.cache_data
 def load_questions():
     try:
         with open("questions.json", "r", encoding="utf-8") as f:
-            data = json.load(f)
-            return data
-    except Exception as e:
-        st.error(f"Error loading questions.json: {e}")
+            return json.load(f)
+    except FileNotFoundError:
         return []
 
 questions = load_questions()
 
-# --- SESSION STATE INITIALIZATION ---
-if "current_index" not in st.session_state:
-    st.session_state.current_index = 0
-if "xp" not in st.session_state:
-    st.session_state.xp = 0
-if "user_answers" not in st.session_state:
-    st.session_state.user_answers = {}
-if "submitted" not in st.session_state:
-    st.session_state.submitted = False
+# Display Total Loaded Items
+st.sidebar.metric(label="Total Loaded Items", value=f"{len(questions)} Questions")
+st.sidebar.markdown("---")
+st.sidebar.write("**Team Morale:** 100% 🌟")
 
-# Track shuffled option mappings per question index to prevent jitter on reruns
-if "shuffled_options" not in st.session_state:
-    st.session_state.shuffled_options = {}
-
-total_questions = len(questions)
-
-# --- SIDEBAR NAVIGATION & GAMIFICATION ---
-with st.sidebar:
-    st.image(LOGO_URL, use_container_width=True)
-    st.markdown("### 🏆 Exam Prep Navigator")
-    
-    # Calculate Rank based on XP
-    rank = "Junior Hospitality HR Analyst"
-    if st.session_state.xp >= 500:
-        rank = "Resort HR Generalist"
-    if st.session_state.xp >= 1500:
-        rank = "Senior Hospitality HR Business Partner"
-    if st.session_state.xp >= 3500:
-        rank = "Director of Hospitality Human Capital"
-    if st.session_state.xp >= 6000:
-        rank = "VP / Chief Human Resources Officer (CHRO)"
-
-    st.write(f"**Consultant Rank:** {rank}")
-    st.write(f"**XP Accumulated:** `:green[{st.session_state.xp} XP]`")
-    st.write(f"**Total Loaded Items:** `{total_questions} Questions`")
-    st.progress(min((st.session_state.current_index + 1) / max(total_questions, 1), 1.0))
-    st.caption(f"Progress: Question {st.session_state.current_index + 1} of {total_questions}")
-    
-    st.markdown("---")
-    if st.button("🔄 Reset Exam Progress"):
-        st.session_state.current_index = 0
-        st.session_state.xp = 0
-        st.session_state.user_answers = {}
-        st.session_state.submitted = False
-        st.session_state.shuffled_options = {}
-        st.rerun()
-
-# --- MAIN HEADER BANNER WITH LOGO ---
-col_logo, col_title = st.columns([1, 4])
-with col_logo:
-    st.image(LOGO_URL, width=130)
-with col_title:
-    st.markdown("""
-        <div style="background-color:#1E293B; padding:15px; border-radius:10px; color:white; border-left: 6px solid #3B82F6;">
-            <h1 style="margin:0; color:#F8FAFC; font-size: 26px;">MAREC Insights | SHRM-CP HR Odyssey</h1>
-            <p style="margin:5px 0 0 0; color:#94A3B8;">150-Question Hospitality Workforce Intelligence & Behavioral Simulator</p>
-        </div>
-    """, unsafe_allow_html=True)
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-if not questions:
-    st.warning("No questions found. Please check `questions.json` formatting in your GitHub repository.")
-    st.stop()
-
-# Ensure index stays within bounds
-if st.session_state.current_index >= total_questions:
-    st.session_state.current_index = total_questions - 1
-
-q = questions[st.session_state.current_index]
-
-# Header Info
-st.subheader(f"Question {st.session_state.current_index + 1} of {total_questions}: {q.get('chapter', 'Hospitality HR Operations')}")
-st.caption(f"**Item Type:** `{q.get('type', 'Knowledge Item')}`")
-st.info(f"🎯 **Core SHRM Competency:** {q.get('competency', 'HR Expertise')}")
-
-# Scenario Box
-st.markdown(f"""
-    <div style="background-color:#0F172A; padding:20px; border-radius:8px; border:1px solid #334155; margin-bottom:15px;">
-        <h4 style="color:#60A5FA; margin-top:0;">Hospitality Scenario Challenge:</h4>
-        <p style="color:#E2E8F0; font-size:16px; line-height:1.6;">{q.get('scenario', '')}</p>
+# Main App Header
+st.markdown("""
+    <div style="background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%); padding: 25px; border-radius: 10px; color: white;">
+        <h1 style="margin:0; font-size: 28px;">MAREC Insights | SHRM-CP HR Odyssey</h1>
+        <p style="margin:5px 0 0 0; font-size: 16px; opacity: 0.9;">Hospitality Workforce Intelligence & Behavioral Competency Simulator</p>
     </div>
 """, unsafe_allow_html=True)
 
-# Key Terms Accordion
-key_terms = q.get("key_terms", {})
-if key_terms:
-    with st.expander("📚 View SHRM Key Terms & Legal Definitions for this Scenario"):
-        for term, definition in key_terms.items():
-            st.markdown(f"**• {term}:** {definition}")
+st.write("")
 
-# Randomize options per question index deterministically for rigorous testing
-q_idx = st.session_state.current_index
-if q_idx not in st.session_state.shuffled_options:
-    original_options = q.get("options", [])
-    correct_original_idx = q.get("correct", 0)
-    correct_text = original_options[correct_original_idx] if 0 <= correct_original_idx < len(original_options) else original_options[0]
-    
-    # Shuffle options
-    shuffled = original_options.copy()
-    random.shuffle(shuffled)
-    new_correct_idx = shuffled.index(correct_text)
-    
-    st.session_state.shuffled_options[q_idx] = {
-        "options": shuffled,
-        "correct": new_correct_idx
-    }
+if not questions:
+    st.error("⚠️ `questions.json` not found or empty! Please make sure your question bank is uploaded to GitHub.")
+else:
+    # State management for quiz
+    if 'q_index' not in st.session_state:
+        st.session_state.q_index = 0
+    if 'submitted' not in st.session_state:
+        st.session_state.submitted = False
 
-current_shuffled_data = st.session_state.shuffled_options[q_idx]
-options = current_shuffled_data["options"]
-correct_index = current_shuffled_data["correct"]
+    current_q = questions[st.session_state.q_index]
 
-# Radio Selection for Options
-selected_option = st.radio(
-    "Select the best strategic intervention:",
-    options,
-    key=f"q_{q_idx}"
-)
+    # Progress bar & header info
+    progress_val = (st.session_state.q_index + 1) / len(questions)
+    st.progress(progress_val, text=f"Exam Progress: Question {st.session_state.q_index + 1} of {len(questions)}")
 
-# Submit Answer Action
-col1, col2, col3 = st.columns([1, 1, 2])
+    st.subheader(f"{current_q.get('chapter', 'Hospitality Operations')}")
+    st.write(f"**Item Type:** {current_q.get('type', 'SJI')} | 🎯 **Core Competency:** {current_q.get('competency', 'Business Acumen & Leadership')}")
 
-with col1:
-    if st.button("Submit Answer", type="primary"):
-        st.session_state.submitted = True
-        selected_idx = options.index(selected_option) if selected_option in options else -1
+    # Scenario Box
+    st.markdown("### 🏨 Hospitality Scenario Challenge:")
+    st.info(current_q['scenario'])
+
+    # Audio Reader Feature (Engaging TTS)
+    if st.button("🔊 Read Scenario Aloud"):
+        try:
+            tts = gTTS(text=current_q['scenario'], lang='en', slow=False)
+            audio_fp = BytesIO()
+            tts.write_to_fp(audio_fp)
+            audio_fp.seek(0)
+            st.audio(audio_fp, format='audio/mp3', autoplay=True)
+        except Exception as e:
+            st.warning("Audio note: Ensure `gTTS` is included in your repository's `requirements.txt` file.")
+
+    # Options Form
+    form_key = f"form_{st.session_state.q_index}"
+    with st.form(key=form_key):
+        selected_option = st.radio(
+            "Select your best operational or strategic HR recommendation:",
+            current_q['options'],
+            key=f"radio_{st.session_state.q_index}"
+        )
         
-        if selected_idx == correct_index:
-            st.session_state.xp += 50
-            st.success("🎉 Correct Strategic Response! (+50 XP)")
-        else:
-            st.error("❌ Sub-optimal Choice. Review rationale below.")
+        submitted = st.form_submit_button("Submit Answer")
 
-if st.session_state.submitted:
-    st.markdown("---")
-    st.markdown("### 💡 Strategic Rationale & Hospitality Application")
-    
-    rat = q.get("strategic_rationale", "")
-    ex = q.get("example", "")
-    exp_text = q.get("explanation", "")
-    
-    if rat:
-        st.markdown(f"**Strategic Rationale:** {rat}")
-    if ex:
-        st.markdown(f"**Hospitality Example:** {ex}")
-    if not rat and not ex:
-        st.write(exp_text)
+        if submitted:
+            st.session_state.submitted = True
+            selected_idx = ord(selected_option[0]) - ord('A')
+            
+            if selected_idx == current_q['correct']:
+                st.success("✅ **Correct! Excellent strategic decision.** (+10 XP)")
+                st.balloons()
+            else:
+                correct_letter = chr(ord('A') + current_q['correct'])
+                st.error(f"❌ **Incorrect.** The correct strategic choice was **{correct_letter}**.")
 
-# Navigation Buttons
-st.markdown("---")
-nav_col1, nav_col2, nav_col3 = st.columns([1, 4, 1])
+            st.markdown("---")
+            st.markdown("### 💡 Strategic Rationale & Explanation")
+            st.write(current_q['explanation'])
 
-with nav_col1:
-    if st.button("⬅️ Previous") and st.session_state.current_index > 0:
-        st.session_state.current_index -= 1
-        st.session_state.submitted = False
-        st.rerun()
+            # Memory Anchor Card
+            st.markdown("### 🧠 Memory Anchor (Keep It Simple!)")
+            st.success(current_q.get('memory_anchor', 'Think of this like balancing resort shifts during peak guest arrivals.'))
 
-with nav_col3:
-    if st.button("Next ➡️") and st.session_state.current_index < total_questions - 1:
-        st.session_state.current_index += 1
-        st.session_state.submitted = False
-        st.rerun()
+    # Navigation Controls
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.session_state.q_index > 0:
+            if st.button("⬅️ Previous Question"):
+                st.session_state.q_index -= 1
+                st.session_state.submitted = False
+                st.rerun()
+    with col2:
+        if st.session_state.q_index < len(questions) - 1:
+            if st.button("Next Question ➡️"):
+                st.session_state.q_index += 1
+                st.session_state.submitted = False
+                st.rerun()
