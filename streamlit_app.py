@@ -48,6 +48,7 @@ st.markdown(
     /* ── Background: deep-ocean gradient, soft colored glows, faint dot grid ── */
     .stApp {
         background:
+            radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) 0 0 / 28px 28px,
             radial-gradient(1100px 560px at 6% -8%,  rgba(0, 180, 216, 0.24), transparent 60%),
             radial-gradient(900px 520px at 100% 4%,  rgba(168, 85, 247, 0.18), transparent 58%),
             radial-gradient(1000px 620px at 50% 115%, rgba(250, 204, 21, 0.11), transparent 62%),
@@ -55,18 +56,27 @@ st.markdown(
         background-attachment: fixed;
         font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    .stApp::before {
-        content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-        background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        background-size: 28px 28px;
-    }
-    .stApp::after {
-        content: ""; position: fixed; width: 60vw; height: 60vw; left: -15vw; top: 25vh;
-        pointer-events: none; z-index: 0; opacity: 0.35; filter: blur(60px);
-        background: radial-gradient(circle, rgba(100, 255, 218, 0.18), transparent 65%);
-        animation: drift 18s ease-in-out infinite;
-    }
     header[data-testid="stHeader"] { background: transparent; }
+
+    /* ── Bright, high-contrast text ── */
+    .stApp, .stApp p, .stApp li, .stApp label, .stApp span, .stMarkdown, .stMarkdown p {
+        color: #f8fafc;
+    }
+    .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5 { color: #ffffff !important; font-weight: 700; }
+    .stApp [data-testid="stCaptionContainer"], .stApp small { color: #cfe0f5 !important; }
+    section[data-testid="stSidebar"] p, section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] span, section[data-testid="stSidebar"] li { color: #f8fafc; }
+    section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] { color: #cfe0f5 !important; }
+    div[data-testid="stRadio"] label p { color: #ffffff !important; }
+    div[data-testid="stMetricValue"], div[data-testid="stMetricValue"] * { color: #ffffff !important; }
+    div[data-testid="stMetricLabel"], div[data-testid="stMetricLabel"] * { color: #cfe0f5 !important; }
+    /* feedback boxes: brighter text on tinted backgrounds */
+    div[data-testid="stAlert"] p, div[data-testid="stAlert"] li { color: #ffffff !important; }
+    div[data-testid="stAlert"] { border-radius: 12px; }
+    div[data-testid="stAlertContentSuccess"] { background: rgba(16, 185, 129, 0.22); }
+    div[data-testid="stAlertContentError"]   { background: rgba(239, 68, 68, 0.25); }
+    div[data-testid="stAlertContentInfo"]    { background: rgba(14, 165, 233, 0.22); }
+    div[data-testid="stAlertContentWarning"] { background: rgba(245, 158, 11, 0.25); }
 
     /* ── Cards ── */
     .st-key-qcard {
@@ -433,14 +443,13 @@ def accuracy_pct() -> int:
 # Sidebar
 # ──────────────────────────────────────────────────────────────────────────────
 with st.sidebar:
-    try:
-        st.image(
-            "https://raw.githubusercontent.com/markreciopro/shrm-study-app/main/assets/logo.png",
-            use_container_width=True,
-            caption="MAREC Insights • Workforce Intelligence",
-        )
-    except Exception:
-        st.markdown("## 🏨 MAREC Insights")
+    st.markdown(
+        '<div style="text-align:center;padding:6px 0 2px 0">'
+        '<div style="font-size:42px">🏨</div>'
+        '<div style="font-size:20px;font-weight:800;color:#ffffff;letter-spacing:0.5px">MAREC Insights</div>'
+        '<div style="font-size:12px;color:#cfe0f5">Workforce Intelligence</div></div>',
+        unsafe_allow_html=True,
+    )
 
     st.markdown("### 🏆 Exam Masterclass Navigator")
     st.caption("Specialized for Luxury Resorts, Casinos & SHRM-CP Success")
@@ -831,11 +840,6 @@ with st.container(border=True, key="qcard"):
         st.write(q["explanation"])
         st.markdown("### 🧠 Memory Anchor & Practical Example")
         st.success(q["memory_anchor"])
-        st.text_input(
-            "✍️ Teach-back: restate the rule in one sentence, in your own words",
-            key=f"tb_{st.session_state.epoch}_{uid}",
-            placeholder="Explaining it yourself strengthens recall...",
-        )
 
     # Audio rendering (generated once per request; autoplays only when freshly requested)
     request = st.session_state.pop("audio_req", None)
