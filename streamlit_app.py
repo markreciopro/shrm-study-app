@@ -124,11 +124,15 @@ def _normalize(raw: dict, idx: int) -> dict:
     }
 
 
-@st.cache_data(show_spinner=False)
-def load_questions():
-    """Returns (questions, warnings, fatal_error)."""
+def _find_questions_file():
     candidates = [Path(__file__).with_name("questions.json"), Path("questions.json")]
-    path = next((p for p in candidates if p.exists()), None)
+    return next((p for p in candidates if p.exists()), None)
+
+
+@st.cache_data(show_spinner=False)
+def load_questions(path_key: str = ""):
+    """Returns (questions, warnings, fatal_error). path_key = path+mtime, so edits bust the cache."""
+    path = _find_questions_file()
     if path is None:
         return [], [], "`questions.json` not found in the repository."
     try:
@@ -145,7 +149,9 @@ def load_questions():
     return questions, warnings, None
 
 
-questions, load_warnings, fatal_error = load_questions()
+_qf = _find_questions_file()
+_qkey = f"{_qf}:{_qf.stat().st_mtime_ns}:{_qf.stat().st_size}" if _qf else ""
+questions, load_warnings, fatal_error = load_questions(_qkey)
 Q_BY_UID = {q["uid"]: q for q in questions}
 
 TYPE_FILTERS = {
@@ -306,6 +312,7 @@ with st.sidebar:
 
     if questions:
         st.metric("Master Question Bank", f"{len(questions)} Questions", "100% Loaded 🌟")
+        st.caption(f"Source: {_qf} ({_qf.stat().st_size // 1024} KB)")
     else:
         st.error("0 Questions Loaded")
 
