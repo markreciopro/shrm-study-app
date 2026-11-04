@@ -14,7 +14,7 @@ from gtts import gTTS
 # Page configuration
 # ──────────────────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="MAREC Insights | SHRM-CP & CRME Hospitality Masterclass",
+    page_title="MAREC Insights | SHRM-CP Exam Prep Masterclass",
     page_icon="🏨",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -421,12 +421,12 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-    st.markdown("### 🏆 Exam Masterclass Navigator")
-    st.caption("Specialized for Luxury Resorts, Casinos & SHRM-CP Success")
+    st.markdown("### 🏆 SHRM-CP Exam Masterclass Navigator")
+    st.caption("100% Aligned with SHRM BASK Competencies & Domains")
     st.markdown("---")
     st.write("**Candidate:** Mark Anthony Recio, MBA")
-    st.write("**Target Credential:** SHRM-CP / CRME")
-    st.write("**Core Focus:** BASK Competencies, OSHA, DEI, Labor, Total Rewards")
+    st.write("**Target Credential:** SHRM-CP")
+    st.write("**Core Focus:** BASK Competencies, Employment Law, Labor, Total Rewards")
     st.markdown("---")
 
     if questions:
@@ -491,7 +491,7 @@ with st.sidebar:
             "co.au": "Australian English",
             "ca": "Canadian English",
             "co.in": "Indian English",
-        }[t],
+        }.get(t, "US English"),
         key="tts_tld",
     )
     st.markdown("---")
@@ -503,7 +503,7 @@ with st.sidebar:
 st.markdown(
     f"""
     <div class="hero-header">
-        <h1>🏨 MAREC Insights | SHRM-CP Hospitality Masterclass</h1>
+        <h1>🏨 MAREC Insights | SHRM-CP Masterclass</h1>
         <p>Mastering {len(questions) or 134} SHRM-BASK Scenarios, Exam Terminology,
         Real-World Examples &amp; Memory Anchors — shuffled, read aloud, with flashcards and a timed exam mode.</p>
         <div class="chip-row">
