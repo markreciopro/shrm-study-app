@@ -35,17 +35,11 @@ st.markdown(
         0%   { opacity: 0; transform: translateY(10px); }
         100% { opacity: 1; transform: translateY(0); }
     }
-    @keyframes drift {
-        0%   { transform: translate3d(0, 0, 0) scale(1); }
-        50%  { transform: translate3d(2%, -3%, 0) scale(1.08); }
-        100% { transform: translate3d(0, 0, 0) scale(1); }
-    }
     @keyframes shimmer {
         0%   { background-position: 0% 50%; }
         100% { background-position: 200% 50%; }
     }
 
-    /* ── Background: deep-ocean gradient, soft colored glows, faint dot grid ── */
     .stApp {
         background:
             radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) 0 0 / 28px 28px,
@@ -58,7 +52,6 @@ st.markdown(
     }
     header[data-testid="stHeader"] { background: transparent; }
 
-    /* ── Bright, high-contrast text ── */
     .stApp, .stApp p, .stApp li, .stApp label, .stApp span, .stMarkdown, .stMarkdown p {
         color: #f8fafc;
     }
@@ -70,7 +63,6 @@ st.markdown(
     div[data-testid="stRadio"] label p { color: #ffffff !important; }
     div[data-testid="stMetricValue"], div[data-testid="stMetricValue"] * { color: #ffffff !important; }
     div[data-testid="stMetricLabel"], div[data-testid="stMetricLabel"] * { color: #cfe0f5 !important; }
-    /* feedback boxes: brighter text on tinted backgrounds */
     div[data-testid="stAlert"] p, div[data-testid="stAlert"] li { color: #ffffff !important; }
     div[data-testid="stAlert"] { border-radius: 12px; }
     div[data-testid="stAlertContentSuccess"] { background: rgba(16, 185, 129, 0.22); }
@@ -78,7 +70,6 @@ st.markdown(
     div[data-testid="stAlertContentInfo"]    { background: rgba(14, 165, 233, 0.22); }
     div[data-testid="stAlertContentWarning"] { background: rgba(245, 158, 11, 0.25); }
 
-    /* ── Cards ── */
     .st-key-qcard {
         animation: fadeIn 0.5s ease-out;
         background: linear-gradient(180deg, rgba(17, 29, 52, 0.88), rgba(10, 20, 40, 0.88));
@@ -112,7 +103,6 @@ st.markdown(
         background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22); color: #eaf2ff;
     }
 
-    /* ── Buttons ── */
     .stButton > button, .stDownloadButton > button {
         border-radius: 10px;
         font-weight: 700;
@@ -129,7 +119,6 @@ st.markdown(
         border: none;
     }
 
-    /* ── Answer choices as tappable cards ── */
     div[data-testid="stRadio"] div[role="radiogroup"] > label {
         background: rgba(255, 255, 255, 0.045);
         border: 1px solid rgba(255, 255, 255, 0.12);
@@ -149,7 +138,6 @@ st.markdown(
     }
     .stRadio label p { font-size: 16px; font-weight: 500; }
 
-    /* ── Progress, expanders, tabs, metrics ── */
     .stProgress > div > div > div > div { background: linear-gradient(90deg, #00b4d8, #64ffda); }
     details[data-testid="stExpander"] {
         background: rgba(255, 255, 255, 0.04);
@@ -182,13 +170,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
 # ──────────────────────────────────────────────────────────────────────────────
 # Data loading & validation
 # ──────────────────────────────────────────────────────────────────────────────
-ITEM_PREFIX_RE = re.compile(r"^\s*\[[^\]]*#\d+\]\s*")  # e.g. "[SHRM-CP Exam Prep Item #16] "
-OPTION_PREFIX_RE = re.compile(r"^\s*[A-Ha-h][\)\.:]\s*")  # e.g. "A) "
-
+ITEM_PREFIX_RE = re.compile(r"^\s*\[[^\]]*#\d+\]\s*")
+OPTION_PREFIX_RE = re.compile(r"^\s*[A-Ha-h][\)\.:]\s*")
 
 def _normalize(raw: dict, idx: int) -> dict:
     options = [OPTION_PREFIX_RE.sub("", str(o)).strip() for o in raw["options"]]
@@ -196,7 +182,7 @@ def _normalize(raw: dict, idx: int) -> dict:
     if len(options) < 2 or not 0 <= correct < len(options):
         raise ValueError("options/correct index are inconsistent")
     return {
-        "uid": idx,  # unique key for session state, independent of the JSON "id"
+        "uid": idx,
         "id": raw.get("id", idx + 1),
         "type": raw.get("type", "Knowledge Item"),
         "chapter": raw.get("chapter", "Hospitality Operations"),
@@ -206,25 +192,19 @@ def _normalize(raw: dict, idx: int) -> dict:
         "topic": raw.get("topic") or raw.get("competency", "Business Acumen"),
         "scenario": ITEM_PREFIX_RE.sub("", str(raw["scenario"])).strip(),
         "options": options,
-        "correct": correct,  # index within the ORIGINAL option order
+        "correct": correct,
         "explanation": str(raw.get("explanation", "")).strip(),
         "memory_anchor": str(
-            raw.get(
-                "memory_anchor",
-                "Think of this like balancing resort shifts during peak guest arrivals.",
-            )
+            raw.get("memory_anchor", "Think of this like balancing resort shifts during peak guest arrivals.")
         ).strip(),
     }
-
 
 def _find_questions_file():
     candidates = [Path(__file__).with_name("questions.json"), Path("questions.json")]
     return next((p for p in candidates if p.exists()), None)
 
-
 @st.cache_data(show_spinner=False)
 def load_questions(path_key: str = ""):
-    """Returns (questions, warnings, fatal_error). path_key = path+mtime, so edits bust the cache."""
     path = _find_questions_file()
     if path is None:
         return [], [], "`questions.json` not found in the repository."
@@ -241,13 +221,12 @@ def load_questions(path_key: str = ""):
             warnings.append(f"Skipped entry #{i + 1}: {e}")
     return questions, warnings, None
 
-
 _qf = _find_questions_file()
 _qkey = f"{_qf}:{_qf.stat().st_mtime_ns}:{_qf.stat().st_size}" if _qf else ""
 questions, load_warnings, fatal_error = load_questions(_qkey)
 Q_BY_UID = {q["uid"]: q for q in questions}
 TOPICS = sorted({q["topic"] for q in questions})
-st.session_state.setdefault("flags", set())  # uids flagged for review (persist across sessions)
+st.session_state.setdefault("flags", set())
 
 TYPE_FILTERS = {
     "All items": lambda q: True,
@@ -256,7 +235,6 @@ TYPE_FILTERS = {
     "Behavioral Competencies only": lambda q: q["category"].startswith("Behavioral"),
     "HR Knowledge Domains only": lambda q: q["category"].startswith("HR"),
 }
-
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Text-to-speech helpers
@@ -273,18 +251,13 @@ SPEECH_FIXES = [
     (r"\bHR\b", "H R"),
     (r"\bDEI\b", "D E I"),
     (r"\bSJI\b", "S J I"),
-    (r"\bBCG\b", "B C G"),
     (r"\bRIF\b", "R I F"),
-    (r"\bLOTO\b", "low-toe"),
     (r"\bADDIE\b", "addy"),
-    (r"\bPESTLE\b", "pestle"),
-    (r"\bVII\b", "seven"),
-    (r"(\d)\(([A-Za-z0-9]+)\)", r"\1 \2"),  # "5(a)(1)" -> "5 a 1"
+    (r"(\d)\(([A-Za-z0-9]+)\)", r"\1 \2"),
     (r"\(([A-Za-z0-9]+)\)", r" \1"),
     (r"\s*&\s*", " and "),
     (r"\s+/\s+|/", ", "),
 ]
-
 
 def clean_for_speech(text: str) -> str:
     text = EMOJI_RE.sub("", text)
@@ -292,18 +265,15 @@ def clean_for_speech(text: str) -> str:
         text = re.sub(pattern, repl, text)
     return re.sub(r"\s+", " ", text).strip()
 
-
 def _sentence(text: str) -> str:
     text = text.strip()
     return text if text.endswith((".", "!", "?", ":")) else text + "."
-
 
 def question_speech(q: dict, perm: list, number: int, total: int) -> str:
     parts = [f"Question {number} of {total}.", _sentence(q["scenario"])]
     for pos, orig in enumerate(perm):
         parts.append(f"Option {LETTERS[pos]}. {_sentence(q['options'][orig])}")
     return clean_for_speech(" ".join(parts))
-
 
 def explanation_speech(q: dict, perm: list, was_correct: bool) -> str:
     letter = LETTERS[perm.index(q["correct"])]
@@ -316,32 +286,29 @@ def explanation_speech(q: dict, perm: list, was_correct: bool) -> str:
     ]
     return clean_for_speech(" ".join(parts))
 
-
 @st.cache_data(show_spinner=False, max_entries=300)
 def synthesize(text: str, slow: bool, tld: str) -> bytes:
     buf = BytesIO()
     gTTS(text=text, lang="en", slow=slow, tld=tld).write_to_fp(buf)
     return buf.getvalue()
 
-
 # ──────────────────────────────────────────────────────────────────────────────
-# Session state: deck building, navigation, audio queue
+# Session state & deck building
 # ──────────────────────────────────────────────────────────────────────────────
 def build_deck(pool_uids=None, force_study=False):
-    """(Re)build a study deck with shuffled question order and shuffled answer choices."""
     mode = st.session_state.get("mode", MODE_STUDY)
     exam = mode == MODE_EXAM and not force_study
     cards = mode == MODE_CARDS and not force_study
     st.session_state.filter_notice = None
     if pool_uids is None:
-        if exam:  # full-length simulation always uses the whole bank
+        if exam:
             pool_uids = [q["uid"] for q in questions]
         else:
             keep = TYPE_FILTERS[st.session_state.get("type_filter", "All items")]
             topic = st.session_state.get("focus_topic", "All topics")
             in_topic = lambda q: topic == "All topics" or q["topic"] == topic
             pool_uids = [q["uid"] for q in questions if keep(q) and in_topic(q)]
-            if not pool_uids:  # filter combination matched nothing
+            if not pool_uids:
                 pool_uids = [q["uid"] for q in questions if in_topic(q)]
                 st.session_state.filter_notice = (
                     "That item-type + topic combination has no questions, so all item types for the topic are shown."
@@ -359,7 +326,7 @@ def build_deck(pool_uids=None, force_study=False):
 
     st.session_state.deck = deck
     st.session_state.perms = perms
-    st.session_state.answers = {}  # uid -> {"choice": position, "correct": bool}
+    st.session_state.answers = {}
     st.session_state.pos = 0
     st.session_state.epoch = st.session_state.get("epoch", 0) + 1
     st.session_state.audio_data = None
@@ -371,7 +338,6 @@ def build_deck(pool_uids=None, force_study=False):
     st.session_state.exam_half = (len(deck) + 1) // 2
     st.session_state.section_start = {1: time.time()}
 
-
 def go_to(new_pos: int):
     deck_len = len(st.session_state.deck)
     st.session_state.pos = max(0, min(deck_len, new_pos))
@@ -381,27 +347,21 @@ def go_to(new_pos: int):
     on_question = st.session_state.pos < deck_len
     st.session_state.audio_req = "question" if (on_question and st.session_state.get("auto_q", True)) else None
 
-
 def request_audio(kind: str):
     st.session_state.audio_req = kind
-
 
 def retry_missed():
     answers = st.session_state.answers
     missed = [uid for uid in st.session_state.deck if not answers.get(uid, {}).get("correct")]
     build_deck(pool_uids=missed, force_study=True)
 
-
 def retry_flagged():
     build_deck(pool_uids=sorted(st.session_state.flags), force_study=True)
-
 
 def card_reveal():
     st.session_state.card_revealed = True
 
-
 def card_next(known: bool):
-    """Flashcard self-grade: 'known' cards leave the deck, 'need review' cards return at the end."""
     d = st.session_state.deck
     if known:
         st.session_state.cards_known += 1
@@ -410,7 +370,6 @@ def card_next(known: bool):
     st.session_state.pos += 1
     st.session_state.card_revealed = False
 
-
 def current_streak() -> int:
     n = 0
     for a in reversed(list(st.session_state.answers.values())):
@@ -418,7 +377,6 @@ def current_streak() -> int:
             break
         n += 1
     return n
-
 
 def missed_csv(deck, answers) -> str:
     buf = StringIO()
@@ -433,11 +391,23 @@ def missed_csv(deck, answers) -> str:
                     qq["explanation"], qq["memory_anchor"]])
     return buf.getvalue()
 
+def missed_anki_csv(deck, answers) -> str:
+    buf = StringIO()
+    w = csv.writer(buf)
+    w.writerow(["Front (Question)", "Back (Answer & Explanation)", "Tags"])
+    for u in deck:
+        if answers.get(u, {}).get("correct"):
+            continue
+        qq = Q_BY_UID[u]
+        front = f"{qq['scenario']}"
+        back = f"<b>Correct Answer:</b> {qq['options'][qq['correct']]}<br><br><b>Explanation:</b> {qq['explanation']}<br><br><b>Anchor:</b> {qq['memory_anchor']}"
+        tags = f"SHRM-CP {qq['topic'].replace(' ', '_')}"
+        w.writerow([front, back, tags])
+    return buf.getvalue()
 
 def accuracy_pct() -> int:
     answers = st.session_state.answers
     return round(100 * sum(a["correct"] for a in answers.values()) / len(answers)) if answers else 0
-
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Sidebar
@@ -469,8 +439,8 @@ with st.sidebar:
     st.radio("Mode", [MODE_STUDY, MODE_EXAM, MODE_CARDS], key="mode")
     if st.session_state.get("mode") == MODE_EXAM:
         st.caption(
-            f"Full bank, mixed knowledge + situational items, two 110-minute sections, "
-            f"answers revealed only at the end. Click **Start New Session** to begin."
+            "Full bank, mixed knowledge + situational items, two 110-minute sections, "
+            "answers revealed only at the end. Click **Start New Session** to begin."
         )
     if st.session_state.get("mode") == MODE_CARDS:
         st.caption("Recall the answer first, flip the card, then grade yourself. Missed cards come back at the end.")
@@ -518,7 +488,7 @@ with st.sidebar:
         format_func=lambda t: {
             "com": "US English",
             "co.uk": "British English",
-            "com.au": "Australian English",
+            "co.au": "Australian English",
             "ca": "Canadian English",
             "co.in": "Indian English",
         }[t],
@@ -526,7 +496,6 @@ with st.sidebar:
     )
     st.markdown("---")
     st.write("**System Status:** Operational 🚀")
-
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Header
@@ -569,20 +538,16 @@ pos = st.session_state.pos
 exam_active = st.session_state.get("exam_active", False)
 half = st.session_state.get("exam_half", total)
 
-
 def _fmt(sec: float) -> str:
     sec = max(0, int(sec))
     return f"{sec // 3600}:{(sec % 3600) // 60:02d}:{sec % 60:02d}"
-
 
 def _section_left(section: int) -> float:
     start = st.session_state.section_start.get(section, time.time())
     return EXAM_SECTION_SECONDS - (time.time() - start)
 
-
 @st.fragment(run_every=1)
 def exam_timer():
-    """Live countdown. Auto-advances Section 1 -> 2 and auto-finishes at the end of Section 2."""
     p = st.session_state.pos
     n = len(st.session_state.deck)
     if p >= n:
@@ -595,11 +560,9 @@ def exam_timer():
     st.metric(f"⏱️ Section {section} of 2 — time left", _fmt(left))
     st.progress(max(0.0, min(1.0, left / EXAM_SECTION_SECONDS)))
 
-
 if exam_active and pos < total:
     with st.sidebar:
         exam_timer()
-
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Flashcard mode (active recall)
@@ -635,7 +598,6 @@ if st.session_state.get("cards_active"):
             st.button("🔄 Reveal answer", on_click=card_reveal, type="primary", use_container_width=True)
     st.stop()
 
-
 # ──────────────────────────────────────────────────────────────────────────────
 # Results screen
 # ──────────────────────────────────────────────────────────────────────────────
@@ -652,7 +614,6 @@ if pos >= total:
         c3.metric("Accuracy (answered)", f"{accuracy_pct()}%")
         c4.metric("Unanswered", total - len(answers))
 
-        # Per-competency breakdown
         def breakdown(field: str, label: str):
             stats = {}
             for uid in deck:
@@ -669,7 +630,7 @@ if pos >= total:
             return table
 
         if st.session_state.get("exam_active"):
-            st.session_state.exam_active = False  # exam over: unlock feedback for review
+            st.session_state.exam_active = False
             st.info(
                 "Exam simulation finished. Raw percentage only - SHRM reports a scaled score, "
                 "so treat anything consistently below ~70% as a signal to keep studying."
@@ -712,17 +673,30 @@ if pos >= total:
                 st.markdown("---")
 
         missed_n = total - correct_n
-        st.download_button(
-            "⬇️ Download missed items (CSV)",
-            data=missed_csv(deck, answers),
-            file_name="shrm_cp_missed_items.csv",
-            mime="text/csv",
-            disabled=missed_n == 0,
-        )
+        d1, d2 = st.columns(2)
+        with d1:
+            st.download_button(
+                "⬇️ Download missed items (CSV)",
+                data=missed_csv(deck, answers),
+                file_name="shrm_cp_missed_items.csv",
+                mime="text/csv",
+                disabled=missed_n == 0,
+                use_container_width=True,
+            )
+        with d2:
+            st.download_button(
+                "⬇️ Download Anki flashcard package (.csv)",
+                data=missed_anki_csv(deck, answers),
+                file_name="shrm_cp_anki_flashcards.csv",
+                mime="text/csv",
+                disabled=missed_n == 0,
+                use_container_width=True,
+            )
+
         b1, b2, b3, b4 = st.columns(4)
         b1.button("🔀 Reshuffle & Restart", on_click=build_deck, type="primary", use_container_width=True)
         b2.button(
-            f"🔁 Retry Missed / Unanswered ({missed_n})",
+            f"🔁 Retry Missed ({missed_n})",
             on_click=retry_missed,
             disabled=missed_n == 0,
             use_container_width=True,
@@ -738,13 +712,12 @@ if pos >= total:
             st.balloons()
     st.stop()
 
-
 # ──────────────────────────────────────────────────────────────────────────────
 # Question screen
 # ──────────────────────────────────────────────────────────────────────────────
 uid = deck[pos]
 q = Q_BY_UID[uid]
-perm = st.session_state.perms[uid]  # perm[display_position] = original option index
+perm = st.session_state.perms[uid]
 correct_pos = perm.index(q["correct"])
 record = st.session_state.answers.get(uid)
 answered = record is not None
@@ -772,17 +745,17 @@ with st.container(border=True, key="qcard"):
 
     st.markdown("### 🏨 Exam Scenario Challenge:")
     st.info(q["scenario"])
+    
+    # Enhanced SHRM SJI Strategy Guide
     if "situational" in q["type"].lower() and not answered:
-        with st.expander("🧭 SJI strategy: how to pick the best response"):
+        with st.expander("🧭 The SHRM Mindset SJI Strategy Guide"):
             st.markdown(
-                "- Eliminate extremes (\"fire immediately,\" \"ignore it\") and anything that breaks law or policy.\n"
-                "- Prefer actions that are **legal, ethical, consistent, and fact-based**.\n"
-                "- For \"first step\" questions, **gather facts or clarify** before acting.\n"
-                "- Involve the right people, address the **root cause**, and document.\n"
-                "- Between two good options, pick the one that builds long-term capability and trust."
+                "- **1. Root Cause over Quick Fix:** Does this option gather data, talk to employees, or investigate before acting?\n"
+                "- **2. Coach, Don't Take Over:** Does HR coach line managers on performance/discipline rather than doing it for them[cite: 2]?\n"
+                "- **3. Compliance & Ethics First:** Instantly eliminate options that break laws (FLSA, ADA, NLRA, FMLA) or company ethics[cite: 2].\n"
+                "- **4. Consistent & Documented:** Ensure actions follow formal, objective criteria rather than arbitrary decisions."
             )
 
-    # Audio controls
     a1, a2, _ = st.columns([2, 2, 3])
     a1.button("🔊 Read Question & Choices", on_click=request_audio, args=("question",), use_container_width=True)
     a2.button(
@@ -794,7 +767,6 @@ with st.container(border=True, key="qcard"):
     )
     audio_slot = st.container()
 
-    # Answer choices
     choice = st.radio(
         "Select your best operational or strategic HR recommendation:",
         options=list(range(len(perm))),
@@ -841,7 +813,6 @@ with st.container(border=True, key="qcard"):
         st.markdown("### 🧠 Memory Anchor & Practical Example")
         st.success(q["memory_anchor"])
 
-    # Audio rendering (generated once per request; autoplays only when freshly requested)
     request = st.session_state.pop("audio_req", None)
     if request == "explanation" and (not answered or exam_active):
         request = None
