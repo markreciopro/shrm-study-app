@@ -2544,5 +2544,366 @@
     "correct": 1,
     "explanation": "Community engagement initiatives support CSR, employee engagement, and employer reputation.",
     "memory_anchor": "🤲 Volunteering builds community and brand."
+  },
+  {
+    "id": 135,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Corporate Social Responsibility",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Corporate Social Responsibility",
+    "scenario": "Which HR-supported initiative best reflects a sustainability-focused CSR commitment?",
+    "options": [
+      "A) Linen and towel reuse programs with employee green teams",
+      "B) Cutting training budgets to save cost",
+      "C) Requiring unpaid overtime during peak season",
+      "D) Limiting benefits to full-time managers"
+    ],
+    "correct": 0,
+    "explanation": "Sustainability CSR reduces environmental impact and invites employee participation, which also supports engagement.",
+    "memory_anchor": "🌱 Green actions, engaged people."
+  },
+  {
+    "id": 136,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Corporate Social Responsibility",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Corporate Social Responsibility",
+    "scenario": "A supplier used for uniforms is reported to use unsafe labor practices. What should HR do FIRST?",
+    "options": [
+      "A) Keep the supplier because the contract is cheap",
+      "B) Verify the report and review the supplier code of conduct with procurement and legal",
+      "C) Announce publicly that the supplier is guilty",
+      "D) Tell employees not to discuss it"
+    ],
+    "correct": 1,
+    "explanation": "Facts come first. Verifying the claim and applying the supplier code of conduct supports ethical sourcing without acting on rumor.",
+    "memory_anchor": "🔍 Verify, then act on the code."
+  },
+  {
+    "id": 137,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: HR in a Global Context",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "HR in a Global Context",
+    "scenario": "A U.S. resort chain sends an employee to work abroad for 18 months and expects them to return. This assignment is best called:",
+    "options": [
+      "A) A local national hire",
+      "B) A third-country national hire",
+      "C) An expatriate assignment",
+      "D) An independent contractor engagement"
+    ],
+    "correct": 2,
+    "explanation": "An expatriate is sent from the home country to work abroad temporarily, with repatriation planned.",
+    "memory_anchor": "✈️ Ex-pat: out and back."
+  },
+  {
+    "id": 138,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: HR in a Global Context",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "HR in a Global Context",
+    "scenario": "A new property opens in a country with different holiday and leave customs. What is the BEST HR approach?",
+    "options": [
+      "A) Apply headquarters policies unchanged everywhere",
+      "B) Let each manager decide on a case-by-case basis",
+      "C) Ignore local custom to keep things consistent",
+      "D) Research local law and custom, then adapt policy while keeping core company values"
+    ],
+    "correct": 3,
+    "explanation": "Global HR balances consistent values with compliance and cultural fit by adapting local practices.",
+    "memory_anchor": "🌍 Think global, act local."
+  },
+  {
+    "id": 139,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Structure of the HR Function",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Structure of the HR Function",
+    "scenario": "An HR model with centralized specialists in areas like compensation or recruiting, serving the whole company, is called:",
+    "options": [
+      "A) Centers of excellence",
+      "B) A flat org chart",
+      "C) A matrix of unions",
+      "D) A franchise model"
+    ],
+    "correct": 0,
+    "explanation": "Centers of excellence concentrate deep expertise in one team that supports the whole organization.",
+    "memory_anchor": "🎓 Expertise in one hub."
+  },
+  {
+    "id": 140,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Structure of the HR Function",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Structure of the HR Function",
+    "scenario": "Line managers keep sending routine questions to HR specialists, slowing complex projects. What is the BEST structural fix?",
+    "options": [
+      "A) Stop answering manager questions",
+      "B) Add self-service tools and a tiered service model so routine requests are handled first",
+      "C) Move all managers into HR",
+      "D) Hire only senior specialists"
+    ],
+    "correct": 1,
+    "explanation": "Tiered service and self-service handle routine transactions efficiently and free specialists for strategic work.",
+    "memory_anchor": "🪜 Tier it: simple first, experts later."
+  },
+  {
+    "id": 141,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Technology Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Technology Management",
+    "scenario": "Which system is MOST directly used to store employee records, track time, and run payroll data together?",
+    "options": [
+      "A) An applicant tracking system only",
+      "B) A social media platform",
+      "C) A human resource information system (HRIS)",
+      "D) A learning management system only"
+    ],
+    "correct": 2,
+    "explanation": "An HRIS centralizes core employee data and often payroll and time functions.",
+    "memory_anchor": "🗂️ HRIS = the people database."
+  },
+  {
+    "id": 142,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Technology Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Technology Management",
+    "scenario": "HR plans to adopt AI to screen resumes. What should HR do to reduce legal risk?",
+    "options": [
+      "A) Trust the vendor without review",
+      "B) Use it only for minority applicants",
+      "C) Hide its use from candidates and regulators",
+      "D) Test the tool for adverse impact and keep human oversight"
+    ],
+    "correct": 3,
+    "explanation": "Automated tools can create disparate impact, so testing, monitoring, and human review are essential.",
+    "memory_anchor": "🤖 Audit the algorithm, keep a human in the loop."
+  },
+  {
+    "id": 143,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Risk Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Risk Management",
+    "scenario": "The process of identifying, assessing, and then reducing or controlling workplace hazards is called:",
+    "options": [
+      "A) Risk management",
+      "B) Succession planning",
+      "C) Job analysis",
+      "D) Benchmarking"
+    ],
+    "correct": 0,
+    "explanation": "Risk management follows identify, assess, control, and monitor to reduce harm and cost.",
+    "memory_anchor": "🛡️ Spot, size, shrink the risk."
+  },
+  {
+    "id": 144,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Risk Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Risk Management",
+    "scenario": "A kitchen has had several slip-and-fall injuries near the dish pit. What is the BEST HR response?",
+    "options": [
+      "A) Remind employees to be careful",
+      "B) Investigate root causes and implement controls such as mats, footwear, and training",
+      "C) Discipline injured employees",
+      "D) Wait for an OSHA inspection"
+    ],
+    "correct": 1,
+    "explanation": "Addressing root causes and hazard controls prevents repeat injuries better than blaming workers.",
+    "memory_anchor": "🧽 Fix the floor, not the person."
+  },
+  {
+    "id": 145,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Diversity, Equity & Inclusion",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Diversity, Equity & Inclusion",
+    "scenario": "Which statement best describes inclusion?",
+    "options": [
+      "A) Hiring a representative workforce only",
+      "B) Applying quotas to every job",
+      "C) Making sure all employees feel respected, valued, and able to contribute",
+      "D) Treating all employees exactly the same regardless of need"
+    ],
+    "correct": 2,
+    "explanation": "Diversity is who is present; inclusion is how people experience belonging and participation.",
+    "memory_anchor": "🤝 Diversity invites, inclusion welcomes."
+  },
+  {
+    "id": 146,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Workplace",
+    "chapter": "HR Knowledge • Workplace: Diversity, Equity & Inclusion",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Diversity, Equity & Inclusion",
+    "scenario": "Employee survey data show front-desk staff from certain groups feel overlooked for promotion. What should HR do FIRST?",
+    "options": [
+      "A) Dismiss the data as opinion",
+      "B) Promote people by group immediately",
+      "C) Cancel the survey",
+      "D) Analyze promotion data and processes to find where gaps occur"
+    ],
+    "correct": 3,
+    "explanation": "A data-driven review pinpoints barriers before choosing solutions.",
+    "memory_anchor": "📊 Look at the data, then the fix."
+  },
+  {
+    "id": 147,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Total Rewards",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Total Rewards",
+    "scenario": "Which item is MOST likely classified as indirect compensation?",
+    "options": [
+      "A) Health insurance coverage",
+      "B) Base hourly wage",
+      "C) Overtime pay",
+      "D) Commission"
+    ],
+    "correct": 0,
+    "explanation": "Benefits such as insurance are indirect compensation; wages and commissions are direct.",
+    "memory_anchor": "💳 Paycheck = direct; perks = indirect."
+  },
+  {
+    "id": 148,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Total Rewards",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Total Rewards",
+    "scenario": "Housekeeping turnover is rising, and exit data point to pay compared with nearby resorts. What should HR do FIRST?",
+    "options": [
+      "A) Raise all pay 20% immediately",
+      "B) Conduct a market pay analysis for the role",
+      "C) Freeze hiring",
+      "D) Cut benefits to fund pay"
+    ],
+    "correct": 1,
+    "explanation": "Benchmarking against market data shows whether pay is truly the problem and by how much.",
+    "memory_anchor": "📐 Benchmark before you budget."
+  },
+  {
+    "id": 149,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Employee & Labor Relations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee & Labor Relations",
+    "scenario": "A written agreement between an employer and a union covering wages, hours, and conditions is called a:",
+    "options": [
+      "A) Handbook",
+      "B) Employment-at-will statement",
+      "C) Collective bargaining agreement",
+      "D) Offer letter"
+    ],
+    "correct": 2,
+    "explanation": "A CBA is the negotiated contract governing terms of employment for represented employees.",
+    "memory_anchor": "📜 CBA = union contract."
+  },
+  {
+    "id": 150,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Employee & Labor Relations",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Employee & Labor Relations",
+    "scenario": "Employees raise a group complaint about unsafe scheduling and ask a manager to discuss it. What should HR advise?",
+    "options": [
+      "A) Discipline the group for organizing",
+      "B) Ignore it as gossip",
+      "C) Fire the spokesperson",
+      "D) Listen, review the concerns, and avoid retaliation because group concerns may be protected activity"
+    ],
+    "correct": 3,
+    "explanation": "Concerted activity about working conditions can be protected under labor law, so retaliation creates risk.",
+    "memory_anchor": "🚫 Never retaliate for group concerns."
+  },
+  {
+    "id": 151,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Workforce Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Workforce Management",
+    "scenario": "Planning to ensure the right number of employees with the right skills are in place at the right time is:",
+    "options": [
+      "A) Workforce planning",
+      "B) Exit interviewing",
+      "C) Job evaluation",
+      "D) Progressive discipline"
+    ],
+    "correct": 0,
+    "explanation": "Workforce planning matches supply and demand for talent with business needs.",
+    "memory_anchor": "🧩 Right people, right place, right time."
+  },
+  {
+    "id": 152,
+    "type": "Situational Judgment Item (SJI)",
+    "category": "HR Knowledge Domain",
+    "domain": "Organization",
+    "chapter": "HR Knowledge • Organization: Workforce Management",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Workforce Management",
+    "scenario": "Demand at a ski resort spikes each winter and drops in spring. What is the BEST staffing approach?",
+    "options": [
+      "A) Keep full staffing all year",
+      "B) Use a mix of seasonal hires, cross-training, and flexible scheduling",
+      "C) Lay off everyone each spring without notice",
+      "D) Hire only part-time workers in all roles"
+    ],
+    "correct": 1,
+    "explanation": "A flexible mix balances cost and service while respecting seasonality.",
+    "memory_anchor": "🎿 Flex up for peak, flex down for off-peak."
+  },
+  {
+    "id": 153,
+    "type": "Knowledge Item",
+    "category": "HR Knowledge Domain",
+    "domain": "People",
+    "chapter": "HR Knowledge • People: Learning & Development",
+    "competency": "HR Expertise (HR Knowledge)",
+    "topic": "Learning & Development",
+    "scenario": "The first phase of the ADDIE instructional design model is:",
+    "options": [
+      "A) Delivery",
+      "B) Implementation",
+      "C) Analysis",
+      "D) Evaluation"
+    ],
+    "correct": 2,
+    "explanation": "ADDIE stands for Analysis, Design, Development, Implementation, and Evaluation, so analysis comes first.",
+    "memory_anchor": "🅰️ Analyze before you design."
   }
 ]
